@@ -99,96 +99,50 @@ function FAQNav() {
 }
 
 // ─── FAQ DATA ────────────────────────────────────────────────────────────────
+// items: { q: string, a: string } — sourced from green-highlighted content in FAQs.docx
 const FAQ_CATEGORIES = [
 {
   num: '01',
-  label: 'About the Program',
+  label: 'How It Works',
   items: [
-  'What exactly is Brivio\u2019s relationship to my dealership – vendor, partner, or lender?',
-  'Who actually owns the loans that get originated?',
-  'Does my dealership become a licensed lender, or does Brivio handle the licensing?',
-  'What states can we operate in, and how long does multi-state licensing take?',
-  'Can I keep working with my existing bank lenders alongside the Brivio program?',
-  'What does Brivio actually do that my dealership doesn\u2019t already do today?',
-  'Is there a minimum dealership size or loan volume to participate?']
-
+  { q: 'Does my dealership need any additional licensing, or does Brivio handle it?', a: 'No. Brivio handles all licensing and compliance. Your dealership operates under our regulatory framework, under your own brand. No additional burden on your end.' },
+  { q: 'What states can we operate in, and how long does multi-state licensing take?', a: 'We\u2019re expanding state by state and moving quickly. If we\u2019re not yet licensed in your state, it typically takes 30 to 90 days to get there. Contact us to find out your timeline.' },
+  { q: 'Can I keep working with my existing bank lenders alongside the Brivio program?', a: 'Yes. You keep all of your existing lender relationships. The difference is that loans routed through Brivio will earn you more income than you receive from other partners.' },
+  { q: 'How do you differ from the current lenders I use today?', a: 'Today, your lender earns the income and owns the customer relationship after the sale. With Brivio, you do. Loans originate under your brand. You earn additional income and retain access to your customers\u2019 portfolio data \u2026 giving you a significant advantage when they\u2019re ready to buy again.' },
+  { q: 'Why wouldn\u2019t I just build my own captive lender, like AutoNation did?', a: 'You could \u2026 and some of the largest dealer groups have. But AutoNation paid $85 million to acquire an existing lender before originating a single loan. Brivio gives you the same strategic advantages for a fraction of that cost, without the capital commitment, licensing burden, or operational complexity of building it yourself.' }]
 },
 {
   num: '02',
-  label: 'About the Economics',
+  label: 'The Economics',
   items: [
-  'How do I actually make money on this – what changes about my per-deal economics?',
-  'Is my finance reserve affected with this program?',
-  'What are the upfront costs, and what\u2019s the ongoing fee structure?',
-  'When do I start earning, and how is that revenue recognized on my books?',
-  'How does Brivio make money? What\u2019s the alignment between our interests?',
-  'What happens if my loan volumes are lower than projected – am I locked into fees?',
-  'Are there long-term commitments or contract minimums?',
-  'What\u2019s the payback period on the setup costs?',
-  'How do gain-on-sale economics work, and when do those payments flow?']
-
+  { q: 'How do I actually make money on this \u2014 what changes about my per-deal economics?', a: 'Loans originated under your brand will earn additional income when sold to an investor. That\u2019s on top of your standard dealer reserve. We\u2019ll walk you through exactly what that means for your volume.' },
+  { q: 'Is my finance reserve affected with this program?', a: 'No. The income you earn under your brand is on top of your standard dealer reserve.' },
+  { q: 'What are the upfront costs, and what\u2019s the ongoing fee structure?', a: 'There\u2019s a modest one-time setup fee and an ongoing fee structure that scales with your program. We\u2019ll walk you through the full detail on our first call.' },
+  { q: 'How does Brivio make money? What\u2019s the alignment between our interests?', a: 'Brivio earns modest fees for running the platform. Primarily, we earn a share of the income your program generates \u2014 so we only do well when your program does. There\u2019s no incentive for us to push volume that doesn\u2019t work for your business.' },
+  { q: 'Are there long-term commitments or contract minimums?', a: 'No. If we\u2019re not the right partner for you, you\u2019re free to walk away. We\u2019d rather earn your business every day than lock you into a contract.' }]
 },
 {
   num: '03',
-  label: 'About the Operations',
+  label: 'Operations',
   items: [
-  'Does my F&I team have to learn new systems or change how they handle deals?',
-  'How does this integrate with my existing DealerTrack or RouteOne workflow?',
-  'What does the actual customer experience look like – what do my buyers see?',
-  'Who handles underwriting decisions, and how fast are they?',
-  'Who handles collections if a loan goes delinquent?',
-  'What happens if a customer disputes a charge or files a complaint?',
-  'Does my dealership take on credit risk, or does Brivio?',
-  'Will my floor managers and sales staff need training?',
-  'Can I see and report on my portfolio\u2019s performance in real time?']
-
+  { q: 'Does my F&I team have to learn new systems or change how they handle deals?', a: 'No. Your F&I processes stay exactly the same. Nothing changes, except you now have the opportunity to earn more by sending the loan to a lender under your own brand.' }]
 },
 {
   num: '04',
-  label: 'About the Risk',
+  label: 'Other Questions',
   items: [
-  'What happens to my program if Brivio goes out of business?',
-  'Who would service my existing loans if Brivio shut down or got acquired?',
-  'Can my customer data be transferred to another platform if I want to exit?',
-  'What\u2019s the exit process if I decide the program isn\u2019t working?',
-  'Do I have any personal liability as a dealer principal?',
-  'What regulatory exposure does my dealership take on?',
-  'How is Brivio funded, and what\u2019s the company\u2019s financial runway?',
-  'Who are Brivio\u2019s capital partners, and how stable is the funding model?']
-
-},
-{
-  num: '05',
-  label: 'About Brivio',
-  items: [
-  'Why aren\u2019t there customer testimonials on the site?',
-  'How many dealer groups are currently using Brivio?',
-  'When did Brivio actually launch?',
-  'Has the model been proven elsewhere in the auto industry?',
-  'Who\u2019s on the team beyond the founders?',
-  'What\u2019s Brivio\u2019s funding stage?',
-  'Who are the investors and capital partners?',
-  'What\u2019s Brivio\u2019s plan if you don\u2019t reach scale quickly?']
-
-},
-{
-  num: '06',
-  label: 'About the Competitive Landscape',
-  items: [
-  'How is Brivio different from Octane?',
-  'Why wouldn\u2019t I just build my own captive lender, like AutoNation did?',
-  'How does this compare to working with a fintech lender like Upgrade or Upstart?',
-  'Why is this different from working with a bank\u2019s white-label program?',
-  'What stops a bank from offering the same model?',
-  'If this is so valuable, why hasn\u2019t anyone done it yet?']
-
+  { q: 'Does my dealership take on credit risk, or does Brivio?', a: 'Your obligations as a dealer stay exactly the same \u2014 you\u2019re responsible for verifying customer information and representations, as you always have been. Beyond that, credit risk transfers to the investor when the loan is sold. You are not on the hook for borrower defaults.' },
+  { q: 'What regulatory exposure does my dealership take on?', a: 'Nothing beyond what you do today. Brivio manages all regulatory and compliance requirements on your behalf.' },
+  { q: 'Is customer data secure?', a: 'Yes. Brivio maintains strict data security and privacy standards, and your customer data is never shared or sold to unauthorized third parties.' },
+  { q: 'What happens if regulations change?', a: 'Brivio stays current on regulatory requirements and works with legal and compliance partners to meet the latest standards.' }]
 }];
 
 
 // ─── FAQ ITEM (accordion row) ────────────────────────────────────────────────
-function FAQItem({ q }) {
+function FAQItem({ item }) {
   const [open, setOpen] = useState(false);
   const { isMobile } = useViewport();
+  const hasAnswer = Boolean(item.a);
   return (
     <div style={{ borderBottom: `1px solid ${T.border}` }}>
       <button onClick={() => setOpen((o) => !o)} aria-expanded={open} style={{
@@ -200,7 +154,7 @@ function FAQItem({ q }) {
           fontSize: isMobile ? 15.5 : 17, fontWeight: 500,
           color: open ? T.offwhite : 'rgba(245,247,249,0.84)', lineHeight: 1.45,
           letterSpacing: '-0.005em', transition: 'color 0.2s'
-        }}>{q}</span>
+        }}>{item.q}</span>
         {/* Plus / minus toggle */}
         <span style={{ flexShrink: 0, width: 24, height: 24, marginTop: 1, position: 'relative', color: T.brass }}>
           <span style={{ position: 'absolute', top: '50%', left: '50%', width: 14, height: 1.5, background: 'currentColor', transform: 'translate(-50%,-50%)' }} />
@@ -208,12 +162,12 @@ function FAQItem({ q }) {
         </span>
       </button>
       <div style={{
-        overflow: 'hidden', maxHeight: open ? 220 : 0, opacity: open ? 1 : 0,
-        transition: 'max-height 0.32s ease, opacity 0.32s ease'
+        overflow: 'hidden', maxHeight: open ? 400 : 0, opacity: open ? 1 : 0,
+        transition: 'max-height 0.35s ease, opacity 0.32s ease'
       }}>
         <div style={{ padding: isMobile ? '2px 0 22px' : '2px 0 26px', maxWidth: 680 }}>
           <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.16em', color: T.brass, textTransform: 'uppercase', marginBottom: 10 }}>Answer</div>
-          <p style={{ fontSize: isMobile ? 14.5 : 15.5, color: T.mutedText, fontStyle: 'italic', lineHeight: 1.65, margin: 0 }}>[Answer to be added]</p>
+          <p style={{ fontSize: isMobile ? 14.5 : 15.5, color: hasAnswer ? T.bodyText : T.mutedText, fontStyle: hasAnswer ? 'normal' : 'italic', lineHeight: 1.65, margin: 0 }}>{hasAnswer ? item.a : '[Answer to be added]'}</p>
         </div>
       </div>
     </div>);
@@ -250,7 +204,7 @@ function FAQCategory({ cat, background }) {
           </div>
         </div>
         <div>
-          {cat.items.map((q, i) => <FAQItem key={i} q={q} />)}
+          {cat.items.map((item, i) => <FAQItem key={i} item={item} />)}
         </div>
       </div>
     </section>);

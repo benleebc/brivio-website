@@ -455,11 +455,11 @@ function TheReality() {
 
 // ─── HOW IT WORKS ────────────────────────────────────────────────────────────
 const STEPS = [
-{ n: '01', title: 'Agree to terms.', body: 'Sign our agreement. Then, do the one thing banks never let you do … put your name on the loan.' },
-{ n: '02', title: 'You set the pricing.', body: 'We walk through the economics together – baseline versus adding margin, and how each approach stacks up against the competition. We agree on a range that works for both sides. Then you decide where to land.' },
-{ n: '03', title: 'We look under the hood.', body: "Your loan volumes, credit mix, and what you're earning today from markups and flat fees. We build the picture, then show you exactly what you're leaving on the table." },
-{ n: '04', title: 'We get to work.', body: "Your branded portal gets built. Your program goes into the tech stack. We train your F&I team so day one feels like business as usual. You don't lift a finger." },
-{ n: '05', title: "You're live.", body: 'Your team routes deals to your new finance company. From this point, every funded deal builds your portfolio, your customer data, and your economics. The bank no longer gets that – you do.' }];
+{ n: '01', title: 'Agree to terms', body: 'Sign our agreement. Then, do the one thing banks never let you do … put your name on the loan.' },
+{ n: '02', title: 'You set the pricing', body: 'We walk through the economics together – baseline versus adding margin, and how each approach stacks up against the competition. We agree on a range that works for both sides. Then you decide where to land.' },
+{ n: '03', title: 'We look under the hood', body: "Your loan volumes, credit mix, and what you're earning today from markups and flat fees. We build the picture, then show you exactly what you're leaving on the table." },
+{ n: '04', title: 'We get to work', body: "Your branded portal gets built. Your program goes into the tech stack. We train your F&I team so day one feels like business as usual. You don't lift a finger." },
+{ n: '05', title: "You're live", body: 'Your team routes deals to your new finance company. From this point, every funded deal builds your portfolio, your customer data, and your economics. The bank no longer gets that – you do.' }];
 
 
 function HowItWorks() {
@@ -536,15 +536,15 @@ function HowItWorks() {
 // ─── WHY BRIVIO ──────────────────────────────────────────────────────────────
 const WHY_CARDS = [
 {
-  title: 'One partner. Total accountability.',
+  title: 'One partner Total accountability',
   body: 'Licensing, compliance, underwriting, servicing, capital markets. We coordinate the full stack, so you don\u2019t have to. When something needs attention, you call us. We handle it from there.'
 },
 {
-  title: 'This is the only thing we do.',
+  title: 'This is the only thing we do',
   body: 'Auto-native from day one. Not a powersports pivot, not a consumer fintech adding cars, not a side project. Full-spectrum credit – new and used, prime through subprime – because that\u2019s how your dealership makes more.'
 },
 {
-  title: 'You\u2019re not our experiment.',
+  title: 'You\u2019re not our experiment',
   body: 'Our founders have led auto lending businesses inside the largest US bank, captive lenders, and a leading consumer fintech, generating over $75 billion across three decades. We\u2019ve operated through credit cycles, capital markets dislocations, and regulatory change. We\u2019re doing it again, this time for you.',
   link: { label: 'Meet the founders', href: 'about.html' }
 }];
