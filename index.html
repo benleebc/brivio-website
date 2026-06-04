@@ -138,10 +138,7 @@
 
     /* ── Static pre-render fallback layer ── */
     .prerender {
-      position: fixed; inset: 0; z-index: 4; overflow-y: auto;
-      background: #0D1B2A; color: #A8ADB3;
-      font-family: 'InterVariable','Inter','Helvetica Neue',Arial,sans-serif;
-      -webkit-font-smoothing: antialiased;
+      display: none;
     }
     .pr-wrap { max-width: 880px; margin: 0 auto; padding: 32px 24px 80px; }
     .pr-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 28px; border-bottom: 1px solid rgba(245,247,249,0.08); }
@@ -338,21 +335,13 @@
       );
     }
 
-    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-
-    // Remove the static pre-render layer once React has mounted real content.
+    // Remove prerender immediately before React renders
     (function () {
-      var root = document.getElementById('root');
-      var tries = 0;
-      var iv = setInterval(function () {
-        if ((root && root.firstChild) || tries > 200) {
-          clearInterval(iv);
-          var pr = document.getElementById('prerender');
-          if (pr) pr.remove();
-        }
-        tries++;
-      }, 25);
+      var pr = document.getElementById('prerender');
+      if (pr) pr.remove();
     })();
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
   </script>
 
   <script>
