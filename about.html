@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Brivio Capital – Built by Auto Lending Operators</title>
+  <meta name="description" content="Brivio's founders spent three decades running auto lending inside major banks, OEM captives, and fintech. Now they're making captive finance accessible to dealer groups." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="canonical" href="https://www.briviocapital.com/about.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Brivio Capital" />
+  <meta property="og:title" content="About Brivio Capital – Built by Auto Lending Operators" />
+  <meta property="og:description" content="Brivio's founders spent three decades running auto lending inside major banks, OEM captives, and fintech. Now they're making captive finance accessible to dealer groups." />
+  <meta property="og:url" content="https://www.briviocapital.com/about.html" />
+  <meta property="og:image" content="https://www.briviocapital.com/assets/brivio-lockup-v2.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Brivio Capital – Built by Auto Lending Operators" />
+  <meta name="twitter:description" content="Brivio's founders spent three decades running auto lending inside major banks, OEM captives, and fintech. Now they're making captive finance accessible to dealer groups." />
+  <meta name="twitter:image" content="https://www.briviocapital.com/assets/brivio-lockup-v2.png" />
+
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+
+  <meta name="ext-resource-dependency" content="assets/brivio-lockup-v2.png" data-resource-id="brivioLockup" />
+  <meta name="ext-resource-dependency" content="assets/charles_do_headshot.png" data-resource-id="charlesHeadshot" />
+  <meta name="ext-resource-dependency" content="assets/ben_lee_headshot.png" data-resource-id="benHeadshot" />
+
+  <template id="__bundler_thumbnail" data-bg-color="#0D1B2A">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#0D1B2A"/>
+      <g transform="translate(600 400)">
+        <path d="M -180 60 L -120 -40 L -60 60 L 0 -40 L 60 60 L 120 -40 L 180 60"
+              stroke="#B99B5F" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="-200" y1="60" x2="200" y2="60" stroke="#B99B5F" stroke-width="4" stroke-linecap="round"/>
+        <text x="0" y="140" text-anchor="middle" fill="#F5F7F9"
+              font-family="Helvetica, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="6">ABOUT</text>
+      </g>
+    </svg>
+  </template>
+
+  <script>
+    window.__resources = window.__resources || {
+      brivioLockup:    'assets/brivio-lockup-v2.png',
+      charlesHeadshot: 'assets/charles_do_headshot.png',
+      benHeadshot:     'assets/ben_lee_headshot.png'
+    };
+  </script>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    img { max-width: 100%; height: auto; }
+    body {
+      font-family: 'InterVariable', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-optical-sizing: auto;
+      background: #0D1B2A;
+      color: #F5F7F9;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection { background: rgba(185,155,95,0.3); color: #F5F7F9; }
+
+    /* Typography polish – line balancing + accent keep-together */
+    h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+    p, li, blockquote { text-wrap: pretty; }
+    .nb { white-space: normal; }
+    @media (min-width: 600px) { .nb { white-space: nowrap; } }
+
+    /* ── Static pre-render fallback layer ── */
+    .prerender {
+      position: fixed; inset: 0; z-index: 4; overflow-y: auto;
+      background: #0D1B2A; color: #A8ADB3;
+      font-family: 'InterVariable','Inter','Helvetica Neue',Arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .pr-wrap { max-width: 880px; margin: 0 auto; padding: 32px 24px 80px; }
+    .pr-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 28px; border-bottom: 1px solid rgba(245,247,249,0.08); }
+    .pr-logo { height: 40px; width: auto; }
+    .pr-nav { display: flex; flex-wrap: wrap; gap: 18px; }
+    .pr-nav a { color: rgba(245,247,249,0.62); text-decoration: none; font-size: 13px; letter-spacing: 0.03em; }
+    .pr-nav a:last-child { color: #B99B5F; }
+    .prerender h1 { color: #F5F7F9; font-size: clamp(30px, 6vw, 52px); font-weight: 500; line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 18px; }
+    .prerender h2 { color: #F5F7F9; font-size: clamp(22px, 4vw, 32px); font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 18px; }
+    .prerender h3 { color: #F5F7F9; font-size: 18px; font-weight: 600; margin: 22px 0 6px; }
+    .prerender p { font-size: 15px; line-height: 1.65; margin: 0 0 12px; max-width: 680px; }
+    .prerender section { padding: 40px 0; border-bottom: 1px solid rgba(245,247,249,0.08); }
+    .pr-hero { padding-top: 48px; }
+    .pr-lead { font-size: 17px; color: #C7CCD1; }
+    .prerender em { color: #F5F7F9; }
+    .prerender a { color: #B99B5F; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Static pre-render layer (SEO / no-JS fallback); removed once React mounts. -->
+  <div id="prerender" class="prerender">
+    <div class="pr-wrap">
+      <header class="pr-head">
+        <img src="assets/brivio-lockup-v2.png" alt="Brivio Capital" class="pr-logo" />
+        <nav class="pr-nav" aria-label="Primary">
+          <a href="index.html#how-it-works">How it Works</a>
+          <a href="index.html#why">Why Brivio</a>
+          <a href="about.html">About Us</a>
+          <a href="faq.html">FAQs</a>
+          <a href="index.html#contact">Apply to Partner</a>
+        </nav>
+      </header>
+
+      <section class="pr-hero">
+        <h1>30 years inside auto lenders. Now building the alternative.</h1>
+        <p class="pr-lead">Brivio's founders spent three decades running auto lending inside the largest banks, OEM captives, and fintech. Now they're making dealer-owned captive finance accessible to every dealer group.</p>
+      </section>
+
+      <section>
+        <h2>What we saw from the inside.</h2>
+        <p>The auto finance system has a quiet imbalance. A dealership sells the car, builds the customer relationship, and arranges the loan … handing the keys to a lender that takes most of the economics. The lender also gets the customer, the data, and the payment history. The dealership did the heavy lifting of marketing and bringing in the customer. The value happens elsewhere.</p>
+        <p>A handful of the largest dealer groups figured out how to fix this: they built their own captive lenders. Until now, that path required tens of millions in capital and over a year to build. Nearly every other dealer group stayed on the sidelines.</p>
+      </section>
+
+      <section>
+        <h2>What we're doing about it.</h2>
+        <p>We spent three decades inside auto lenders, leading businesses that generated over $75 billion across the largest U.S. bank, OEM captives, and a leading consumer fintech. We know how this business actually works because we've operated at scale.</p>
+        <p>We're building Brivio because launching a captive lender shouldn't be reserved for the few dealer groups with the capital to build one from scratch. The infrastructure exists to make this accessible. The capital markets are open to dealer-originated paper. The technology can be assembled rather than built from scratch. The only thing missing was a team that understood every layer of the stack well enough to bring it together. That's us.</p>
+      </section>
+
+      <section>
+        <h2>The founders</h2>
+        <h3>Charles Do – Founder &amp; CEO</h3>
+        <p><em>Bank. Captive. Fintech. One of the few auto finance executives to have led businesses inside all three.</em></p>
+        <p>Charles spent the early part of his career at GMAC and lived through the 2008 financial crisis as it became Ally Financial. At JPMorgan Chase, he led three auto finance businesses, including the bank's white-label captive program for Jaguar Land Rover. He later launched Best Egg's auto lending business as Head of Auto. Most recently led Harley-Davidson Financial Services through a landmark forward flow transaction with KKR and PIMCO, including a 9.8% equity sale of the business. <a href="https://www.linkedin.com/in/charles-do/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+        <h3>Ben Lee – Co-Founder &amp; COO</h3>
+        <p><em>Priced and scaled auto lending businesses across the largest institutions in auto finance.</em></p>
+        <p>Ben began his career in GE Capital's Financial Management Program before joining Ally Financial in 2010, where he ran stress testing as the bank rebuilt under post-crisis regulatory scrutiny. At JPMorgan Chase, he led pricing across the bank's auto originations portfolio, including the white-label captive programs for Mazda, Subaru, and Jaguar Land Rover, before continuing that work at Santander. He later joined Best Egg to help build and ultimately led the auto lending business. <a href="https://www.linkedin.com/in/benjamin-lee-81b7878/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+        <p><em>Together, we've spent three decades inside auto finance … running captives, leading pricing, and operating through every condition the market throws at lenders. If you're a dealer group ready to own your lending economics, let's talk.</em></p>
+        <p><a href="index.html#contact">Apply to Partner →</a></p>
+      </section>
+    </div>
+  </div>
+
+  <script type="text/babel" src="landing-components.jsx"></script>
+  <script type="text/babel" src="about-components.jsx"></script>
+
+  <script type="text/babel">
+    ReactDOM.createRoot(document.getElementById('root')).render(<AboutPage />);
+
+    // Remove the static pre-render layer once React has mounted real content.
+    (function () {
+      var root = document.getElementById('root');
+      var tries = 0;
+      var iv = setInterval(function () {
+        if ((root && root.firstChild) || tries > 200) {
+          clearInterval(iv);
+          var pr = document.getElementById('prerender');
+          if (pr) pr.remove();
+        }
+        tries++;
+      }, 25);
+    })();
+  </script>
+</body>
+</html>

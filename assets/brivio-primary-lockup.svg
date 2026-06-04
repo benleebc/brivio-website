@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" font-family="&#39;Söhne Neue&#39;, &#39;Inter&#39;, &#39;Helvetica Neue&#39;, Arial, sans-serif">
+  <title>Brivio Primary Lockup</title>
+  <g transform="translate(60 50)" stroke="#B99B5F" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter" fill="none">
+    <line x1="20" y1="10" x2="20" y2="210"></line>
+    <path d="M 20 10 H 125 Q 180 10 180 60 Q 180 110 125 110 H 20"></path>
+    <path d="M 20 110 H 125 Q 180 110 180 160 Q 180 210 125 210 H 20"></path>
+  </g>
+  <line x1="320" y1="70" x2="320" y2="250" stroke="#656B72" stroke-width="2"></line>
+  <text x="370" y="180" fill="#F5F7F9" font-size="92" font-weight="500" letter-spacing="18">BRIVIO</text>
+  <text x="370" y="240" fill="#B99B5F" font-size="22" font-weight="300" letter-spacing="8">CAPITAL.  CONNECTION.  MOMENTUM.</text>
+</svg>

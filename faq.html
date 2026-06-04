@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Brivio Capital FAQ – Dealer Captive Finance, Answered</title>
+  <meta name="description" content="Straight answers to what dealer principals ask about Brivio: ownership, economics, operations, risk, and how dealer-owned auto finance actually works." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="canonical" href="https://www.briviocapital.com/faq.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Brivio Capital" />
+  <meta property="og:title" content="Brivio Capital FAQ – Dealer Captive Finance, Answered" />
+  <meta property="og:description" content="Straight answers to what dealer principals ask about Brivio: ownership, economics, operations, risk, and how dealer-owned auto finance actually works." />
+  <meta property="og:url" content="https://www.briviocapital.com/faq.html" />
+  <meta property="og:image" content="https://www.briviocapital.com/assets/brivio-lockup-v2.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Brivio Capital FAQ – Dealer Captive Finance, Answered" />
+  <meta name="twitter:description" content="Straight answers to what dealer principals ask about Brivio: ownership, economics, operations, risk, and how dealer-owned auto finance actually works." />
+  <meta name="twitter:image" content="https://www.briviocapital.com/assets/brivio-lockup-v2.png" />
+
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+
+  <meta name="ext-resource-dependency" content="assets/brivio-lockup-v2.png" data-resource-id="brivioLockup" />
+
+  <template id="__bundler_thumbnail" data-bg-color="#0D1B2A">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#0D1B2A"/>
+      <g transform="translate(600 400)">
+        <path d="M -180 60 L -120 -40 L -60 60 L 0 -40 L 60 60 L 120 -40 L 180 60"
+              stroke="#B99B5F" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="-200" y1="60" x2="200" y2="60" stroke="#B99B5F" stroke-width="4" stroke-linecap="round"/>
+        <text x="0" y="140" text-anchor="middle" fill="#F5F7F9"
+              font-family="Helvetica, Arial, sans-serif" font-size="44" font-weight="500" letter-spacing="10">FAQ</text>
+      </g>
+    </svg>
+  </template>
+
+  <script>
+    window.__resources = window.__resources || {
+      brivioLockup: 'assets/brivio-lockup-v2.png'
+    };
+  </script>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    img { max-width: 100%; height: auto; }
+    body {
+      font-family: 'InterVariable', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-optical-sizing: auto;
+      background: #0D1B2A;
+      color: #F5F7F9;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection { background: rgba(185,155,95,0.3); color: #F5F7F9; }
+
+    /* Typography polish – line balancing + accent keep-together */
+    h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+    p, li, blockquote { text-wrap: pretty; }
+    .nb { white-space: normal; }
+    @media (min-width: 600px) { .nb { white-space: nowrap; } }
+
+    /* ── Static pre-render fallback layer ── */
+    .prerender {
+      position: fixed; inset: 0; z-index: 4; overflow-y: auto;
+      background: #0D1B2A; color: #A8ADB3;
+      font-family: 'InterVariable','Inter','Helvetica Neue',Arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .pr-wrap { max-width: 880px; margin: 0 auto; padding: 32px 24px 80px; }
+    .pr-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 28px; border-bottom: 1px solid rgba(245,247,249,0.08); }
+    .pr-logo { height: 40px; width: auto; }
+    .pr-nav { display: flex; flex-wrap: wrap; gap: 18px; }
+    .pr-nav a { color: rgba(245,247,249,0.62); text-decoration: none; font-size: 13px; letter-spacing: 0.03em; }
+    .pr-nav a:last-child { color: #B99B5F; }
+    .prerender h1 { color: #F5F7F9; font-size: clamp(30px, 6vw, 52px); font-weight: 500; line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 18px; }
+    .prerender h2 { color: #F5F7F9; font-size: clamp(20px, 3.5vw, 28px); font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 14px; }
+    .prerender h3 { color: #E4E7EA; font-size: 16px; font-weight: 500; margin: 12px 0 4px; }
+    .prerender p { font-size: 14px; line-height: 1.6; margin: 0 0 8px; max-width: 680px; }
+    .prerender ul { margin: 0 0 8px; padding-left: 20px; }
+    .prerender li { font-size: 15px; line-height: 1.7; color: #C7CCD1; }
+    .prerender section { padding: 36px 0; border-bottom: 1px solid rgba(245,247,249,0.08); }
+    .pr-hero { padding-top: 48px; }
+    .pr-lead { font-size: 17px; color: #C7CCD1; }
+    .prerender a { color: #B99B5F; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Static pre-render layer (SEO / no-JS fallback); removed once React mounts. -->
+  <div id="prerender" class="prerender">
+    <div class="pr-wrap">
+      <header class="pr-head">
+        <img src="assets/brivio-lockup-v2.png" alt="Brivio Capital" class="pr-logo" />
+        <nav class="pr-nav" aria-label="Primary">
+          <a href="index.html#how-it-works">How it Works</a>
+          <a href="index.html#why">Why Brivio</a>
+          <a href="about.html">About Us</a>
+          <a href="faq.html">FAQs</a>
+          <a href="index.html#contact">Apply to Partner</a>
+        </nav>
+      </header>
+
+      <section class="pr-hero">
+        <h1>Frequently Asked Questions</h1>
+        <p class="pr-lead">The questions dealer principals actually ask about Brivio's dealer-owned captive finance – answered straight.</p>
+      </section>
+
+      <section>
+        <h2>About the Program</h2>
+        <ul>
+          <li>What exactly is Brivio's relationship to my dealership – vendor, partner, or lender?</li>
+          <li>Who actually owns the loans that get originated?</li>
+          <li>Does my dealership become a licensed lender, or does Brivio handle the licensing?</li>
+          <li>What states can we operate in, and how long does multi-state licensing take?</li>
+          <li>Can I keep working with my existing bank lenders alongside the Brivio program?</li>
+          <li>What does Brivio actually do that my dealership doesn't already do today?</li>
+          <li>Is there a minimum dealership size or loan volume to participate?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>About the Economics</h2>
+        <ul>
+          <li>How do I actually make money on this – what changes about my per-deal economics?</li>
+          <li>Is my finance reserve affected with this program?</li>
+          <li>What are the upfront costs, and what's the ongoing fee structure?</li>
+          <li>When do I start earning, and how is that revenue recognized on my books?</li>
+          <li>How does Brivio make money? What's the alignment between our interests?</li>
+          <li>What happens if my loan volumes are lower than projected – am I locked into fees?</li>
+          <li>Are there long-term commitments or contract minimums?</li>
+          <li>What's the payback period on the setup costs?</li>
+          <li>How do gain-on-sale economics work, and when do those payments flow?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>About the Operations</h2>
+        <ul>
+          <li>Does my F&amp;I team have to learn new systems or change how they handle deals?</li>
+          <li>How does this integrate with my existing DealerTrack or RouteOne workflow?</li>
+          <li>What does the actual customer experience look like – what do my buyers see?</li>
+          <li>Who handles underwriting decisions, and how fast are they?</li>
+          <li>Who handles collections if a loan goes delinquent?</li>
+          <li>What happens if a customer disputes a charge or files a complaint?</li>
+          <li>Does my dealership take on credit risk, or does Brivio?</li>
+          <li>Will my floor managers and sales staff need training?</li>
+          <li>Can I see and report on my portfolio's performance in real time?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>About the Risk</h2>
+        <ul>
+          <li>What happens to my program if Brivio goes out of business?</li>
+          <li>Who would service my existing loans if Brivio shut down or got acquired?</li>
+          <li>Can my customer data be transferred to another platform if I want to exit?</li>
+          <li>What's the exit process if I decide the program isn't working?</li>
+          <li>Do I have any personal liability as a dealer principal?</li>
+          <li>What regulatory exposure does my dealership take on?</li>
+          <li>How is Brivio funded, and what's the company's financial runway?</li>
+          <li>Who are Brivio's capital partners, and how stable is the funding model?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>About Brivio</h2>
+        <ul>
+          <li>Why aren't there customer testimonials on the site?</li>
+          <li>How many dealer groups are currently using Brivio?</li>
+          <li>When did Brivio actually launch?</li>
+          <li>Has the model been proven elsewhere in the auto industry?</li>
+          <li>Who's on the team beyond the founders?</li>
+          <li>What's Brivio's funding stage?</li>
+          <li>Who are the investors and capital partners?</li>
+          <li>What's Brivio's plan if you don't reach scale quickly?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>About the Competitive Landscape</h2>
+        <ul>
+          <li>How is Brivio different from Octane?</li>
+          <li>Why wouldn't I just build my own captive lender, like AutoNation did?</li>
+          <li>How does this compare to working with a fintech lender like Upgrade or Upstart?</li>
+          <li>Why is this different from working with a bank's white-label program?</li>
+          <li>What stops a bank from offering the same model?</li>
+          <li>If this is so valuable, why hasn't anyone done it yet?</li>
+        </ul>
+        <p><a href="index.html#contact">Still have questions? Apply to Partner →</a></p>
+      </section>
+    </div>
+  </div>
+
+  <script type="text/babel" src="landing-components.jsx"></script>
+  <script type="text/babel" src="faq-components.jsx"></script>
+
+  <script type="text/babel">
+    ReactDOM.createRoot(document.getElementById('root')).render(<FAQPage />);
+
+    // Remove the static pre-render layer once React has mounted real content.
+    (function () {
+      var root = document.getElementById('root');
+      var tries = 0;
+      var iv = setInterval(function () {
+        if ((root && root.firstChild) || tries > 200) {
+          clearInterval(iv);
+          var pr = document.getElementById('prerender');
+          if (pr) pr.remove();
+        }
+        tries++;
+      }, 25);
+    })();
+  </script>
+</body>
+</html>
