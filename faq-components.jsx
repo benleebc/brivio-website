@@ -103,7 +103,7 @@ function FAQNav() {
 const FAQ_CATEGORIES = [
 {
   num: '01',
-  label: 'How It Works',
+  label: 'How it works',
   items: [
   { q: 'Does my dealership need any additional licensing, or does Brivio handle it?', a: 'No. Brivio handles all licensing and compliance. Your dealership operates under our regulatory framework, under your own brand. No additional burden on your end.' },
   { q: 'What states can we operate in, and how long does multi-state licensing take?', a: 'We\u2019re expanding state by state and moving quickly. If we\u2019re not yet licensed in your state, it typically takes 30 to 90 days to get there. Contact us to find out your timeline.' },
@@ -129,7 +129,7 @@ const FAQ_CATEGORIES = [
 },
 {
   num: '04',
-  label: 'Other Questions',
+  label: 'Other questions',
   items: [
   { q: 'Does my dealership take on credit risk, or does Brivio?', a: 'Your obligations as a dealer stay exactly the same \u2014 you\u2019re responsible for verifying customer information and representations, as you always have been. Beyond that, credit risk transfers to the investor when the loan is sold. You are not on the hook for borrower defaults.' },
   { q: 'What regulatory exposure does my dealership take on?', a: 'Nothing beyond what you do today. Brivio manages all regulatory and compliance requirements on your behalf.' },
@@ -260,7 +260,7 @@ function FAQContact() {
   const { isMobile, isTablet } = useViewport();
   return (
     <section style={{
-      background: T.graphite, borderTop: `1px solid ${T.border}`,
+      background: T.bgLight, borderTop: `1px solid ${T.cardBorderLight}`,
       padding: isMobile ? '64px 20px' : isTablet ? '84px 32px' : '104px 56px'
     }}>
       <div ref={ref} style={{
@@ -271,7 +271,7 @@ function FAQContact() {
         <Eyebrow>STILL HAVE QUESTIONS</Eyebrow>
         <h2 style={{
           fontSize: isMobile ? 30 : 42, fontWeight: 500, fontFamily: FONT_DISPLAY,
-          letterSpacing: '-0.01em', color: T.offwhite, margin: '0 0 28px', lineHeight: 1.2,
+          letterSpacing: '-0.01em', color: T.textOnLight, margin: '0 0 28px', lineHeight: 1.2,
           maxWidth: 620
         }}>Talk to the people who built it
 

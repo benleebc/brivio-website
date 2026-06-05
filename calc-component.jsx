@@ -27,7 +27,7 @@ const C_FONT_DISPLAY = "'InterDisplay','InterVariable','Inter','Helvetica Neue',
 // Estimated lender finance income retained over the life of a typical auto loan,
 // expressed as a share of originated principal. Industry-level, deliberately
 // conservative, and shown to the user so the figure is verifiable.
-const LENDER_LIFETIME_MARGIN = 0.07; // 7% of originated principal over the 3–5yr life
+const LENDER_LIFETIME_MARGIN = 0.04; // 4% of originated principal over the 3–5yr life
 
 // ── Responsive hook ─────────────────────────────────────────────────────
 function cUseViewport() {
@@ -97,7 +97,7 @@ function CSlider({ label, value, min, max, step = 1, onChange, money, hint }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12 }}>
-        <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: '0.14em', color: cT.steel, textTransform: 'uppercase' }}>{label}</span>
+        <span style={{ fontSize: 12.5, fontWeight: 500, letterSpacing: '0.12em', color: cT.steel, textTransform: 'uppercase' }}>{label}</span>
         <input
           type="text"
           value={money ? getFormattedDisplay(value) : value.toLocaleString()}
@@ -127,7 +127,7 @@ function CSlider({ label, value, min, max, step = 1, onChange, money, hint }) {
           onChange={e => onChange(Number(e.target.value))}
           style={{ position: 'relative', zIndex: 1, margin: 0 }} />
       </div>
-      {hint && <div style={{ fontSize: 11, color: cT.mutedText, fontStyle: 'italic', marginTop: -2 }}>{hint}</div>}
+      {hint && <div style={{ fontSize: 12, color: cT.mutedText, fontStyle: 'italic', marginTop: -2 }}>{hint}</div>}
     </div>
   );
 }
@@ -145,14 +145,14 @@ function COppCard({ label, value, sub, animKey, accent }) {
       {accent && (
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: `linear-gradient(90deg, ${cT.brass}, ${cT.brassLight})` }} />
       )}
-      <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.14em', color: accent ? cT.brass : cT.mutedText, textTransform: 'uppercase' }}>{label}</div>
+      <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.12em', color: accent ? cT.brass : cT.mutedText, textTransform: 'uppercase' }}>{label}</div>
       <div style={{
         fontSize: isMobile ? 30 : 40, fontWeight: 500, fontFamily: C_FONT_DISPLAY,
         color: accent ? cT.brass : cT.offwhite, letterSpacing: '-0.02em', lineHeight: 1,
       }}>
         <CAnimatedNumber key={`${label}-${animKey}`} value={value} />
       </div>
-      <div style={{ fontSize: 13, color: cT.bodyText, lineHeight: 1.55 }}>{sub}</div>
+      <div style={{ fontSize: 14, color: cT.bodyText, lineHeight: 1.55 }}>{sub}</div>
     </div>
   );
 }
@@ -293,12 +293,11 @@ function CalculatorPage({ onGoHome, onContact }) {
       {/* HERO */}
       <div className="calc-hero" style={{
         padding: isMobile ? '110px 20px 56px' : isTablet ? '130px 32px 64px' : '140px 56px 72px',
-        maxWidth: 900, margin: '0 auto', textAlign: 'center',
+        maxWidth: 1100, margin: '0 auto', textAlign: 'left',
       }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
-          <div style={{ width: 20, height: 1, background: cT.brass }} />
-          <span style={{ fontSize: isMobile ? 10 : 11, fontWeight: 500, letterSpacing: '0.18em', color: cT.brass, textTransform: 'uppercase' }}>The opportunity cost</span>
-          <div style={{ width: 20, height: 1, background: cT.brass }} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
+          <div style={{ width: 24, height: 1, background: cT.brass, flexShrink: 0 }} />
+          <span style={{ fontSize: 13, fontWeight: 500, letterSpacing: '0.16em', color: cT.brass, textTransform: 'uppercase' }}>The opportunity cost</span>
         </div>
         <h1 style={{
           fontFamily: C_FONT_DISPLAY,
@@ -306,9 +305,9 @@ function CalculatorPage({ onGoHome, onContact }) {
           fontWeight: 500, letterSpacing: '-0.02em', lineHeight: 1.06,
           color: cT.offwhite, margin: '0 0 24px',
         }}>
-          What you're<br /><span style={{ color: cT.brass }}>giving up today</span>
+          What you're <span style={{ color: cT.brass }}>giving up today</span>
         </h1>
-        <p style={{ fontSize: isMobile ? 15 : 17, color: cT.bodyText, lineHeight: 1.65, maxWidth: 600, margin: '0 auto' }}>
+        <p style={{ fontSize: isMobile ? 16 : 18, color: cT.bodyText, lineHeight: 1.65, maxWidth: 680, margin: 0 }}>
           Every loan your dealerships route to an outside lender hands away years of finance income. This calculator shows what that costs you – built on industry-level loan economics, not Brivio projections, so the numbers are yours to verify.
         </p>
       </div>
@@ -322,7 +321,7 @@ function CalculatorPage({ onGoHome, onContact }) {
         }}>
           <div style={{ marginBottom: isMobile ? 28 : 36 }}>
             <div style={{ fontSize: 11, fontWeight: 500, letterSpacing: '0.16em', color: cT.brass, textTransform: 'uppercase', marginBottom: 8 }}>Your dealer group</div>
-            <p style={{ fontSize: 14, color: cT.bodyText }}>Adjust the inputs to match your operation. Defaults reflect a typical multi-rooftop group.</p>
+            <p style={{ fontSize: 15, color: cT.bodyText }}>Adjust the inputs to match your operation. Defaults reflect a typical multi-rooftop group.</p>
           </div>
           <div className="calc-sliders" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 28 : '32px 56px' }}>
             <CSlider label="Number of locations" value={locations} min={1} max={100} step={1} onChange={v => handleChange(setLocations, v)} />
@@ -337,12 +336,12 @@ function CalculatorPage({ onGoHome, onContact }) {
           }}>
             {[
               { label: 'Annual funded loans', sublabel: '(locations × monthly × 12)', value: annualLoans.toLocaleString() },
-              { label: 'Annual loan volume routed', sublabel: '(funded loans × avg loan size)', value: cFmt(annualVolume) },
+              { label: 'Annual loan volume given away', sublabel: '(funded loans × avg loan size)', value: cFmt(annualVolume) },
             ].map((s, i) => (
               <div key={i}>
-                <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.14em', color: cT.mutedText, textTransform: 'uppercase', marginBottom: 2 }}>{s.label}</div>
-                <div style={{ fontSize: 9, color: cT.mutedText, fontStyle: 'italic', marginBottom: 8 }}>{s.sublabel}</div>
-                <div style={{ fontSize: isMobile ? 18 : 20, fontWeight: 500, fontFamily: C_FONT_DISPLAY, color: cT.offwhite }}>{s.value}</div>
+                <div style={{ fontSize: 12, fontWeight: 500, letterSpacing: '0.12em', color: cT.mutedText, textTransform: 'uppercase', marginBottom: 3 }}>{s.label}</div>
+                <div style={{ fontSize: 11, color: cT.mutedText, fontStyle: 'italic', marginBottom: 8 }}>{s.sublabel}</div>
+                <div style={{ fontSize: isMobile ? 22 : 26, fontWeight: 500, fontFamily: C_FONT_DISPLAY, color: cT.offwhite }}>{s.value}</div>
               </div>
             ))}
           </div>
@@ -406,13 +405,13 @@ function CalculatorPage({ onGoHome, onContact }) {
           background: 'rgba(245,247,249,0.03)', border: `1px solid ${cT.border}`,
           borderRadius: 8, padding: isMobile ? '18px 20px' : '20px 24px', marginBottom: isMobile ? 40 : 56,
         }}>
-          <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.14em', color: cT.brass, textTransform: 'uppercase', marginBottom: 8 }}>Assumption used</div>
-          <p style={{ fontSize: isMobile ? 12.5 : 13, color: cT.bodyText, lineHeight: 1.65, margin: 0 }}>
-            Estimated lender earnings assume <strong style={{ color: cT.offwhite, fontWeight: 600 }}>7% of originated loan principal</strong> retained as net finance income over a typical 3–5 year loan life. This is an industry-level estimate applied to your inputs – not a Brivio performance figure.
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', color: cT.brass, textTransform: 'uppercase', marginBottom: 8 }}>Assumption used</div>
+          <p style={{ fontSize: isMobile ? 14 : 15, color: cT.bodyText, lineHeight: 1.65, margin: 0 }}>
+            Estimated lender earnings assume <strong style={{ color: cT.offwhite, fontWeight: 600 }}>4% of originated loan principal</strong> retained as net finance income over a typical 3–5 year loan life. This is an industry-level estimate applied to your inputs – not a Brivio performance figure. Net finance income for consumer auto lenders (gross interest less cost of funds, credit losses, and servicing) is broadly estimated at 3–6% of originated principal depending on credit tier and lender type; we use 4% as a conservative mid-range figure, consistent with publicly available auto lender net interest margin data reported in CFPB auto loan market reports and Federal Reserve consumer credit statistics (G.19).
           </p>
         </div>
 
-        <p style={{ fontSize: 11, color: cT.mutedText, lineHeight: 1.6, maxWidth: 720, marginBottom: isMobile ? 48 : 64 }}>
+        <p style={{ fontSize: 12.5, color: cT.mutedText, lineHeight: 1.65, maxWidth: 720, marginBottom: isMobile ? 48 : 64 }}>
           These figures are illustrative estimates of opportunity cost based on the inputs above and industry-level loan economics. They reflect income that outside lenders are positioned to earn on dealer-originated loans, not a guarantee of Brivio results. Actual lender earnings and dealer economics vary with credit mix, term, rate, prepayment, losses, and program structure. Brivio does not guarantee specific returns.
         </p>
 

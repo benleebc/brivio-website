@@ -35,7 +35,7 @@ const T = {
   mutedText: '#7B8289', // tertiary metadata – intentionally subtle
   offwhite: '#F5F7F9',
   // ─ Light-section tokens (Option 2 alternating dark/light) ─
-  bgLight: '#F1F4F7',        // off-white section background
+  bgLight: '#E8EBEF',        // softened off-white section background
   textOnLight: '#0D1B2A',    // navy headings on light
   bodyOnLight: '#51606E',    // body copy on light – ~7:1 contrast
   mutedOnLight: '#7A8694',   // tertiary metadata on light
@@ -380,9 +380,9 @@ function Hero({ variant, onContact }) {
 
 // ─── THE REALITY ─────────────────────────────────────────────────────────────
 const REALITY_CARDS = [
-{ stat: 'Once', sub: 'How often you got paid on that loan' },
-{ stat: '3 to 5 years', sub: 'How long the lender will collect on it Every single month' },
-{ stat: '100%', sub: 'Of the customer relationship and data that went with it' }];
+{ stat: '1 payment', sub: 'How often you get paid on the loan' },
+{ stat: '3–5 years', sub: 'How long the lender collects on it' },
+{ stat: '100%', sub: 'Ownership of customer data' }];
 
 
 function TheReality() {
@@ -569,7 +569,7 @@ const WHY_CARDS = [
   body: 'Auto-native from day one. Not a powersports pivot, not a consumer fintech adding cars, not a side project. Full-spectrum credit – new and used, prime through subprime – because that\u2019s how your dealership makes more.'
 },
 {
-  title: 'One partner Total accountability',
+  title: 'One partner total accountability',
   body: 'Licensing, compliance, underwriting, servicing, capital markets. We coordinate the full stack, so you don\u2019t have to. When something needs attention, you call us. We handle it from there.'
 }];
 
@@ -633,8 +633,7 @@ function WhyBrivio() {
           })}
         </div>
 
-        {/* We win when you win */}
-        <div style={{
+        {!isMobile && <div style={{
           marginTop: isMobile ? 36 : 48,
           background: 'rgba(185,155,95,0.1)', borderTop: `2px solid ${T.brass}`,
           padding: isMobile ? '28px 24px' : '36px 40px'
@@ -650,10 +649,32 @@ function WhyBrivio() {
               </div>
             )}
           </div>
-        </div>
+        </div>}
       </div>
     </section>);
 
+}
+
+// ─── WE WIN WHEN YOU WIN (mobile-only standalone section) ────────────────────
+function WinWhenYouWinSection() {
+  const { isMobile } = useViewport();
+  if (!isMobile) return null;
+  return (
+    <section style={{ padding: '64px 20px', background: T.navy, borderTop: `1px solid ${T.border}` }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+        <div style={{ fontFamily: FONT_DISPLAY, fontSize: 24, fontWeight: 500, color: T.offwhite, letterSpacing: '-0.01em', marginBottom: 22 }}>
+          We win when you win
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          {WIN_POINTS.map((pt, i) =>
+            <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+              <div style={{ width: 5, height: 5, borderRadius: '50%', background: T.brass, marginTop: 9, flexShrink: 0 }} />
+              <span style={{ fontSize: 14, color: T.bodyText, lineHeight: 1.6 }}>{pt}</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>);
 }
 
 // ─── WHO WE WORK WITH ────────────────────────────────────────────────────────
@@ -1033,4 +1054,4 @@ function ProofPoints() {
 
 }
 
-Object.assign(window, { Nav, Hero, TheReality, HowItWorks, WhyBrivio, RooftopsWeServe, CalcTeaser, About, Contact, Footer });
+Object.assign(window, { Nav, Hero, TheReality, HowItWorks, WhyBrivio, WinWhenYouWinSection, RooftopsWeServe, CalcTeaser, About, Contact, Footer });
