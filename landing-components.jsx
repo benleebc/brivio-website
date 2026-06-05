@@ -68,9 +68,9 @@ function Arrow() {
 
 }
 
-function Eyebrow({ children }) {
+function Eyebrow({ children, style }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20, ...style }}>
       <div style={{ width: 24, height: 1, background: T.brass, flexShrink: 0 }} />
       <span style={{ color: T.brass, fontSize: 13, fontWeight: 500, letterSpacing: '0.16em' }}>{children}</span>
     </div>);
@@ -727,31 +727,31 @@ function CalcTeaser() {
   const [ref, visible] = useReveal();
   const { isMobile, isTablet } = useViewport();
   return (
-    <section style={{ padding: isMobile ? '80px 20px 80px' : isTablet ? '100px 32px 100px' : '120px 56px 120px', background: T.navy }}>
+    <section style={{ padding: isMobile ? '80px 20px 80px' : isTablet ? '100px 32px 100px' : '120px 56px 120px', background: T.bgLight }}>
       <div ref={ref} style={{
         maxWidth: 1100, margin: '0 auto',
         opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(28px)',
         transition: 'opacity 0.7s ease, transform 0.7s ease'
       }}>
+        <div style={{ marginBottom: isMobile ? 40 : 56 }}>
+          <Eyebrow>BENEFIT CALCULATOR</Eyebrow>
+          <h2 style={{
+            fontFamily: "'InterDisplay','InterVariable','Inter','Helvetica Neue',Arial,sans-serif",
+            fontSize: isMobile ? 30 : 46, fontWeight: 500, letterSpacing: '-0.01em',
+            color: T.textOnLight, margin: '0 0 16px', lineHeight: 1.15,
+            whiteSpace: isMobile ? 'normal' : 'nowrap'
+          }}>
+            See what you're leaving on the table
+          </h2>
+          <p style={{ fontSize: 15, color: T.bodyOnLight, lineHeight: 1.65, margin: '0 0 40px', maxWidth: 600 }}>Lenders can make over $1,000 per loan. Recapture those economics with Brivio Capital. Use our calculator to see your annual upside from a Brivio captive program.</p>
+        </div>
         <div style={{
-          background: T.graphite, border: `1px solid ${T.border}`,
-          borderRadius: 12, padding: isMobile ? '40px 28px' : '56px 64px',
-          display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr auto', gap: isMobile ? 28 : 48, alignItems: 'center'
+          background: '#FFFFFF', border: `1px solid ${T.cardBorderLight}`,
+          borderRadius: 12, padding: isMobile ? '40px 28px' : '40px 56px',
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          flexWrap: 'wrap', gap: 24
         }}>
-          <div>
-            <Eyebrow>BENEFIT CALCULATOR</Eyebrow>
-            <h2 style={{
-              fontFamily: "'InterDisplay','InterVariable','Inter','Helvetica Neue',Arial,sans-serif",
-              fontSize: isMobile ? 30 : 46, fontWeight: 500, letterSpacing: '-0.01em',
-              color: T.offwhite, margin: '0 0 16px', lineHeight: 1.15,
-              whiteSpace: isMobile ? 'normal' : 'nowrap'
-            }}>
-              See what you're leaving on the table
-            </h2>
-            <p style={{ fontSize: 15, color: T.bodyText, lineHeight: 1.65, margin: 0 }}>Lenders can make over $1,000 per loan. Recapture those economics with Brivio Capital. Use our calculator to see your annual upside from a Brivio captive program.
-
-            </p>
-          </div>
+          <p style={{ fontSize: 15, color: T.bodyOnLight, lineHeight: 1.65, margin: 0, maxWidth: 540 }}>See your dealership's estimated annual upside in under 60 seconds.</p>
           <a href="calculator.html" style={{
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10,
             height: 52, padding: '0 32px', flexShrink: 0,
@@ -783,33 +783,33 @@ function Contact() {
 
   const inputSt = {
     width: '100%', height: 52, padding: '0 18px',
-    background: '#FFFFFF',
-    border: `1px solid ${T.cardBorderLight}`,
-    borderRadius: 2, color: T.textOnLight,
+    background: 'rgba(245,247,249,0.04)',
+    border: `1px solid rgba(245,247,249,0.12)`,
+    borderRadius: 2, color: T.offwhite,
     fontSize: 16, fontFamily: 'inherit',
     outline: 'none', boxSizing: 'border-box',
     transition: 'border-color 0.2s'
   };
   const labelSt = {
     display: 'block', fontSize: 12, fontWeight: 500, letterSpacing: '0.12em',
-    color: T.mutedOnLight, textTransform: 'uppercase', marginBottom: 10
+    color: T.steel, textTransform: 'uppercase', marginBottom: 10
   };
   const focus = (e) => e.target.style.borderColor = T.brass;
-  const blur = (e) => e.target.style.borderColor = T.cardBorderLight;
+  const blur = (e) => e.target.style.borderColor = 'rgba(245,247,249,0.12)';
 
   return (
-    <section id="contact" style={{ padding: isMobile ? '80px 20px' : isTablet ? '100px 32px' : '120px 56px', background: T.bgLight }}>
+    <section id="contact" style={{ padding: isMobile ? '80px 20px' : isTablet ? '100px 32px' : '120px 56px', background: T.navy }}>
       <div ref={ref} style={{
-        maxWidth: 600, margin: '0 auto',
+        maxWidth: 1100, margin: '0 auto',
         opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(28px)',
         transition: 'opacity 0.7s ease, transform 0.7s ease'
       }}>
-        <div style={{ textAlign: 'center', marginBottom: isMobile ? 44 : 64 }}>
-          <Eyebrow style={{ justifyContent: 'center' }}>GET IN TOUCH</Eyebrow>
-          <h2 style={{ fontSize: isMobile ? 36 : 48, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.textOnLight, margin: '0 0 16px', lineHeight: 1.2 }}>
+        <div style={{ marginBottom: isMobile ? 44 : 56 }}>
+          <Eyebrow>GET IN TOUCH</Eyebrow>
+          <h2 style={{ fontSize: isMobile ? 36 : 52, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.offwhite, margin: '0 0 16px', lineHeight: 1.15, whiteSpace: isMobile ? 'normal' : 'nowrap' }}>
             Let's build something together
           </h2>
-          <p style={{ fontSize: isMobile ? 15 : 16, color: T.bodyOnLight, lineHeight: 1.6, margin: 0 }}>
+          <p style={{ fontSize: isMobile ? 15 : 16, color: T.bodyText, lineHeight: 1.6, margin: 0, maxWidth: 520 }}>
             Tell us what you're building. We'll come prepared.
           </p>
         </div>
@@ -866,7 +866,7 @@ function Contact() {
             onMouseLeave={(e) => e.currentTarget.style.background = T.brass}>
                 Send message <Arrow />
               </button>
-              <p style={{ fontSize: 13, color: T.mutedOnLight, lineHeight: 1.55, margin: 0 }}>
+              <p style={{ fontSize: 13, color: T.steel, lineHeight: 1.55, margin: 0 }}>
                 We'll reach out within two business days to walk through your numbers – no obligation.
               </p>
             </div>
