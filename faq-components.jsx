@@ -215,7 +215,7 @@ function FAQCategory({ cat, background }) {
 function FAQHeader() {
   const [mounted, setMounted] = useState(false);
   const { isMobile, isTablet } = useViewport();
-  useEffect(() => { const t = setTimeout(() => setMounted(true), 60); return () => clearTimeout(t); }, []);
+  useEffect(() => {const t = setTimeout(() => setMounted(true), 60);return () => clearTimeout(t);}, []);
   return (
     <section style={{
       background: T.navy, position: 'relative', overflow: 'hidden',
@@ -245,8 +245,8 @@ function FAQHeader() {
         }}>
           Frequently Asked Questions
         </h1>
-        <p style={{ fontSize: isMobile ? 16 : 18, color: T.bodyText, lineHeight: 1.6, margin: 0, maxWidth: 560 }}>
-          The questions dealer principals actually ask – answered straight.
+        <p style={{ fontSize: isMobile ? 16 : 18, color: T.bodyText, lineHeight: 1.6, margin: 0, maxWidth: 560 }}>The questions dealer principals actually ask – answered straight
+
         </p>
       </div>
     </section>);
@@ -272,8 +272,8 @@ function FAQContact() {
           fontSize: isMobile ? 26 : 34, fontWeight: 500, fontFamily: FONT_DISPLAY,
           letterSpacing: '-0.01em', color: T.offwhite, margin: '0 0 28px', lineHeight: 1.2,
           maxWidth: 620
-        }}>
-          Talk to the people who built it.
+        }}>Talk to the people who built it
+
         </h2>
         <a href="index.html#contact" style={{ ...btnPrimary, ...(isMobile ? { height: 48, padding: '0 24px' } : {}) }}
         onMouseEnter={(e) => e.currentTarget.style.background = T.brassLight}
@@ -287,7 +287,7 @@ function FAQContact() {
 
 // ─── FAQ PAGE ────────────────────────────────────────────────────────────────
 function FAQPage() {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  useEffect(() => {window.scrollTo(0, 0);}, []);
   return (
     <>
       <FAQNav />

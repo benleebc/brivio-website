@@ -128,11 +128,11 @@ function Nav({ onContact }) {
       borderBottom: scrolled ? `1px solid ${T.border}` : '1px solid transparent',
       transition: 'background 0.4s, border-color 0.4s, backdrop-filter 0.4s'
     }}>
-      <a href="index.html" onClick={e => { 
+      <a href="index.html" onClick={(e) => {
         // If already on index.html, just scroll to top instead of navigating
         if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
-          e.preventDefault(); 
-          window.scrollTo({ top: 0, behavior: 'smooth' }); 
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       }} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 36 : 48 }} />
@@ -366,9 +366,9 @@ function Hero({ variant, onContact }) {
 
 // ─── THE REALITY ─────────────────────────────────────────────────────────────
 const REALITY_CARDS = [
-{ stat: 'Once', sub: 'How often you got paid on that loan' },
-{ stat: '3 to 5 years', sub: 'How long the lender will collect on it Every single month' },
-{ stat: '100%', sub: 'Of the customer relationship and data that went with it' }];
+{ stat: 'Once', sub: 'How often you got paid on that loan.' },
+{ stat: '3 to 5 years', sub: 'How long the lender will collect on it. Every single month.' },
+{ stat: '100%', sub: 'Of the customer relationship and data that went with it.' }];
 
 
 function TheReality() {
@@ -391,8 +391,8 @@ function TheReality() {
             letterSpacing: '-0.01em', color: T.offwhite, margin: 0,
             lineHeight: 1.15, maxWidth: 900
           }}>
-            <span style={{ display: 'block' }}>Lenders get paid for months, for years.</span>
-            <span style={{ display: 'block', color: T.brass }}>You got paid once.</span>
+            <span style={{ display: 'block' }}>Lenders get paid for months, for years</span>
+            <span style={{ display: 'block', color: T.brass }}>You got paid once</span>
           </h2>
         </div>
 
@@ -478,8 +478,8 @@ function HowItWorks() {
       }}>
         <div style={{ marginBottom: isMobile ? 40 : 64 }}>
           <Eyebrow>HOW IT WORKS</Eyebrow>
-          <h2 style={{ fontSize: isMobile ? 28 : 40, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.offwhite, margin: 0, lineHeight: 1.15 }}>
-            Your brand on every loan – in under 90 days.
+          <h2 style={{ fontSize: isMobile ? 28 : 40, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.offwhite, margin: 0, lineHeight: 1.15 }}>Your brand on every loan – in under 90 days
+
           </h2>
         </div>
 
@@ -551,10 +551,10 @@ const WHY_CARDS = [
 }];
 
 const WIN_POINTS = [
-'No major capital commitment. Modest setup and subscription fees',
-'You bring the loan volume. We bring the infrastructure',
-'No long-term commitments. We earn your business every month',
-'Our economics are tied to yours. We don\u2019t win unless you do'];
+'No major capital commitment. Modest setup and subscription fees.',
+'You bring the loan volume. We bring the infrastructure.',
+'No long-term commitments. We earn your business every month.',
+'Our economics are tied to yours. We don\u2019t win unless you do.'];
 
 
 function WhyBrivio() {
@@ -570,8 +570,8 @@ function WhyBrivio() {
         <div style={{ marginBottom: isMobile ? 40 : 64 }}>
           <Eyebrow>WHY BRIVIO</Eyebrow>
           <h2 style={{ fontSize: isMobile ? 28 : 40, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.offwhite, margin: 0, lineHeight: 1.15, maxWidth: 760 }}>
-            <span style={{ display: 'block' }}>Built for dealers.</span>
-            <span style={{ display: 'block', color: T.brass }}>By people who've run auto lenders.</span>
+            <span style={{ display: 'block' }}>Built for dealers</span>
+            <span style={{ display: 'block', color: T.brass }}>By people who've run auto lenders</span>
           </h2>
         </div>
 
@@ -587,19 +587,19 @@ function WhyBrivio() {
               <h3 style={{ fontSize: isMobile ? 19 : 21, fontWeight: 600, color: T.offwhite, margin: '0 0 16px', lineHeight: 1.25, letterSpacing: '-0.005em', minHeight: isMobile ? 'auto' : '2.5em' }}>{c.title}</h3>
               <p style={{ fontSize: isMobile ? 14 : 14.5, color: T.bodyText, lineHeight: 1.65, margin: 0 }}>{c.body}</p>
               {c.link &&
-              <a href={c.link.href} style={{
-                display: 'inline-flex', alignItems: 'center', gap: 7, marginTop: 'auto', paddingTop: 22,
-                color: T.brass, fontSize: 13, fontWeight: 500, letterSpacing: '0.02em',
-                textDecoration: 'none', alignSelf: 'flex-start', transition: 'gap 0.2s, color 0.2s'
-              }}
-              onMouseEnter={(e) => {e.currentTarget.style.color = T.brassLight;e.currentTarget.style.gap = '11px';}}
-              onMouseLeave={(e) => {e.currentTarget.style.color = T.brass;e.currentTarget.style.gap = '7px';}}>
+            <a href={c.link.href} style={{
+              display: 'inline-flex', alignItems: 'center', gap: 7, marginTop: 'auto', paddingTop: 22,
+              color: T.brass, fontSize: 13, fontWeight: 500, letterSpacing: '0.02em',
+              textDecoration: 'none', alignSelf: 'flex-start', transition: 'gap 0.2s, color 0.2s'
+            }}
+            onMouseEnter={(e) => {e.currentTarget.style.color = T.brassLight;e.currentTarget.style.gap = '11px';}}
+            onMouseLeave={(e) => {e.currentTarget.style.color = T.brass;e.currentTarget.style.gap = '7px';}}>
                   {c.link.label}
                   <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                     <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </a>
-              }
+            }
             </div>
           )}
         </div>
@@ -610,8 +610,8 @@ function WhyBrivio() {
           background: 'rgba(185,155,95,0.06)', borderTop: `1px solid ${T.brass}`,
           padding: isMobile ? '28px 24px' : '36px 40px'
         }}>
-          <div style={{ fontFamily: FONT_DISPLAY, fontSize: isMobile ? 20 : 24, fontWeight: 500, color: T.offwhite, letterSpacing: '-0.01em', marginBottom: isMobile ? 22 : 26 }}>
-            We win when you win.
+          <div style={{ fontFamily: FONT_DISPLAY, fontSize: isMobile ? 20 : 24, fontWeight: 500, color: T.offwhite, letterSpacing: '-0.01em', marginBottom: isMobile ? 22 : 26 }}>We win when you win
+
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 16 : '18px 32px' }}>
             {WIN_POINTS.map((pt, i) =>
