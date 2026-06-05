@@ -34,6 +34,13 @@ const T = {
   bodyText: '#A8ADB3', // secondary body copy – ~5.5:1 on navy, ~4.2:1 on graphite
   mutedText: '#7B8289', // tertiary metadata – intentionally subtle
   offwhite: '#F5F7F9',
+  // ─ Light-section tokens (Option 2 alternating dark/light) ─
+  bgLight: '#F1F4F7',        // off-white section background
+  textOnLight: '#0D1B2A',    // navy headings on light
+  bodyOnLight: '#51606E',    // body copy on light – ~7:1 contrast
+  mutedOnLight: '#7A8694',   // tertiary metadata on light
+  cardLight: '#FFFFFF',      // white card on light section
+  cardBorderLight: '#DDE3E9',// hairline border on light cards
   border: 'rgba(245,247,249,0.08)',
   borderMed: 'rgba(245,247,249,0.14)',
   surfaceElev: '#3A4046'
@@ -65,7 +72,7 @@ function Eyebrow({ children }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
       <div style={{ width: 24, height: 1, background: T.brass, flexShrink: 0 }} />
-      <span style={{ color: T.brass, fontSize: 11, fontWeight: 500, letterSpacing: '0.18em' }}>{children}</span>
+      <span style={{ color: T.brass, fontSize: 13, fontWeight: 500, letterSpacing: '0.16em' }}>{children}</span>
     </div>);
 
 }
@@ -109,7 +116,7 @@ function Nav({ onContact }) {
 
   const linkSt = {
     background: 'none', border: 'none', cursor: 'pointer', padding: 0,
-    color: 'rgba(245,247,249,0.62)', fontSize: 13, fontWeight: 400, letterSpacing: '0.03em',
+    color: 'rgba(245,247,249,0.62)', fontSize: 16, fontWeight: 400, letterSpacing: '0.02em',
     fontFamily: 'inherit', transition: 'color 0.2s', whiteSpace: 'nowrap', textDecoration: 'none'
   };
 
@@ -135,7 +142,7 @@ function Nav({ onContact }) {
           window.scrollTo({ top: 0, behavior: 'smooth' }); 
         }
       }} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-        <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 36 : 48 }} />
+        <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 44 : 64 }} />
       </a>
       <div style={{ flex: 1 }} />
 
@@ -268,7 +275,7 @@ function Hero({ variant, onContact }) {
 
   return (
     <section style={{
-      minHeight: '100vh', background: T.navy,
+      minHeight: '100vh', background: 'linear-gradient(135deg, #0D1B2A 0%, #1A2A3A 100%)',
       display: 'flex', flexDirection: 'column', justifyContent: 'center',
       padding: isMobile ? '110px 20px 80px' : isTablet ? '130px 32px 90px' : '140px 56px 100px',
       position: 'relative', overflow: 'hidden'
@@ -296,19 +303,26 @@ function Hero({ variant, onContact }) {
       {/* Bridge image – right side */}
       <div style={{
         position: 'absolute', top: 0, right: 0, bottom: 0,
-        width: isMobile ? '100%' : '52%', pointerEvents: 'none', overflow: 'hidden'
+        width: '100%', pointerEvents: 'none', overflow: 'hidden'
       }}>
         <img src={window.__resources.bridgeImg} alt="" style={{
-          width: '100%', height: '100%', objectFit: 'cover',
-          objectPosition: 'center right',
-          opacity: isMobile ? 0.22 : 0.55
+          width: isMobile ? '100%' : '52%', height: '100%', objectFit: 'cover',
+          objectPosition: 'center right', position: 'absolute', top: 0, right: 0,
+          opacity: isMobile ? 0.22 : 0.55,
+          filter: 'grayscale(0.65) sepia(0.4) brightness(0.82) contrast(1.05)'
+        }} />
+        {/* Brass/navy duotone wash so the image reads in-palette */}
+        <div style={{
+          position: 'absolute', top: 0, right: 0, bottom: 0, width: isMobile ? '100%' : '52%', pointerEvents: 'none',
+          background: 'linear-gradient(135deg, rgba(13,27,42,0.55) 0%, rgba(185,155,95,0.22) 100%)',
+          mixBlendMode: 'color'
         }} />
         {/* Left-to-right fade so text remains legible */}
         <div style={{
           position: 'absolute', inset: 0,
           background: isMobile ?
           `linear-gradient(180deg, ${T.navy} 0%, rgba(13,27,42,0.85) 40%, rgba(13,27,42,0.92) 100%)` :
-          `linear-gradient(90deg, ${T.navy} 0%, rgba(13,27,42,0.85) 22%, rgba(13,27,42,0.35) 55%, rgba(13,27,42,0.15) 100%)`
+          `linear-gradient(90deg, ${T.navy} 0%, ${T.navy} 42%, rgba(13,27,42,0.82) 60%, rgba(13,27,42,0.32) 82%, rgba(13,27,42,0.12) 100%)`
         }} />
         {/* Bottom fade into the section below */}
         <div style={{
@@ -373,6 +387,7 @@ const REALITY_CARDS = [
 
 function TheReality() {
   const [ref, visible] = useReveal();
+  const [hoveredCard, setHoveredCard] = useState(null);
   const { isMobile, isTablet } = useViewport();
   return (
     <section style={{
@@ -387,7 +402,7 @@ function TheReality() {
         <div style={{ marginBottom: isMobile ? 40 : 64 }}>
           <Eyebrow>THE REALITY</Eyebrow>
           <h2 style={{
-            fontSize: isMobile ? 28 : 40, fontWeight: 500, fontFamily: FONT_DISPLAY,
+            fontSize: isMobile ? 32 : 52, fontWeight: 500, fontFamily: FONT_DISPLAY,
             letterSpacing: '-0.01em', color: T.offwhite, margin: 0,
             lineHeight: 1.15, maxWidth: 900
           }}>
@@ -402,12 +417,19 @@ function TheReality() {
           gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
           gap: 1, background: T.border
         }}>
-          {REALITY_CARDS.map((c, i) =>
+          {REALITY_CARDS.map((c, i) => {
+            const isActive = hoveredCard !== null ? hoveredCard === i : i === 0;
+            return (
           <div key={i} style={{
-            background: T.graphite, padding: isMobile ? '36px 28px' : '48px 40px',
+            background: hoveredCard === i ? 'rgba(185,155,95,0.2)' : 'rgba(185,155,95,0.12)',
+            border: '1px solid rgba(185,155,95,0.25)',
+            padding: isMobile ? '36px 28px' : '48px 40px',
             display: 'flex', flexDirection: 'column', gap: 14,
-            borderTop: `2px solid ${i === 0 ? T.brass : 'transparent'}`
-          }}>
+            borderTop: `2px solid ${isActive ? T.brass : 'rgba(185,155,95,0.25)'}`,
+            transition: 'background 0.25s, border-color 0.2s', cursor: 'default'
+          }}
+          onMouseEnter={() => { if (!isMobile) setHoveredCard(i); }}
+          onMouseLeave={() => { if (!isMobile) setHoveredCard(null); }}>
               <div style={{
               fontSize: isMobile ? 40 : 52, fontWeight: 500,
               fontFamily: FONT_DISPLAY, color: T.brass,
@@ -415,7 +437,8 @@ function TheReality() {
             }}>{c.stat}</div>
               <div style={{ fontSize: isMobile ? 14 : 15, color: T.bodyText, lineHeight: 1.65 }}>{c.sub}</div>
             </div>
-          )}
+            );
+          })}
         </div>
 
         {/* Calculator CTA band */}
@@ -469,7 +492,7 @@ function HowItWorks() {
   return (
     <section id="how-it-works" style={{
       padding: isMobile ? '80px 20px' : isTablet ? '100px 32px' : '120px 56px',
-      background: T.graphite
+      background: T.bgLight
     }}>
       <div ref={ref} style={{
         maxWidth: 1100, margin: '0 auto',
@@ -478,7 +501,7 @@ function HowItWorks() {
       }}>
         <div style={{ marginBottom: isMobile ? 40 : 64 }}>
           <Eyebrow>HOW IT WORKS</Eyebrow>
-          <h2 style={{ fontSize: isMobile ? 28 : 40, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.offwhite, margin: 0, lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: isMobile ? 32 : 52, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.textOnLight, margin: 0, lineHeight: 1.15 }}>
             Your brand on every loan – in under 90 days.
           </h2>
         </div>
@@ -498,10 +521,10 @@ function HowItWorks() {
                     width: 48, height: 48, borderRadius: 2,
                     border: `1px solid ${T.brass}`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: '#16283a', position: 'relative', zIndex: 1,
-                    boxShadow: '0 0 24px rgba(185,155,95,0.14)'
+                    background: '#FFFFFF', position: 'relative', zIndex: 1,
+                    boxShadow: '0 2px 12px rgba(185,155,95,0.18)'
                   }}>
-                    <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', color: T.brass }}>{s.n}</span>
+                    <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', color: T.brassDark }}>{s.n}</span>
                   </div>
                   {!last &&
                   <div style={{
@@ -511,8 +534,8 @@ function HowItWorks() {
                   }
                 </div>
                 <div style={{ paddingTop: 2 }}>
-                  <h3 style={{ fontSize: isMobile ? 18 : 21, fontWeight: 600, color: T.offwhite, margin: '0 0 10px', lineHeight: 1.25, letterSpacing: '-0.005em' }}>{s.title}</h3>
-                  <p style={{ fontSize: isMobile ? 14 : 15, color: T.bodyText, lineHeight: 1.65, margin: 0 }}>{s.body}</p>
+                  <h3 style={{ fontSize: isMobile ? 20 : 26, fontWeight: 600, color: T.textOnLight, margin: '0 0 10px', lineHeight: 1.25, letterSpacing: '-0.005em' }}>{s.title}</h3>
+                  <p style={{ fontSize: isMobile ? 14 : 15, color: T.bodyOnLight, lineHeight: 1.65, margin: 0 }}>{s.body}</p>
                 </div>
               </div>);
 
@@ -522,11 +545,11 @@ function HowItWorks() {
         {/* Takeaway callout */}
         <div style={{
           marginTop: isMobile ? 44 : 64,
-          background: 'rgba(185,155,95,0.06)', borderTop: `1px solid ${T.brass}`,
+          background: 'rgba(185,155,95,0.1)', borderTop: `2px solid ${T.brass}`,
           padding: isMobile ? '24px' : '30px 36px'
         }}>
-          <p style={{ fontSize: isMobile ? 15 : 17, color: T.offwhite, lineHeight: 1.55, margin: 0, fontWeight: 500, letterSpacing: '-0.005em' }}>
-            The average dealer location routes <span className="nb" style={{ color: T.brass }}>$26mm in loans annually</span> to banks and credit unions. Every one of those loans is margin and customer data you don't own. That changes on day one.
+          <p style={{ fontSize: isMobile ? 15 : 17, color: T.textOnLight, lineHeight: 1.55, margin: 0, fontWeight: 500, letterSpacing: '-0.005em' }}>
+            The average dealer location routes <span className="nb" style={{ color: T.brassDark, fontWeight: 600 }}>$26mm in loans annually</span> to banks and credit unions. Every one of those loans is margin and customer data you don't own. That changes on day one.
           </p>
         </div>
       </div>
@@ -552,16 +575,17 @@ const WHY_CARDS = [
 
 const WIN_POINTS = [
 'No major capital commitment. Modest setup and subscription fees',
-'You bring the loan volume. We bring the infrastructure',
+'You bring the loan rooftop. We bring the infrastructure',
 'No long-term commitments. We earn your business every month',
 'Our economics are tied to yours. We don\u2019t win unless you do'];
 
 
 function WhyBrivio() {
   const [ref, visible] = useReveal();
+  const [hoveredCard, setHoveredCard] = useState(null);
   const { isMobile, isTablet } = useViewport();
   return (
-    <section id="why" style={{ padding: isMobile ? '80px 20px' : isTablet ? '100px 32px' : '120px 56px', background: T.graphite }}>
+    <section id="why" style={{ padding: isMobile ? '80px 20px' : isTablet ? '100px 32px' : '120px 56px', background: T.bgLight }}>
       <div ref={ref} style={{
         maxWidth: 1100, margin: '0 auto',
         opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(28px)',
@@ -569,31 +593,35 @@ function WhyBrivio() {
       }}>
         <div style={{ marginBottom: isMobile ? 40 : 64 }}>
           <Eyebrow>WHY BRIVIO</Eyebrow>
-          <h2 style={{ fontSize: isMobile ? 28 : 40, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.offwhite, margin: 0, lineHeight: 1.15, maxWidth: 760 }}>
-            <span style={{ display: 'block' }}>Built for dealers.</span>
-            <span style={{ display: 'block', color: T.brass }}>By people who've run auto lenders.</span>
+          <h2 style={{ fontSize: isMobile ? 32 : 48, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.textOnLight, margin: 0, lineHeight: 1.15, maxWidth: 760 }}>
+            <span style={{ display: 'block' }}>Built for dealers</span>
+            <span style={{ display: 'block', color: T.brassDark }}>By people who've run auto lenders</span>
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: 1, background: T.border }}>
-          {WHY_CARDS.map((c, i) =>
-          <div key={i} style={{
-            background: T.navy, padding: isMobile ? '36px 28px' : '44px 36px',
-            borderTop: `2px solid ${i === 0 ? T.brass : 'transparent'}`,
-            display: 'flex', flexDirection: 'column', transition: 'background 0.25s'
-          }}
-          onMouseEnter={(e) => {if (isMobile) return;e.currentTarget.style.borderTopColor = T.brass;}}
-          onMouseLeave={(e) => {if (isMobile) return;e.currentTarget.style.borderTopColor = i === 0 ? T.brass : 'transparent';}}>
-              <h3 style={{ fontSize: isMobile ? 19 : 21, fontWeight: 600, color: T.offwhite, margin: '0 0 16px', lineHeight: 1.25, letterSpacing: '-0.005em', minHeight: isMobile ? 'auto' : '2.5em' }}>{c.title}</h3>
-              <p style={{ fontSize: isMobile ? 14 : 14.5, color: T.bodyText, lineHeight: 1.65, margin: 0 }}>{c.body}</p>
+        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: 1, background: T.cardBorderLight }}>
+          {WHY_CARDS.map((c, i) => {
+            const isActive = hoveredCard !== null ? hoveredCard === i : i === 0;
+            return (
+            <div key={i} style={{
+              background: hoveredCard === i ? '#FBFAF7' : T.cardLight,
+              padding: isMobile ? '36px 28px' : '44px 36px',
+              borderTop: `2px solid ${isActive ? T.brass : 'transparent'}`,
+              boxShadow: hoveredCard === i ? '0 8px 28px rgba(13,27,42,0.1)' : 'none',
+              display: 'flex', flexDirection: 'column', transition: 'box-shadow 0.25s, border-color 0.2s'
+            }}
+            onMouseEnter={() => { if (!isMobile) setHoveredCard(i); }}
+            onMouseLeave={() => { if (!isMobile) setHoveredCard(null); }}>
+              <h3 style={{ fontSize: isMobile ? 22 : 24, fontWeight: 600, color: T.textOnLight, margin: '0 0 16px', lineHeight: 1.25, letterSpacing: '-0.005em', minHeight: isMobile ? 'auto' : '2.5em' }}>{c.title}</h3>
+              <p style={{ fontSize: isMobile ? 14 : 14.5, color: T.bodyOnLight, lineHeight: 1.65, margin: 0 }}>{c.body}</p>
               {c.link &&
               <a href={c.link.href} style={{
                 display: 'inline-flex', alignItems: 'center', gap: 7, marginTop: 'auto', paddingTop: 22,
-                color: T.brass, fontSize: 13, fontWeight: 500, letterSpacing: '0.02em',
+                color: T.brassDark, fontSize: 13, fontWeight: 600, letterSpacing: '0.02em',
                 textDecoration: 'none', alignSelf: 'flex-start', transition: 'gap 0.2s, color 0.2s'
               }}
-              onMouseEnter={(e) => {e.currentTarget.style.color = T.brassLight;e.currentTarget.style.gap = '11px';}}
-              onMouseLeave={(e) => {e.currentTarget.style.color = T.brass;e.currentTarget.style.gap = '7px';}}>
+              onMouseEnter={(e) => {e.currentTarget.style.color = T.brass;e.currentTarget.style.gap = '11px';}}
+              onMouseLeave={(e) => {e.currentTarget.style.color = T.brassDark;e.currentTarget.style.gap = '7px';}}>
                   {c.link.label}
                   <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                     <path d="M2.5 7H11.5M7.5 3L11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -601,23 +629,24 @@ function WhyBrivio() {
                 </a>
               }
             </div>
-          )}
+            );
+          })}
         </div>
 
         {/* We win when you win */}
         <div style={{
           marginTop: isMobile ? 36 : 48,
-          background: 'rgba(185,155,95,0.06)', borderTop: `1px solid ${T.brass}`,
+          background: 'rgba(185,155,95,0.1)', borderTop: `2px solid ${T.brass}`,
           padding: isMobile ? '28px 24px' : '36px 40px'
         }}>
-          <div style={{ fontFamily: FONT_DISPLAY, fontSize: isMobile ? 20 : 24, fontWeight: 500, color: T.offwhite, letterSpacing: '-0.01em', marginBottom: isMobile ? 22 : 26 }}>
+          <div style={{ fontFamily: FONT_DISPLAY, fontSize: isMobile ? 24 : 30, fontWeight: 500, color: T.textOnLight, letterSpacing: '-0.01em', marginBottom: isMobile ? 22 : 26 }}>
             We win when you win.
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 16 : '18px 32px' }}>
             {WIN_POINTS.map((pt, i) =>
             <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-                <div style={{ width: 5, height: 5, borderRadius: '50%', background: T.brass, marginTop: 9, flexShrink: 0 }} />
-                <span style={{ fontSize: isMobile ? 14 : 15, color: T.bodyText, lineHeight: 1.6 }}>{pt}</span>
+                <div style={{ width: 5, height: 5, borderRadius: '50%', background: T.brassDark, marginTop: 9, flexShrink: 0 }} />
+                <span style={{ fontSize: isMobile ? 14 : 15, color: T.bodyOnLight, lineHeight: 1.6 }}>{pt}</span>
               </div>
             )}
           </div>
@@ -628,7 +657,7 @@ function WhyBrivio() {
 }
 
 // ─── WHO WE WORK WITH ────────────────────────────────────────────────────────
-const PARTNERS = [
+const ROOFTOPS = [
 {
   label: 'KEEP THE ECONOMICS',
   title: 'Capture the spread you give away',
@@ -649,8 +678,9 @@ const PARTNERS = [
 }];
 
 
-function WhoWeWorkWith() {
+function RooftopsWeServe() {
   const [ref, visible] = useReveal();
+  const [hoveredCard, setHoveredCard] = useState(null);
   const { isMobile, isTablet } = useViewport();
   return (
     <section id="who" style={{ padding: isMobile ? '80px 20px' : isTablet ? '100px 32px' : '120px 56px', background: T.navy }}>
@@ -661,26 +691,31 @@ function WhoWeWorkWith() {
       }}>
         <div style={{ marginBottom: isMobile ? 40 : 64 }}>
           <Eyebrow>WHO WE SERVE</Eyebrow>
-          <h2 style={{ fontSize: isMobile ? 28 : 40, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.offwhite, margin: 0, whiteSpace: isMobile ? 'normal' : 'nowrap', lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: isMobile ? 32 : 48, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.offwhite, margin: 0, whiteSpace: isMobile ? 'normal' : 'nowrap', lineHeight: 1.15 }}>
             Built for multi-rooftop dealer groups
           </h2>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: 1, background: T.border }}>
-          {PARTNERS.map((p, i) =>
+          {ROOFTOPS.map((p, i) => {
+            const isActive = hoveredCard !== null ? hoveredCard === i : i === 0;
+            return (
           <div key={i} style={{
-            background: T.navy, padding: isMobile ? '36px 28px' : '48px 40px',
-            borderTop: `2px solid ${i === 0 ? T.brass : 'transparent'}`,
-            transition: 'background 0.25s'
+            background: hoveredCard === i ? 'rgba(185,155,95,0.2)' : 'rgba(185,155,95,0.12)',
+            border: '1px solid rgba(185,155,95,0.25)',
+            padding: isMobile ? '36px 28px' : '48px 40px',
+            borderTop: `2px solid ${isActive ? T.brass : 'rgba(185,155,95,0.25)'}`,
+            transition: 'background 0.25s, border-color 0.2s'
           }}
-          onMouseEnter={(e) => {if (isMobile) return;e.currentTarget.style.background = T.graphite;e.currentTarget.style.borderTopColor = T.brass;}}
-          onMouseLeave={(e) => {if (isMobile) return;e.currentTarget.style.background = T.navy;e.currentTarget.style.borderTopColor = i === 0 ? T.brass : 'transparent';}}>
-              <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '0.18em', color: T.brass, textTransform: 'uppercase', marginBottom: 20 }}>{p.label}</div>
-              <h3 style={{ fontSize: isMobile ? 19 : 21, fontWeight: 500, color: T.offwhite, margin: '0 0 16px', lineHeight: 1.25 }}>{p.title}</h3>
+          onMouseEnter={() => { if (!isMobile) setHoveredCard(i); }}
+          onMouseLeave={() => { if (!isMobile) setHoveredCard(null); }}>
+              <div style={{ fontSize: 13, fontWeight: 500, letterSpacing: '0.14em', color: T.brass, textTransform: 'uppercase', marginBottom: 20 }}>{p.label}</div>
+              <h3 style={{ fontSize: isMobile ? 22 : 26, fontWeight: 500, color: T.offwhite, margin: '0 0 16px', lineHeight: 1.25 }}>{p.title}</h3>
               <p style={{ fontSize: 14, color: T.bodyText, lineHeight: 1.65, margin: '0 0 28px' }}>{p.body}</p>
               <div style={{ fontSize: 11, color: 'rgba(245,247,249,0.7)', letterSpacing: '0.06em', fontWeight: 300 }}>{p.sub}</div>
             </div>
-          )}
+            );
+          })}
         </div>
       </div>
     </section>);
@@ -707,7 +742,7 @@ function CalcTeaser() {
             <Eyebrow>BENEFIT CALCULATOR</Eyebrow>
             <h2 style={{
               fontFamily: "'InterDisplay','InterVariable','Inter','Helvetica Neue',Arial,sans-serif",
-              fontSize: isMobile ? 26 : 36, fontWeight: 500, letterSpacing: '-0.01em',
+              fontSize: isMobile ? 30 : 46, fontWeight: 500, letterSpacing: '-0.01em',
               color: T.offwhite, margin: '0 0 16px', lineHeight: 1.15,
               whiteSpace: isMobile ? 'normal' : 'nowrap'
             }}>
@@ -743,39 +778,38 @@ function CalcTeaser() {
 // ─── CONTACT ─────────────────────────────────────────────────────────────────
 function Contact() {
   const [ref, visible] = useReveal();
-  const [form, setForm] = useState({ name: '', company: '', role: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', role: '', message: '' });
   const { isMobile, isTablet } = useViewport();
 
   const inputSt = {
-    width: '100%', height: 48, padding: '0 16px',
-    background: 'rgba(245,247,249,0.04)',
-    border: `1px solid rgba(245,247,249,0.1)`,
-    borderRadius: 2, color: T.offwhite,
-    fontSize: 14, fontFamily: 'inherit',
+    width: '100%', height: 52, padding: '0 18px',
+    background: '#FFFFFF',
+    border: `1px solid ${T.cardBorderLight}`,
+    borderRadius: 2, color: T.textOnLight,
+    fontSize: 16, fontFamily: 'inherit',
     outline: 'none', boxSizing: 'border-box',
     transition: 'border-color 0.2s'
   };
   const labelSt = {
-    display: 'block', fontSize: 10, fontWeight: 500, letterSpacing: '0.14em',
-    color: T.steel, textTransform: 'uppercase', marginBottom: 8
+    display: 'block', fontSize: 12, fontWeight: 500, letterSpacing: '0.12em',
+    color: T.mutedOnLight, textTransform: 'uppercase', marginBottom: 10
   };
   const focus = (e) => e.target.style.borderColor = T.brass;
-  const blur = (e) => e.target.style.borderColor = 'rgba(245,247,249,0.1)';
+  const blur = (e) => e.target.style.borderColor = T.cardBorderLight;
 
   return (
-    <section id="contact" style={{ padding: isMobile ? '80px 20px' : isTablet ? '100px 32px' : '120px 56px', background: T.graphite }}>
+    <section id="contact" style={{ padding: isMobile ? '80px 20px' : isTablet ? '100px 32px' : '120px 56px', background: T.bgLight }}>
       <div ref={ref} style={{
         maxWidth: 600, margin: '0 auto',
         opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(28px)',
         transition: 'opacity 0.7s ease, transform 0.7s ease'
       }}>
         <div style={{ textAlign: 'center', marginBottom: isMobile ? 44 : 64 }}>
-          <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 44 : 56, marginBottom: isMobile ? 22 : 28 }} />
           <Eyebrow style={{ justifyContent: 'center' }}>GET IN TOUCH</Eyebrow>
-          <h2 style={{ fontSize: isMobile ? 28 : 36, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.offwhite, margin: '0 0 16px', lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: isMobile ? 36 : 48, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.textOnLight, margin: '0 0 16px', lineHeight: 1.2 }}>
             Let's build something together
           </h2>
-          <p style={{ fontSize: isMobile ? 15 : 16, color: T.bodyText, lineHeight: 1.6, margin: 0 }}>
+          <p style={{ fontSize: isMobile ? 15 : 16, color: T.bodyOnLight, lineHeight: 1.6, margin: 0 }}>
             Tell us what you're building. We'll come prepared.
           </p>
         </div>
@@ -786,6 +820,20 @@ function Contact() {
                 <label style={labelSt}>Name</label>
                 <input name="name" style={inputSt} placeholder="Your name" value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
+              onFocus={focus} onBlur={blur} />
+              </div>
+              <div>
+                <label style={labelSt}>Email</label>
+                <input name="email" type="email" style={inputSt} placeholder="your@email.com" value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              onFocus={focus} onBlur={blur} />
+              </div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 16 }}>
+              <div>
+                <label style={labelSt}>Phone</label>
+                <input name="phone" type="tel" style={inputSt} placeholder="(555) 123-4567" value={form.phone}
+              onChange={(e) => setForm({ ...form, phone: e.target.value })}
               onFocus={focus} onBlur={blur} />
               </div>
               <div>
@@ -805,7 +853,7 @@ function Contact() {
               <label style={labelSt}>What you're building</label>
               <textarea
               name="message"
-              style={{ ...inputSt, height: 128, padding: '14px 16px', resize: 'none', lineHeight: 1.55 }}
+              style={{ ...inputSt, height: 140, padding: '14px 18px', resize: 'none', lineHeight: 1.55 }}
               placeholder="Tell us about your program or initiative…"
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -818,7 +866,7 @@ function Contact() {
             onMouseLeave={(e) => e.currentTarget.style.background = T.brass}>
                 Send message <Arrow />
               </button>
-              <p style={{ fontSize: 13, color: T.mutedText, lineHeight: 1.55, margin: 0 }}>
+              <p style={{ fontSize: 13, color: T.mutedOnLight, lineHeight: 1.55, margin: 0 }}>
                 We'll reach out within two business days to walk through your numbers – no obligation.
               </p>
             </div>
@@ -839,7 +887,7 @@ function Footer() {
         flexDirection: isMobile ? 'column' : 'row',
         textAlign: isMobile ? 'center' : 'left'
       }}>
-        <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 28 : 32, opacity: 0.85 }} />
+        <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 40 : 52, opacity: 0.85 }} />
         <span style={{ color: T.steel, fontSize: isMobile ? 10 : 11, fontWeight: 300, letterSpacing: '0.18em' }}>
           CAPITAL.&nbsp;&nbsp;CONNECTION.&nbsp;&nbsp;MOMENTUM.
         </span>
@@ -880,7 +928,7 @@ function About() {
         <Eyebrow>ABOUT US</Eyebrow>
         <h2 style={{
           fontFamily: "'InterDisplay','InterVariable','Inter','Helvetica Neue',Arial,sans-serif",
-          fontSize: isMobile ? 28 : 36, fontWeight: 500, letterSpacing: '-0.01em',
+          fontSize: isMobile ? 32 : 46, fontWeight: 500, letterSpacing: '-0.01em',
           color: T.offwhite, margin: '0 0 16px', lineHeight: 1.15,
           whiteSpace: isMobile ? 'normal' : 'nowrap'
         }}>
@@ -985,4 +1033,4 @@ function ProofPoints() {
 
 }
 
-Object.assign(window, { Nav, Hero, TheReality, HowItWorks, WhyBrivio, CalcTeaser, About, Contact, Footer });
+Object.assign(window, { Nav, Hero, TheReality, HowItWorks, WhyBrivio, RooftopsWeServe, CalcTeaser, About, Contact, Footer });

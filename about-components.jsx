@@ -40,7 +40,7 @@ function AboutNav() {
       transition: 'background 0.4s, border-color 0.4s, backdrop-filter 0.4s'
     }}>
       <a href="index.html" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-        <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 36 : 48 }} />
+        <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 44 : 64 }} />
       </a>
       <div style={{ flex: 1 }} />
 
@@ -183,9 +183,10 @@ function AboutHeader() {
 function AboutProse({ eyebrow, title, paras, background, emphasizeShort }) {
   const [ref, visible] = useReveal();
   const { isMobile, isTablet } = useViewport();
+  const isLight = background === T.bgLight;
   return (
     <section style={{
-      background, borderTop: `1px solid ${T.border}`,
+      background, borderTop: `1px solid ${isLight ? T.cardBorderLight : T.border}`,
       padding: isMobile ? '72px 20px' : isTablet ? '92px 32px' : '110px 56px'
     }}>
       <div ref={ref} style={{
@@ -198,8 +199,8 @@ function AboutProse({ eyebrow, title, paras, background, emphasizeShort }) {
         <div>
           <Eyebrow>{eyebrow}</Eyebrow>
           <h2 style={{
-            fontSize: isMobile ? 26 : 34, fontWeight: 500, fontFamily: FONT_DISPLAY,
-            letterSpacing: '-0.01em', color: T.offwhite, margin: 0, lineHeight: 1.18,
+            fontSize: isMobile ? 32 : 46, fontWeight: 500, fontFamily: FONT_DISPLAY,
+            letterSpacing: '-0.01em', color: isLight ? T.textOnLight : T.offwhite, margin: 0, lineHeight: 1.18,
             maxWidth: 360
           }}>
             {title}
@@ -211,7 +212,7 @@ function AboutProse({ eyebrow, title, paras, background, emphasizeShort }) {
             return (
               <p key={i} style={{
                 fontSize: isShort ? isMobile ? 18 : 20 : isMobile ? 15.5 : 17,
-                color: isShort ? T.brass : T.bodyText,
+                color: isShort ? (isLight ? T.brassDark : T.brass) : (isLight ? T.bodyOnLight : T.bodyText),
                 fontWeight: isShort ? 500 : 400,
                 lineHeight: 1.7, margin: 0,
                 fontFamily: isShort ? FONT_DISPLAY : FONT_UI,
@@ -233,7 +234,7 @@ function FounderCard({ f }) {
         <div style={{
           width: isMobile ? 84 : 104, height: isMobile ? 84 : 104, flexShrink: 0,
           borderRadius: '50%', overflow: 'hidden',
-          background: T.navy, border: `1px solid ${T.borderMed}`
+          background: T.navy, border: `1px solid ${T.cardBorderLight}`
         }}>
           {/* Headshot – swap the file at assets/<name>_headshot.png to replace */}
           <img src={window.__resources[f.photoKey]} alt={f.name} style={{
@@ -243,24 +244,24 @@ function FounderCard({ f }) {
         <div style={{ minWidth: 0 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 6, flexWrap: 'wrap' }}>
             <h3 style={{
-              fontFamily: FONT_DISPLAY, fontSize: isMobile ? 20 : 23, fontWeight: 500,
-              color: T.offwhite, margin: 0, letterSpacing: '-0.01em'
+              fontFamily: FONT_DISPLAY, fontSize: isMobile ? 24 : 28, fontWeight: 500,
+              color: T.textOnLight, margin: 0, letterSpacing: '-0.01em'
             }}>{f.name}</h3>
             <LinkedInLink href={f.linkedin} name={f.name} />
           </div>
           <div style={{
-            fontSize: 10, fontWeight: 500, letterSpacing: '0.16em', color: T.brass,
+            fontSize: 13, fontWeight: 500, letterSpacing: '0.13em', color: T.brassDark,
             textTransform: 'uppercase'
           }}>{f.role}</div>
         </div>
       </div>
 
       <p style={{
-        fontStyle: 'italic', fontSize: isMobile ? 15 : 16.5, lineHeight: 1.6,
-        color: T.offwhite, margin: '0 0 18px', fontWeight: 400, letterSpacing: '-0.005em'
-      }}>“{f.tagline}”</p>
+        fontStyle: 'italic', fontSize: isMobile ? 17 : 20, lineHeight: 1.6,
+        color: T.textOnLight, margin: '0 0 18px', fontWeight: 400, letterSpacing: '-0.005em'
+      }}>{f.tagline}</p>
 
-      <p style={{ fontSize: isMobile ? 14 : 15, color: T.bodyText, lineHeight: 1.75, margin: 0 }}>{f.bio}</p>
+      <p style={{ fontSize: isMobile ? 14 : 15, color: T.bodyOnLight, lineHeight: 1.75, margin: 0 }}>{f.bio}</p>
     </div>);
 
 }
@@ -270,7 +271,7 @@ function AboutFounders() {
   const { isMobile, isTablet } = useViewport();
   return (
     <section style={{
-      background: T.graphite, borderTop: `1px solid ${T.border}`,
+      background: T.bgLight, borderTop: `1px solid ${T.cardBorderLight}`,
       padding: isMobile ? '72px 20px' : isTablet ? '92px 32px' : '110px 56px'
     }}>
       <div ref={ref} style={{
@@ -281,8 +282,8 @@ function AboutFounders() {
         <div style={{ marginBottom: isMobile ? 44 : 64 }}>
           <Eyebrow>THE FOUNDERS</Eyebrow>
           <h2 style={{
-            fontSize: isMobile ? 26 : 34, fontWeight: 500, fontFamily: FONT_DISPLAY,
-            letterSpacing: '-0.01em', color: T.offwhite, margin: 0, lineHeight: 1.18
+            fontSize: isMobile ? 32 : 46, fontWeight: 500, fontFamily: FONT_DISPLAY,
+            letterSpacing: '-0.01em', color: T.textOnLight, margin: 0, lineHeight: 1.18
           }}>
             The operators behind Brivio
           </h2>
@@ -298,12 +299,12 @@ function AboutFounders() {
         {/* Closing line */}
         <div style={{
           marginTop: isMobile ? 48 : 72, paddingTop: isMobile ? 40 : 56,
-          borderTop: `1px solid ${T.border}`, maxWidth: 860
+          borderTop: `1px solid ${T.cardBorderLight}`, maxWidth: 860
         }}>
           <p style={{
             fontStyle: 'italic', fontFamily: FONT_DISPLAY,
-            fontSize: isMobile ? 18 : 22, lineHeight: 1.55, letterSpacing: '-0.01em',
-            color: T.offwhite, margin: '0 0 32px', fontWeight: 400
+            fontSize: isMobile ? 22 : 30, lineHeight: 1.55, letterSpacing: '-0.01em',
+            color: T.textOnLight, margin: '0 0 32px', fontWeight: 400
           }}>
             Together, we've spent three decades inside auto finance … running captives, leading pricing, and operating through every condition the market throws at lenders. If you're a dealer group ready to own your lending economics, let's talk.
           </p>
@@ -330,7 +331,7 @@ function AboutPage() {
       <AboutProse
         eyebrow="WHAT WE SAW"
         title="What we saw from the inside"
-        background={T.graphite}
+        background={T.bgLight}
         paras={[
         'The auto finance system has a quiet imbalance. A dealership sells the car, builds the customer relationship, and arranges the loan … handing the keys to a lender that takes most of the economics. The lender also gets the customer, the data, and the payment history. The dealership did the heavy lifting of marketing and bringing in the customer. The value happens elsewhere.',
         'A handful of the largest dealer groups figured out how to fix this: they built their own captive lenders. Until now, that path required tens of millions in capital and over a year to build. Nearly every other dealer group stayed on the sidelines.']} />

@@ -139,24 +139,24 @@ const FAQ_CATEGORIES = [
 
 
 // ─── FAQ ITEM (accordion row) ────────────────────────────────────────────────
-function FAQItem({ item }) {
+function FAQItem({ item, isLight }) {
   const [open, setOpen] = useState(false);
   const { isMobile } = useViewport();
   const hasAnswer = Boolean(item.a);
   return (
-    <div style={{ borderBottom: `1px solid ${T.border}` }}>
+    <div style={{ borderBottom: `1px solid ${isLight ? T.cardBorderLight : T.border}` }}>
       <button onClick={() => setOpen((o) => !o)} aria-expanded={open} style={{
         width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 20,
         background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left',
         padding: isMobile ? '20px 0' : '24px 0', fontFamily: 'inherit'
       }}>
         <span style={{
-          fontSize: isMobile ? 15.5 : 17, fontWeight: 500,
-          color: open ? T.offwhite : 'rgba(245,247,249,0.84)', lineHeight: 1.45,
+          fontSize: isMobile ? 17 : 20, fontWeight: 500,
+          color: isLight ? (open ? T.textOnLight : 'rgba(13,27,42,0.82)') : (open ? T.offwhite : 'rgba(245,247,249,0.84)'), lineHeight: 1.45,
           letterSpacing: '-0.005em', transition: 'color 0.2s'
         }}>{item.q}</span>
         {/* Plus / minus toggle */}
-        <span style={{ flexShrink: 0, width: 24, height: 24, marginTop: 1, position: 'relative', color: T.brass }}>
+        <span style={{ flexShrink: 0, width: 24, height: 24, marginTop: 1, position: 'relative', color: isLight ? T.brassDark : T.brass }}>
           <span style={{ position: 'absolute', top: '50%', left: '50%', width: 14, height: 1.5, background: 'currentColor', transform: 'translate(-50%,-50%)' }} />
           <span style={{ position: 'absolute', top: '50%', left: '50%', width: 1.5, height: 14, background: 'currentColor', transform: `translate(-50%,-50%) scaleY(${open ? 0 : 1})`, transition: 'transform 0.25s ease' }} />
         </span>
@@ -166,8 +166,8 @@ function FAQItem({ item }) {
         transition: 'max-height 0.35s ease, opacity 0.32s ease'
       }}>
         <div style={{ padding: isMobile ? '2px 0 22px' : '2px 0 26px', maxWidth: 680 }}>
-          <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.16em', color: T.brass, textTransform: 'uppercase', marginBottom: 10 }}>Answer</div>
-          <p style={{ fontSize: isMobile ? 14.5 : 15.5, color: hasAnswer ? T.bodyText : T.mutedText, fontStyle: hasAnswer ? 'normal' : 'italic', lineHeight: 1.65, margin: 0 }}>{hasAnswer ? item.a : '[Answer to be added]'}</p>
+          <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.13em', color: isLight ? T.brassDark : T.brass, textTransform: 'uppercase', marginBottom: 10 }}>Answer</div>
+          <p style={{ fontSize: isMobile ? 14.5 : 15.5, color: hasAnswer ? (isLight ? T.bodyOnLight : T.bodyText) : T.mutedText, fontStyle: hasAnswer ? 'normal' : 'italic', lineHeight: 1.65, margin: 0 }}>{hasAnswer ? item.a : '[Answer to be added]'}</p>
         </div>
       </div>
     </div>);
@@ -178,9 +178,10 @@ function FAQItem({ item }) {
 function FAQCategory({ cat, background }) {
   const [ref, visible] = useReveal();
   const { isMobile, isTablet } = useViewport();
+  const isLight = background === T.bgLight;
   return (
     <section style={{
-      background, borderTop: `1px solid ${T.border}`,
+      background, borderTop: `1px solid ${isLight ? T.cardBorderLight : T.border}`,
       padding: isMobile ? '56px 20px' : isTablet ? '72px 32px' : '88px 56px'
     }}>
       <div ref={ref} style={{
@@ -193,18 +194,18 @@ function FAQCategory({ cat, background }) {
         <div style={{ position: isMobile ? 'static' : 'sticky', top: 116 }}>
           <Eyebrow>{cat.num}</Eyebrow>
           <h2 style={{
-            fontSize: isMobile ? 24 : 30, fontWeight: 500, fontFamily: FONT_DISPLAY,
-            letterSpacing: '-0.01em', color: T.offwhite, margin: '0 0 12px', lineHeight: 1.2,
+            fontSize: isMobile ? 28 : 38, fontWeight: 500, fontFamily: FONT_DISPLAY,
+            letterSpacing: '-0.01em', color: isLight ? T.textOnLight : T.offwhite, margin: '0 0 12px', lineHeight: 1.2,
             maxWidth: 300
           }}>
             {cat.label}
           </h2>
-          <div style={{ fontSize: 12, fontWeight: 500, letterSpacing: '0.06em', color: T.steel }}>
+          <div style={{ fontSize: 12, fontWeight: 500, letterSpacing: '0.06em', color: isLight ? T.mutedOnLight : T.steel }}>
             {cat.items.length} questions
           </div>
         </div>
         <div>
-          {cat.items.map((item, i) => <FAQItem key={i} item={item} />)}
+          {cat.items.map((item, i) => <FAQItem key={i} item={item} isLight={isLight} />)}
         </div>
       </div>
     </section>);
@@ -238,7 +239,7 @@ function FAQHeader() {
       }}>
         <Eyebrow>FAQ</Eyebrow>
         <h1 style={{
-          fontSize: isMobile ? 'clamp(34px, 9vw, 46px)' : 'clamp(48px, 5.6vw, 76px)',
+          fontSize: isMobile ? 'clamp(38px, 9vw, 54px)' : 'clamp(56px, 6.5vw, 92px)',
           fontWeight: 500, fontFamily: FONT_DISPLAY,
           letterSpacing: '-0.02em', lineHeight: 1.06,
           color: T.offwhite, margin: '0 0 20px', maxWidth: 900
@@ -269,7 +270,7 @@ function FAQContact() {
       }}>
         <Eyebrow>STILL HAVE QUESTIONS</Eyebrow>
         <h2 style={{
-          fontSize: isMobile ? 26 : 34, fontWeight: 500, fontFamily: FONT_DISPLAY,
+          fontSize: isMobile ? 30 : 42, fontWeight: 500, fontFamily: FONT_DISPLAY,
           letterSpacing: '-0.01em', color: T.offwhite, margin: '0 0 28px', lineHeight: 1.2,
           maxWidth: 620
         }}>Talk to the people who built it
@@ -293,7 +294,7 @@ function FAQPage() {
       <FAQNav />
       <FAQHeader />
       {FAQ_CATEGORIES.map((cat, i) =>
-      <FAQCategory key={cat.num} cat={cat} background={i % 2 === 0 ? T.graphite : T.navy} />
+      <FAQCategory key={cat.num} cat={cat} background={i % 2 === 0 ? T.bgLight : T.navy} />
       )}
       <FAQContact />
       <Footer />
