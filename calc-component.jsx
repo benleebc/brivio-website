@@ -361,9 +361,9 @@ function CalculatorPage({ onGoHome, onContact }) {
             fontSize: isMobile ? 19 : 26, lineHeight: 1.45, color: cT.offwhite,
             margin: 0,
           }}>
-            Based on your volume, your dealerships are routing approximately{' '}
+            Based on your volume, your dealerships are giving away{' '}
             <span style={{ color: cT.brass }}><CAnimatedNumber key={`x-${animKey}`} value={annualVolume} /></span>{' '}
-            in annual loan volume to banks. Those banks will earn an estimated{' '}
+            in annual loan volume to banks. They will earn an estimated{' '}
             <span style={{ color: cT.brass }}><CAnimatedNumber key={`y-${animKey}`} value={lenderEarnings} /></span>{' '}
             from your customers over the next 3 to 5 years.{' '}
             <span style={{ color: cT.brassLight }}>You'll be paid once.</span>
@@ -411,7 +411,7 @@ function CalculatorPage({ onGoHome, onContact }) {
           </p>
         </div>
 
-        <p style={{ fontSize: 12.5, color: cT.mutedText, lineHeight: 1.65, maxWidth: 720, marginBottom: isMobile ? 48 : 64 }}>
+        <p style={{ fontSize: 12.5, color: cT.mutedText, lineHeight: 1.65, marginBottom: isMobile ? 48 : 64 }}>
           These figures are illustrative estimates of opportunity cost based on the inputs above and industry-level loan economics. They reflect income that outside lenders are positioned to earn on dealer-originated loans, not a guarantee of Brivio results. Actual lender earnings and dealer economics vary with credit mix, term, rate, prepayment, losses, and program structure. Brivio does not guarantee specific returns.
         </p>
 
