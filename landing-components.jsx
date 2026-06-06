@@ -135,8 +135,8 @@ function Nav({ onContact }) {
       borderBottom: scrolled ? `1px solid ${T.border}` : '1px solid transparent',
       transition: 'background 0.4s, border-color 0.4s, backdrop-filter 0.4s'
     }}>
-      <a href="index.html" onClick={e => { 
-        // If already on index.html, just scroll to top instead of navigating
+      <a href="/" onClick={e => { 
+        // If already on root, just scroll to top instead of navigating
         if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
           e.preventDefault(); 
           window.scrollTo({ top: 0, behavior: 'smooth' }); 

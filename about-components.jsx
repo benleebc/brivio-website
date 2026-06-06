@@ -39,7 +39,7 @@ function AboutNav() {
       borderBottom: scrolled ? `1px solid ${T.border}` : '1px solid transparent',
       transition: 'background 0.4s, border-color 0.4s, backdrop-filter 0.4s'
     }}>
-      <a href="index.html" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+      <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 44 : 64 }} />
       </a>
       <div style={{ flex: 1 }} />

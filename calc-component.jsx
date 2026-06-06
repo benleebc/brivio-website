@@ -201,7 +201,7 @@ function CalcNav({ onGoHome, onContact }) {
       borderBottom: scrolled ? `1px solid ${cT.border}` : '1px solid transparent',
       transition: 'background 0.4s, border-color 0.4s, backdrop-filter 0.4s',
     }}>
-      <a href="index.html" onClick={(e) => { e.preventDefault(); onGoHome(); }} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', cursor: 'pointer' }}>
+      <a href="/" onClick={(e) => { e.preventDefault(); onGoHome(); }} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', cursor: 'pointer' }}>
         <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 36 : 48 }} />
       </a>
       <div style={{ flex: 1 }} />
