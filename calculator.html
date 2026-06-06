@@ -222,10 +222,20 @@
     ReactDOM.createRoot(document.getElementById('root')).render(
       <CalculatorPage onGoHome={goHome} onContact={goContact} />
     );
+
+    // Reveal the page only after React has painted, so the static SEO
+    // pre-render fallback never flashes as unstyled text on load.
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        document.body.classList.add('ready');
+      });
+    });
   </script>
 
   <script>
-    document.body.classList.add('ready');
+    // Safety net only – the babel render script reveals the page once React
+    // mounts. This guarantees the page still shows if that script errors out.
+    window.setTimeout(function () { document.body.classList.add('ready'); }, 5000);
   </script>
 </body>
 </html>

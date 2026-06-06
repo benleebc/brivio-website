@@ -237,7 +237,7 @@ const HERO_VARIANTS = [
 {
   lines: ['Your auto finance company', 'Our infrastructure'],
   accent: { line: 0, word: 'Your auto finance company' },
-  sub: `All the economics. None of the build.`
+  sub: `Brivio Capital gives dealer groups their own auto finance company. You keep the income, the data, and the customer relationship \u2013 without the capital or the build.`
 },
 {
   lines: ['Keep the finance income', 'you hand to banks'],
@@ -341,15 +341,28 @@ function Hero({ variant, onContact }) {
           fontWeight: 500,
           fontFamily: FONT_DISPLAY,
           letterSpacing: '-0.02em', lineHeight: 1.04,
-          color: T.offwhite, margin: isMobile ? '0 0 24px' : '0 0 32px'
+          color: T.offwhite, margin: isMobile ? '0 0 32px' : '0 0 44px'
         }}>
           {v.lines.map(renderLine)}
         </h1>
 
         <p style={{
           fontSize: isMobile ? 16 : 18, fontWeight: 400, lineHeight: 1.65, color: T.bodyText,
-          maxWidth: 680, margin: isMobile ? '0 0 36px' : '0 0 52px', whiteSpace: 'pre-line'
+          maxWidth: 680, margin: v.sub2 ? '0 0 18px' : (isMobile ? '0 0 36px' : '0 0 52px'), whiteSpace: 'pre-line'
         }}>{v.sub}</p>
+
+        {v.sub2 && (
+          <p style={{
+            fontSize: isMobile ? 14.5 : 16, fontWeight: 400, lineHeight: 1.75, color: T.bodyText,
+            maxWidth: 680, margin: isMobile ? '0 0 40px' : '0 0 56px'
+          }}>
+            {v.sub2.map((part, i) =>
+              part.bold
+                ? <span key={i} style={{ color: T.offwhite, fontWeight: 600 }}>{part.text}</span>
+                : <span key={i}>{part.text}</span>
+            )}
+          </p>
+        )}
 
         <div style={{ display: 'flex', gap: isMobile ? 12 : 16, flexWrap: 'wrap' }}>
           <button onClick={onContact} style={{ ...btnPrimary, ...(isMobile ? { height: 48, padding: '0 24px' } : {}) }}
@@ -748,7 +761,7 @@ function CalcTeaser() {
   const [ref, visible] = useReveal();
   const { isMobile, isTablet } = useViewport();
   return (
-    <section style={{ padding: isMobile ? '80px 20px 80px' : isTablet ? '100px 32px 100px' : '120px 56px 120px', background: T.bgLight }}>
+    <section style={{ padding: isMobile ? '80px 20px 80px' : isTablet ? '100px 32px 100px' : '120px 56px 120px', background: T.navy }}>
       <div ref={ref} style={{
         maxWidth: 1100, margin: '0 auto',
         opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(28px)',
@@ -759,20 +772,20 @@ function CalcTeaser() {
           <h2 style={{
             fontFamily: "'InterDisplay','InterVariable','Inter','Helvetica Neue',Arial,sans-serif",
             fontSize: isMobile ? 30 : 46, fontWeight: 500, letterSpacing: '-0.01em',
-            color: T.textOnLight, margin: '0 0 16px', lineHeight: 1.15,
+            color: T.offwhite, margin: '0 0 16px', lineHeight: 1.15,
             whiteSpace: isMobile ? 'normal' : 'nowrap'
           }}>
             See what you're leaving on the table
           </h2>
-          <p style={{ fontSize: 15, color: T.bodyOnLight, lineHeight: 1.65, margin: '0 0 40px', maxWidth: 600 }}>Lenders can make over $1,000 per loan. Recapture those economics with Brivio Capital. Use our calculator to see your annual upside from a Brivio captive program.</p>
+          <p style={{ fontSize: 15, color: T.bodyText, lineHeight: 1.65, margin: '0 0 40px', maxWidth: 600 }}>Lenders can make over $1,000 per loan. Recapture those economics with Brivio Capital. Use our calculator to see your annual upside from a Brivio captive program.</p>
         </div>
         <div style={{
-          background: '#FFFFFF', border: `1px solid ${T.cardBorderLight}`,
+          background: 'rgba(185,155,95,0.07)', border: `1px solid ${T.border}`,
           borderRadius: 12, padding: isMobile ? '40px 28px' : '40px 56px',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           flexWrap: 'wrap', gap: 24
         }}>
-          <p style={{ fontSize: 15, color: T.bodyOnLight, lineHeight: 1.65, margin: 0, maxWidth: 540 }}>See your dealership's estimated annual upside in under 60 seconds.</p>
+          <p style={{ fontSize: 15, color: T.bodyText, lineHeight: 1.65, margin: 0, maxWidth: 540 }}>See your dealership's estimated annual upside in under 60 seconds.</p>
           <a href="calculator.html" style={{
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10,
             height: 52, padding: '0 32px', flexShrink: 0,
@@ -804,22 +817,22 @@ function Contact() {
 
   const inputSt = {
     width: '100%', height: 52, padding: '0 18px',
-    background: 'rgba(245,247,249,0.04)',
-    border: `1px solid rgba(245,247,249,0.12)`,
-    borderRadius: 2, color: T.offwhite,
+    background: '#FFFFFF',
+    border: `1px solid ${T.cardBorderLight}`,
+    borderRadius: 2, color: T.textOnLight,
     fontSize: 16, fontFamily: 'inherit',
     outline: 'none', boxSizing: 'border-box',
     transition: 'border-color 0.2s'
   };
   const labelSt = {
     display: 'block', fontSize: 12, fontWeight: 500, letterSpacing: '0.12em',
-    color: T.steel, textTransform: 'uppercase', marginBottom: 10
+    color: T.mutedOnLight, textTransform: 'uppercase', marginBottom: 10
   };
   const focus = (e) => e.target.style.borderColor = T.brass;
-  const blur = (e) => e.target.style.borderColor = 'rgba(245,247,249,0.12)';
+  const blur = (e) => e.target.style.borderColor = T.cardBorderLight;
 
   return (
-    <section id="contact" style={{ padding: isMobile ? '80px 20px' : isTablet ? '100px 32px' : '120px 56px', background: T.navy }}>
+    <section id="contact" style={{ padding: isMobile ? '80px 20px' : isTablet ? '100px 32px' : '120px 56px', background: T.bgLight }}>
       <div ref={ref} style={{
         maxWidth: 1100, margin: '0 auto',
         opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(28px)',
@@ -827,10 +840,10 @@ function Contact() {
       }}>
         <div style={{ marginBottom: isMobile ? 44 : 56 }}>
           <Eyebrow>GET IN TOUCH</Eyebrow>
-          <h2 style={{ fontSize: isMobile ? 36 : 52, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.offwhite, margin: '0 0 16px', lineHeight: 1.15, whiteSpace: isMobile ? 'normal' : 'nowrap' }}>
+          <h2 style={{ fontSize: isMobile ? 36 : 52, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.textOnLight, margin: '0 0 16px', lineHeight: 1.15, whiteSpace: isMobile ? 'normal' : 'nowrap' }}>
             Let's build something together
           </h2>
-          <p style={{ fontSize: isMobile ? 15 : 16, color: T.bodyText, lineHeight: 1.6, margin: 0, maxWidth: 520 }}>
+          <p style={{ fontSize: isMobile ? 15 : 16, color: T.bodyOnLight, lineHeight: 1.6, margin: 0, maxWidth: 520 }}>
             Tell us what you're building. We'll come prepared.
           </p>
         </div>
@@ -887,7 +900,7 @@ function Contact() {
             onMouseLeave={(e) => e.currentTarget.style.background = T.brass}>
                 Send message <Arrow />
               </button>
-              <p style={{ fontSize: 13, color: T.steel, lineHeight: 1.55, margin: 0 }}>
+              <p style={{ fontSize: 13, color: T.mutedOnLight, lineHeight: 1.55, margin: 0 }}>
                 We'll reach out within two business days to walk through your numbers – no obligation.
               </p>
             </div>
