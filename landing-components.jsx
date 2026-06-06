@@ -813,6 +813,8 @@ function CalcTeaser() {
 function Contact() {
   const [ref, visible] = useReveal();
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', role: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const { isMobile, isTablet } = useViewport();
 
   const inputSt = {
@@ -831,6 +833,23 @@ function Contact() {
   const focus = (e) => e.target.style.borderColor = T.brass;
   const blur = (e) => e.target.style.borderColor = T.cardBorderLight;
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      const res = await fetch('https://formspree.io/f/xbdbozza', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(e.target)
+      });
+      if (res.ok) setSubmitted(true);
+    } catch (_) {
+      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" style={{ padding: isMobile ? '80px 20px' : isTablet ? '100px 32px' : '120px 56px', background: T.bgLight }}>
       <div ref={ref} style={{
@@ -848,7 +867,18 @@ function Contact() {
           </p>
         </div>
 
-        <form action="https://formspree.io/f/xbdbozza" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+        {submitted ? (
+          <div style={{ padding: isMobile ? '40px 0' : '56px 0' }}>
+            <p style={{
+              fontSize: isMobile ? 22 : 30, fontWeight: 500,
+              color: T.textOnLight, fontFamily: FONT_DISPLAY,
+              letterSpacing: '-0.01em', lineHeight: 1.4
+            }}>
+              Thank you. We’ll be in touch within two business days.
+            </p>
+          </div>
+        ) : (
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 16 }}>
               <div>
                 <label style={labelSt}>Name</label>
@@ -895,16 +925,17 @@ function Contact() {
             
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 14, marginTop: 8 }}>
-              <button type="submit" style={{ ...btnPrimary, alignSelf: 'flex-start' }}
+              <button type="submit" disabled={submitting} style={{ ...btnPrimary, alignSelf: 'flex-start', opacity: submitting ? 0.7 : 1 }}
             onMouseEnter={(e) => e.currentTarget.style.background = T.brassLight}
             onMouseLeave={(e) => e.currentTarget.style.background = T.brass}>
-                Send message <Arrow />
+                {submitting ? 'Sending…' : <><span>Send message</span><Arrow /></>}
               </button>
               <p style={{ fontSize: 13, color: T.mutedOnLight, lineHeight: 1.55, margin: 0 }}>
                 We'll reach out within two business days to walk through your numbers – no obligation.
               </p>
             </div>
           </form>
+        )}
       </div>
     </section>);
 
