@@ -562,7 +562,7 @@ function HowItWorks() {
           padding: isMobile ? '24px' : '30px 36px'
         }}>
           <p style={{ fontSize: isMobile ? 15 : 17, color: T.textOnLight, lineHeight: 1.55, margin: 0, fontWeight: 500, letterSpacing: '-0.005em' }}>
-            The average dealer location routes <span className="nb" style={{ color: T.brassDark, fontWeight: 600 }}>$26mm in loans annually</span> to banks and credit unions. Every one of those loans is margin and customer data you don't own. That changes on day one.
+            The average dealer rooftop routes <span className="nb" style={{ color: T.brassDark, fontWeight: 600 }}>$30mm in loans annually</span> to banks and credit unions. Every one of those loans is margin and customer data you don't own. That changes on day one.
           </p>
         </div>
       </div>
@@ -952,7 +952,9 @@ function Footer() {
         flexDirection: isMobile ? 'column' : 'row',
         textAlign: isMobile ? 'center' : 'left'
       }}>
-        <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 40 : 52, opacity: 0.85 }} />
+        <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', cursor: 'pointer' }}>
+          <img src={window.__resources.brivioLockup} alt="Brivio Capital" style={{ height: isMobile ? 40 : 52, opacity: 0.85 }} />
+        </a>
         <span style={{ color: T.steel, fontSize: isMobile ? 10 : 11, fontWeight: 300, letterSpacing: '0.18em' }}>
           CAPITAL.&nbsp;&nbsp;CONNECTION.&nbsp;&nbsp;MOMENTUM.
         </span>
