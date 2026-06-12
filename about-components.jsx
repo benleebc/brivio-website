@@ -299,11 +299,12 @@ function AboutFounders() {
         {/* Closing line */}
         <div style={{
           marginTop: isMobile ? 48 : 72, paddingTop: isMobile ? 40 : 56,
-          borderTop: `1px solid ${T.cardBorderLight}`, maxWidth: 860
+          borderTop: `1px solid ${T.cardBorderLight}`
         }}>
           <p style={{
             fontStyle: 'italic', fontFamily: FONT_DISPLAY,
-            fontSize: isMobile ? 22 : 30, lineHeight: 1.55, letterSpacing: '-0.01em',
+            fontSize: isMobile ? 22 : 30, lineHeight: 1.65, letterSpacing: '-0.01em',
+            textAlign: isMobile ? 'left' : 'justify', wordSpacing: '0.18em',
             color: T.textOnLight, margin: '0 0 32px', fontWeight: 400
           }}>
             Together, we've spent three decades inside auto finance … running captives, leading pricing, and operating through every condition the market throws at lenders. If you're a dealer group ready to own your lending economics, let's talk.
