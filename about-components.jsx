@@ -128,7 +128,7 @@ const ABOUT_FOUNDERS = [
   role: 'Founder & CEO',
   linkedin: 'https://www.linkedin.com/in/charles-do/',
   tagline: 'Bank. Captive. Fintech. One of the few auto finance executives to have led businesses inside all three',
-  bio: 'Charles spent the early part of his career at GMAC and lived through the 2008 financial crisis as it became Ally Financial. At JPMorgan Chase, he led three auto finance businesses, including the bank\u2019s white-label captive program for Jaguar Land Rover. He later launched Best Egg\u2019s auto lending business as Head of Auto. Most recently led Harley-Davidson Financial Services through a landmark forward flow transaction with KKR and PIMCO, including a 9.8% equity sale of the business.'
+  bio: 'Charles began at GMAC and lived through the 2008 financial crisis as it became Ally Financial. At JPMorgan Chase, he led three auto finance businesses, including the bank\u2019s white-label captive program for Jaguar Land Rover. He later launched Best Egg\u2019s auto lending business as Head of Auto. Most recently led Harley-Davidson Financial Services through a landmark forward flow transaction with KKR and PIMCO, including a 9.8% equity sale of the business.'
 },
 {
   photoKey: 'benHeadshot',
