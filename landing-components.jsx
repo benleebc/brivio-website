@@ -419,8 +419,8 @@ function TheReality() {
             letterSpacing: '-0.01em', color: T.offwhite, margin: 0,
             lineHeight: 1.15, maxWidth: 900
           }}>
-            <span style={{ display: 'block' }}>Lenders get paid for months, for years.</span>
-            <span style={{ display: 'block', color: T.brass }}>You got paid once.</span>
+            <span style={{ display: 'block' }}>Lenders get paid for months, for years</span>
+            <span style={{ display: 'block', color: T.brass }}>You got paid once</span>
           </h2>
         </div>
 
@@ -490,13 +490,53 @@ function TheReality() {
 
 }
 
+// ─── PORTAL MOCK ───────────────────────────────────────────────────────────
+function PortalMock() {
+  const rows = [['Loan balance','$28,340'],['Rate','7.49% APR'],['Payments made','14 of 60']];
+  return (
+    <div>
+      <div style={{ background: '#0A1521', border: '1px solid rgba(245,247,249,0.18)', borderRadius: 6, overflow: 'hidden', boxShadow: '0 8px 28px rgba(0,0,0,0.28)' }} aria-hidden="true">
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px', borderBottom: '1px solid rgba(245,247,249,0.10)' }}>
+          {['#2B2F33','#2B2F33','#2B2F33'].map((c,i) => <span key={i} style={{ width: 9, height: 9, borderRadius: '50%', background: c, display: 'inline-block', flexShrink: 0 }}></span>)}
+          <span style={{ marginLeft: 12, flex: 1, fontSize: 11.5, color: '#7B8289', background: 'rgba(245,247,249,0.04)', border: '1px solid rgba(245,247,249,0.10)', borderRadius: 4, padding: '5px 12px', letterSpacing: '0.02em' }}>
+            <span style={{ color: '#D4BA85' }}>summitautofinancial</span>.com/account
+          </span>
+        </div>
+        <div style={{ padding: 28 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 26, gap: 12, flexWrap: 'wrap' }}>
+            <span style={{ fontFamily: FONT_DISPLAY, fontWeight: 500, fontSize: 17, display: 'flex', alignItems: 'center', gap: 10 }}>
+              <span style={{ width: 26, height: 26, borderRadius: 4, background: T.brass, color: T.navy, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, flexShrink: 0 }}>S</span>
+              Summit Auto Financial
+            </span>
+            <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#D4BA85', border: '1px solid rgba(185,155,95,0.35)', borderRadius: 99, padding: '5px 12px', whiteSpace: 'nowrap' }}>Your brand here</span>
+          </div>
+          <p style={{ fontSize: 13, color: '#7B8289', marginBottom: 4 }}>Good morning, Sarah</p>
+          <p style={{ fontFamily: FONT_DISPLAY, fontWeight: 300, fontSize: 40, letterSpacing: '-0.01em', color: T.offwhite, marginBottom: 2 }}>$487.22</p>
+          <p style={{ fontSize: 12.5, color: '#A8ADB3', marginBottom: 24 }}>Next payment · July 1, 2026</p>
+          <div>
+            {rows.map(([label, val]) => (
+              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, padding: '11px 0', borderTop: '1px solid rgba(245,247,249,0.10)', color: '#A8ADB3' }}>
+                <span>{label}</span><span style={{ color: T.offwhite }}>{val}</span>
+              </div>
+            ))}
+          </div>
+          <button type="button" tabIndex="-1" style={{ marginTop: 22, width: '100%', height: 44, border: 'none', borderRadius: 3, background: T.brass, color: T.navy, fontFamily: FONT_UI, fontSize: 12, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', cursor: 'default' }}>
+            Make a payment
+          </button>
+        </div>
+      </div>
+
+    </div>
+  );
+}
+
 // ─── HOW IT WORKS ────────────────────────────────────────────────────────────
 const STEPS = [
-{ n: '01', title: 'We look under the hood', body: "Your loan volumes, credit mix, and what you're earning today from markups and flat fees. We build the picture, then show you exactly what you're leaving on the table." },
-{ n: '02', title: 'You set the pricing', body: 'We walk through the economics together – baseline versus adding margin, and how each approach stacks up against the competition. We agree on a range that works for both sides. Then you decide where to land.' },
-{ n: '03', title: 'Agree to terms', body: 'Sign our agreement. Then, do the one thing banks never let you do … put your name on the loan.' },
-{ n: '04', title: 'We get to work', body: "Your branded portal gets built. Your program goes into the tech stack. We train your F&I team so day one feels like business as usual. You don't lift a finger." },
-{ n: '05', title: "You're live", body: 'Your team routes deals to your new finance company. From this point, every funded deal builds your portfolio, your customer data, and your economics. The bank no longer gets that – you do.' }];
+{ n: '01', title: 'We look under the hood', body: 'We map your loan volumes, credit mix, and what you’re leaving on the table today.' },
+{ n: '02', title: 'You set the pricing', body: 'We walk through the economics together and agree on a pricing range that works for both sides.' },
+{ n: '03', title: 'Agree to terms', body: 'Sign our agreement — and put your name on the loan for the first time.' },
+{ n: '04', title: 'We get to work', body: 'Your branded portal is built, your F&I team is trained. You don’t lift a finger.' },
+{ n: '05', title: 'You’re live', body: 'Every funded deal now builds your portfolio, your data, and your economics.' }];
 
 
 function HowItWorks() {
@@ -512,69 +552,65 @@ function HowItWorks() {
         opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(28px)',
         transition: 'opacity 0.7s ease, transform 0.7s ease'
       }}>
-        <div style={{ marginBottom: isMobile ? 40 : 64 }}>
+        <div style={{ marginBottom: isMobile ? 40 : 56 }}>
           <Eyebrow>HOW IT WORKS</Eyebrow>
           <h2 style={{ fontSize: isMobile ? 32 : 52, fontWeight: 500, fontFamily: FONT_DISPLAY, letterSpacing: '-0.01em', color: T.textOnLight, margin: 0, lineHeight: 1.15 }}>
-            Your brand on every loan – in under 90 days.
+            Your brand on every loan – in under 90 days
           </h2>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {STEPS.map((s, i) => {
-            const last = i === STEPS.length - 1;
-            return (
-              <div key={i} style={{
-                display: 'grid', gridTemplateColumns: isMobile ? '48px 1fr' : '48px 1fr',
-                columnGap: isMobile ? 20 : 32, position: 'relative',
-                paddingBottom: last ? 0 : isMobile ? 32 : 44
-              }}>
-                {/* Number badge + connecting vertical line */}
-                <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-                  <div style={{
-                    width: 48, height: 48, borderRadius: 2,
-                    border: `1px solid ${T.brass}`,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: '#FFFFFF', position: 'relative', zIndex: 1,
-                    boxShadow: '0 2px 12px rgba(185,155,95,0.18)'
-                  }}>
-                    <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', color: T.brassDark }}>{s.n}</span>
-                  </div>
-                  {!last &&
-                  <div style={{
-                    position: 'absolute', top: 48, bottom: 0, width: 1,
-                    background: `linear-gradient(${T.brass}, rgba(185,155,95,0.15))`
-                  }} />
-                  }
-                </div>
-                <div style={{ paddingTop: 2 }}>
-                  <h3 style={{ fontSize: isMobile ? 20 : 26, fontWeight: 600, color: T.textOnLight, margin: '0 0 10px', lineHeight: 1.25, letterSpacing: '-0.005em' }}>{s.title}</h3>
-                  <p style={{ fontSize: isMobile ? 14 : 15, color: T.bodyOnLight, lineHeight: 1.65, margin: 0 }}>{s.body}</p>
-                </div>
-              </div>);
+        {/* Two-column: steps left, portal right */}
+        <div style={{ display: isMobile ? 'flex' : 'grid', flexDirection: 'column', gridTemplateColumns: isTablet ? '1fr' : '1fr 1fr', gap: isMobile ? 0 : isTablet ? 48 : 72, alignItems: 'stretch' }}>
 
-          })}
+          {/* Left: compact steps + callout */}
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            {STEPS.map((s, i) => {
+              const last = i === STEPS.length - 1;
+              return (
+                <div key={i} style={{
+                  display: 'grid', gridTemplateColumns: '40px 1fr',
+                  columnGap: isMobile ? 16 : 20, position: 'relative',
+                  paddingBottom: last ? 0 : isMobile ? 24 : 28
+                }}>
+                  <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+                    <div style={{
+                      width: 40, height: 40, borderRadius: 2,
+                      border: `1px solid ${T.brass}`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      background: '#FFFFFF', position: 'relative', zIndex: 1
+                    }}>
+                      <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: T.brassDark }}>{s.n}</span>
+                    </div>
+                    {!last && <div style={{ position: 'absolute', top: 40, bottom: 0, width: 1, background: `linear-gradient(${T.brass}, rgba(185,155,95,0.15))` }} />}
+                  </div>
+                  <div style={{ paddingTop: 4 }}>
+                    <h3 style={{ fontSize: isMobile ? 16 : 17, fontWeight: 600, color: T.textOnLight, margin: '0 0 4px', lineHeight: 1.3, letterSpacing: '-0.005em' }}>{s.title}</h3>
+                    <p style={{ fontSize: 13.5, color: T.bodyOnLight, lineHeight: 1.6, margin: 0 }}>{s.body}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Right: portal mock — hidden on mobile */}
+          {!isMobile && <PortalMock />}
         </div>
 
-        {/* Takeaway callout */}
-        <div style={{
-          marginTop: isMobile ? 44 : 64,
-          background: 'rgba(185,155,95,0.1)', borderTop: `2px solid ${T.brass}`,
-          padding: isMobile ? '24px' : '30px 36px'
-        }}>
-          <p style={{ fontSize: isMobile ? 15 : 17, color: T.textOnLight, lineHeight: 1.55, margin: 0, fontWeight: 500, letterSpacing: '-0.005em' }}>
-            The average dealer rooftop routes <span className="nb" style={{ color: T.brassDark, fontWeight: 600 }}>$30mm in loans annually</span> to banks and credit unions. Every one of those loans is margin and customer data you don't own. That changes on day one.
+        {/* Full-width callout below grid */}
+        <div style={{ marginTop: isMobile ? 32 : 48, background: 'rgba(185,155,95,0.1)', borderTop: `2px solid ${T.brass}`, padding: isMobile ? '20px' : '24px 36px' }}>
+          <p style={{ fontSize: isMobile ? 14 : 15, color: T.textOnLight, lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
+            The average dealer rooftop routes <span className="nb" style={{ color: T.brassDark, fontWeight: 600 }}>$30mm in loans annually</span> to banks and credit unions. Every one of those loans is margin and customer data you don’t own. That changes on day one
           </p>
         </div>
       </div>
     </section>);
-
 }
 
 // ─── WHY BRIVIO ──────────────────────────────────────────────────────────────
 const WHY_CARDS = [
 {
-  title: 'You\u2019re not our experiment',
-  body: 'Our founders have led auto lending businesses inside the largest US bank, captive lenders, and a leading consumer fintech, generating over $75 billion across three decades. We\u2019ve operated through credit cycles, capital markets dislocations, and regulatory change. We\u2019re doing it again, this time for you.',
+  title: 'You\u2019re not\nour experiment',
+  body: 'Our founders have spent decades in the industry and originated over $75bn across bank, captive, and fintech lending. Cycle-tested through \u201808, COVID, and capital markets dislocations. We\u2019ve run this \u2014 and we\u2019re running it again, for you',
   link: { label: 'Meet the founders', href: 'about.html' }
 },
 {
@@ -625,7 +661,7 @@ function WhyBrivio() {
             }}
             onMouseEnter={() => { if (!isMobile) setHoveredCard(i); }}
             onMouseLeave={() => { if (!isMobile) setHoveredCard(null); }}>
-              <h3 style={{ fontSize: isMobile ? 22 : 24, fontWeight: 600, color: T.textOnLight, margin: '0 0 16px', lineHeight: 1.25, letterSpacing: '-0.005em', minHeight: isMobile ? 'auto' : '2.5em' }}>{c.title}</h3>
+              <h3 style={{ fontSize: isMobile ? 22 : 24, fontWeight: 600, color: T.textOnLight, margin: '0 0 16px', lineHeight: 1.25, letterSpacing: '-0.005em', minHeight: isMobile ? 'auto' : '2.5em', whiteSpace: 'pre-line' }}>{c.title}</h3>
               <p style={{ fontSize: isMobile ? 14 : 14.5, color: T.bodyOnLight, lineHeight: 1.65, margin: 0 }}>{c.body}</p>
               {c.link &&
               <a href={c.link.href} style={{

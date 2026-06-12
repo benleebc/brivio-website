@@ -1,0 +1,11 @@
+# Brivio Capital — redirect rules (Netlify)
+
+# 1. Force HTTPS (non-www is canonical)
+http://briviocapital.com/*        https://briviocapital.com/:splat  301!
+http://www.briviocapital.com/*    https://briviocapital.com/:splat  301!
+
+# 2. Strip www
+https://www.briviocapital.com/*   https://briviocapital.com/:splat  301!
+
+# 3. Prevent /index.html from being a distinct URL
+/index.html                        /                                 301!
