@@ -97,7 +97,7 @@ function CSlider({ label, value, min, max, step = 1, onChange, money, hint }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12 }}>
-        <span style={{ fontSize: 12.5, fontWeight: 500, letterSpacing: '0.12em', color: cT.steel, textTransform: 'uppercase' }}>{label}</span>
+        <span style={{ fontSize: 12, fontWeight: 500, letterSpacing: '0.09em', color: cT.steel, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{label}</span>
         <input
           type="text"
           value={money ? getFormattedDisplay(value) : value.toLocaleString()}
@@ -106,7 +106,7 @@ function CSlider({ label, value, min, max, step = 1, onChange, money, hint }) {
           style={{
             fontSize: 22, fontWeight: 500, color: cT.offwhite, fontFamily: C_FONT_DISPLAY, letterSpacing: '-0.01em',
             background: 'transparent', border: 'none', outline: 'none', textAlign: 'right',
-            width: '150px', padding: 0, cursor: 'text'
+            width: '120px', padding: 0, cursor: 'text'
           }}
         />
       </div>
@@ -324,8 +324,8 @@ function CalculatorPage({ onGoHome, onContact }) {
             <p style={{ fontSize: 15, color: cT.bodyText }}>Adjust the inputs to match your operation. Defaults reflect a typical multi-rooftop group.</p>
           </div>
           <div className="calc-sliders" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 28 : '32px 56px' }}>
-            <CSlider label="Number of locations" value={locations} min={1} max={100} step={1} onChange={v => handleChange(setLocations, v)} />
-            <CSlider label="Monthly funded loans / location" value={monthly} min={1} max={150} step={1} onChange={v => handleChange(setMonthly, v)} />
+            <CSlider label="Number of rooftops" value={locations} min={1} max={100} step={1} onChange={v => handleChange(setLocations, v)} />
+            <CSlider label="Monthly funded loans / rooftop" value={monthly} min={1} max={150} step={1} onChange={v => handleChange(setMonthly, v)} />
             <CSlider label="Average loan size" value={avgLoan} money min={10000} max={100000} step={500} onChange={v => handleChange(setAvgLoan, v)} />
             <CSlider label="Reserve / flat fee per deal (today)" value={fee} money min={0} max={2000} step={25} onChange={v => handleChange(setFee, v)} hint="Optional – industry default shown. Set to your number." />
           </div>
@@ -335,7 +335,7 @@ function CalculatorPage({ onGoHome, onContact }) {
             display: 'flex', gap: isMobile ? 24 : 48, flexWrap: 'wrap',
           }}>
             {[
-              { label: 'Annual funded loans', sublabel: '(locations × monthly × 12)', value: annualLoans.toLocaleString() },
+              { label: 'Annual funded loans', sublabel: '(rooftops × monthly × 12)', value: annualLoans.toLocaleString() },
               { label: 'Annual loan volume given away', sublabel: '(funded loans × avg loan size)', value: cFmt(annualVolume) },
             ].map((s, i) => (
               <div key={i}>
