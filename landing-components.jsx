@@ -624,7 +624,7 @@ const WHY_CARDS = [
 
 const WIN_POINTS = [
 'No major capital commitment. Modest setup and subscription fees',
-'You bring the loan rooftop. We bring the infrastructure',
+'You bring the loan. We bring the infrastructure',
 'No long-term commitments. We earn your business every month',
 'Our economics are tied to yours. We don\u2019t win unless you do'];
 
