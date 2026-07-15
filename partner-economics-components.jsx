@@ -239,7 +239,7 @@ function PTierCard({ tag, title, sub, income, incomeLabel, rows, note, learnMore
   const stacked = isMobile || isTablet;
   const cardSt = stacked
     ? { display: 'flex', flexDirection: 'column' }
-    : { display: 'grid', gridTemplateRows: 'subgrid', gridRow: 'span 7' };
+    : { display: 'grid', gridTemplateRows: 'subgrid', gridRow: 'span 10' };
   return (
     <div style={{
       background: pT.graphite, border: `1px solid ${pT.border}`,
@@ -248,7 +248,7 @@ function PTierCard({ tag, title, sub, income, incomeLabel, rows, note, learnMore
     }}>
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: `linear-gradient(90deg, ${pT.brass}, ${pT.brassLight})` }} />
       <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.15em', color: pT.brass, textTransform: 'uppercase', marginBottom: 10 }}>{tag}</div>
-      <h3 style={{ fontFamily: P_FONT_DISPLAY, fontSize: 21, fontWeight: 500, color: pT.offwhite, margin: '0 0 8px', letterSpacing: '-0.01em' }}>{title}</h3>
+      <h3 style={{ fontFamily: P_FONT_DISPLAY, fontSize: 30, fontWeight: 500, color: pT.offwhite, margin: '0 0 10px', letterSpacing: '-0.02em' }}>{title}</h3>
       <p style={{ fontSize: 13.5, color: pT.bodyText, lineHeight: 1.6, margin: '0 0 24px' }}>{sub}</p>
       <div style={{ marginBottom: 24 }}>
         <div style={{ fontFamily: P_FONT_DISPLAY, fontSize: isMobile ? 32 : 36, fontWeight: 500, color: pT.brass, letterSpacing: '-0.02em', lineHeight: 1 }}>
@@ -271,7 +271,7 @@ function PTierCard({ tag, title, sub, income, incomeLabel, rows, note, learnMore
         ))}
       </div>
       <p style={{ fontSize: 12, color: pT.mutedText, lineHeight: 1.6, margin: '0 0 18px' }}>{note}</p>
-      <div style={{ borderTop: `1px solid ${pT.border}`, paddingTop: 14, alignSelf: 'stretch' }}>
+      <div style={{ borderTop: `1px solid ${pT.border}`, paddingTop: 14, alignSelf: 'stretch', marginBottom: learnOpen ? 16 : 0 }}>
         <button type="button" onClick={onToggleLearn} aria-expanded={learnOpen} style={{
           background: 'none', border: 'none', padding: 0, cursor: 'pointer',
           fontFamily: P_FONT_UI, fontSize: 12, fontWeight: 500, letterSpacing: '0.12em',
@@ -283,17 +283,13 @@ function PTierCard({ tag, title, sub, income, incomeLabel, rows, note, learnMore
           Learn more
           <span style={{ fontSize: 14, lineHeight: 1, transform: learnOpen ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s', display: 'inline-block' }}>+</span>
         </button>
-        {learnOpen && (
-          <div style={{ marginTop: 16 }}>
-            {learnMore.map((block, i) => (
-              <div key={i} style={{ marginBottom: i === learnMore.length - 1 ? 0 : 16 }}>
-                <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: pT.mutedText, marginBottom: 6 }}>{block.h}</div>
-                <p style={{ fontSize: 13.5, color: pT.bodyText, lineHeight: 1.65, margin: 0 }}>{block.p}</p>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
+      {learnMore.map((block, i) => (
+        <div key={i} style={{ display: learnOpen ? 'block' : 'none', marginBottom: i === learnMore.length - 1 ? 0 : 16 }}>
+          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: pT.mutedText, marginBottom: 6 }}>{block.h}</div>
+          <p style={{ fontSize: 13.5, color: pT.bodyText, lineHeight: 1.65, margin: 0 }}>{block.p}</p>
+        </div>
+      ))}
     </div>
   );
 }
@@ -301,19 +297,19 @@ function PTierCard({ tag, title, sub, income, incomeLabel, rows, note, learnMore
 // ── Learn-more copy per tier ────────────────────────────────────────
 const P_LEARN = {
   t1: [
-    { h: 'What it asks of you', p: 'Nothing changes on your showroom floor. Your F&I team keeps writing deals the way it does today — Brivio funds the loan, sells it day one, and cuts you a check for your share of the gain at sale. No capital, no committee, no new headcount.' },
-    { h: 'What you get', p: 'A second check on every funded deal, stacked on top of your existing finance reserve. It shows up when the loan sells, so there is no waiting on a portfolio to season.' },
-    { h: 'The trade-off', p: 'It is the smallest number of the three, and the loan, the data, and the customer relationship still leave the building. Think of it as getting paid fairly for volume you are already producing — a starting point, not a destination.' },
+    { h: 'What it asks of you', p: 'Nothing changes on your showroom floor. Your F&I team writes deals the way it does today. Brivio funds the loan, sells it day one, and cuts you a check at sale.' },
+    { h: 'What you get', p: 'A second check on every funded deal, stacked on top of your existing finance reserve. It arrives when the loan sells, so there is no waiting on a portfolio to build.' },
+    { h: 'The trade-off', p: 'It is the smallest number of the three, and the loan, the data, and the customer still leave the building. Fair pay for volume you already produce.' },
   ],
   t2: [
-    { h: 'What it asks of you', p: 'You put real capital to work — the junior slice on your near-prime and subprime paper. That capital is committed for the life of the loan pool and takes the first loss if credits go bad. Prime keeps selling day one, exactly like Tier 1.' },
-    { h: 'What you get', p: 'The levered spread on your own customers\u2019 loans, month after month, for the life of the book — plus the upfront prime participation. Brivio carries the operational load: underwriting, servicing, collections, compliance, and reporting. You review a statement, not a loan file.' },
-    { h: 'The trade-off', p: 'Income builds as the book builds — plan on 30 to 36 months to steady state, with year one meaningfully lighter. You are earning lender returns because you are taking lender risk on the slice you retain. Most groups start here or graduate here quickly.' },
+    { h: 'What it asks of you', p: 'You invest capital in the loans your stores originate. Brivio puts it to work in the segments that earn the strongest return, for the life of the loans.' },
+    { h: 'What you get', p: 'Lending income on your own customers\u2019 loans, month after month. Brivio handles underwriting, servicing, and collections. You review a statement, not a loan file.' },
+    { h: 'The trade-off', p: 'Your capital absorbs losses first, which is what earns the higher return. Income reaches full run rate in about three years. Most groups start here.' },
   ],
   t3: [
-    { h: 'What it asks of you', p: 'This is a real finance company with your name on it. Your captive funds every loan across all credit bands on its own warehouse facility, and your balance sheet carries the full portfolio risk. It is the most capital and the most commitment of the three.' },
-    { h: 'What you get', p: 'Everything. Every dollar of finance income your customers generate stays in your group — no participation splits, no one else\u2019s margin. You own the loan, the data, and the customer for the next vehicle, the service visit, and the trade-in. Brivio runs the platform underneath so you are not building a servicing operation from scratch.' },
-    { h: 'The trade-off', p: 'Full credit exposure and a dedicated warehouse facility to stand up and maintain. This is rarely the first step — the typical path is 12 to 24 months in Tier 2, proving out performance on your own paper, then converting.' },
+    { h: 'What it asks of you', p: 'A real finance company with your name on it. Your captive funds every loan on its own warehouse facility, and your balance sheet carries the risk.' },
+    { h: 'What you get', p: 'Every dollar of finance income stays in your group. You own the loan, the data, and the customer. Brivio runs the platform underneath, start to finish.' },
+    { h: 'The trade-off', p: 'The most capital and the most commitment of the three. Most groups prove out performance in the Invest path first, then convert.' },
   ],
 };
 
@@ -363,7 +359,7 @@ function PAssumptions({ bands, onBandChange, hurdle, onHurdleChange, isMobile })
           </table>
           <p style={{ fontSize: 12, color: pT.mutedText, lineHeight: 1.6, marginTop: 14 }}>
             Unlevered return = gross yield less net credit losses and servicing, annualized on average assets.
-            Tier 3 assumes an 80% warehouse advance at 6.5% across all bands. Capital baseline (your alternative return) is{' '}
+            The Own path assumes an 80% warehouse advance at 6.5% across all bands. Capital baseline (your alternative return) is{' '}
             <input type="number" step="0.1" value={hurdle} className="pe-field"
               onChange={e => onHurdleChange(parseFloat(e.target.value) || 0)}
               style={{ ...pNumInputSt, width: 64, display: 'inline-block' }} /> %.
@@ -398,7 +394,7 @@ function PAssumptions({ bands, onBandChange, hurdle, onHurdleChange, isMobile })
           </table>
           <p style={{ fontSize: 12, color: pT.mutedText, lineHeight: 1.6, marginTop: 14 }}>
             Directional estimates informed by industry origination data (luxury franchises skew prime; value and used operations skew near-prime/subprime).
-            Calibrated per dealer group before final proposal. Lease-heavy luxury franchises fund fewer retail loans per rooftop — reflect that in the funded-loans input, not the mix.
+            Calibrated per dealer group before final proposal. Lease-heavy luxury franchises fund fewer retail loans per rooftop; reflect that in the funded-loans input, not the mix.
           </p>
         </div>
       </details>
@@ -420,7 +416,7 @@ function PartnerEconomicsPage() {
   const [dealerName, setDealerName] = pUseState('');
   const [roofs, setRoofs] = pUseState(P_DEFAULT_ROOFS);
   const [roofsOpen, setRoofsOpen] = pUseState(false);
-  const [learnOpen, setLearnOpen] = pUseState({ t1: false, t2: false, t3: false });
+  const [learnOpen, setLearnOpen] = pUseState(false);
   const [bands, setBands] = pUseState(P_BANDS_DEFAULT.map(b => ({ ...b })));
   const [stressed, setStressed] = pUseState(false);
   const [hurdle, setHurdle] = pUseState(P_HURDLE_DEFAULT);
@@ -439,7 +435,6 @@ function PartnerEconomicsPage() {
   const strip = [
     { v: pMoney(r.totalOrig), k: 'Annual originations via Brivio' },
     { v: r.totalLoans.toLocaleString(), k: 'Brivio-funded loans / yr' },
-    { v: r.totalOrig ? `${Math.round(r.orig.P / r.totalOrig * 100)} / ${Math.round(r.orig.NP / r.totalOrig * 100)} / ${Math.round(r.orig.SP / r.totalOrig * 100)}` : '0 / 0 / 0', k: 'Prime / near / sub %' },
     { v: pMoney(r.totalOrig ? r.totalOrig / r.totalLoans : 0), k: 'Avg amount financed' },
   ];
 
@@ -466,7 +461,7 @@ function PartnerEconomicsPage() {
           Three ways to own your lending economics, <span style={{ color: pT.brass }}>{nameOrGroup}</span>
         </h1>
         <p style={{ fontSize: isMobile ? 16 : 18, color: pT.bodyText, lineHeight: 1.65, maxWidth: 660, margin: 0 }}>
-          One platform, three levels of participation — from zero capital committed to running a full captive on your balance sheet. We've modeled your group below; adjust anything to match your operation.
+          One platform, three levels of participation, from zero capital committed to running a full captive on your balance sheet. We've modeled your group below; adjust anything to match your operation.
         </p>
       </div>
 
@@ -479,7 +474,7 @@ function PartnerEconomicsPage() {
         }}>
           <div style={{ marginBottom: isMobile ? 24 : 30 }}>
             <div style={{ fontSize: 11, fontWeight: 500, letterSpacing: '0.16em', color: pT.brass, textTransform: 'uppercase', marginBottom: 8 }}>Your group</div>
-            <p style={{ fontSize: 15, color: pT.bodyText, margin: 0 }}>Your rooftops and the monthly volume you'd fund <strong style={{ color: pT.offwhite, fontWeight: 500 }}>through Brivio</strong> — not your total store volume. Everything downstream updates as you edit.</p>
+            <p style={{ fontSize: 15, color: pT.bodyText, margin: 0 }}>Your rooftops and the monthly volume you'd fund <strong style={{ color: pT.offwhite, fontWeight: 500 }}>through Brivio</strong>, not your total store volume. Everything downstream updates as you edit.</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 20 : 24, marginBottom: isMobile ? 24 : 30 }}>
@@ -490,13 +485,13 @@ function PartnerEconomicsPage() {
             </div>
             <div>
               <span style={{ fontSize: 12, fontWeight: 500, letterSpacing: '0.09em', color: pT.steel, textTransform: 'uppercase', display: 'block', marginBottom: 8 }}>Loss scenario</span>
-              <div role="group" aria-label="Loss scenario" style={{ display: 'inline-flex', border: `1px solid ${pT.borderMed}`, borderRadius: 4, overflow: 'hidden' }}>
+              <div role="group" aria-label="Loss scenario" style={{ display: 'flex', width: '100%', border: `1px solid ${pT.borderMed}`, borderRadius: 4, overflow: 'hidden' }}>
                 {[['Base case', false], ['Stressed losses', true]].map(([label, val]) => (
                   <button key={label} type="button" onClick={() => setStressed(val)} style={{
                     background: stressed === val ? (val ? pT.coral : pT.brass) : 'none',
                     border: 'none', color: stressed === val ? pT.navy : pT.bodyText,
                     fontFamily: P_FONT_UI, fontSize: 13, fontWeight: stressed === val ? 600 : 400,
-                    padding: '10px 20px', cursor: 'pointer', transition: 'background 0.15s, color 0.15s',
+                    padding: '10px 20px', cursor: 'pointer', transition: 'background 0.15s, color 0.15s', flex: 1,
                   }}>{label}</button>
                 ))}
               </div>
@@ -510,7 +505,7 @@ function PartnerEconomicsPage() {
               padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12,
               fontFamily: P_FONT_UI, fontSize: 13, letterSpacing: '0.04em', color: pT.bodyText, textAlign: 'left',
             }}>
-              <span>Rooftops — {roofs.length} location{roofs.length === 1 ? '' : 's'} <span style={{ color: pT.mutedText }}>· view &amp; edit</span></span>
+              <span>Rooftops · {roofs.length} location{roofs.length === 1 ? '' : 's'} <span style={{ color: pT.mutedText }}>· view &amp; edit</span></span>
               <span style={{ color: pT.brass, fontSize: 16, lineHeight: 1 }}>{roofsOpen ? '–' : '+'}</span>
             </button>
             {roofsOpen && (
@@ -549,7 +544,7 @@ function PartnerEconomicsPage() {
 
           {/* volume strip */}
           <div style={{
-            display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4, 1fr)',
+            display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(3, 1fr)',
             gap: isMobile ? 20 : 40, marginTop: isMobile ? 28 : 36, paddingTop: isMobile ? 24 : 30,
             borderTop: `1px solid ${pT.border}`,
           }}>
@@ -561,23 +556,23 @@ function PartnerEconomicsPage() {
             ))}
           </div>
           <p style={{ fontSize: 12, color: pT.mutedText, lineHeight: 1.6, margin: '20px 0 0' }}>
-            Figures reflect only the volume routed through the Brivio program above — not your group's total sales or F&amp;I volume.
+            Figures reflect only the volume routed through the Brivio program above, not your group's total sales or F&amp;I volume.
           </p>
         </div>
 
         {/* TIERS */}
         <div style={{ marginBottom: isMobile ? 12 : 16 }}>
-          {sectionLabel('What each path earns you annually')}
+          {sectionLabel('The capital you deploy determines your return')}
         </div>
         <div style={{
           display: 'grid',
           gridTemplateColumns: (isMobile || isTablet) ? '1fr' : 'repeat(3, 1fr)',
-          gridTemplateRows: (isMobile || isTablet) ? undefined : 'repeat(7, auto)',
+          gridTemplateRows: (isMobile || isTablet) ? undefined : 'repeat(10, auto)',
           gap: (isMobile || isTablet) ? 16 : '0 20px', marginBottom: 18,
         }}>
           <PTierCard isMobile={isMobile} isTablet={isTablet}
-            learnMore={P_LEARN.t1} learnOpen={learnOpen.t1} onToggleLearn={() => setLearnOpen(o => ({ ...o, t1: !o.t1 }))}
-            tag="Tier 1 · Zero capital" title="Participation"
+            learnMore={P_LEARN.t1} learnOpen={learnOpen} onToggleLearn={() => setLearnOpen(o => !o)}
+            tag="Zero capital · Participation" title="Earn"
             sub="Loans sold day one. You collect a share of the gain on every funded deal. No capital, no credit risk."
             income={r.t1Income} incomeLabel="per year, upfront income"
             rows={[
@@ -587,20 +582,19 @@ function PartnerEconomicsPage() {
             ]}
             note="On top of your existing finance reserve." />
           <PTierCard isMobile={isMobile} isTablet={isTablet}
-            learnMore={P_LEARN.t2} learnOpen={learnOpen.t2} onToggleLearn={() => setLearnOpen(o => ({ ...o, t2: !o.t2 }))}
-            tag="Tier 2 · Partial capital" title="Capital Partner"
-            sub="Prime sold as in Tier 1. You fund the junior slice of near-prime & subprime and keep the levered spread."
+            learnMore={P_LEARN.t2} learnOpen={learnOpen} onToggleLearn={() => setLearnOpen(o => !o)}
+            tag="Partial capital · Capital Partner" title="Invest"
+            sub="You invest alongside Brivio in loans to your own customers and earn lending income on that money, year after year."
             income={r.t2Income} incomeLabel="per year at steady state"
             rows={[
               ['Capital committed', pMoney(r.t2.cap), ''],
               ['Return on that capital', pPct(r.t2ROE * 100), r.t2ROE * 100 >= 12 ? 'good' : ''],
               ['vs. ' + pPct(hurdle) + ' alternative', (r.t2Incr >= 0 ? '+' : '') + pMoney(r.t2Incr) + ' / yr', r.t2Incr >= 0 ? 'brass' : ''],
-              ['Upfront prime income', pMoney(r.t2.primePart), ''],
             ]}
-            note="You take first-loss credit risk on retained capital. Brivio underwrites, services, and reports." />
+            note="You take first-loss risk on your capital. Brivio handles everything else." />
           <PTierCard isMobile={isMobile} isTablet={isTablet}
-            learnMore={P_LEARN.t3} learnOpen={learnOpen.t3} onToggleLearn={() => setLearnOpen(o => ({ ...o, t3: !o.t3 }))}
-            tag="Tier 3 · Full captive" title="Your Own Book"
+            learnMore={P_LEARN.t3} learnOpen={learnOpen} onToggleLearn={() => setLearnOpen(o => !o)}
+            tag="Full captive · Your Own Book" title="Own"
             sub="Your captive funds every loan across all credit bands on its own warehouse facility. All economics are yours."
             income={r.t3.income} incomeLabel="per year at steady state"
             rows={[
@@ -608,10 +602,10 @@ function PartnerEconomicsPage() {
               ['Return on that capital', pPct(r.t3ROE * 100), r.t3ROE * 100 >= 12 ? 'good' : ''],
               ['vs. ' + pPct(hurdle) + ' alternative', (r.t3Incr >= 0 ? '+' : '') + pMoney(r.t3Incr) + ' / yr', r.t3Incr >= 0 ? 'brass' : ''],
             ]}
-            note="Full portfolio credit risk. Requires a dedicated warehouse facility; typical path after 12–24 months in Tier 2." />
+            note="Full portfolio credit risk. Requires a dedicated warehouse facility." />
         </div>
         <p style={{ fontSize: 12.5, color: pT.mutedText, lineHeight: 1.65, marginBottom: isMobile ? 44 : 64 }}>
-          Tier 2 and Tier 3 income shown at steady state, reached roughly 30–36 months after launch as the retained book builds. Year-one income during ramp is lower. Stressed case adds +50 / +100 / +250 bps of net loss to prime / near-prime / subprime.
+          Invest and Own income shown at steady state, reached roughly 30–36 months after launch as the retained book builds. Year-one income during ramp is lower. Stressed case adds +50 / +100 / +250 bps of net loss to prime / near-prime / subprime.
         </p>
 
         {/* UNDER THE HOOD */}
@@ -624,7 +618,7 @@ function PartnerEconomicsPage() {
 
         {/* DISCLAIMER */}
         <p style={{ fontSize: 12, color: pT.mutedText, lineHeight: 1.65, margin: isMobile ? '40px 0 0' : '56px 0 0' }}>
-          Illustrative economics for discussion purposes only. Not an offer, commitment, or guarantee of returns. Tier 2 and Tier 3 structures involve credit risk to retained capital, are subject to structuring, capital-partner terms, and legal documentation, and retained capital is committed for the life of the loan pool. Figures assume steady-state portfolio composition and are before dealer-level taxes. Brivio Capital, Inc.
+          Illustrative economics for discussion purposes only. Not an offer, commitment, or guarantee of returns. Invest and Own structures involve credit risk to retained capital, are subject to structuring, capital-partner terms, and legal documentation, and retained capital is committed for the life of the loan pool. Figures assume steady-state portfolio composition and are before dealer-level taxes. Brivio Capital, Inc.
         </p>
       </div>
 
