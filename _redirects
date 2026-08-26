@@ -9,3 +9,6 @@ https://www.briviocapital.com/*   https://briviocapital.com/:splat  301!
 
 # 3. Prevent /index.html from being a distinct URL
 /index.html                        /                                 301!
+
+# 4. Clean URL for the unlisted pitch-deck page
+/pitch                             /pitch.html                       200

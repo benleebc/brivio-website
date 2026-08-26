@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brivio Capital – Investor Presentation</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'InterVariable','Inter','Helvetica Neue',Arial,sans-serif;background:#0D1B2A;color:#F5F7F9;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+::selection{background:rgba(185,155,95,0.3);color:#F5F7F9}
+a{color:#B99B5F;text-decoration:none}
+a:hover{color:#D4B87A}
+h1{text-wrap:balance}
+p{text-wrap:pretty}
+nav{position:sticky;top:0;z-index:100;height:84px;display:flex;align-items:center;gap:32px;padding:0 56px;background:rgba(13,27,42,0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(245,247,249,0.08)}
+nav .lock{display:flex;align-items:center}
+nav .lock img{height:64px;width:auto}
+nav .spacer{flex:1}
+nav .links{display:flex;align-items:center;gap:32px}
+nav .links a{color:rgba(245,247,249,0.62);font-size:16px;letter-spacing:0.02em;white-space:nowrap;transition:color .2s}
+nav .links a:hover{color:#F5F7F9}
+.btn-apply{display:inline-flex;align-items:center;height:40px;padding:0 22px;background:#B99B5F;color:#0D1B2A;border-radius:2px;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;white-space:nowrap;transition:background .2s}
+.btn-apply:hover{background:#D4BA85;color:#0D1B2A}
+@media (max-width:900px){nav{padding:0 32px;gap:20px}nav .links{gap:20px}}
+@media (max-width:700px){nav{height:64px;padding:0 20px}nav .lock img{height:44px}nav .links a{display:none}}
+.wrap{flex:1;width:100%;max-width:660px;margin:0 auto;padding:72px 24px 56px;display:flex;flex-direction:column;justify-content:center;gap:40px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#B99B5F;margin-bottom:20px}
+h1{font-size:clamp(32px,6vw,46px);font-weight:500;line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}
+.lead{font-size:17px;line-height:1.65;color:#C7CCD1}
+.dl{display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 28px;background:#B99B5F;color:#0D1B2A;font-size:16px;font-weight:500;letter-spacing:0.01em;border-radius:2px;transition:background .2s,transform .2s}
+.dl:hover{background:#D4B87A;color:#0D1B2A;transform:translateY(-1px)}
+.dl svg{flex:none}
+.meta{font-size:13px;color:rgba(245,247,249,0.45);margin-top:16px;letter-spacing:0.02em}
+footer{padding:48px 56px;background:#0D1B2A;border-top:1px solid rgba(245,247,249,0.08)}
+.fin{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.fin img{height:52px;width:auto;opacity:0.85}
+.tag{color:#656B72;font-size:11px;font-weight:300;letter-spacing:0.18em}
+.copy{color:rgba(101,107,114,0.45);font-size:12px}
+@media (max-width:700px){footer{padding:32px 20px}.fin{flex-direction:column;text-align:center;gap:14px}.fin img{height:40px}.tag{font-size:10px}.copy{font-size:11px}}
+.ov{position:fixed;inset:0;background:rgba(6,12,20,0.72);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:50}
+.ov.on{opacity:1;pointer-events:auto}
+.modal{position:relative;width:100%;max-width:460px;margin:auto;background:#F5F7F9;color:#0D1B2A;border-radius:3px;padding:40px 36px 36px;transform:translateY(14px) scale(.98);transition:transform .28s ease}
+.ov.on .modal{transform:none}
+.modal h2{font-size:26px;font-weight:500;letter-spacing:-0.01em;line-height:1.2;margin-bottom:10px}
+.modal .sub{font-size:15px;line-height:1.6;color:#5A646E;margin-bottom:26px}
+.x{position:absolute;top:14px;right:14px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;color:#8A939C;font-size:22px;line-height:1;border-radius:2px}
+.x:hover{color:#0D1B2A}
+form{display:flex;flex-direction:column;gap:16px}
+label{display:block;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#5A646E;margin-bottom:8px}
+input,textarea{width:100%;padding:0 16px;height:50px;background:#fff;border:1px solid rgba(13,27,42,0.14);border-radius:2px;color:#0D1B2A;font-size:16px;font-family:inherit;outline:none;transition:border-color .2s}
+textarea{height:96px;padding:13px 16px;resize:none;line-height:1.55}
+input:focus,textarea:focus{border-color:#B99B5F}
+button[type=submit]{height:52px;background:#0D1B2A;color:#F5F7F9;border:0;border-radius:2px;font-size:15px;font-weight:500;font-family:inherit;cursor:pointer;transition:background .2s}
+button[type=submit]:hover{background:#16283C}
+.thanks{font-size:22px;font-weight:500;line-height:1.4;letter-spacing:-0.01em;padding:8px 0 4px}
+@media (max-width:520px){.modal{padding:36px 24px 28px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="lock" href="index.html"><img src="assets/brivio-lockup-v2.png" alt="Brivio Capital"></a>
+  <div class="spacer"></div>
+  <div class="links">
+    <a href="index.html#how-it-works">How it Works</a>
+    <a href="index.html#why">Why Brivio</a>
+    <a href="about.html">About Us</a>
+    <a href="faq.html">FAQs</a>
+  </div>
+  <a class="btn-apply" href="index.html#contact">Apply to Partner</a>
+</nav>
+<div class="wrap">
+  <div>
+    <p class="eyebrow">Investor Presentation</p>
+    <h1>Dealer-owned captive finance, in full.</h1>
+    <p class="lead">The complete Brivio Capital investor presentation: the model, the economics, the market, and how dealer groups keep the finance income they currently give away.</p>
+  </div>
+  <div>
+    <a class="dl" id="dl" href="assets/Brivio%20Capital%20Investor%20Presentation_Website.pdf" download>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1v9m0 0 3.5-3.5M8 10 4.5 6.5M1.5 12v1.5A1 1 0 0 0 2.5 14.5h11a1 1 0 0 0 1-1V12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Download pitch deck
+    </a>
+    <p class="meta">PDF · opens in a new tab if your browser previews it</p>
+  </div>
+</div>
+<footer>
+  <div class="fin">
+    <a href="index.html"><img src="assets/brivio-lockup-v2.png" alt="Brivio Capital"></a>
+    <span class="tag">CAPITAL.&nbsp;&nbsp;CONNECTION.&nbsp;&nbsp;MOMENTUM.</span>
+    <span class="copy">© 2026 Brivio Capital</span>
+  </div>
+</footer>
+
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="modal" id="modal">
+    <button class="x" id="x" aria-label="Close">&times;</button>
+    <div id="body">
+      <h2 id="mt">Before you go, tell us who you are</h2>
+      <p class="sub">Your download has started. If you'd like us to follow up with context or answer questions, leave your details.</p>
+      <form id="f">
+        <input type="hidden" name="_subject" value="Pitch deck download">
+        <input type="hidden" name="source" value="/pitch">
+        <div><label for="n">Name</label><input id="n" name="name" placeholder="Your name" autocomplete="name"></div>
+        <div><label for="e">Email</label><input id="e" name="email" type="email" placeholder="your@email.com" autocomplete="email"></div>
+        <div><label for="m">Anything you'd like us to know</label><textarea id="m" name="message" placeholder="Optional"></textarea></div>
+        <button type="submit" id="sb">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+var ov=document.getElementById('ov'),dl=document.getElementById('dl');
+function open(){ov.classList.add('on');setTimeout(function(){var n=document.getElementById('n');if(n)n.focus();},300);}
+function close(){ov.classList.remove('on');}
+dl.addEventListener('click',function(){setTimeout(open,150);});
+document.getElementById('x').addEventListener('click',close);
+ov.addEventListener('click',function(e){if(e.target===ov)close();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+document.getElementById('f').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var btn=document.getElementById('sb');btn.disabled=true;btn.textContent='Sending…';
+  try{await fetch('https://formspree.io/f/xbdbozza',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(e.target)});}catch(_){}
+  document.getElementById('body').innerHTML='<p class="thanks">Thank you. We\u2019ll be in touch.</p>';
+  setTimeout(close,2200);
+});
+</script>
+</body>
+</html>
