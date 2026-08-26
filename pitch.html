@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P33J1Z05FL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P33J1Z05FL');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brivio Capital – Investor Presentation</title>
@@ -101,7 +103,7 @@ button[type=submit]:hover{background:#16283C}
       <h2 id="mt">Before you go, tell us who you are</h2>
       <p class="sub">Your download has started. If you'd like us to follow up with context or answer questions, leave your details.</p>
       <form id="f">
-        <input type="hidden" name="_subject" value="Pitch deck download">
+        <input type="hidden" name="_subject" value="Pitch deck download — identified">
         <input type="hidden" name="source" value="/pitch">
         <div><label for="n">Name</label><input id="n" name="name" placeholder="Your name" autocomplete="name"></div>
         <div><label for="e">Email</label><input id="e" name="email" type="email" placeholder="your@email.com" autocomplete="email"></div>
@@ -116,7 +118,17 @@ button[type=submit]:hover{background:#16283C}
 var ov=document.getElementById('ov'),dl=document.getElementById('dl');
 function open(){ov.classList.add('on');setTimeout(function(){var n=document.getElementById('n');if(n)n.focus();},300);}
 function close(){ov.classList.remove('on');}
-dl.addEventListener('click',function(){setTimeout(open,150);});
+dl.addEventListener('click',function(){
+  try{gtag('event','pitch_deck_download',{file:'Brivio-pitch-website.pdf',page:'/pitch'});}catch(_){}
+  var fd=new FormData();
+  fd.append('_subject','Pitch deck downloaded');
+  fd.append('event','Pitch deck download');
+  fd.append('page','/pitch');
+  fd.append('referrer',document.referrer||'direct');
+  fd.append('time',new Date().toString());
+  try{fetch('https://formspree.io/f/xbdbozza',{method:'POST',headers:{'Accept':'application/json'},body:fd,keepalive:true});}catch(_){}
+  setTimeout(open,150);
+});
 document.getElementById('x').addEventListener('click',close);
 ov.addEventListener('click',function(e){if(e.target===ov)close();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
