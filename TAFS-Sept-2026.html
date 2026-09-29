@@ -463,7 +463,7 @@ footer img{height:54px;width:auto}
                 </div>
                 <div class="pside">
                   <div class="pcard"><div class="h">Your dealership</div><p>Masano Auto Park, Reading, PA. Oil change due in 400 miles.</p><span class="go">Book service ›</span></div>
-                  <div class="pcard"><div class="h">Just for you</div><p>You're pre-qualified to upgrade at Tom Masano Ford.</p><span class="go">See your offer ›</span></div>
+                  <div class="pcard"><div class="h">Just for you</div><p>You're pre-qualified for a BMW at a Masano store.</p><span class="go">See your offer ›</span></div>
                 </div>
               </div>
             </div>
@@ -486,18 +486,18 @@ footer img{height:54px;width:auto}
           <span class="sample-tag">Sample loyalty mailer · illustrative</span>
           <div class="mail-wrap">
             <div class="mailer" aria-label="Sample loyalty mailer (illustration)">
-              <div class="mh"><div class="store">Tom Masano Ford<small>1600 Lancaster Ave, Reading, PA</small></div></div>
+              <div class="mh"><div class="store">Masano BMW<small>Reading, PA · A Masano Auto Group store</small></div></div>
               <div class="mb">
                 <div class="hi">Dana, thank you for 24 on-time payments.</div>
-                <div class="head">You've earned an upgrade. You're pre-qualified.*</div>
+                <div class="head">You've earned a step up to BMW. You're pre-qualified.*</div>
                 <div class="offer">
-                  <div class="veh"><b>2026 Ford Explorer</b>Selected for you based on your Escape</div>
+                  <div class="veh"><b>2026 BMW 330i</b>From your Ford Escape to a BMW, same Masano family</div>
                   <div class="pay">$699<small>/mo</small></div>
                 </div>
                 <p class="eq">Your 2021 Escape is worth more than you owe: <b>about $4,290 in equity</b> toward your next vehicle.</p>
                 <div class="mcta"><span>Claim your offer</span><em>Code TAFS-LOYAL · valid through Nov 30</em></div>
                 <div class="fin"><img src="https://tritonautomotivegroup.com/wp-content/uploads/TAFS.png" alt="" referrerpolicy="no-referrer" data-fallback="TAFS">Financing by Triton Automotive Financial Services</div>
-                <p class="fine">*Pre-qualification based on your TAFS payment history; final approval subject to credit review. Example: $48,395 price, $2,500 down plus $4,290 trade equity, $41,605 financed at 6.49% APR for 72 months = 72 payments of $699.18. Illustrative mock-up prepared for Triton Automotive Group. Not an offer of credit.</p>
+                <p class="fine">*Pre-qualification based on your TAFS payment history; final approval subject to credit review. Example: $48,675 price, $2,500 down plus $4,290 trade equity, $41,885 financed at 6.25% APR for 72 months = 72 payments of $699.11. Illustrative mock-up prepared for Triton Automotive Group. Not an offer of credit.</p>
               </div>
             </div>
             <div class="signals">
@@ -505,7 +505,7 @@ footer img{height:54px;width:auto}
               <ul>
                 <li><span class="dot"></span><span><b>24 of 24</b> payments on time</span></li>
                 <li><span class="dot"></span><span>Payoff <b>$14,210</b> vs. trade value <b>$18,500</b></span></li>
-                <li><span class="dot"></span><span>Bought pre-owned at <b>Masano Auto Park</b>, same group as Tom Masano Ford</span></li>
+                <li><span class="dot"></span><span>Bought a Ford pre-owned at <b>Masano Auto Park</b>; the data follows her to <b>Masano BMW</b></span></li>
                 <li><span class="dot"></span><span><b>5 service visits</b> at Masano stores</span></li>
                 <li><span class="dot"></span><span>Year 3 of 5: <b>the upgrade window</b></span></li>
               </ul>
@@ -635,7 +635,7 @@ footer img{height:54px;width:auto}
     <h2>Let's launch TAFS<span>together.</span></h2>
     <p>Next step is a signed pilot LOI. We'll bring the draft, a proposed pilot state and a store list to review.</p>
     <div class="cta">
-      <a class="btn" href="mailto:Charles.do@briviocapital.com,Ben.lee@briviocapital.com?subject=TAFS%20pilot" data-track="cta_email">Email the team</a>
+      <a class="btn" href="mailto:Charles.do@briviocapital.com?cc=Ben.lee@briviocapital.com&amp;subject=TAFS%20pilot" data-track="cta_email">Email the team</a>
     </div>
     <div class="who">
       <div><b>Charles Do</b>CEO, Brivio Capital</div>
@@ -654,7 +654,7 @@ footer img{height:54px;width:auto}
 
 <!-- ======================= ASSUMPTIONS DIALOG ======================= -->
 <dialog id="assump" aria-labelledby="assump-title">
-  <form method="dialog">
+  <form method="dialog" id="assumpForm">
     <div class="dlg-h">
       <h3 id="assump-title">Review assumptions</h3>
       <p>Change a number and the whole page updates.</p>
@@ -668,7 +668,7 @@ footer img{height:54px;width:auto}
       <div class="fld">
         <label for="inL">Loans per rooftop, per month <output id="outL">20</output></label>
         <div class="inw"><input id="inL" type="number" inputmode="numeric" min="1" max="200" step="1" value="20"></div>
-        <div class="help" id="helpL">About 21% of a typical Triton store's ~97 monthly sales.</div>
+        <div class="help" id="helpL">About 18% of a typical Triton store's ~111 monthly sales.</div>
       </div>
       <div class="fld">
         <label for="inP">Share of loans with 740+ credit <output id="outP">15%</output></label>
@@ -682,7 +682,7 @@ footer img{height:54px;width:auto}
     </div>
     <div class="dlg-f">
       <button class="linkish" type="button" id="resetA">Reset to proposal</button>
-      <button class="btn" value="done">Done</button>
+      <button class="btn" type="button" id="doneA">Done</button>
     </div>
   </form>
 </dialog>
@@ -841,7 +841,7 @@ function render(animateFrom){
   document.getElementById('outR').textContent = state.R;
   document.getElementById('outL').textContent = state.L;
   document.getElementById('outP').textContent = state.P + '%';
-  const perStore = 350000/300/12; // Triton: 350,000+ units, 300+ dealerships
+  const perStore = 111; // ~111 monthly sales per Triton rooftop (Brivio assumption; 20 loans = ~18% penetration)
   document.getElementById('helpL').textContent = `About ${Math.round(state.L/perStore*100)}% of a typical Triton store's ~${Math.round(perStore)} monthly sales.`;
   document.getElementById('helpP').textContent = `740+ pays ${$d(r.p740)} per loan all-in. Below 740 pays ${$d(r.pLow)}.`;
   return r;
@@ -873,7 +873,13 @@ document.getElementById('resetA').addEventListener('click',()=>{
   const prev = drawn; Object.assign(state, DEFAULTS); syncInputs(); render(prev);
   window.TAFS_TRACK && TAFS_TRACK.assumptionsChanged({...state, reset:true});
 });
-dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); }); // click backdrop to close
+document.getElementById('doneA').addEventListener('click',()=>{ syncInputs(); dlg.close(); });
+document.getElementById('assumpForm').addEventListener('submit', e => e.preventDefault());
+[inR,inL,inP].forEach(inp=>inp.addEventListener('keydown', e => { if (e.key === 'Enter'){ e.preventDefault(); inp.blur(); } }));
+let downOnBackdrop = false;
+const outside = e => { const r = dlg.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
+dlg.addEventListener('pointerdown', e => { downOnBackdrop = e.target === dlg && outside(e); });
+dlg.addEventListener('click', e => { if (downOnBackdrop && e.target === dlg && outside(e)) dlg.close(); downOnBackdrop = false; });
 
 /* ---------- value-prop carousel ---------- */
 (function(){
