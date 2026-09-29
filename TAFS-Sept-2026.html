@@ -101,9 +101,11 @@ p{margin:0}
 section{scroll-margin-top:80px}
 .sec{padding:96px 0}
 .sec.mist{background:var(--mist)}
+#why{padding-bottom:48px}#terms{padding-top:48px}
 .sec-head{max-width:none}
 .sec-head h2{font-size:clamp(28px,3.4vw,42px);margin-top:12px}
 .sec-head p{margin-top:14px;font-size:18px;color:var(--text);max-width:1000px}
+#terms .sec-head p{max-width:none}
 @media (max-width:640px){.sec{padding:64px 0}}
 
 /* ---------- Value-prop carousel ---------- */
@@ -129,6 +131,7 @@ section{scroll-margin-top:80px}
 .ticks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
 .ticks li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15.5px;line-height:1.5}
 .ticks li svg{margin-top:3px;color:var(--navy)}
+.terms .panel:not(.need) .ticks li svg{color:#B99B5F}
 .ticks b{color:var(--navy-ink)}
 .chips{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
 .chips li{font-size:13.5px;font-weight:600;color:var(--navy-ink);background:#EEF3FA;border:1px solid #DCE6F3;border-radius:999px;padding:7px 14px}
@@ -217,7 +220,7 @@ section{scroll-margin-top:80px}
 .dana p.one{margin-top:16px;padding:14px 16px;background:#EEF3FA;border-radius:12px;font-size:14.5px;color:var(--text)}
 .dana p.one b{color:var(--navy-ink)}
 .mailer{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #d9dee6;background:#fff}
-.mailer .mh{background:var(--navy-deep);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.mailer .mh{background:var(--navy);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
 .mailer .mh .store{font-weight:800;letter-spacing:.06em;font-size:15px;text-transform:uppercase}
 .mailer .mh .store small{display:block;font-weight:400;letter-spacing:0;text-transform:none;font-size:11.5px;color:#BFD0E6}
 .mailer .mb{padding:18px 20px 16px}
@@ -287,8 +290,9 @@ table.tbl{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px;fon
 .kpis .ev .vs b{color:var(--navy-ink)}
 .perloan .vs{margin-top:auto;padding-top:16px;font-size:14.5px;color:var(--muted)}
 .perloan .vs b{color:var(--navy-ink)}
-.chart-panel{margin-top:24px}
-@media (max-width:860px){.kpis{grid-template-columns:1fr}}
+.ev-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.btn.sm{padding:8px 14px;font-size:13.5px}
+.econ-foot p{padding:0 14px}
+@media (max-width:860px){.kpis,.econ-foot{grid-template-columns:1fr}.econ-foot{gap:4px}}
 .side{display:grid;grid-template-rows:1fr auto;gap:24px}
 .side .ev{display:flex;flex-direction:column}
 .side .ev .foot{margin-top:auto;padding-top:14px}
@@ -305,7 +309,7 @@ table.tbl{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px;fon
 .perloan .foot{font-size:12.5px;color:var(--muted);margin-top:10px}
 .assump-btn{width:100%;justify-content:center}
 .assump-now{font-size:13px;color:var(--muted);text-align:center;margin-top:10px}
-.econ-foot{margin:14px 14px 0;font-size:11.5px;color:var(--muted);line-height:1.55}
+.econ-foot{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:0;margin:14px 0 0;font-size:11.5px;color:var(--muted);line-height:1.55}
 @media (max-width:960px){.econ{grid-template-columns:1fr}}
 @media (max-width:640px){.panel{padding:20px 16px}.ev .big{font-size:48px}.tbl{font-size:13px}.tbl th,.tbl td{padding:8px 4px}}
 
@@ -335,11 +339,15 @@ dialog::backdrop{background:rgba(7,30,60,.4)}
 .terms .panel h3{font-size:22px;display:flex;align-items:center;gap:12px}
 .terms .panel h3 .n{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:15px}
 .terms .panel.need h3 .n{background:var(--red)}
+.terms .panel h3 .n.logo{background:none;border-radius:0;width:38px;height:38px;overflow:hidden;display:block}
+.terms .panel h3 .n.logo img{height:38px;width:auto;max-width:none;display:block;margin:0 auto}
+.terms .panel h3 .n.tri{width:33px;position:relative;flex:none}
+.terms .panel h3 .n.tri img{position:absolute;left:0;top:0;height:38px;width:auto;max-width:none;margin:0 !important}
 .terms .ticks{gap:18px !important;margin-top:22px}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
 .step{padding:20px 22px;background:#fff;position:relative}
 .step+.step{border-left:1px solid var(--line)}
-.step .w{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.step .w{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
 .step h4{font-size:18px;margin-top:6px}
 .step p{font-size:14.5px;margin-top:4px;color:var(--muted)}
 @media (max-width:860px){.terms{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.step+.step{border-left:0;border-top:1px solid var(--line)}}
@@ -421,8 +429,8 @@ footer img{height:54px;width:auto}
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">Retain the economics</div>
-      <h2>Keep the economics lenders keep today</h2>
-      <p>Big lenders pay a flat incentive once. TAFS pays when the loan funds, then keeps paying while it's on the books.</p>
+      <h2>Keep the economics lenders earn today</h2>
+      <p>In addition to your typical dealer markup or flat-fee.</p>
     </div>
     <div class="kpis">
       <div class="panel perloan">
@@ -432,33 +440,19 @@ footer img{height:54px;width:auto}
           <div class="cell"><div class="t">740+ credit</div><div class="v" data-bind="p740">~$250</div></div>
           <div class="cell hi"><div class="t">Below 740</div><div class="v" data-bind="pLow">~$700</div></div>
         </div>
-        <p class="vs">Typical group incentive today: <b>$150 to $300</b></p>
+        <p class="vs">Compared to Triton's lender incentive: <b>$250 to $300</b></p>
       </div>
       <div class="panel ev">
-        <div class="lbl">Enterprise value added</div>
+        <div class="ev-top"><div class="lbl">Enterprise value added</div><button class="btn ghost sm" type="button" data-open-assumptions data-track="ev_review">Review assumptions</button></div>
         <div class="big" data-bind="ev">$158M</div>
         <div class="row">
           <div class="cell"><div class="t">Year 3 payout</div><div class="v" data-bind="y3">$39.5M</div></div>
           <div class="cell"><div class="t">Earnings multiple</div><div class="v">4x</div></div>
         </div>
-        <p class="vs">About <b data-bind="evPerRoof">$527K</b> of value per rooftop, without adding a store.</p>
+        <p class="vs">About <b data-bind="evPerRoof">$527K</b> of value per rooftop.</p>
       </div>
     </div>
-    <p class="econ-foot">Per loan: <span data-bind="upLoan">~$500</span> upfront, net of the $2,495 monthly store fee, plus <span data-bind="bonusLoan">~$140</span> servicing bonus (0.10% of portfolio above $500M, 0.20% above $1B), paid annually. Enterprise value at 4x, at or below the blue sky midpoint for most franchises (Haig Report, Q1 2026). Illustrative.</p>
-    <div class="panel chart-panel">
-      <div class="chart-head">
-        <div>
-          <h3>Annual payout to Triton members</h3>
-          <div class="muted"><span data-bind="total3Long">$66.3M</span> over 3 years · <span data-bind="assumpNow">300+ rooftops · 20 loans/rooftop · 15% 740+</span></div>
-        </div>
-        <button class="btn ghost" type="button" data-open-assumptions data-track="chart_review">Review assumptions</button>
-      </div>
-      <div class="legend">
-        <span><i style="background:var(--c1)"></i>Upfront payout, net of monthly store fee</span>
-        <span><i style="background:var(--c2)"></i>Accrued servicing bonus</span>
-      </div>
-      <div class="chart-box" id="chart"><div class="tip" id="tip"></div></div>
-    </div>
+    <div class="econ-foot"><p>Per loan: upfront sales commission + annual volume bonus - monthly subscription fee</p><p>Enterprise value at 4x (Haig Report, Q1 2026).</p></div>
   </div>
 </section>
 
@@ -540,7 +534,7 @@ footer img{height:54px;width:auto}
               <div class="mh"><div class="store">Masano BMW<small>Reading, PA · A Masano Auto Group store</small></div></div>
               <div class="mb">
                 <div class="hi">Jeff, thank you for 24 on-time payments.</div>
-                <div class="head">You've earned a step up to BMW. You're pre-qualified.*</div>
+                <div class="head">You've earned a step up to BMW.<br>You're pre-qualified.*</div>
                 <div class="offer">
                   <div class="veh"><b>2026 BMW 330i</b>From your Ford Escape to a BMW, same Masano family</div>
                   <div class="pay">$699<small>/mo</small></div>
@@ -568,27 +562,27 @@ footer img{height:54px;width:auto}
     </div>
     <div class="terms">
       <div class="panel">
-        <h3><span class="n">B</span>What Brivio brings</h3>
+        <h3><span class="n logo"><img src="assets/brivio-b-gold.png" alt="Brivio"></span>What Brivio brings</h3>
         <ul class="ticks">
-          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>A 3-month pilot at zero cost.</b> The monthly store fee is waived.</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Funding for up to $25 million</b> in pilot loans.</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Upfront economics paid at the end of the pilot</b>, about <b data-bind="pilotPay">$148K</b>.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>3-month pilot at zero cost.</b> No monthly subscription fee</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Funding - up to $25 million</b> in pilot loans.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Economics paid at the end of the pilot</b></span></li>
           <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Licensing, compliance, underwriting, servicing &amp; capital markets</b></span></li>
         </ul>
       </div>
       <div class="panel need">
-        <h3><span class="n">T</span>What we need from Triton</h3>
+        <h3><span class="n logo tri"><img src="https://tritonautomotivegroup.com/wp-content/uploads/tag-logo-01-01.png" alt="Triton" referrerpolicy="no-referrer"></span>What we need from Triton</h3>
         <ul class="ticks">
-          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Signed letter of intent</b></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Non-binding letter of intent</b></span></li>
           <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Partnership agreement</b></span></li>
-          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>The pilot state and about 8 rooftops</b>, chosen together.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>The pilot state &amp; rooftops</b>, chosen together.</span></li>
           <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>One executive sponsor</b> at Triton.</span></li>
         </ul>
       </div>
     </div>
     <div class="steps">
-      <div class="step"><div class="w">Step 1</div><h4>Sign the LOI</h4><p>Agree on the pilot state and stores.</p></div>
-      <div class="step"><div class="w">Step 2 · 3 months</div><h4>Run the pilot</h4><p>About 8 rooftops. No fees. Upfront economics paid at the end.</p></div>
+      <div class="step"><div class="w">Step 1</div><h4>Sign the LOI &amp; agreement</h4><p>Agree on the pilot state and stores.</p></div>
+      <div class="step"><div class="w">Step 2 · 3 months</div><h4>Run the pilot</h4><p>No fees. Economics paid at the end.</p></div>
       <div class="step"><div class="w">Step 3</div><h4>Roll out to members</h4><p>Add groups and stores at their own pace.</p></div>
     </div>
   </div>
@@ -628,7 +622,7 @@ footer img{height:54px;width:auto}
       <div class="fld">
         <label for="inR">Rooftops on TAFS <output id="outR">300</output></label>
         <div class="inw"><input id="inR" type="number" inputmode="numeric" min="1" max="1000" step="1" value="300"></div>
-        <div class="help">At full rollout. Triton has 300+ member dealerships.</div>
+        <div class="help">At full rollout. Triton has 300+ rooftops.</div>
       </div>
       <div class="fld">
         <label for="inL">Loans per rooftop, per month <output id="outL">20</output></label>
@@ -724,6 +718,7 @@ function topRoundedPath(x,y,w,h,r){ if (h<=0) return ''; r=Math.min(r,h,w/2); re
 function rectPath(x,y,w,h){ if (h<=0) return ''; return `M${x},${y}H${x+w}V${y+h}H${x}Z`; }
 
 function drawChart(res, from){
+  if (!chartEl) return;
   const W=Math.max(300, Math.round(chartEl.clientWidth||640)), H = W < 520 ? 250 : 320, m={t:30,r:4,b:34,l:W<520?40:48};
   const iw=W-m.l-m.r, ih=H-m.t-m.b;
   const sc = niceScale(Math.max(...res.years.map(y=>y.total), 1)), max = sc.max;
@@ -896,8 +891,8 @@ document.querySelectorAll('img[data-fallback]').forEach(img=>{
 });
 
 render();
-let rzw = chartEl.clientWidth;
-addEventListener('resize',()=>{ if (Math.abs(chartEl.clientWidth - rzw) > 20){ rzw = chartEl.clientWidth; const r = calc(state.R,state.L,state.P); drawChart(r, drawn); } });
+let rzw = chartEl ? chartEl.clientWidth : 0;
+addEventListener('resize',()=>{ if (chartEl && Math.abs(chartEl.clientWidth - rzw) > 20){ rzw = chartEl.clientWidth; const r = calc(state.R,state.L,state.P); drawChart(r, drawn); } });
 </script>
 
 <!-- =====================================================================
