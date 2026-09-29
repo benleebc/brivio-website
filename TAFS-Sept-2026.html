@@ -82,8 +82,8 @@ p{margin:0}
 @media (max-width:640px){.hero .wrap{padding-top:56px;padding-bottom:60px}.hero h1{display:block;border-left:8px solid var(--red);padding-left:14px}.hero h1 .bar{display:none}}
 .hero-head{display:flex;align-items:center;gap:32px}
 .hero-head h1{flex:none}
-.hero-logo{flex:none;width:clamp(160px,14vw,240px);margin-top:18px}
-.hero-logo img{width:100%;height:auto;display:block;filter:drop-shadow(0 10px 24px rgba(0,20,60,.35))}
+.hero-logo{flex:none;width:clamp(90px,8vw,130px);margin-top:18px;overflow:hidden;filter:drop-shadow(0 10px 24px rgba(0,20,60,.35))}
+.hero-logo img{width:200%;max-width:none;height:auto;display:block}
 @media (max-width:980px){.hero-logo{display:none}}
 
 /* ---------- Stat band (Triton-style badges) ---------- */
@@ -107,7 +107,7 @@ section{scroll-margin-top:80px}
 @media (max-width:640px){.sec{padding:64px 0}}
 
 /* ---------- Value-prop carousel ---------- */
-.vp-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.vp-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
 .vp-tab{position:relative;text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 24px 26px;cursor:pointer;font:inherit;color:inherit;transition:border-color .2s,box-shadow .2s,transform .2s;overflow:hidden}
 .vp-tab:hover{border-color:#bcd0ea}
 .vp-tab .ic{width:46px;height:46px;border-radius:12px;background:#EAF1FB;color:var(--navy);display:grid;place-items:center}
@@ -119,9 +119,10 @@ section{scroll-margin-top:80px}
 .vp-tab[aria-selected="true"] p{color:#CFE0F6}
 .vp-tab[aria-selected="true"] .ic{background:rgba(255,255,255,.14);color:#fff}
 .vp-tab:focus-visible{outline:3px solid #8DB8EE;outline-offset:2px}
-.vp-panels{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);min-height:520px;position:relative}
+.vp-panels{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);position:relative;display:grid}
 .vp-panel{display:none;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;padding:44px;animation:fade .35s ease}
-.vp-panel.on{display:grid}
+.vp-panel{grid-area:1/1;align-items:center;display:grid;visibility:hidden;animation:none}
+.vp-panel.on{visibility:visible;animation:fade .35s ease}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .vp-panel h3{font-size:28px}
 .vp-panel .sub{margin-top:10px;font-size:17px}
@@ -129,6 +130,9 @@ section{scroll-margin-top:80px}
 .ticks li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15.5px;line-height:1.5}
 .ticks li svg{margin-top:3px;color:var(--navy)}
 .ticks b{color:var(--navy-ink)}
+.chips{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{font-size:13.5px;font-weight:600;color:var(--navy-ink);background:#EEF3FA;border:1px solid #DCE6F3;border-radius:999px;padding:7px 14px}
+.team{margin-top:28px !important}
 .sample-tag{display:block;font-size:11px;line-height:16px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .vp-panel > div:first-child:has(+ div > .sample-tag){padding-top:28px}
 @media (max-width:900px){.vp-panel > div:first-child:has(+ div > .sample-tag){padding-top:0}}
@@ -144,7 +148,8 @@ section{scroll-margin-top:80px}
 }
 
 /* Panel 1: per-loan card */
-.loan-card{background:var(--mist);border:1px solid var(--line);border-radius:16px;padding:28px}
+.loan-card{background:var(--mist);border:1px solid var(--line);border-radius:16px;padding:32px}
+.loan-card .vs{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-size:15px}
 .loan-card .lbl{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .loan-card .big{font-size:64px;font-weight:800;color:var(--navy);line-height:1;margin-top:10px;letter-spacing:-.02em}
 .loan-card .big small{font-size:18px;font-weight:600;color:var(--muted);letter-spacing:0;margin-left:6px}
@@ -192,8 +197,15 @@ section{scroll-margin-top:80px}
 @media (max-width:640px){.portal-body{grid-template-columns:1fr}.portal-top nav{display:none}}
 
 /* Panel 3: mailer + data signals */
-#p-data{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
-.mail-wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:16px;align-items:stretch}
+#p-data{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.mail-wrap{display:block}
+.dana{margin-top:26px;border-top:1px solid var(--line);padding-top:18px}
+.dana .h{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dana dl{margin:12px 0 0;display:grid;gap:0}
+.dana dl div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.dana dt{color:var(--muted)}
+.dana dd{margin:0;font-weight:700;color:var(--navy-ink);text-align:right}
+.dana p{margin-top:14px;font-size:14px;color:var(--muted)}
 .mailer{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #d9dee6;background:#fff}
 .mailer .mh{background:var(--navy-deep);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
 .mailer .mh .store{font-weight:800;letter-spacing:.06em;font-size:15px;text-transform:uppercase}
@@ -225,7 +237,9 @@ section{scroll-margin-top:80px}
 @media (max-width:900px){#p-data{grid-template-columns:1fr}}
 
 /* ---------- Economics ---------- */
-.econ{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:28px;margin-top:40px;align-items:start}
+.econ{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:24px;margin-top:40px;align-items:stretch}
+.econ > .panel{display:flex;flex-direction:column}
+.econ > .panel .chart-box{margin-top:auto;padding-top:10px}
 .panel{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:28px}
 .chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
 .chart-head h3{font-size:20px}
@@ -250,7 +264,18 @@ table.tbl{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px;fon
 .tbl th:first-child,.tbl td:first-child{text-align:left}
 .tbl thead th{white-space:nowrap;font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-top:0}
 .tbl tr.tot td{font-weight:800;color:var(--navy-ink)}
-.side{display:grid;gap:18px}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.kpis .panel{display:flex;flex-direction:column}
+.perloan .big{font-size:58px;font-weight:800;line-height:1;color:var(--navy);margin-top:10px;letter-spacing:-.02em}
+.perloan .big small{font-size:18px;font-weight:600;color:var(--muted);letter-spacing:0;margin-left:6px}
+.perloan .row{margin-top:18px !important}
+.perloan .vs{margin-top:auto;padding-top:16px;font-size:14.5px;color:var(--muted)}
+.perloan .vs b{color:var(--navy-ink)}
+.chart-panel{margin-top:24px}
+@media (max-width:860px){.kpis{grid-template-columns:1fr}}
+.side{display:grid;grid-template-rows:1fr auto;gap:24px}
+.side .ev{display:flex;flex-direction:column}
+.side .ev .foot{margin-top:auto;padding-top:14px}
 .ev .lbl,.perloan .lbl{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .ev .big{font-size:58px;font-weight:800;line-height:1;color:var(--navy);margin-top:10px;letter-spacing:-.02em}
 .ev p{margin-top:10px;font-size:15px}
@@ -259,12 +284,12 @@ table.tbl{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px;fon
 .perloan .cell{background:var(--mist);border-radius:12px;padding:14px}
 .perloan .cell .t{font-size:13px;font-weight:600;color:var(--muted)}
 .perloan .cell .v{font-size:32px;font-weight:800;color:var(--navy-ink);line-height:1.1;margin-top:4px}
-.perloan .cell.hi{background:#0A2A52}
-.perloan .cell.hi .t{color:#9EC0EA}.perloan .cell.hi .v{color:#fff}
+.perloan .cell.hi{background:#E3ECF8}
+.perloan .cell.hi .t{color:var(--muted)}.perloan .cell.hi .v{color:var(--navy)}
 .perloan .foot{font-size:12.5px;color:var(--muted);margin-top:10px}
 .assump-btn{width:100%;justify-content:center}
 .assump-now{font-size:13px;color:var(--muted);text-align:center;margin-top:10px}
-.econ-foot{margin-top:18px;font-size:12.5px;color:var(--muted);max-width:900px;line-height:1.55}
+.econ-foot{margin-top:18px;font-size:12.5px;color:var(--muted);max-width:none;line-height:1.55}
 @media (max-width:960px){.econ{grid-template-columns:1fr}}
 @media (max-width:640px){.panel{padding:20px 16px}.ev .big{font-size:48px}.tbl{font-size:13px}.tbl th,.tbl td{padding:8px 4px}}
 
@@ -339,8 +364,8 @@ footer img{height:54px;width:auto}
       <span class="for"><b>Financial Services</b>Proposal from Brivio · Sept 2026</span>
     </a>
     <nav class="nav" aria-label="Sections">
-      <a href="#why">Why TAFS</a>
       <a href="#numbers">The numbers</a>
+      <a href="#why">Why TAFS</a>
       <a href="#terms">Terms</a>
       <a class="btn" href="#next" data-track="nav_next">Next steps</a>
     </nav>
@@ -374,23 +399,59 @@ footer img{height:54px;width:auto}
   </div>
 </section>
 
+<!-- ======================= THE NUMBERS ======================= -->
+<section class="sec mist" id="numbers" data-sec="economics">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Retain the economics</div>
+      <h2>Keep the economics lenders keep today</h2>
+      <p>Big lenders pay a flat incentive once. TAFS pays when the loan funds, then keeps paying while it's on the books.</p>
+    </div>
+    <div class="kpis">
+      <div class="panel perloan">
+        <div class="lbl">All-in payout per funded loan</div>
+        <div class="big" data-bind="blended">~$640<small>blended</small></div>
+        <div class="row">
+          <div class="cell"><div class="t">740+ credit</div><div class="v" data-bind="p740">~$250</div></div>
+          <div class="cell hi"><div class="t">Below 740</div><div class="v" data-bind="pLow">~$700</div></div>
+        </div>
+        <p class="vs">Typical group incentive today: <b>$150 to $300</b></p>
+      </div>
+      <div class="panel ev">
+        <div class="lbl">Enterprise value added</div>
+        <div class="big" data-bind="ev">$158M</div>
+        <p>At 4x Year 3 payout of <b data-bind="y3">$39.5M</b>. Dealer groups are valued on earnings, and TAFS adds earnings without adding a store.</p>
+      </div>
+    </div>
+    <div class="panel chart-panel">
+      <div class="chart-head">
+        <div>
+          <h3>Annual payout to Triton members</h3>
+          <div class="muted"><span data-bind="total3Long">$66.3M</span> over 3 years · <span data-bind="assumpNow">300 rooftops · 20 loans/rooftop · 15% 740+</span></div>
+        </div>
+        <button class="btn ghost" type="button" data-open-assumptions data-track="chart_review">Review assumptions</button>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--c1)"></i>Upfront payout, net of monthly store fee</span>
+        <span><i style="background:var(--c2)"></i>Accrued servicing bonus</span>
+      </div>
+      <div class="chart-box" id="chart"><div class="tip" id="tip"></div></div>
+    </div>
+    <p class="econ-foot">Per loan: <span data-bind="upLoan">~$500</span> upfront as the loan funds, after the $2,495 monthly store fee (waived in the pilot), plus <span data-bind="bonusLoan">~$140</span> servicing bonus: 0.10% of portfolio above $500M and 0.20% above $1B, paid annually. At <span data-bind="lprShort">20 loans per rooftop a month</span>; rollout ramps over ~2 years. Enterprise value: 4x is at or below the blue sky midpoint for 15 of the 20 franchises Haig Partners tracks (Haig Report, Q1 2026); illustrative.</p>
+  </div>
+</section>
+
 <!-- ======================= VALUE PROPS ======================= -->
 <section class="sec" id="why" data-sec="value_props">
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">Why TAFS</div>
-      <h2>Three ways your own finance company pays off</h2>
-      <p>Today your members send billions in loans to outside lenders and get paid once. TAFS keeps the economics, the brand and the customer inside Triton.</p>
+      <h2>Own the brand and the customer</h2>
+      <p>With TAFS, the name on the contract and the data behind every loan stay inside Triton.</p>
     </div>
 
     <div class="vp-tabs" role="tablist" aria-label="Value propositions">
-      <button class="vp-tab" role="tab" id="t-econ" aria-controls="p-econ" aria-selected="true" data-key="retain_economics">
-        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><ellipse cx="9" cy="6" rx="6" ry="2.5"/><path d="M3 6v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V6"/><path d="M3 10v4c0 1.4 2.7 2.5 6 2.5"/><ellipse cx="15.5" cy="14" rx="5.5" ry="2.3"/><path d="M10 14v4c0 1.3 2.5 2.3 5.5 2.3S21 19.3 21 18v-4"/></svg></span>
-        <h3>Retain economics</h3>
-        <p>Keep the loan income that outside lenders keep today.</p>
-        <span class="prog"></span>
-      </button>
-      <button class="vp-tab" role="tab" id="t-brand" aria-controls="p-brand" aria-selected="false" data-key="own_brand">
+      <button class="vp-tab" role="tab" id="t-brand" aria-controls="p-brand" aria-selected="true" data-key="own_brand">
         <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v6c0 4.6-3.3 7.9-8 9-4.7-1.1-8-4.4-8-9V6l8-3Z"/><path d="m8.5 12 2.4 2.4L15.8 9.6"/></svg></span>
         <h3>Own the brand experience</h3>
         <p>Every contract, statement and payment says Triton.</p>
@@ -405,46 +466,12 @@ footer img{height:54px;width:auto}
     </div>
 
     <div class="vp-panels" id="vp-panels">
-      <!-- Panel 1: Retain economics -->
-      <div class="vp-panel on" role="tabpanel" id="p-econ" aria-labelledby="t-econ">
-        <div>
-          <h3>Keep the economics lenders keep today</h3>
-          <p class="sub">Big lenders pay you a flat and collect for five years. TAFS pays you when the loan funds, then keeps paying while it's on the books.</p>
-          <ul class="ticks">
-            <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Paid on top of dealer reserve.</b> This is new money, not a reshuffle of what you already earn.</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>No change at the F&amp;I desk.</b> TAFS shows up as one more lender in Dealertrack and RouteOne.</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>No capital and no credit risk.</b> Loans are sold to institutional funding partners when they fund. Triton never holds a loan.</span></li>
-          </ul>
-        </div>
-        <div>
-          <div class="loan-card">
-            <div class="lbl">Per funded loan, all-in</div>
-            <div class="big" data-bind="blended">$633<small>blended</small></div>
-            <div class="split" aria-hidden="true"><span class="a" data-bind-w="upPct" style="width:78%"></span><span class="b" style="flex:1"></span></div>
-            <div class="split-legend">
-              <div><i style="background:var(--c1)"></i><span>Upfront, as loans fund <span style="color:var(--muted)">(after the $2,495 monthly store fee)</span></span><b data-bind="upLoan">$495</b></div>
-              <div><i style="background:var(--c2)"></i><span>Servicing bonus, accrued over the life of the loan</span><b data-bind="bonusLoan">$138</b></div>
-            </div>
-            <div class="tiers">
-              <div class="tier"><div class="t">740+ credit</div><div class="v" data-bind="p740">~$250</div></div>
-              <div class="tier"><div class="t">Below 740</div><div class="v" data-bind="pLow">~$700</div></div>
-            </div>
-            <p class="vs">Typical big-lender flat today: <b>$150 to $300</b></p>
-          </div>
-        </div>
-      </div>
-
       <!-- Panel 2: Own brand experience -->
-      <div class="vp-panel" role="tabpanel" id="p-brand" aria-labelledby="t-brand">
+      <div class="vp-panel on" role="tabpanel" id="p-brand" aria-labelledby="t-brand">
         <div>
           <h3>Every touchpoint says Triton</h3>
-          <p class="sub">Your customer never hears the name Brivio. From the contract to the payoff letter, the relationship is with TAFS and the store that sold the car.</p>
-          <ul class="ticks">
-            <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>TAFS on the contract</b>, welcome kit, statements and lien release</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>A TAFS-branded customer portal</b> and payment reminders</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Servicing and collections run under the TAFS name</b>, to your standards</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Every login is a chance to sell</b>: service reminders and upgrade offers from your own stores</span></li>
-          </ul>
+          <p class="sub">From contract to payoff letter, your customer deals with TAFS and the store that sold the car.</p>
+          <ul class="chips"><li>TAFS on every contract</li><li>Branded customer portal</li><li>Servicing in the TAFS name</li></ul>
         </div>
         <div>
           <span class="sample-tag">Sample customer portal · illustrative</span>
@@ -469,7 +496,7 @@ footer img{height:54px;width:auto}
                   <div class="fakebtn" aria-hidden="true">Make a payment</div>
                 </div>
                 <div class="pside">
-                  <div class="pcard"><div class="h">Your dealership</div><p>Masano Auto Park, Reading, PA. Oil change due in 400 miles.</p><span class="go">Book service ›</span></div>
+                  <div class="pcard"><div class="h">Your dealership</div><p>Masano Auto Park, Reading, PA</p><span class="go">Book service ›</span></div>
                   <div class="pcard"><div class="h">Just for you</div><p>You're pre-qualified for a BMW at a Masano store.</p><span class="go">See your offer ›</span></div>
                 </div>
               </div>
@@ -482,12 +509,8 @@ footer img{height:54px;width:auto}
       <div class="vp-panel" role="tabpanel" id="p-data" aria-labelledby="t-data">
         <div>
           <h3>Market to your customers with your own data</h3>
-          <p class="sub">Today the bank that funds the loan sees the payment history, the equity position and the payoff date. With TAFS, Triton does, across every member store and franchise.</p>
-          <ul class="ticks">
-            <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Know who's ready</b>: on-time payers with equity, before a competitor's mailer reaches them</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Cross-sell inside the group</b>: a pre-owned buyer today is a new-car buyer at a sister store tomorrow</span></li>
-            <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>It compounds</b>: every funded loan adds to a customer file that 300+ stores and 46 franchises can sell from</span></li>
-          </ul>
+          <p class="sub">Payment history, equity and payoff dates stay with Triton, not the bank, across every member store.</p>
+          <div class="dana"><div class="h">What TAFS knows about Dana</div><dl><div><dt>On-time payments</dt><dd>24 of 24</dd></div><div><dt>Equity in her Escape</dt><dd>+$4,290</dd></div><div><dt>Bought at</dt><dd>Masano Auto Park</dd></div><div><dt>Offer from</dt><dd>Masano BMW</dd></div></dl><p>Today this file sits with the bank that funded the loan. With TAFS, it sits with Triton.</p></div>
         </div>
         <div>
           <span class="sample-tag">Sample loyalty mailer · illustrative</span>
@@ -507,75 +530,10 @@ footer img{height:54px;width:auto}
                 <p class="fine">*Based on TAFS payment history; subject to credit approval. $48,675 price, $2,500 down + $4,290 trade equity, $41,885 at 6.25% APR for 72 mo = $699.11/mo. Illustrative only; not an offer of credit.</p>
               </div>
             </div>
-            <div class="signals">
-              <div class="h">Why Dana, why now</div>
-              <ul>
-                <li><span class="dot"></span><span><b>24 of 24</b> payments on time</span></li>
-                <li><span class="dot"></span><span>Payoff <b>$14,210</b> vs. trade value <b>$18,500</b></span></li>
-                <li><span class="dot"></span><span>Bought a Ford pre-owned at <b>Masano Auto Park</b>; the data follows her to <b>Masano BMW</b></span></li>
-                <li><span class="dot"></span><span><b>5 service visits</b> at Masano stores</span></li>
-                <li><span class="dot"></span><span>Year 3 of 5: <b>the upgrade window</b></span></li>
-              </ul>
-              <p class="foot">Today, this file sits with the bank that funded the loan. With TAFS, it sits with Triton.</p>
-            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ======================= THE NUMBERS ======================= -->
-<section class="sec mist" id="numbers" data-sec="economics">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">The numbers</div>
-      <h2>Build enterprise value on your dealerships</h2>
-      <p>What TAFS pays Triton members each year, after the monthly store fee. Change any assumption and every number on this page updates.</p>
-    </div>
-
-    <div class="econ">
-      <div class="panel">
-        <div class="chart-head">
-          <div>
-            <h3>Annual payout to Triton members</h3>
-            <div class="muted"><span data-bind="total3Long">$66.3M</span> over 3 years</div>
-          </div>
-          <button class="btn ghost" type="button" data-open-assumptions data-track="chart_review">Review assumptions</button>
-        </div>
-        <div class="legend">
-          <span><i style="background:var(--c1)"></i>Upfront payout, net of monthly store fee</span>
-          <span><i style="background:var(--c2)"></i>Accrued servicing bonus</span>
-        </div>
-        <div class="chart-box" id="chart"><div class="tip" id="tip"></div></div>
-        <table class="tbl" aria-label="Annual payout table">
-          <thead><tr><th>$ millions</th><th>Year 1</th><th>Year 2</th><th>Year 3</th><th>Total</th></tr></thead>
-          <tbody id="tbl"></tbody>
-        </table>
-      </div>
-
-      <div class="side">
-        <div class="panel ev">
-          <div class="lbl">Enterprise value added</div>
-          <div class="big" data-bind="ev">$158M</div>
-          <p>At 4x Year 3 payout of <b data-bind="y3">$39.5M</b>. Dealer groups are valued on earnings, and TAFS adds earnings without adding a store.</p>
-          <p class="foot">4x is at or below the blue sky midpoint for 15 of the 20 franchises Haig Partners tracks (Haig Report, Q1 2026). Illustrative; actual value depends on buyer, franchise mix and contract terms.</p>
-        </div>
-        <div class="panel perloan">
-          <div class="lbl">All-in payout per funded loan</div>
-          <div class="row">
-            <div class="cell"><div class="t">740+ credit</div><div class="v" data-bind="p740">~$250</div></div>
-            <div class="cell hi"><div class="t">Below 740</div><div class="v" data-bind="pLow">~$700</div></div>
-          </div>
-          <p class="foot">At <span data-bind="lprShort">20 loans per rooftop a month</span>. Includes upfront payout, net of the store fee, plus servicing bonus.</p>
-        </div>
-        <div>
-          <button class="btn assump-btn" type="button" data-open-assumptions data-track="side_review">Review assumptions</button>
-          <p class="assump-now" data-bind="assumpNow">300 rooftops · 20 loans/rooftop · 15% 740+</p>
-        </div>
-      </div>
-    </div>
-    <p class="econ-foot">Upfront payout is paid as loans fund, less the $2,495 monthly fee per rooftop (waived during the 3-month pilot). The servicing bonus accrues on the outstanding TAFS portfolio at 0.10% a year above $500M and 0.20% above $1B, and is paid annually. Rooftops and volume ramp in over roughly two years from launch. Loans average $34,400. Credit tiers below 740 earn the same payout.</p>
   </div>
 </section>
 
@@ -585,7 +543,7 @@ footer img{height:54px;width:auto}
     <div class="sec-head">
       <div class="eyebrow">Proposal</div>
       <h2>Start with a 3-month pilot. Zero investment.</h2>
-      <p>Prove it on a handful of stores in one state, then roll it out across the membership.</p>
+      <p>Prove it on a handful of stores in one state, then roll it out across the membership. Brivio runs the lender; Triton owns the relationship.</p>
     </div>
     <div class="terms">
       <div class="panel">
@@ -613,25 +571,9 @@ footer img{height:54px;width:auto}
       <div class="step"><div class="w">Step 2 · 3 months</div><h4>Run the pilot</h4><p>About 8 rooftops. No fees. Upfront economics paid at the end.</p></div>
       <div class="step"><div class="w">Step 3</div><h4>Roll out to members</h4><p>Add groups and stores at their own pace.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- ======================= ENGINE ======================= -->
-<section class="sec mist" id="engine" data-sec="engine">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Behind the brand</div>
-      <h2>Brivio runs the lender. Triton owns the relationship.</h2>
-    </div>
-    <div class="engine">
-      <div class="eng"><h4>Licensed lender of record</h4><p>Brivio holds the lending licenses. TAFS operates as the brand on every contract.</p></div>
-      <div class="eng"><h4>Underwriting</h4><p>Full-spectrum credit, new and used, prime through subprime, decisioned in seconds.</p></div>
-      <div class="eng"><h4>Servicing</h4><p>Payments, customer care and collections, all under the TAFS name.</p></div>
-      <div class="eng"><h4>Capital markets</h4><p>Loans sold to institutional funding partners at origination. No balance sheet at Triton.</p></div>
-    </div>
     <div class="team">
       <img src="https://briviocapital.com/assets/brivio-lockup-v2.png" alt="Brivio Capital" data-fallback="Brivio Capital">
-      <p>Brivio's founders have originated more than $75 billion in auto loans across bank, captive and fintech lenders, including Chase, Ally, Santander, Best Egg and Harley-Davidson Financial Services.</p>
+      <p>Brivio's founders have originated more than $75 billion in auto loans at Chase, Ally, Santander, Best Egg and Harley-Davidson Financial Services.</p>
     </div>
   </div>
 </section>
@@ -827,7 +769,7 @@ function render(animateFrom){
   const r = calc(state.R, state.L, state.P);
   const vals = {
     total3: $M0(r.total3), total3Long: $m(r.total3), ev: $M0(r.ev), y3: $m(r.years[2].total),
-    p740: '~'+$d(r.p740), pLow: '~'+$d(r.pLow), upLoan: $d(r.upLoan), bonusLoan: $d(r.bonusLoan),
+    p740: '~'+$d(r.p740), pLow: '~'+$d(r.pLow), upLoan: '~'+$d(Math.round(Math.round(r.upLoan)/10)*10), bonusLoan: '~'+$d(Math.round(Math.round(r.bonusLoan)/10)*10),
     pilotPay: $k(r.pilot),
     rooftopsTxt: state.R + ' rooftops', lprTxt: state.L + ' loans a month',
     lprShort: state.L + ' loans per rooftop a month',
@@ -835,14 +777,14 @@ function render(animateFrom){
   };
   document.querySelectorAll('[data-bind]').forEach(n=>{
     const k=n.dataset.bind;
-    if (k==='blended'){ n.innerHTML = $d(r.blended) + '<small>blended</small>'; return; }
+    if (k==='blended'){ n.innerHTML = '~' + $d(Math.round(Math.round(r.upLoan)/10)*10 + Math.round(Math.round(r.bonusLoan)/10)*10) + '<small>blended</small>'; return; }
     if (k in vals) n.textContent = vals[k];
   });
   const upPct = r.blended>0 ? Math.max(0,Math.min(100, r.upLoan/r.blended*100)) : 100;
   document.querySelectorAll('[data-bind-w="upPct"]').forEach(n=>n.style.width = upPct+'%');
-  const tb = document.getElementById('tbl');
+  const tb = document.getElementById('tbl'); if (tb) {
   const row = (name,f,cls='') => `<tr class="${cls}"><td>${name}</td>${r.years.map(y=>`<td>${(f(y)/1e6).toFixed(1)}</td>`).join('')}<td>${(r.years.reduce((a,y)=>a+f(y),0)/1e6).toFixed(1)}</td></tr>`;
-  tb.innerHTML = row('Upfront payout, net of fee', y=>y.up) + row('Servicing bonus', y=>y.bonus) + row('Total payout', y=>y.total, 'tot');
+  tb.innerHTML = row('Upfront payout, net of fee', y=>y.up) + row('Servicing bonus', y=>y.bonus) + row('Total payout', y=>y.total, 'tot'); }
   drawChart(r, animateFrom);
   // dialog helpers
   document.getElementById('outR').textContent = state.R;
