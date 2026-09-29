@@ -101,9 +101,9 @@ p{margin:0}
 section{scroll-margin-top:80px}
 .sec{padding:96px 0}
 .sec.mist{background:var(--mist)}
-.sec-head{max-width:760px}
+.sec-head{max-width:none}
 .sec-head h2{font-size:clamp(28px,3.4vw,42px);margin-top:12px}
-.sec-head p{margin-top:14px;font-size:18px;color:var(--text)}
+.sec-head p{margin-top:14px;font-size:18px;color:var(--text);max-width:1000px}
 @media (max-width:640px){.sec{padding:64px 0}}
 
 /* ---------- Value-prop carousel ---------- */
@@ -332,8 +332,8 @@ dialog::backdrop{background:rgba(7,30,60,.4)}
 /* ---------- Close + footer ---------- */
 .close{background:linear-gradient(120deg,#07356F,#09418C 55%,#0B5AB5);color:#fff;padding:84px 0}
 .close h2{color:#fff;font-size:clamp(30px,4vw,48px);text-transform:uppercase;font-weight:800;line-height:1}
-.close h2 span{color:#C9CDD3;display:block}
-.close p{margin-top:18px;max-width:640px;color:#DCE7F5;font-size:18px}
+.close h2 span{color:#C9CDD3;display:inline;margin-left:.25em}
+.close p{margin-top:18px;max-width:1000px;color:#DCE7F5;font-size:18px}
 .close .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
 .close .btn{background:#fff;color:var(--navy) !important}
 .close .who{margin-top:34px;display:flex;gap:40px;flex-wrap:wrap;font-size:15px;color:#DCE7F5}
