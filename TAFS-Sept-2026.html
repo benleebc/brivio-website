@@ -79,7 +79,7 @@ p{margin:0}
 .hero .cta .btn{background:#fff;color:var(--navy) !important}
 .hero .cta .btn:hover{background:#EAF1FB}
 .hero .cta .btn.ghost{background:transparent;color:#fff !important;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
-@media (max-width:640px){.hero .wrap{padding-top:56px;padding-bottom:60px}.hero h1{display:block;border-left:8px solid var(--red);padding-left:14px}.hero h1 .bar{display:none}}
+@media (max-width:640px){.hero .wrap{padding-top:56px;padding-bottom:60px}.hero h1{display:block;border-left:8px solid var(--red);padding-left:14px}.hero h1 .bar{display:none}.hero-head h1{flex:1 1 auto;min-width:0;font-size:clamp(24px,7.4vw,38px)}}
 .hero-head{display:flex;align-items:center;gap:32px}
 .hero-head h1{flex:none}
 .hero-logo{flex:none;width:clamp(90px,8vw,130px);margin-top:18px;overflow:hidden;filter:drop-shadow(0 10px 24px rgba(0,20,60,.35))}
@@ -292,6 +292,9 @@ table.tbl{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px;fon
 .perloan .vs b{color:var(--navy-ink)}
 .ev-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.btn.sm{padding:8px 14px;font-size:13.5px}
 .econ-foot p{padding:0 14px}
+.vp-panels{grid-template-columns:minmax(0,1fr)}.vp-panel{min-width:0}
+.vp-panel > *{min-width:0}
+@media (max-width:900px){.vp-panel{grid-template-columns:minmax(0,1fr) !important}.vp-panel .chips{flex-wrap:wrap}.vp-panel *{max-width:100%}}
 @media (max-width:860px){.kpis,.econ-foot{grid-template-columns:1fr}.econ-foot{gap:4px}}
 .side{display:grid;grid-template-rows:1fr auto;gap:24px}
 .side .ev{display:flex;flex-direction:column}
@@ -310,6 +313,9 @@ table.tbl{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px;fon
 .assump-btn{width:100%;justify-content:center}
 .assump-now{font-size:13px;color:var(--muted);text-align:center;margin-top:10px}
 .econ-foot{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:0;margin:14px 0 0;font-size:11.5px;color:var(--muted);line-height:1.55}
+@media (max-width:860px){.econ-foot{grid-template-columns:1fr;gap:4px}}
+@media (max-width:900px){.vp-panel:not(.on){display:none}.vp-panel{align-items:start}}
+@media (max-width:640px){.perloan .vs,.kpis .ev .vs{display:block}.mailer .head{font-size:16px}.perloan .vs b,.kpis .ev .vs b{white-space:nowrap}.mailer .offer{flex-direction:column;align-items:flex-start;gap:8px}.mailer .offer .pay{font-size:34px}.hero .cta{flex-wrap:wrap}}
 @media (max-width:960px){.econ{grid-template-columns:1fr}}
 @media (max-width:640px){.panel{padding:20px 16px}.ev .big{font-size:48px}.tbl{font-size:13px}.tbl th,.tbl td{padding:8px 4px}}
 
@@ -389,9 +395,9 @@ footer img{height:54px;width:auto}
       <span class="for"><b>Financial Services</b>Proposal from Brivio · Sept 2026</span>
     </a>
     <nav class="nav" aria-label="Sections">
-      <a href="#numbers">The numbers</a>
-      <a href="#why">Why TAFS</a>
-      <a href="#terms">Terms</a>
+      <a href="#numbers">The math</a>
+      <a href="#why">Beyond the economics</a>
+      <a href="#terms">Proposal</a>
       <a class="btn" href="#next" data-track="nav_next">Next steps</a>
     </nav>
   </div>
@@ -428,7 +434,7 @@ footer img{height:54px;width:auto}
 <section class="sec mist" id="numbers" data-sec="economics">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Retain the economics</div>
+      <div class="eyebrow">The math</div>
       <h2>Keep the economics lenders earn today</h2>
       <p>In addition to your typical dealer markup or flat-fee.</p>
     </div>
@@ -460,7 +466,7 @@ footer img{height:54px;width:auto}
 <section class="sec" id="why" data-sec="value_props">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Why TAFS</div>
+      <div class="eyebrow">Beyond the economics</div>
       <h2>Own the brand and the customer</h2>
       <p>With TAFS, the name on the contract and the data behind every loan stay inside Triton.</p>
     </div>
@@ -475,7 +481,7 @@ footer img{height:54px;width:auto}
       <button class="vp-tab" role="tab" id="t-data" aria-controls="p-data" aria-selected="false" data-key="compound_data">
         <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-13.7 5.6"/><path d="M4 12A8 8 0 0 1 17.7 6.4"/><path d="M18 2.5v4h-4"/><path d="M6 21.5v-4h4"/></svg></span>
         <h3>Compound your data</h3>
-        <p>Your customer data drives the next sale across 300+ rooftops.</p>
+        <p>Personalized offers leveraging your customer data</p>
         <span class="prog"></span>
       </button>
     </div>
@@ -565,7 +571,7 @@ footer img{height:54px;width:auto}
         <h3><span class="n logo"><img src="assets/brivio-b-gold.png" alt="Brivio"></span>What Brivio brings</h3>
         <ul class="ticks">
           <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>3-month pilot at zero cost.</b> No monthly subscription fee</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Funding - up to $25 million</b> in pilot loans.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Funding - up to $25 million</b> in pilot loans</span></li>
           <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Economics paid at the end of the pilot</b></span></li>
           <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Licensing, compliance, underwriting, servicing &amp; capital markets</b></span></li>
         </ul>
@@ -575,8 +581,8 @@ footer img{height:54px;width:auto}
         <ul class="ticks">
           <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Non-binding letter of intent</b></span></li>
           <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Partnership agreement</b></span></li>
-          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>The pilot state &amp; rooftops</b>, chosen together.</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>One executive sponsor</b> at Triton.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>The pilot state &amp; rooftops</b>, chosen together</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>One executive sponsor</b> at Triton</span></li>
         </ul>
       </div>
     </div>
@@ -849,7 +855,7 @@ dlg.addEventListener('click', e => { if (downOnBackdrop && e.target === dlg && o
   const panelsBox = document.getElementById('vp-panels');
   const INTERVAL = 6000;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let idx = 0, locked = reduced, hovering = false, visible = false, elapsed = 0, last = null;
+  let idx = 0, locked = reduced || window.matchMedia('(max-width:900px)').matches, hovering = false, visible = false, elapsed = 0, last = null;
   function select(i, how){
     idx = i; elapsed = 0;
     tabs.forEach((t,j)=>{ t.setAttribute('aria-selected', j===i ? 'true':'false'); t.tabIndex = j===i ? 0 : -1; t.querySelector('.prog').style.width='0'; });
@@ -861,7 +867,7 @@ dlg.addEventListener('click', e => { if (downOnBackdrop && e.target === dlg && o
     t.addEventListener('mouseenter',()=>{ if (window.matchMedia('(hover:hover)').matches){ hovering = true; if (idx!==i) select(i,'hover'); } });
     t.addEventListener('mouseleave',()=>{ hovering = false; elapsed = 0; });
     t.addEventListener('keydown',e=>{
-      if (e.key==='ArrowRight'||e.key==='ArrowLeft'){ e.preventDefault(); locked = true; const n=(i+(e.key==='ArrowRight'?1:2))%3; select(n,'keyboard'); tabs[n].focus(); }
+      if (e.key==='ArrowRight'||e.key==='ArrowLeft'){ e.preventDefault(); locked = true; const n=(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length; select(n,'keyboard'); tabs[n].focus(); }
     });
   });
   panelsBox.addEventListener('mouseenter',()=>{ hovering = true; });
