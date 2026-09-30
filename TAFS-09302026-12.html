@@ -635,7 +635,7 @@ footer img{height:54px;width:auto}
       </div>
       <div class="fld">
         <label for="inL">Loans per rooftop, per month <output id="outL">20</output></label>
-        <div class="inw"><input id="inL" type="number" inputmode="numeric" min="10" max="40" step="1" value="20"></div>
+        <div class="inw"><input id="inL" type="number" inputmode="numeric" min="1" max="40" step="1" value="20"></div>
         <div class="help" id="helpL">About 18% of a typical Triton store's ~111 monthly sales.</div>
       </div>
       <div class="fld">
@@ -712,10 +712,11 @@ function calc(R, L, pct){
 }
 
 /* ---------- formatting ---------- */
-const $m = (v,d=1) => '$' + (v/1e6).toFixed(d) + 'M';
-const $M0 = v => '$' + Math.round(v/1e6).toLocaleString('en-US') + 'M';
-const $d = v => (v<0?'-$':'$') + Math.round(Math.abs(v)).toLocaleString('en-US');
-const $k = v => '$' + Math.round(v/1000).toLocaleString('en-US') + 'K';
+const $sign = (v, n) => (v < 0 && n !== 0 ? '-' : '');
+const $m = (v,d=1) => { const s = (Math.abs(v)/1e6).toFixed(d); return $sign(v, +s) + '$' + s + 'M'; };
+const $M0 = v => { const n = Math.round(Math.abs(v)/1e6); return $sign(v, n) + '$' + n.toLocaleString('en-US') + 'M'; };
+const $d = v => { const n = Math.round(Math.abs(v)); return $sign(v, n) + '$' + n.toLocaleString('en-US'); };
+const $k = v => { const n = Math.round(Math.abs(v)/1000); return $sign(v, n) + '$' + n.toLocaleString('en-US') + 'K'; };
 
 /* ---------- chart ---------- */
 const chartEl = document.getElementById('chart'), tip = document.getElementById('tip');
@@ -834,7 +835,7 @@ const clampIn = (el,lo,hi,fb) => { const v = parseFloat(el.value); return isFini
 [inR,inL,inP].forEach(inp=>inp.addEventListener('input',()=>{
   if (inp.value === '') return;
   const prev = drawn;
-  state.R=clampIn(inR,25,400,state.R); state.L=clampIn(inL,10,40,state.L); state.P=clampIn(inP,0,80,state.P);
+  state.R=clampIn(inR,25,400,state.R); state.L=clampIn(inL,1,40,state.L); state.P=clampIn(inP,0,80,state.P);
   render(prev);
   clearTimeout(inputTimer);
   inputTimer = setTimeout(()=>window.TAFS_TRACK && TAFS_TRACK.assumptionsChanged({...state}), 700);
