@@ -57,10 +57,14 @@ section{scroll-margin-top:100px}
 .brand img{height:34px;width:auto}
 .brand .for{font-size:12px;line-height:1.35;color:var(--sand);border-left:1px solid #3d3d3d;padding-left:16px}
 .brand .for b{display:block;color:var(--lime);font:700 13px var(--head);letter-spacing:0}
-.links{display:flex;align-items:center;gap:30px}
+.links{display:flex;align-items:center;gap:28px}
+.links a{white-space:nowrap}
+.brand .for{white-space:nowrap}
+@media (max-width:1180px){.brand .for{display:none}}
 .links a:not(.btn){text-decoration:none;font-size:15px;color:var(--paper);font-weight:500}
 .links a:not(.btn):hover{color:var(--lime)}
-@media (max-width:900px){.links a:not(.btn){display:none}.brand .for{display:none}.nav-wrap{padding:0 12px;top:10px}.navbar{height:60px;padding:0 10px 0 14px}.brand img{height:28px}}
+@media (max-width:1000px){.links a:not(.btn){display:none}}
+@media (max-width:900px){.brand .for{display:none}.nav-wrap{padding:0 12px;top:10px}.navbar{height:60px;padding:0 10px 0 14px}.brand img{height:28px}}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;min-height:92vh;display:flex;align-items:center;background:var(--ink) center/cover no-repeat;color:var(--paper);overflow:hidden}
@@ -101,7 +105,7 @@ section{scroll-margin-top:100px}
 
 /* Stacked-word heading (AutoTrust signature) */
 .stack{font-size:clamp(40px,4.4vw,56px);line-height:1.12}
-.stack span{display:block}
+.stack span{display:block;white-space:nowrap}
 .stack span.g{color:var(--stone)}
 .js .stack span{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
 .js .stack.in span{opacity:1;transform:none}
@@ -110,11 +114,11 @@ section{scroll-margin-top:100px}
 .js .reveal.in{opacity:1;transform:none}
 
 /* ---------- The math ---------- */
-.math-head{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:end}
+.math-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:end}
 .math-head .copy p{font-size:17px;color:#3a3833}
 .math-head .copy p+p{margin-top:14px}
 .cards2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
-.card{background:var(--ink);color:var(--paper);border:2px solid var(--stone);border-radius:var(--radius);padding:40px;display:flex;flex-direction:column}
+.card{background:var(--ink);color:var(--paper);border:2px solid var(--stone);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column}
 .lbl{font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sand)}
 .card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .big{font:700 clamp(54px,5.6vw,76px)/1 var(--head);letter-spacing:-.03em;color:var(--lime);margin-top:16px}
@@ -124,13 +128,13 @@ section{scroll-margin-top:100px}
 .cell .t{font-size:13px;color:var(--stone);font-weight:600}
 .cell .v{font:700 34px/1.15 var(--head);letter-spacing:-.02em;color:var(--paper);margin-top:4px}
 .cell.hi{border-color:var(--lime)}
-.card .foot{margin-top:auto;padding-top:22px;font-size:14.5px;color:var(--sand)}
+.card .foot{margin-top:auto;padding-top:22px;min-height:62px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;font-size:14.5px;color:var(--sand)}
 .card .foot b{color:var(--paper)}
 .quote{margin-top:40px;display:grid;grid-template-columns:4px 1fr;gap:20px;align-items:stretch;max-width:860px}
 .quote i{background:var(--lime);border-radius:2px;display:block}
 .quote q{display:block;font:400 clamp(20px,2vw,24px)/1.4 var(--head);letter-spacing:-.01em;quotes:"\201C" "\201D"}
 .quote .by{margin-top:10px;font-size:14px;color:var(--muted)}
-.notes{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px;font-size:12px;color:var(--muted);line-height:1.55}
+.notes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:16px;padding:0 4px;font-size:12px;color:var(--muted);line-height:1.55}
 @media (max-width:900px){.math-head{grid-template-columns:1fr;gap:24px}.cards2{grid-template-columns:1fr;margin-top:36px}.card{padding:26px 20px}.notes{grid-template-columns:1fr;gap:4px}}
 
 /* ---------- Beyond the economics (tabs + panels) ---------- */
@@ -152,6 +156,8 @@ section{scroll-margin-top:100px}
 .vp-panel.on{visibility:visible;animation:fade .45s ease}
 .vp-panel > *{min-width:0}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (min-width:901px) and (max-width:1100px){.vp-panel{grid-template-columns:minmax(0,1fr);gap:32px;padding:40px}.vp-panel > div:last-child{max-width:620px}}
+@media (max-width:1100px){.p-brand span{display:none}.vp-panel:not(.on){display:none}.vp-panel{align-content:start}}
 .vp-panel h3{font-weight:400;font-size:clamp(26px,2.6vw,32px);line-height:1.25;color:var(--lime)}
 .vp-panel .p{margin-top:14px;font-size:16.5px;color:var(--paper)}
 .chips{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-wrap:wrap;gap:8px}
@@ -225,13 +231,14 @@ section{scroll-margin-top:100px}
 @media (max-width:640px){.offer{flex-direction:column;align-items:flex-start}.offer .pay{font-size:34px}.m-body .head{font-size:19px}}
 
 /* ---------- Proposal (dark) ---------- */
-.prop-head{max-width:900px}
-.prop-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
-.pcard{border:2px solid rgba(147,141,131,.55);border-radius:var(--radius);padding:34px 32px}
-.pcard h3{display:flex;align-items:center;gap:14px;font-size:24px;letter-spacing:-.02em}
+.prop-head .sub{max-width:760px}
+.prop-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:52px}
+.pcard{border:2px solid rgba(147,141,131,.55);border-radius:var(--radius);padding:32px 28px}
+.pcard h3{display:flex;align-items:center;gap:14px;font-size:clamp(20px,2vw,24px);letter-spacing:-.02em}
+@media (min-width:861px){.pcard h3{white-space:nowrap}}
 .pcard h3 img{width:40px;height:40px;object-fit:contain;border-radius:6px;flex:none}
 .ticks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:14px}
-.ticks li{display:grid;grid-template-columns:20px 1fr;gap:12px;font-size:16px;line-height:1.5;color:var(--sand)}
+.ticks li{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:16px;line-height:1.5;color:var(--sand)}
 .ticks li svg{margin-top:3px;color:var(--lime)}
 .ticks b{color:var(--paper);font-weight:600}
 @media (max-width:860px){.prop-grid{grid-template-columns:1fr;margin-top:36px}.pcard{padding:24px 20px}}
@@ -239,7 +246,7 @@ section{scroll-margin-top:100px}
 /* ---------- Steps (light) ---------- */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:64px}
 .step img{width:34px;height:34px}
-.step h3{margin-top:22px;font-weight:400;font-size:28px;line-height:1.25}
+.step h3{margin-top:22px;font-weight:400;font-size:clamp(22px,2.2vw,28px);line-height:1.25}
 .step p{margin-top:10px;color:var(--muted)}
 @media (max-width:860px){.steps{grid-template-columns:1fr;gap:36px;margin-top:40px}}
 
@@ -285,6 +292,19 @@ dialog::backdrop{background:rgba(10,10,10,.55)}
 .dlg-f{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 26px 24px}
 .linkish{background:none;border:0;color:var(--ink);font:600 14px var(--body);cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
 
+/* ---------- Spacing / wrap polish ---------- */
+.h2,.cta-sec h2,.sub{text-wrap:balance}
+.pc .kv > div{display:flex;flex-direction:column;justify-content:flex-end}
+@media (max-width:640px){
+.tag{font-size:12px;letter-spacing:.02em}
+.h2{font-size:30px}
+.stack{font-size:38px}
+.cell{padding:14px}.cell .t{white-space:nowrap;font-size:12.5px}.cell .v{font-size:30px}
+.big{font-size:52px}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.who b{font-size:17px}
+.stats-note{line-height:1.6}
+}
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;scroll-behavior:auto !important}.js .stack span,.js .reveal{opacity:1 !important;transform:none !important}}
 </style>
 <script>document.documentElement.classList.add('js');</script>
@@ -346,7 +366,7 @@ dialog::backdrop{background:rgba(10,10,10,.55)}
 <section class="sec" id="math" data-sec="economics">
   <div class="container">
     <div class="math-head">
-      <h2 class="stack"><span>The</span><span>Math</span><span class="g">on</span><span class="g">Every</span><span class="g">Loan</span></h2>
+      <h2 class="stack"><span>The Math</span><span class="g">on Every Loan</span></h2>
       <div class="copy reveal">
         <p>Paid on top of the reserve and bank advance your members earn today.</p>
         <p>Most preferred-lender programs pay once per contract. ATFS pays when the loan funds, then keeps paying while it's on the books.</p>
@@ -360,19 +380,18 @@ dialog::backdrop{background:rgba(10,10,10,.55)}
           <div class="cell"><div class="t">740+ credit</div><div class="v" data-bind="p740">~$250</div></div>
           <div class="cell hi"><div class="t">Below 740</div><div class="v" data-bind="pLow">~$700</div></div>
         </div>
-        <p class="foot">At <b data-bind="lprShort">20 loans per rooftop a month</b>.</p>
+        <div class="foot"><p>At <b data-bind="lprShort">20 loans per rooftop a month</b>.</p></div>
       </div>
       <div class="card">
-        <div class="card-top"><div class="lbl">Enterprise value added</div><button class="btn sm" type="button" data-open-assumptions data-track="ev_review">Review assumptions</button></div>
+        <div class="lbl">Enterprise value added</div>
         <div class="big" data-bind="ev">$158M</div>
         <div class="cells">
           <div class="cell"><div class="t">Year 3 payout</div><div class="v" data-bind="y3">$39.5M</div></div>
           <div class="cell"><div class="t">Earnings multiple</div><div class="v">4x</div></div>
         </div>
-        <p class="foot">About <b data-bind="evPerRoof">$527K</b> of value per rooftop.</p>
+        <div class="foot"><p>About <b data-bind="evPerRoof">$527K</b> of value per rooftop.</p><button class="btn sm" type="button" data-open-assumptions data-track="ev_review">Review assumptions</button></div>
       </div>
     </div>
-    <div class="quote reveal"><i aria-hidden="true"></i><div><q>Stronger per-contract economics … expand dealership valuation by adding incremental earnings.</q><div class="by">James Wood, President, AutoTrust Financial Services (CBT News, March 2026)</div></div></div>
     <div class="notes"><p>Per loan: upfront payout plus servicing bonus, minus the monthly subscription fee.</p><p>Enterprise value at 4x Year 3 payout, within franchise blue sky ranges (Haig Report, Q1 2026).</p></div>
   </div>
 </section>
