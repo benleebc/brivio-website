@@ -305,6 +305,24 @@ dialog::backdrop{background:rgba(10,10,10,.55)}
 .who b{font-size:17px}
 .stats-note{line-height:1.6}
 }
+.browser,.mailer{border:1px solid var(--stone);box-shadow:0 0 0 6px rgba(147,141,131,.14),0 24px 60px rgba(0,0,0,.55)}
+.p-top,.m-top{border-bottom:1px solid #3a3a3a}
+.pcard{padding-left:24px;padding-right:24px}
+.ticks li{grid-template-columns:14px 1fr;gap:8px}.ticks li svg{width:14px;height:14px;margin-top:5px}
+@media (min-width:1180px){.prop-grid{grid-template-columns:max-content minmax(0,1fr);gap:20px}.pcard .ticks li{white-space:nowrap}}
+@media (min-width:1200px){.prop-head .sub{max-width:none;white-space:nowrap;font-size:16px}}
+.owners-grid{grid-template-columns:1fr}
+.owners-copy{margin-top:40px;padding-top:32px;border-top:1px solid #3a3a3a;font-size:18px}
+@media (max-width:640px){.owners-copy{margin-top:28px;padding-top:24px;font-size:16px}}
+.math-head{grid-template-columns:1fr !important;gap:18px !important;justify-items:center;text-align:center}
+.math-head .stack span{display:inline}
+.math-head .stack span+span{margin-left:.25em}
+.math-head .stack span.g+span.g{margin-left:0}
+.math-head .copy{max-width:820px}
+.math-head .copy p+p{margin-top:4px}
+.math-head + .cards2{margin-top:44px}
+@media (max-width:900px){.math-head + .cards2{margin-top:32px}}
+@media (max-width:640px){.math-head .stack{font-size:34px;white-space:normal}.math-head .stack span{white-space:normal}}
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;scroll-behavior:auto !important}.js .stack span,.js .reveal{opacity:1 !important;transform:none !important}}
 </style>
 <script>document.documentElement.classList.add('js');</script>
@@ -348,10 +366,6 @@ dialog::backdrop{background:rgba(10,10,10,.55)}
   <div class="container">
     <div class="owners-grid reveal">
       <h2>Your dealers own the alliance.<br><span class="accent">Now they own the lender.</span></h2>
-      <div class="copy">
-        <p>AutoTrust already returns lender incentives to members through quarterly dealer payments. A captive lender goes further: members keep the loan economics, the brand on the contract and the customer file, not just a referral fee.</p>
-        <p class="sig">AutoTrust owns it. Brivio runs it. Your members win.</p>
-      </div>
     </div>
     <div class="stats reveal">
       <div class="stat"><div class="v" data-bind="total3">$66M</div><div class="k">Estimated payout</div><div class="s">over the first 3 years</div></div>
@@ -359,6 +373,10 @@ dialog::backdrop{background:rgba(10,10,10,.55)}
       <div class="stat"><div class="v">$0</div><div class="k">Capital to launch</div><div class="s">and zero credit risk</div></div>
     </div>
     <p class="stats-note">Based on <span data-bind="rooftopsTxt">300 of AutoTrust's 350+ rooftops</span> at <span data-bind="lprTxt">20 loans a month</span> each. <a href="#math" data-open-assumptions>Change the assumptions</a></p>
+    <div class="copy owners-copy reveal">
+        <p>AutoTrust already returns lender incentives to members through quarterly dealer payments. A captive lender goes further: members keep the loan economics, the brand on the contract and the customer file, not just a referral fee.</p>
+        <p class="sig">AutoTrust owns it. Brivio runs it. Your members win.</p>
+      </div>
   </div>
 </section>
 
@@ -366,10 +384,9 @@ dialog::backdrop{background:rgba(10,10,10,.55)}
 <section class="sec" id="math" data-sec="economics">
   <div class="container">
     <div class="math-head">
-      <h2 class="stack"><span>The Math</span><span class="g">on Every Loan</span></h2>
+      <h2 class="stack"><span>Keep the economics</span><span class="g">lenders earn today</span></h2>
       <div class="copy reveal">
-        <p>Paid on top of the reserve and bank advance your members earn today.</p>
-        <p>Most preferred-lender programs pay once per contract. ATFS pays when the loan funds, then keeps paying while it's on the books.</p>
+        <p>Paid on top of the reserve your members earn today.</p>
       </div>
     </div>
     <div class="cards2 reveal">
@@ -392,7 +409,7 @@ dialog::backdrop{background:rgba(10,10,10,.55)}
         <div class="foot"><p>About <b data-bind="evPerRoof">$527K</b> of value per rooftop.</p><button class="btn sm" type="button" data-open-assumptions data-track="ev_review">Review assumptions</button></div>
       </div>
     </div>
-    <div class="notes"><p>Per loan: upfront payout plus servicing bonus, minus the monthly subscription fee.</p><p>Enterprise value at 4x Year 3 payout, within franchise blue sky ranges (Haig Report, Q1 2026).</p></div>
+    <div class="notes"><p>Per loan: upfront payout plus servicing bonus, minus the monthly subscription fee.</p><p>Enterprise value at 4x Year 3 payout (Haig Report, Q1 2026).</p></div>
   </div>
 </section>
 
@@ -445,7 +462,7 @@ dialog::backdrop{background:rgba(10,10,10,.55)}
                 <div class="fakebtn" aria-hidden="true">Make a payment</div>
               </div>
               <div class="pside">
-                <div class="pc"><div class="h">Your dealership</div><p>Serviced where you bought. Oil change due in 400 miles.</p><span class="go">Book service ›</span></div>
+                <div class="pc"><div class="h">Your dealership</div><p>Serviced where you bought.</p><span class="go">Book service ›</span></div>
                 <div class="pc"><div class="h">Just for you</div><p>You're pre-qualified for a new Ford Explorer.</p><span class="go">See your offer ›</span></div>
               </div>
             </div>
@@ -524,9 +541,9 @@ dialog::backdrop{background:rgba(10,10,10,.55)}
     <h2 class="h2 center reveal">A Simple Path <span class="stone">to Launch</span></h2>
     <p class="sub center reveal">Sign, pilot, roll out.</p>
     <div class="steps reveal">
-      <div class="step"><img src="assets/autotrust/autotrust-icon-step-1.svg" alt="Step 1"><h3>Sign the LOI and agreement</h3><p>Agree on the pilot state and member stores.</p></div>
-      <div class="step"><img src="assets/autotrust/autotrust-icon-step-2.svg" alt="Step 2"><h3>Run the pilot</h3><p>Three months. No fees. Economics paid at the end.</p></div>
-      <div class="step"><img src="assets/autotrust/autotrust-icon-step-3.svg" alt="Step 3"><h3>Roll out to members</h3><p>Member groups opt in at their own pace.</p></div>
+      <div class="step"><img src="assets/autotrust/autotrust-icon-step-1.svg" alt="Step 1"><h3>Sign the LOI and agreement</h3><p>Agree on the pilot state and stores.</p></div>
+      <div class="step"><img src="assets/autotrust/autotrust-icon-step-2.svg" alt="Step 2"><h3>Run the pilot</h3><p>No fees. Economics paid at the end.</p></div>
+      <div class="step"><img src="assets/autotrust/autotrust-icon-step-3.svg" alt="Step 3"><h3>Roll out to members</h3><p>Add groups and stores at their own pace</p></div>
     </div>
   </div>
 </section>
