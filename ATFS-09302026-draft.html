@@ -69,7 +69,7 @@ section{scroll-margin-top:100px}
 /* ---------- Hero ---------- */
 .hero{position:relative;min-height:92vh;display:flex;align-items:center;background:var(--ink) center/cover no-repeat;color:var(--paper);overflow:hidden}
 .hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:1}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.35) 100%);z-index:1}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0) 62%,var(--ink));z-index:1}
 .hero .container{position:relative;z-index:2;width:100%;padding-top:150px;padding-bottom:96px}
 .tag{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--paper);background:rgba(26,26,26,.72);border:1px solid rgba(204,255,0,.5);border-radius:999px;padding:7px 14px}
@@ -348,7 +348,7 @@ dialog::backdrop{background:rgba(10,10,10,.55)}
 <main id="top">
 <!-- ======================= HERO ======================= -->
 <header class="hero" data-sec="hero">
-  <img class="poster" src="https://cdn.prod.website-files.com/68b06f75d41e795e76b5dc8c%2F6a3beaf5418b8569349020ed_hero%20vid%20revised_poster.0000000.jpg" alt="" referrerpolicy="no-referrer">
+  <img class="poster" src="assets/atfs/hero-keys-poster.jpg" alt="">
   <video id="heroVid" muted loop playsinline preload="none" aria-hidden="true"></video>
   <div class="container">
     <span class="tag"><i></i>Proposal for AutoTrust Dealer Alliance · September 2026</span>
@@ -775,8 +775,8 @@ dlg.addEventListener('click', e => { if (downOnBackdrop && e.target === dlg && o
 (function(){
   const v = document.getElementById('heroVid');
   if (!v || !matchMedia('(min-width:768px)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) { if (v) v.remove(); return; }
-  const base = 'https://cdn.prod.website-files.com/68b06f75d41e795e76b5dc8c%2F6a3beaf5418b8569349020ed_hero%20vid%20revised_';
-  [['webm','video/webm'],['mp4','video/mp4']].forEach(([ext,type])=>{ const s=document.createElement('source'); s.src=base+ext+'.'+ext; s.type=type; v.appendChild(s); });
+  
+  const s=document.createElement('source'); s.src='assets/atfs/hero-keys.mp4'; s.type='video/mp4'; v.appendChild(s);
   v.addEventListener('playing',()=>{ const p=document.querySelector('.hero .poster'); if (p) p.style.visibility='hidden'; });
   v.addEventListener('error',()=>v.remove(), true);
   v.load(); v.play().catch(()=>{});
