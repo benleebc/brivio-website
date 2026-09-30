@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TAFS-09_2026</title>
+<meta name="description" content="A proposal to launch Triton Automotive Financial Services: Triton's own captive lender, powered by Brivio.">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta property="og:title" content="TAFS-09_2026">
+<meta property="og:description" content="Proposal prepared for Triton Automotive Group by Brivio Capital. September 2026.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="https://tritonautomotivegroup.com/wp-content/uploads/cropped-tag-favicon-270x270.png" referrerpolicy="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#09418C;          /* Triton primary blue */
+  --navy-2:#0B4E9E;
+  --navy-deep:#16406B;     /* Triton footer */
+  --navy-ink:#0A2A52;      /* headings */
+  --red:#B3232B;           /* Triton accent bar */
+  --band:#DEDEDE;          /* Triton stat band gray */
+  --paper:#FFFFFF;
+  --mist:#F3F5F8;
+  --line:#E2E6EC;
+  --text:#4A4F57;
+  --muted:#6B7280;
+  --c1:#1F5BB5;            /* chart: upfront payout */
+  --c2:#62A6E8;            /* chart: servicing bonus */
+  --radius:14px;
+  --shadow:0 1px 2px rgba(10,42,82,.06),0 8px 24px rgba(10,42,82,.08);
+  --font:"Commissioner",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--font);font-size:17px;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+h1,h2,h3,h4{color:var(--navy-ink);margin:0;line-height:1.15;font-weight:700;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:640px){.wrap{padding:0 16px}body{font-size:16px}}
+
+/* ---------- Top bar ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brandmark{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brandmark img{height:44px;width:auto}
+.brandmark .for{font-size:12px;color:var(--muted);border-left:1px solid var(--line);padding-left:14px;line-height:1.3}
+.brandmark .for b{display:block;color:var(--navy-ink);font-size:13px;font-weight:700}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font-size:15px;color:#333;text-decoration:none;font-weight:500}
+.nav a:hover{color:var(--navy)}
+.btn{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;border:0;border-radius:999px;background:var(--navy);color:#fff !important;font:600 15px/1 var(--font);padding:13px 20px;text-decoration:none;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--navy-2)}
+.btn.ghost{background:transparent;color:var(--navy) !important;box-shadow:inset 0 0 0 1.5px var(--navy)}
+.btn.ghost:hover{background:rgba(9,65,140,.06)}
+.btn.red{background:var(--red)}
+.btn.red:hover{background:#9c1d24}
+@media (max-width:860px){.nav a:not(.btn){display:none}.brandmark .for{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;color:#fff;background:
+  radial-gradient(1200px 500px at 85% 20%,rgba(255,255,255,.10),transparent 60%),
+  repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,transparent 2px 38px),
+  linear-gradient(120deg,#07356F 0%,#09418C 45%,#0B5AB5 100%)}
+.hero .shield{position:absolute;left:-60px;top:40px;width:420px;opacity:.08;pointer-events:none}
+.hero .wrap{position:relative;padding-top:84px;padding-bottom:88px}
+.hero .eyebrow{color:#BFD6F5}
+.hero h1{color:#fff;text-transform:uppercase;font-weight:800;font-size:clamp(38px,6.4vw,80px);line-height:.98;letter-spacing:-.015em;margin-top:18px;display:inline-grid;grid-template-columns:auto 12px;column-gap:22px;align-items:stretch}
+.hero h1 .l2{color:#C9CDD3;display:block}
+.hero h1 .bar{grid-row:1 / span 2;grid-column:2;background:var(--red);width:12px}
+.hero .lede{max-width:820px;margin-top:28px;font-size:clamp(17px,1.6vw,20px);color:#E6EEF9;font-weight:300}
+.hero .lede b{font-weight:600;color:#fff}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero .cta .btn{background:#fff;color:var(--navy) !important}
+.hero .cta .btn:hover{background:#EAF1FB}
+.hero .cta .btn.ghost{background:transparent;color:#fff !important;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+@media (max-width:640px){.hero .wrap{padding-top:56px;padding-bottom:60px}.hero h1{display:block;border-left:8px solid var(--red);padding-left:14px}.hero h1 .bar{display:none}.hero-head h1{flex:1 1 auto;min-width:0;font-size:clamp(24px,7.4vw,38px)}}
+.hero-head{display:flex;align-items:center;gap:32px}
+.hero-head h1{flex:none}
+.hero-logo{flex:none;width:clamp(90px,8vw,130px);margin-top:18px;overflow:hidden;filter:drop-shadow(0 10px 24px rgba(0,20,60,.35))}
+.hero-logo img{width:200%;max-width:none;height:auto;display:block}
+@media (max-width:980px){.hero-logo{display:none}}
+
+/* ---------- Stat band (Triton-style badges) ---------- */
+.band{background:var(--band);padding:56px 0}
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;justify-items:center}
+.badge{width:210px;height:210px;border-radius:50%;background:#0A3569;box-shadow:0 0 0 10px #0C4F9C;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:22px}
+.badge .v{font-size:46px;font-weight:800;line-height:1;letter-spacing:-.02em}
+.badge .k{margin-top:10px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1.3}
+.badge .s{margin-top:6px;font-size:11.5px;color:#B9CFEE;line-height:1.3}
+.band .note{text-align:center;margin-top:34px;font-size:13px;color:#5b6068}
+.band .note a{color:var(--navy);font-weight:600}
+@media (max-width:760px){.band{padding:36px 0}.badges{grid-template-columns:1fr;gap:18px}.badge{width:100%;height:auto;border-radius:20px;box-shadow:inset 0 0 0 5px #0C4F9C;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:18px;text-align:left;justify-items:start;padding:20px 22px}.badge .v{grid-row:1 / span 2;font-size:38px;align-self:center}.badge .k{margin-top:0;align-self:end}.badge .s{margin-top:2px;align-self:start}}
+
+/* ---------- Sections ---------- */
+section{scroll-margin-top:80px}
+.sec{padding:96px 0}
+.sec.mist{background:var(--mist)}
+#why{padding-bottom:48px}#terms{padding-top:48px}
+.sec-head{max-width:none}
+.sec-head h2{font-size:clamp(28px,3.4vw,42px);margin-top:12px}
+.sec-head p{margin-top:14px;font-size:18px;color:var(--text);max-width:1000px}
+#terms .sec-head p{max-width:none}
+@media (max-width:640px){.sec{padding:64px 0}}
+
+/* ---------- Value-prop carousel ---------- */
+.vp-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
+.vp-tab{position:relative;text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 24px 26px;cursor:pointer;font:inherit;color:inherit;transition:border-color .2s,box-shadow .2s,transform .2s;overflow:hidden}
+.vp-tab:hover{border-color:#bcd0ea}
+.vp-tab .ic{width:46px;height:46px;border-radius:12px;background:#EAF1FB;color:var(--navy);display:grid;place-items:center}
+.vp-tab h3{font-size:21px;margin-top:16px}
+.vp-tab p{margin-top:6px;font-size:15px;color:var(--muted);line-height:1.5}
+.vp-tab .prog{position:absolute;left:0;bottom:0;height:4px;width:0;background:var(--red)}
+.vp-tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);box-shadow:var(--shadow)}
+.vp-tab[aria-selected="true"] h3{color:#fff}
+.vp-tab[aria-selected="true"] p{color:#CFE0F6}
+.vp-tab[aria-selected="true"] .ic{background:rgba(255,255,255,.14);color:#fff}
+.vp-tab:focus-visible{outline:3px solid #8DB8EE;outline-offset:2px}
+.vp-panels{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);position:relative;display:grid}
+.vp-panel{display:none;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;padding:44px;animation:fade .35s ease}
+.vp-panel{grid-area:1/1;align-items:center;display:grid;visibility:hidden;animation:none}
+.vp-panel.on{visibility:visible;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.vp-panel h3{font-size:28px}
+.vp-panel .sub{margin-top:10px;font-size:17px}
+.ticks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.ticks li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15.5px;line-height:1.5}
+.ticks li svg{margin-top:3px;color:var(--navy)}
+.terms .panel:not(.need) .ticks li svg{color:#B99B5F}
+.ticks b{color:var(--navy-ink)}
+.chips{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{font-size:13.5px;font-weight:600;color:var(--navy-ink);background:#EEF3FA;border:1px solid #DCE6F3;border-radius:999px;padding:7px 14px}
+.team{margin-top:28px !important}
+.sample-tag{display:block;font-size:11px;line-height:16px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.vp-panel > div:first-child:has(+ div > .sample-tag){padding-top:28px}
+@media (max-width:900px){.vp-panel > div:first-child:has(+ div > .sample-tag){padding-top:0}}
+@media (max-width:900px){
+  .vp-tabs{gap:8px}
+  .vp-tab{padding:14px 12px 16px}
+  .vp-tab .ic{width:36px;height:36px;border-radius:10px}
+  .vp-tab .ic svg{width:20px;height:20px}
+  .vp-tab h3{font-size:14.5px;margin-top:10px}
+  .vp-tab p{display:none}
+  .vp-panel{grid-template-columns:1fr;gap:28px;padding:24px 18px}
+  .vp-panel h3{font-size:23px}
+}
+
+/* Panel 1: per-loan card */
+.loan-card{background:var(--mist);border:1px solid var(--line);border-radius:16px;padding:32px}
+.loan-card .vs{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-size:15px}
+.loan-card .lbl{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.loan-card .big{font-size:64px;font-weight:800;color:var(--navy);line-height:1;margin-top:10px;letter-spacing:-.02em}
+.loan-card .big small{font-size:18px;font-weight:600;color:var(--muted);letter-spacing:0;margin-left:6px}
+.split{display:flex;height:14px;border-radius:7px;overflow:hidden;margin-top:22px;gap:2px;background:#fff}
+.split span{display:block;height:100%}
+.split .a{background:var(--c1);border-radius:7px 0 0 7px}
+.split .b{background:var(--c2);border-radius:0 7px 7px 0}
+.split-legend{display:grid;gap:10px;margin-top:16px;font-size:15px}
+.split-legend div{display:grid;grid-template-columns:12px 1fr auto;gap:10px;align-items:center}
+.split-legend i{width:12px;height:12px;border-radius:3px;display:block}
+.split-legend b{color:var(--navy-ink);font-variant-numeric:tabular-nums}
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.tier{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.tier .t{font-size:13px;color:var(--muted);font-weight:600}
+.tier .v{font-size:26px;font-weight:800;color:var(--navy-ink);margin-top:2px}
+.vs{margin-top:16px;font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.vs b{color:var(--navy-ink)}
+
+/* Panel 2: portal mock */
+.browser{border-radius:14px;border:1px solid #d9dee6;overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.browser .chrome{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#F1F3F6;border-bottom:1px solid #e3e7ec}
+.browser .dots{display:flex;gap:6px}.browser .dots i{width:10px;height:10px;border-radius:50%;background:#D5DAE1;display:block}
+.browser .url{flex:1;background:#fff;border:1px solid #e3e7ec;border-radius:8px;font-size:12px;color:#5d6570;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.portal{padding:0}
+.portal-top{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line)}
+.portal-top img{height:34px;width:auto}
+.portal-top nav{display:flex;gap:18px;font-size:13px;color:#555}
+.portal-top nav span.on{color:var(--navy);font-weight:700;box-shadow:inset 0 -2px 0 var(--red);padding-bottom:4px}
+.portal-body{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;padding:20px;background:#F6F8FB}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.pcard .hello{font-size:19px;font-weight:700;color:var(--navy-ink)}
+.pcard .acct{font-size:12.5px;color:var(--muted)}
+.pcard .kv{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.pcard .kv .k{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.pcard .kv .v{font-size:22px;font-weight:800;color:var(--navy-ink);font-variant-numeric:tabular-nums}
+.meter{height:8px;border-radius:4px;background:#E3EAF4;margin-top:14px;overflow:hidden}
+.meter span{display:block;height:100%;width:40%;background:var(--navy);border-radius:4px}
+.pcard .meta{font-size:12.5px;color:var(--muted);margin-top:6px}
+.fakebtn{margin-top:14px;display:block;text-align:center;background:var(--navy);color:#fff;border-radius:9px;padding:10px;font-size:14px;font-weight:700;user-select:none}
+.pside{display:grid;gap:12px;align-content:start}
+.pside .pcard .h{font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.08em}
+.pside .pcard p{font-size:13.5px;margin-top:4px;line-height:1.45;color:#3f454d}
+.pside .pcard .go{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;color:var(--red)}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#146c2e;background:#E4F4E8;border-radius:999px;padding:3px 9px;margin-top:10px}
+@media (max-width:640px){.portal-body{grid-template-columns:1fr}.portal-top nav{display:none}}
+
+/* Panel 3: mailer + data signals */
+#p-data{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+#p-data{align-items:stretch}
+#p-data > div:last-child{display:flex;flex-direction:column}
+#p-data .mail-wrap{flex:1;display:flex;flex-direction:column}
+#p-data .mailer{flex:1;display:flex;flex-direction:column}
+#p-data .mailer .mb{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:22px 22px 18px}
+#p-data .mailer .mb > *{margin-top:0 !important}
+#p-data .mailer .mb .head{margin-top:-10px !important}
+@media (max-width:900px){#p-data .mailer .mb{justify-content:flex-start;gap:12px}#p-data .mailer .mb .head{margin-top:-6px !important}}
+.mail-wrap{display:block}
+.dana{margin-top:26px;border-top:1px solid var(--line);padding-top:18px}
+.dana .h{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dana dl{margin:12px 0 0;display:grid;gap:0}
+.dana dl div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.dana dt{color:var(--muted)}
+.dana dd{margin:0;font-weight:700;color:var(--navy-ink);text-align:right}
+.dana p{margin-top:14px;font-size:14px;color:var(--muted)}
+.dana p.one{margin-top:16px;padding:14px 16px;background:#EEF3FA;border-radius:12px;font-size:14.5px;color:var(--text)}
+.dana p.one b{color:var(--navy-ink)}
+.mailer{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #d9dee6;background:#fff}
+.mailer .mh{background:var(--navy);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.mailer .mh .store{font-weight:800;letter-spacing:.06em;font-size:15px;text-transform:uppercase}
+.mailer .mh .store small{display:block;font-weight:400;letter-spacing:0;text-transform:none;font-size:11.5px;color:#BFD0E6}
+.mailer .mb{padding:18px 20px 16px}
+.mailer .hi{font-size:14px;color:var(--muted)}
+.mailer .head{font-size:20px;font-weight:800;color:var(--navy-ink);line-height:1.15;margin-top:6px}
+.mailer .offer{margin-top:14px;background:#F2F6FC;border:1px solid #dbe6f5;border-radius:12px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mailer .offer .veh{font-size:13px;color:var(--muted);line-height:1.35}
+.mailer .offer .veh b{display:block;color:var(--navy-ink);font-size:16px}
+.mailer .offer .pay{font-size:38px;font-weight:800;color:var(--red);line-height:1;white-space:nowrap}
+.mailer .offer .pay small{font-size:14px;color:var(--muted);font-weight:600}
+.mailer .eq{margin-top:12px;font-size:14px}
+.mailer .eq b{color:#146c2e}
+.mailer .mcta{margin-top:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.mailer .mcta span{background:var(--red);color:#fff;border-radius:8px;padding:9px 14px;font-weight:700;font-size:14px}
+.mailer .mcta em{font-style:normal;font-size:12.5px;color:var(--muted)}
+.mailer .fin{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted)}
+.mailer .fin img{height:20px;width:auto}
+.mailer .fine{font-size:10.5px;color:#8a9099;line-height:1.45;margin-top:10px}
+.signals{background:#0A2A52;color:#DCE7F5;border-radius:14px;padding:20px;display:flex;flex-direction:column}
+.signals .h{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9EC0EA}
+.signals ul{list-style:none;padding:0;margin:20px 0;display:flex;flex-direction:column;justify-content:space-evenly;gap:16px;flex:1}
+.signals li{display:grid;grid-template-columns:18px 1fr;gap:8px;font-size:14.5px;line-height:1.45}
+.signals li b{color:#fff}
+.signals .dot{width:8px;height:8px;border-radius:50%;background:#62A6E8;margin-top:7px}
+.signals .foot{margin-top:auto;padding-top:12px;border-top:1px solid rgba(255,255,255,.14);font-size:12.5px;color:#B7CAE3}
+@media (max-width:1100px){.mail-wrap{grid-template-columns:1fr}}
+@media (max-width:900px){#p-data{grid-template-columns:1fr}}
+
+/* ---------- Economics ---------- */
+.econ{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:24px;margin-top:40px;align-items:stretch}
+.econ > .panel{display:flex;flex-direction:column}
+.econ > .panel .chart-box{margin-top:auto;padding-top:10px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:28px}
+.chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.chart-head h3{font-size:20px}
+.chart-head .muted{font-size:14px;color:var(--muted);margin-top:4px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px;color:#3f454d;margin-top:14px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.chart-box{position:relative;margin-top:10px}
+.chart-box svg{width:100%;height:auto;display:block;overflow:visible}
+.chart-box .grid line{stroke:#E6E9EE;stroke-width:1}
+.chart-box .axis text{fill:#6B7280;font-size:12px;font-family:var(--font);font-variant-numeric:tabular-nums}
+.chart-box .tot{fill:#1c2430;font-size:15px;font-weight:800;font-family:var(--font)}
+.chart-box .seglbl{fill:#fff;font-size:12px;font-weight:700;font-family:var(--font)}
+.chart-box .yr{fill:#3f454d;font-size:13px;font-weight:600;font-family:var(--font)}
+.chart-box .seglbl,.chart-box .tot,.chart-box .yr{pointer-events:none}
+.chart-box .seg{cursor:default}
+.chart-box .seg:hover{filter:brightness(1.08)}
+.tip{position:absolute;pointer-events:none;background:#0A2A52;color:#fff;font-size:13px;border-radius:8px;padding:8px 10px;box-shadow:0 6px 20px rgba(0,0,0,.18);opacity:0;transition:opacity .12s;white-space:nowrap;z-index:5}
+.tip b{display:block;font-size:15px}
+table.tbl{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px;font-variant-numeric:tabular-nums}
+.tbl th,.tbl td{padding:9px 8px;text-align:right;border-top:1px solid var(--line)}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl thead th{white-space:nowrap;font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-top:0}
+.tbl tr.tot td{font-weight:800;color:var(--navy-ink)}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.kpis .panel{display:flex;flex-direction:column}
+.perloan .big{font-size:58px;font-weight:800;line-height:1;color:var(--navy);margin-top:10px;letter-spacing:-.02em}
+.perloan .big small{font-size:18px;font-weight:600;color:var(--muted);letter-spacing:0;margin-left:6px}
+.perloan .row,.kpis .ev .row{margin-top:18px !important}
+.kpis .ev .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kpis .ev .cell{background:var(--mist);border-radius:12px;padding:14px}
+.kpis .ev .cell .t{font-size:13px;font-weight:600;color:var(--muted)}
+.kpis .ev .cell .v{font-size:32px;font-weight:800;color:var(--navy-ink);line-height:1.1;margin-top:4px}
+.kpis .ev .vs{margin-top:auto;padding-top:16px;font-size:14.5px;color:var(--muted)}
+.kpis .ev .vs b{color:var(--navy-ink)}
+.perloan .vs{margin-top:auto;padding-top:16px;font-size:14.5px;color:var(--muted)}
+.perloan .vs b{color:var(--navy-ink)}
+.ev-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.btn.sm{padding:8px 14px;font-size:13.5px}
+.econ-foot p{padding:0 14px}
+.vp-panels{grid-template-columns:minmax(0,1fr)}.vp-panel{min-width:0}
+.vp-panel > *{min-width:0}
+@media (max-width:900px){.vp-panel{grid-template-columns:minmax(0,1fr) !important}.vp-panel .chips{flex-wrap:wrap}.vp-panel *{max-width:100%}}
+@media (max-width:860px){.kpis,.econ-foot{grid-template-columns:1fr}.econ-foot{gap:4px}}
+.side{display:grid;grid-template-rows:1fr auto;gap:24px}
+.side .ev{display:flex;flex-direction:column}
+.side .ev .foot{margin-top:auto;padding-top:14px}
+.ev .lbl,.perloan .lbl{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ev .big{font-size:58px;font-weight:800;line-height:1;color:var(--navy);margin-top:10px;letter-spacing:-.02em}
+.ev p{margin-top:10px;font-size:15px}
+.ev .foot{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.5}
+.perloan .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.perloan .cell{background:var(--mist);border-radius:12px;padding:14px}
+.perloan .cell .t{font-size:13px;font-weight:600;color:var(--muted)}
+.perloan .cell .v{font-size:32px;font-weight:800;color:var(--navy-ink);line-height:1.1;margin-top:4px}
+.perloan .cell.hi{background:#E3ECF8}
+.perloan .cell.hi .t{color:var(--muted)}.perloan .cell.hi .v{color:var(--navy)}
+.perloan .foot{font-size:12.5px;color:var(--muted);margin-top:10px}
+.assump-btn{width:100%;justify-content:center}
+.assump-now{font-size:13px;color:var(--muted);text-align:center;margin-top:10px}
+.econ-foot{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:0;margin:14px 0 0;font-size:11.5px;color:var(--muted);line-height:1.55}
+@media (max-width:860px){.econ-foot{grid-template-columns:1fr;gap:4px}}
+@media (max-width:900px){.vp-panel:not(.on){display:none}.vp-panel{align-items:start}}
+@media (max-width:640px){.perloan .vs,.kpis .ev .vs{display:block}.mailer .head{font-size:16px}.perloan .vs b,.kpis .ev .vs b{white-space:nowrap}.mailer .offer{flex-direction:column;align-items:flex-start;gap:8px}.mailer .offer .pay{font-size:34px}.hero .cta{flex-wrap:wrap}}
+@media (max-width:960px){.econ{grid-template-columns:1fr}}
+@media (max-width:640px){.panel{padding:20px 16px}.ev .big{font-size:48px}.tbl{font-size:13px}.tbl th,.tbl td{padding:8px 4px}}
+
+/* ---------- Assumptions dialog ---------- */
+dialog{border:0;border-radius:18px;padding:0;width:min(560px,calc(100vw - 32px));box-shadow:0 30px 80px rgba(0,0,0,.35);color:var(--text)}
+dialog::backdrop{background:rgba(7,30,60,.4)}
+.dlg-h{background:var(--navy);color:#fff;padding:22px 26px}
+.dlg-h h3{color:#fff;font-size:22px}
+.dlg-h p{font-size:14px;color:#CFE0F6;margin-top:4px}
+.dlg-b{padding:22px 26px 8px;display:grid;gap:22px}
+.fld label{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;color:var(--navy-ink);font-size:15px}
+.fld output{display:none}
+.fld .inw{position:relative;margin-top:10px}
+.fld input[type=number]{width:100%;height:52px;padding:0 44px 0 16px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:20px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums;background:#fff;-moz-appearance:textfield}
+.fld input[type=number]::-webkit-inner-spin-button,.fld input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.fld input[type=number]:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(9,65,140,.15)}
+.fld .unit{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;pointer-events:none}
+.fld .help{font-size:13px;color:var(--muted);margin-top:2px}
+.dlg-sum{margin:6px 26px 0;background:var(--mist);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dlg-sum .k{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.dlg-sum .v{font-size:24px;font-weight:800;color:var(--navy-ink)}
+.dlg-f{display:flex;justify-content:space-between;gap:12px;padding:18px 26px 24px}
+.linkish{background:none;border:0;color:var(--navy);font:600 14px var(--font);cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- Terms ---------- */
+.terms{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.terms .panel h3{font-size:22px;display:flex;align-items:center;gap:12px}
+.terms .panel h3 .n{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:15px}
+.terms .panel.need h3 .n{background:var(--red)}
+.terms .panel h3 .n.logo{background:none;border-radius:0;width:38px;height:38px;overflow:hidden;display:block}
+.terms .panel h3 .n.logo img{height:38px;width:auto;max-width:none;display:block;margin:0 auto}
+.terms .panel h3 .n.tri{width:33px;position:relative;flex:none}
+.terms .panel h3 .n.tri img{position:absolute;left:0;top:0;height:38px;width:auto;max-width:none;margin:0 !important}
+.terms{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}@media (max-width:900px){.terms{grid-template-columns:minmax(0,1fr)}}
+@media (min-width:1180px){.terms .oneline{white-space:nowrap;letter-spacing:-.015em;font-size:.95em}}
+.terms .ticks{gap:14px !important;margin-top:18px}
+.terms .panel{padding-bottom:22px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.step{padding:20px 22px;background:#fff;position:relative}
+.step+.step{border-left:1px solid var(--line)}
+.step .w{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.step h4{font-size:18px;margin-top:6px}
+.step p{font-size:14.5px;margin-top:4px;color:var(--muted)}
+@media (max-width:860px){.terms{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.step+.step{border-left:0;border-top:1px solid var(--line)}}
+
+/* ---------- Engine strip ---------- */
+.engine{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.eng{border-top:3px solid var(--navy);padding-top:16px}
+.eng h4{font-size:17px}
+.eng p{font-size:14.5px;margin-top:6px;color:var(--muted);line-height:1.5}
+.team{margin-top:40px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--mist);border-radius:16px;padding:20px 24px}
+.team img{height:40px;width:auto}
+.team p{font-size:15px;flex:1;min-width:260px}
+@media (max-width:860px){.engine{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.engine{grid-template-columns:1fr}}
+
+/* ---------- Close + footer ---------- */
+.close{background:linear-gradient(120deg,#07356F,#09418C 55%,#0B5AB5);color:#fff;padding:84px 0}
+.close h2{color:#fff;font-size:clamp(30px,4vw,48px);text-transform:uppercase;font-weight:800;line-height:1}
+.close h2 span{color:#C9CDD3;display:inline;margin-left:.25em}
+.close p{margin-top:18px;max-width:1000px;color:#DCE7F5;font-size:18px}
+.close .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.close .btn{background:#fff;color:var(--navy) !important}
+.close .who{margin-top:34px;display:flex;gap:40px;flex-wrap:wrap;font-size:15px;color:#DCE7F5}
+.close .who b{display:block;color:#fff;font-size:17px}
+footer{background:var(--navy-deep);color:#AFC3DD;padding:34px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer img{height:54px;width:auto}
+.fallback-wordmark{font-weight:800;letter-spacing:.04em;color:var(--navy);text-transform:uppercase;font-size:15px;line-height:1.05}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+</style>
+</head>
+<body>
+
+<!-- ======================= TOP BAR ======================= -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brandmark" href="#top" aria-label="Triton Automotive Group">
+      <img src="https://tritonautomotivegroup.com/wp-content/uploads/TAG_Logo2_woTL.png" alt="Triton Automotive Group" referrerpolicy="no-referrer" data-fallback="Triton Automotive Group">
+      <span class="for"><b>Financial Services</b>Proposal from Brivio · Sept 2026</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#numbers">The math</a>
+      <a href="#why">Beyond the economics</a>
+      <a href="#terms">Proposal</a>
+      <a class="btn" href="mailto:Charles.do@briviocapital.com?cc=Ben.lee@briviocapital.com&amp;subject=TAFS%20pilot" data-track="nav_contact">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- ======================= HERO ======================= -->
+<section class="hero" data-sec="hero">
+  <svg class="shield" viewBox="0 0 200 230" aria-hidden="true"><path d="M100 6 186 36v74c0 58-38 96-86 114C52 206 14 168 14 110V36L100 6Z" fill="none" stroke="#fff" stroke-width="10"/></svg>
+    <div class="wrap">
+    <div class="eyebrow">Proposal for Triton Automotive Group · September 2026</div>
+    <div class="hero-head"><h1><span>Triton Automotive</span><span class="l2">Financial Services</span><i class="bar" aria-hidden="true"></i></h1><div class="hero-logo"><img src="https://tritonautomotivegroup.com/wp-content/uploads/tag-logo-01-01.png" alt="Triton Automotive Group" referrerpolicy="no-referrer" data-fallback="Triton Automotive Group"></div></div>
+    <p class="lede">Your own captive lender, with <b>Triton's name on every contract</b> and Brivio running the engine behind it. No capital, no credit risk, and no change at the F&amp;I desk.</p>
+    <div class="cta">
+      <a class="btn" href="#numbers" data-track="hero_numbers">See the numbers</a>
+      <a class="btn ghost" href="#terms" data-track="hero_terms">Pilot terms</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= STAT BAND ======================= -->
+<section class="band" aria-label="Headline numbers">
+  <div class="wrap">
+    <div class="badges">
+      <div class="badge"><div class="v" data-bind="total3">$66M</div><div class="k">Estimated payout</div><div class="s">over the first 3 years</div></div>
+      <div class="badge"><div class="v" data-bind="ev">$158M</div><div class="k">Enterprise value</div><div class="s">built at 4x Year 3 payout</div></div>
+      <div class="badge"><div class="v">$0</div><div class="k">Capital to launch</div><div class="s">and zero credit risk</div></div>
+    </div>
+    <p class="note">Based on <span data-bind="rooftopsTxt">300+ rooftops</span> at <span data-bind="lprTxt">20 loans a month</span> each. <a href="#numbers" data-open-assumptions>Change the assumptions</a></p>
+  </div>
+</section>
+
+<!-- ======================= THE NUMBERS ======================= -->
+<section class="sec mist" id="numbers" data-sec="economics">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The math</div>
+      <h2>Keep the economics lenders earn today</h2>
+      <p>In addition to your typical dealer markup or flat-fee.</p>
+    </div>
+    <div class="kpis">
+      <div class="panel perloan">
+        <div class="lbl">All-in payout to Triton (per funded loan)</div>
+        <div class="big" data-bind="blended">~$640<small>blended</small></div>
+        <div class="row">
+          <div class="cell"><div class="t">740+ credit</div><div class="v" data-bind="p740">~$250</div></div>
+          <div class="cell hi"><div class="t">Below 740</div><div class="v" data-bind="pLow">~$700</div></div>
+        </div>
+        <p class="vs">Compared to Triton's lender incentive: <b>$250 to $300</b></p>
+      </div>
+      <div class="panel ev">
+        <div class="ev-top"><div class="lbl">Enterprise value added</div><button class="btn ghost sm" type="button" data-open-assumptions data-track="ev_review">Review assumptions</button></div>
+        <div class="big" data-bind="ev">$158M</div>
+        <div class="row">
+          <div class="cell"><div class="t">Year 3 payout</div><div class="v" data-bind="y3">$39.5M</div></div>
+          <div class="cell"><div class="t">Earnings multiple</div><div class="v">4x</div></div>
+        </div>
+        <p class="vs">About <b data-bind="evPerRoof">$527K</b> of value per rooftop.</p>
+      </div>
+    </div>
+    <div class="econ-foot"><p>Per loan: upfront sales commission + annual volume bonus - monthly subscription fee</p><p>Enterprise value at 4x (Haig Report, Q1 2026).</p></div>
+  </div>
+</section>
+
+<!-- ======================= VALUE PROPS ======================= -->
+<section class="sec" id="why" data-sec="value_props">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Beyond the economics</div>
+      <h2>Own the brand and the customer</h2>
+      <p>With TAFS, the name on the contract and the data behind every loan stay inside Triton.</p>
+    </div>
+
+    <div class="vp-tabs" role="tablist" aria-label="Value propositions">
+      <button class="vp-tab" role="tab" id="t-brand" aria-controls="p-brand" aria-selected="true" data-key="own_brand">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v6c0 4.6-3.3 7.9-8 9-4.7-1.1-8-4.4-8-9V6l8-3Z"/><path d="m8.5 12 2.4 2.4L15.8 9.6"/></svg></span>
+        <h3>Own the brand experience</h3>
+        <p>Every contract, statement and payment features Triton.</p>
+        <span class="prog"></span>
+      </button>
+      <button class="vp-tab" role="tab" id="t-data" aria-controls="p-data" aria-selected="false" data-key="compound_data">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-13.7 5.6"/><path d="M4 12A8 8 0 0 1 17.7 6.4"/><path d="M18 2.5v4h-4"/><path d="M6 21.5v-4h4"/></svg></span>
+        <h3>Compound your data</h3>
+        <p>Personalized offers leveraging your customer data</p>
+        <span class="prog"></span>
+      </button>
+    </div>
+
+    <div class="vp-panels" id="vp-panels">
+      <!-- Panel 2: Own brand experience -->
+      <div class="vp-panel on" role="tabpanel" id="p-brand" aria-labelledby="t-brand">
+        <div>
+          <h3>Every touchpoint says Triton</h3>
+          <p class="sub">From contract to payoff letter, your customer deals with TAFS and the store that sold the car.</p>
+          <ul class="chips"><li>TAFS on every contract</li><li>Branded customer portal</li><li>Servicing in the TAFS name</li></ul>
+        </div>
+        <div>
+          <span class="sample-tag">Sample customer portal · illustrative</span>
+          <div class="browser" aria-label="Sample TAFS customer portal (illustration)">
+            <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">tritonautomotivegroup.com/tafs/account</span></div>
+            <div class="portal">
+              <div class="portal-top">
+                <img src="https://tritonautomotivegroup.com/wp-content/uploads/TAFS.png" alt="Triton Automotive Financial Services" referrerpolicy="no-referrer" data-fallback="Triton Automotive Financial Services">
+                <nav aria-hidden="true"><span class="on">Account</span><span>Payments</span><span>Documents</span><span>Offers</span></nav>
+              </div>
+              <div class="portal-body">
+                <div class="pcard">
+                  <div class="hello">Good morning, Jeff</div>
+                  <div class="acct">2021 Ford Escape · Account ending 4417</div>
+                  <div class="kv">
+                    <div><div class="k">Current balance</div><div class="v">$14,210</div></div>
+                    <div><div class="k">Next payment</div><div class="v">$412.18</div></div>
+                  </div>
+                  <div class="meter"><span></span></div>
+                  <div class="meta">24 of 60 payments made · Due Oct 1 · Autopay on</div>
+                  <div class="chip">✓ 24 on-time payments in a row</div>
+                  <div class="fakebtn" aria-hidden="true">Make a payment</div>
+                </div>
+                <div class="pside">
+                  <div class="pcard"><div class="h">Your dealership</div><p>Masano Auto Park, Reading, PA</p><span class="go">Book service ›</span></div>
+                  <div class="pcard"><div class="h">Just for you</div><p>You're pre-qualified for a BMW at a Masano store.</p><span class="go">See your offer ›</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Compound data -->
+      <div class="vp-panel" role="tabpanel" id="p-data" aria-labelledby="t-data">
+        <div>
+          <h3>Market to your customers with your own data</h3>
+          
+          <div class="dana"><div class="h">What TAFS knows about Jeff</div><dl><div><dt>On-time payments</dt><dd>24 of 24</dd></div><div><dt>Equity in his Escape</dt><dd>+$4,290</dd></div><div><dt>Bought at</dt><dd>Masano Auto Park</dd></div><div><dt>Offer from</dt><dd>Masano BMW</dd></div></dl><p>Today this sits with the funding bank. With TAFS, it sits with Triton.</p><p class="one"><b>One customer file, every channel.</b> TAFS servicing and your sales team share the same data, so a payment reminder, a service call and an upgrade offer are one conversation, by phone, mail, email, the portal or in the store.</p></div>
+        </div>
+        <div>
+          <span class="sample-tag">Sample loyalty mailer · illustrative</span>
+          <div class="mail-wrap">
+            <div class="mailer" aria-label="Sample loyalty mailer (illustration)">
+              <div class="mh"><div class="store">Masano BMW<small>Reading, PA · A Masano Auto Group store</small></div></div>
+              <div class="mb">
+                <div class="hi">Jeff, thank you for 24 on-time payments.</div>
+                <div class="head">You've earned a step up to BMW.<br>You're pre-qualified.*</div>
+                <div class="offer">
+                  <div class="veh"><b>2026 BMW 330i</b>From your Ford Escape to a BMW, same Masano family</div>
+                  <div class="pay">$699<small>/mo</small></div>
+                </div>
+                <p class="eq">Your 2021 Ford Escape is worth more than you owe: <b>about $4,290 in equity</b> toward your next vehicle.</p>
+                <div class="mcta"><span>Claim your offer</span><em>Code TAFS-LOYAL · valid through Nov 30</em></div>
+                <div class="fin"><img src="https://tritonautomotivegroup.com/wp-content/uploads/TAFS.png" alt="" referrerpolicy="no-referrer" data-fallback="TAFS">Financing by Triton Automotive Financial Services</div>
+                <p class="fine">*Based on TAFS payment history; subject to credit approval. $48,675 price, $2,500 down + $4,290 trade equity, $41,885 at 6.25% APR for 72 mo = $699.11/mo. Illustrative only; not an offer of credit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= TERMS ======================= -->
+<section class="sec" id="terms" data-sec="terms">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Proposal</div>
+      <h2>Start with a 3-month pilot. Zero investment.</h2>
+      <p>Prove it on a handful of stores in one state, then roll it out across the membership. Brivio runs the lender; Triton owns the relationship.</p>
+    </div>
+    <div class="terms">
+      <div class="panel">
+        <h3><span class="n logo"><img src="assets/brivio-b-gold.png" alt="Brivio"></span>What Brivio brings</h3>
+        <ul class="ticks">
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>3-month pilot at zero cost.</b> No monthly subscription fee</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Funding - up to $25 million</b> in pilot loans</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b class="oneline">Licensing, compliance, underwriting, servicing and capital markets</b></span></li>
+        </ul>
+      </div>
+      <div class="panel need">
+        <h3><span class="n logo tri"><img src="https://tritonautomotivegroup.com/wp-content/uploads/tag-logo-01-01.png" alt="Triton" referrerpolicy="no-referrer"></span>What we need from Triton</h3>
+        <ul class="ticks">
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Non-binding letter of intent</b></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Standard dealers lending agreement</b></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Agreement on pilot population</b></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="w">Step 1</div><h4>Sign the LOI and agreement</h4><p>Agree on the pilot state and stores.</p></div>
+      <div class="step"><div class="w">Step 2</div><h4>Run the pilot</h4><p>No fees. Economics paid at the end.</p></div>
+      <div class="step"><div class="w">Step 3</div><h4>Roll out to members</h4><p>Add groups and stores at their own pace.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLOSE ======================= -->
+<section class="close" id="next" data-sec="next_steps">
+  <div class="wrap">
+    <h2>Let's launch TAFS<span>together.</span></h2>
+    <p>Next step is a signed pilot LOI. We'll bring the draft, a proposed pilot state and a store list to review.</p>
+    <div class="cta">
+      <a class="btn" href="mailto:Charles.do@briviocapital.com?cc=Ben.lee@briviocapital.com&amp;subject=TAFS%20pilot" data-track="cta_email">Email the team</a>
+    </div>
+    <div class="who">
+      <div><b>Charles Do</b>CEO</div>
+      <div><b>Ben Lee</b>COO &amp; CFO</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="https://tritonautomotivegroup.com/wp-content/uploads/tag-logo-01-01.png" alt="Triton Automotive Group" referrerpolicy="no-referrer" data-fallback="Triton Automotive Group">
+    <div>Prepared by Brivio Capital for Triton Automotive Group. Confidential. September 2026.</div>
+  </div>
+</footer>
+
+<!-- ======================= ASSUMPTIONS DIALOG ======================= -->
+<dialog id="assump" aria-labelledby="assump-title">
+  <form method="dialog" id="assumpForm">
+    <div class="dlg-h">
+      <h3 id="assump-title">Review assumptions</h3>
+      <p>Change a number and the whole page updates.</p>
+    </div>
+    <div class="dlg-b">
+      <div class="fld">
+        <label for="inR">Rooftops on TAFS <output id="outR">300</output></label>
+        <div class="inw"><input id="inR" type="number" inputmode="numeric" min="1" max="1000" step="1" value="300"></div>
+        <div class="help">At full rollout. Triton has 300+ rooftops.</div>
+      </div>
+      <div class="fld">
+        <label for="inL">Loans per rooftop, per month <output id="outL">20</output></label>
+        <div class="inw"><input id="inL" type="number" inputmode="numeric" min="1" max="200" step="1" value="20"></div>
+        <div class="help" id="helpL">About 18% of a typical Triton store's ~111 monthly sales.</div>
+      </div>
+      <div class="fld">
+        <label for="inP">Share of loans with 740+ credit <output id="outP">15%</output></label>
+        <div class="inw"><input id="inP" type="number" inputmode="numeric" min="0" max="100" step="1" value="15"><span class="unit">%</span></div>
+        <div class="help" id="helpP">740+ pays ~$250 per loan all-in. Below 740 pays ~$700.</div>
+      </div>
+    </div>
+    <div class="dlg-sum">
+      <div><div class="k">3-year payout</div><div class="v" data-bind="total3Long">$66.3M</div></div>
+      <div><div class="k">Enterprise value</div><div class="v" data-bind="ev">$158M</div></div>
+    </div>
+    <div class="dlg-f">
+      <button class="linkish" type="button" id="resetA">Reset to proposal</button>
+      <button class="btn" type="button" id="doneA">Done</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+/* =====================================================================
+   PAYOUT ENGINE
+   Mirrors 'Dealer financials' rows 95-98 of Triton_Business_Case.xlsx
+   (servicing bonus corrected to /12). Rooftop and loan ramps are the
+   model's 36 launch months, scaled to the chosen rooftops and loans/rooftop.
+   ===================================================================== */
+const MODEL = {
+  roof:  [8,8,8,32,60,93,113,113,122,122,150,150,166,166,203,203,221,221,280,280,280,280,280,310,310,310,312,312,312,312,312,312,312,312,312,312],
+  loans: [50.4809,57.2117,100.9618,201.9237,363.4626,584.7372,780.3508,989.4259,1227.3172,1405.4728,1692.7933,1798.5929,2068.8761,2189.1889,2567.7958,2669.1783,2959.0229,3034.5339,3512.6302,3616.9574,3923.2083,4020.1737,4290.8776,4512.9937,4621.5276,4774.6531,4866.7807,5024.5336,5105.303,5131.8055,5164.1974,5191.1206,5218.0438,5244.9669,5246.6496,5248.3323],
+  avgLoan: 34412.5,
+  gos740: 237.5024,      // $ per loan, 740+ (Pricing!H16)
+  gosLow: 687.0797,      // $ per loan, below 740 (Pricing!H17:H18, mix-weighted)
+  fee: 2495,             // $ per rooftop per month, waived months 1-3
+  pilotMonths: 3,
+  runoff: 0.015,         // monthly portfolio runoff (model: 0.985 x prior)
+  tiers: [[1e9,0.002],[5e8,0.001],[0,0]], // servicing bonus, annual rate by portfolio size
+  multiple: 4
+};
+const DEFAULTS = {R:300, L:20, P:15};
+const state = {...DEFAULTS};
+
+function bonusRate(p){ for (const [t,r] of MODEL.tiers) if (p >= t) return r; return 0; }
+
+function calc(R, L, pct){
+  const p = pct/100;
+  const baseR = MODEL.roof[35], baseL = MODEL.loans[35]/MODEL.roof[35];
+  const sR = R/baseR, sL = L/baseL;
+  const gosLoan = p*MODEL.gos740 + (1-p)*MODEL.gosLow;
+  let P = 0; const months = [];
+  for (let i=0;i<36;i++){
+    const rt = MODEL.roof[i]*sR, n = MODEL.loans[i]*sR*sL;
+    const gos = n*gosLoan;
+    const fee = i < MODEL.pilotMonths ? 0 : -MODEL.fee*rt;
+    const Pn = (1-MODEL.runoff)*P + n*MODEL.avgLoan;
+    const bonus = bonusRate(Pn)*(P+Pn)/2/12;
+    P = Pn; months.push({gos, fee, bonus, n});
+  }
+  const years = [0,1,2].map(y => {
+    const s = months.slice(y*12, y*12+12);
+    const up = s.reduce((a,m)=>a+m.gos+m.fee,0), bo = s.reduce((a,m)=>a+m.bonus,0);
+    return {up, bonus:bo, total:up+bo, loans:s.reduce((a,m)=>a+m.n,0)};
+  });
+  const bonusLoan = bonusRate(P)*MODEL.avgLoan*2;   // Pricing tab convention
+  const feeLoan = MODEL.fee/L;
+  const pilot = months.slice(0,MODEL.pilotMonths).reduce((a,m)=>a+m.gos,0);
+  const total3 = years.reduce((a,y)=>a+y.total,0);
+  return {
+    years, total3, ev: years[2].total*MODEL.multiple, pilot,
+    p740: MODEL.gos740 - feeLoan + bonusLoan,
+    pLow: MODEL.gosLow - feeLoan + bonusLoan,
+    upLoan: gosLoan - feeLoan, bonusLoan,
+    blended: gosLoan - feeLoan + bonusLoan
+  };
+}
+
+/* ---------- formatting ---------- */
+const $m = (v,d=1) => '$' + (v/1e6).toFixed(d) + 'M';
+const $M0 = v => '$' + Math.round(v/1e6).toLocaleString('en-US') + 'M';
+const $d = v => (v<0?'-$':'$') + Math.round(Math.abs(v)).toLocaleString('en-US');
+const $k = v => '$' + Math.round(v/1000).toLocaleString('en-US') + 'K';
+
+/* ---------- chart ---------- */
+const chartEl = document.getElementById('chart'), tip = document.getElementById('tip');
+const SVGNS = 'http://www.w3.org/2000/svg';
+let drawn = null;
+function niceScale(v){ const m = v/1e6*1.08; for (const s of [1,2,5,10,20,25,50,100,200,250,500]){ const n=Math.ceil(m/s); if (n<=5) return {max:n*s*1e6, n}; } return {max:Math.ceil(m/1000)*1e9, n:5}; }
+function el(tag, attrs, parent){ const e=document.createElementNS(SVGNS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; }
+function topRoundedPath(x,y,w,h,r){ if (h<=0) return ''; r=Math.min(r,h,w/2); return `M${x},${y+h}V${y+r}Q${x},${y} ${x+r},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+h}Z`; }
+function rectPath(x,y,w,h){ if (h<=0) return ''; return `M${x},${y}H${x+w}V${y+h}H${x}Z`; }
+
+function drawChart(res, from){
+  if (!chartEl) return;
+  const W=Math.max(300, Math.round(chartEl.clientWidth||640)), H = W < 520 ? 250 : 320, m={t:30,r:4,b:34,l:W<520?40:48};
+  const iw=W-m.l-m.r, ih=H-m.t-m.b;
+  const sc = niceScale(Math.max(...res.years.map(y=>y.total), 1)), max = sc.max;
+  chartEl.querySelectorAll('svg').forEach(s=>s.remove());
+  const svg = el('svg',{viewBox:`0 0 ${W} ${H}`,width:W,height:H,role:'img','aria-label':'Stacked columns: annual payout to Triton members by year'});
+  chartEl.insertBefore(svg, tip);
+  const g = el('g',{transform:`translate(${m.l},${m.t})`},svg);
+  const grid = el('g',{class:'grid'},g), axis = el('g',{class:'axis'},g);
+  for (let i=0;i<=sc.n;i++){
+    const v=max*i/sc.n, y=ih - ih*i/sc.n;
+    el('line',{x1:0,x2:iw,y1:y,y2:y},grid);
+    const t=el('text',{x:-10,y:y+4,'text-anchor':'end'},axis); t.textContent = '$'+Math.round(v/1e6)+'M';
+  }
+  const band = iw/3, bw = Math.min(88, band*0.5);
+  const bars = res.years.map((yr,i)=>{
+    const x = band*i + (band-bw)/2;
+    const up = Math.max(0,yr.up), bo = Math.max(0,yr.bonus);
+    const s1 = el('path',{class:'seg',fill:'var(--c1)'},g);
+    const s2 = el('path',{class:'seg',fill:'var(--c2)'},g);
+    const l1 = el('text',{class:'seglbl','text-anchor':'middle'},g);
+    const tt = el('text',{class:'tot','text-anchor':'middle'},g);
+    const yl = el('text',{class:'yr','text-anchor':'middle',x:x+bw/2,y:ih+22},g); yl.textContent='Year '+(i+1);
+    const hover = (e, name, val) => { tip.innerHTML = `Year ${i+1} · ${name}<b>${$m(val)}</b>`; tip.style.opacity=1; placeTip(e); };
+    s1.addEventListener('mousemove',e=>hover(e,'Upfront payout',yr.up));
+    s2.addEventListener('mousemove',e=>hover(e,'Servicing bonus',yr.bonus));
+    [s1,s2].forEach(s=>s.addEventListener('mouseleave',()=>tip.style.opacity=0));
+    return {x,up,bo,total:yr.total,s1,s2,l1,tt};
+  });
+  const start = from || bars.map(()=>({up:0,bo:0}));
+  const t0 = performance.now(), dur = 520;
+  const ease = t => 1-Math.pow(1-t,3);
+  function frame(now){
+    const k = ease(Math.min(1,(now-t0)/dur));
+    bars.forEach((b,i)=>{
+      const up = start[i].up + (b.up-start[i].up)*k, bo = start[i].bo + (b.bo-start[i].bo)*k;
+      const hUp = ih*up/max, hBo = ih*bo/max, gap = hBo>0.5 ? 2 : 0;
+      const yUp = ih - hUp, yBo = yUp - gap - hBo;
+      b.s1.setAttribute('d', hBo>0.5 ? rectPath(b.x,yUp,bw,hUp) : topRoundedPath(b.x,yUp,bw,hUp,4));
+      b.s2.setAttribute('d', topRoundedPath(b.x,yBo,bw,Math.max(0,hBo),4));
+      const topY = hBo>0.5 ? yBo : yUp;
+      b.tt.setAttribute('x',b.x+bw/2); b.tt.setAttribute('y',topY-9); b.tt.textContent = $m(b.total);
+      b.l1.setAttribute('x',b.x+bw/2); b.l1.setAttribute('y',yUp+hUp/2+4);
+      b.l1.textContent = (hUp > 26 && bw >= 54) ? $m(up) : '';
+    });
+    if (k<1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  drawn = bars.map(b=>({up:b.up,bo:b.bo}));
+}
+function placeTip(e){
+  const r = chartEl.getBoundingClientRect();
+  let x = e.clientX - r.left + 14, y = e.clientY - r.top - 14;
+  const tw = tip.offsetWidth; if (x + tw > r.width) x = e.clientX - r.left - tw - 14;
+  tip.style.left = x+'px'; tip.style.top = y+'px';
+}
+
+/* ---------- bind values ---------- */
+function render(animateFrom){
+  const r = calc(state.R, state.L, state.P);
+  const vals = {
+    total3: $M0(r.total3), total3Long: $m(r.total3), ev: $M0(r.ev), y3: $m(r.years[2].total),
+    p740: '~'+$d(r.p740), pLow: '~'+$d(r.pLow), upLoan: '~'+$d(Math.round(Math.round(r.upLoan)/10)*10), bonusLoan: '~'+$d(Math.round(Math.round(r.bonusLoan)/10)*10),
+    pilotPay: $k(r.pilot),
+    rooftopsTxt: state.R + (state.R===300?'+':'') + ' rooftops', lprTxt: state.L + ' loans a month',
+    lprShort: state.L + ' loans per rooftop a month',
+    evPerRoof: $k(r.ev/Math.max(1,state.R)),
+    assumpNow: `${state.R}${state.R===300?'+':''} rooftops · ${state.L} loans/rooftop · ${state.P}% 740+`
+  };
+  document.querySelectorAll('[data-bind]').forEach(n=>{
+    const k=n.dataset.bind;
+    if (k==='blended'){ n.innerHTML = '~' + $d(Math.round(Math.round(r.upLoan)/10)*10 + Math.round(Math.round(r.bonusLoan)/10)*10) + '<small>blended</small>'; return; }
+    if (k in vals) n.textContent = vals[k];
+  });
+  const upPct = r.blended>0 ? Math.max(0,Math.min(100, r.upLoan/r.blended*100)) : 100;
+  document.querySelectorAll('[data-bind-w="upPct"]').forEach(n=>n.style.width = upPct+'%');
+  const tb = document.getElementById('tbl'); if (tb) {
+  const row = (name,f,cls='') => `<tr class="${cls}"><td>${name}</td>${r.years.map(y=>`<td>${(f(y)/1e6).toFixed(1)}</td>`).join('')}<td>${(r.years.reduce((a,y)=>a+f(y),0)/1e6).toFixed(1)}</td></tr>`;
+  tb.innerHTML = row('Upfront payout, net of fee', y=>y.up) + row('Servicing bonus', y=>y.bonus) + row('Total payout', y=>y.total, 'tot'); }
+  drawChart(r, animateFrom);
+  // dialog helpers
+  document.getElementById('outR').textContent = state.R;
+  document.getElementById('outL').textContent = state.L;
+  document.getElementById('outP').textContent = state.P + '%';
+  const perStore = 111; // ~111 monthly sales per Triton rooftop (Brivio assumption; 20 loans = ~18% penetration)
+  document.getElementById('helpL').textContent = `About ${Math.round(state.L/perStore*100)}% of a typical Triton store's ~${Math.round(perStore)} monthly sales.`;
+  document.getElementById('helpP').textContent = `740+ pays ~${$d(r.p740)} per loan all-in. Below 740 pays ~${$d(r.pLow)}.`;
+  return r;
+}
+
+/* ---------- assumptions dialog ---------- */
+const dlg = document.getElementById('assump');
+const inR = document.getElementById('inR'), inL = document.getElementById('inL'), inP = document.getElementById('inP');
+function syncInputs(){ inR.value=state.R; inL.value=state.L; inP.value=state.P; }
+function openAssumptions(e){
+  if (e) e.preventDefault();
+  syncInputs();
+  if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open','');
+  window.TAFS_TRACK && TAFS_TRACK.assumptionsOpened();
+}
+document.querySelectorAll('[data-open-assumptions]').forEach(b=>b.addEventListener('click', openAssumptions));
+let inputTimer;
+const clampIn = (el,lo,hi,fb) => { const v = parseFloat(el.value); return isFinite(v) ? Math.min(hi, Math.max(lo, v)) : fb; };
+[inR,inL,inP].forEach(inp=>inp.addEventListener('blur',()=>syncInputs()));
+[inR,inL,inP].forEach(inp=>inp.addEventListener('input',()=>{
+  if (inp.value === '') return;
+  const prev = drawn;
+  state.R=clampIn(inR,1,1000,state.R); state.L=clampIn(inL,1,200,state.L); state.P=clampIn(inP,0,100,state.P);
+  render(prev);
+  clearTimeout(inputTimer);
+  inputTimer = setTimeout(()=>window.TAFS_TRACK && TAFS_TRACK.assumptionsChanged({...state}), 700);
+}));
+document.getElementById('resetA').addEventListener('click',()=>{
+  const prev = drawn; Object.assign(state, DEFAULTS); syncInputs(); render(prev);
+  window.TAFS_TRACK && TAFS_TRACK.assumptionsChanged({...state, reset:true});
+});
+document.getElementById('doneA').addEventListener('click',()=>{ syncInputs(); dlg.close(); });
+document.getElementById('assumpForm').addEventListener('submit', e => e.preventDefault());
+[inR,inL,inP].forEach(inp=>inp.addEventListener('keydown', e => { if (e.key === 'Enter'){ e.preventDefault(); inp.blur(); } }));
+let downOnBackdrop = false;
+const outside = e => { const r = dlg.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
+dlg.addEventListener('pointerdown', e => { downOnBackdrop = e.target === dlg && outside(e); });
+dlg.addEventListener('click', e => { if (downOnBackdrop && e.target === dlg && outside(e)) dlg.close(); downOnBackdrop = false; });
+
+/* ---------- value-prop carousel ---------- */
+(function(){
+  const tabs = [...document.querySelectorAll('.vp-tab')];
+  const panels = tabs.map(t=>document.getElementById(t.getAttribute('aria-controls')));
+  const panelsBox = document.getElementById('vp-panels');
+  const INTERVAL = 6000;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let idx = 0, locked = reduced || window.matchMedia('(max-width:900px)').matches, hovering = false, visible = false, elapsed = 0, last = null;
+  function select(i, how){
+    idx = i; elapsed = 0;
+    tabs.forEach((t,j)=>{ t.setAttribute('aria-selected', j===i ? 'true':'false'); t.tabIndex = j===i ? 0 : -1; t.querySelector('.prog').style.width='0'; });
+    panels.forEach((p,j)=>p.classList.toggle('on', j===i));
+    if (how && window.TAFS_TRACK) TAFS_TRACK.card(tabs[i].dataset.key, how);
+  }
+  tabs.forEach((t,i)=>{
+    t.addEventListener('click',()=>{ locked = true; select(i,'click'); });
+    t.addEventListener('mouseenter',()=>{ if (window.matchMedia('(hover:hover)').matches){ hovering = true; if (idx!==i) select(i,'hover'); } });
+    t.addEventListener('mouseleave',()=>{ hovering = false; elapsed = 0; });
+    t.addEventListener('keydown',e=>{
+      if (e.key==='ArrowRight'||e.key==='ArrowLeft'){ e.preventDefault(); locked = true; const n=(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length; select(n,'keyboard'); tabs[n].focus(); }
+    });
+  });
+  panelsBox.addEventListener('mouseenter',()=>{ hovering = true; });
+  panelsBox.addEventListener('mouseleave',()=>{ hovering = false; });
+  panelsBox.addEventListener('touchstart',()=>{ locked = true; },{passive:true});
+  new IntersectionObserver(es=>es.forEach(e=>visible = e.isIntersecting),{threshold:.35}).observe(document.getElementById('why'));
+  function tick(now){
+    if (last==null) last = now;
+    const dt = now - last; last = now;
+    if (!locked && !hovering && visible && !document.hidden){
+      elapsed += dt;
+      tabs[idx].querySelector('.prog').style.width = Math.min(100, elapsed/INTERVAL*100) + '%';
+      if (elapsed >= INTERVAL){ select((idx+1)%tabs.length); if (window.TAFS_TRACK) TAFS_TRACK.card(tabs[idx].dataset.key,'auto'); }
+    } else if (locked) {
+      tabs.forEach(t=>t.querySelector('.prog').style.width='0');
+    }
+    requestAnimationFrame(tick);
+  }
+  select(0);
+  requestAnimationFrame(tick);
+})();
+
+/* ---------- logo fallbacks ---------- */
+document.querySelectorAll('img[data-fallback]').forEach(img=>{
+  const swap = () => { const s=document.createElement('span'); s.className='fallback-wordmark'; s.textContent=img.dataset.fallback; if (img.closest('footer')) s.style.color='#fff'; img.replaceWith(s); };
+  if (img.complete && img.naturalWidth===0) swap(); else img.addEventListener('error', swap);
+});
+
+render();
+let rzw = chartEl ? chartEl.clientWidth : 0;
+addEventListener('resize',()=>{ if (chartEl && Math.abs(chartEl.clientWidth - rzw) > 20){ rzw = chartEl.clientWidth; const r = calc(state.R,state.L,state.P); drawChart(r, drawn); } });
+</script>
+
+<!-- =====================================================================
+     VISIT TRACKING  (keep this block when editing the page)
+     - Microsoft Clarity: session recordings + heatmaps (project ypy955s9lz)
+     - Formspree: ONE email per page visit with location + engagement summary
+     - Runs only on briviocapital.com. Open the page once with ?notrack=1 on
+       each of your own devices to exclude yourself (?notrack=0 to undo).
+     ===================================================================== -->
+<script>
+(function(){
+  const CFG = {
+    formspree: 'https://formspree.io/f/xbdbozza',
+    clarity: 'ypy955s9lz',
+    proposal: 'Triton Sept 2026',
+    hosts: ['briviocapital.com','www.briviocapital.com'],
+    idleSendMs: 15000,        // tab hidden this long = visit over
+    checkpointMs: 180000,     // or send after 3 min of reading
+    maxEmailsPerDevicePerDay: 4
+  };
+  const ls = { get(k){ try{return localStorage.getItem(k);}catch(e){return null;} }, set(k,v){ try{localStorage.setItem(k,v);}catch(e){} } };
+  const qs = new URLSearchParams(location.search);
+  if (qs.get('notrack')==='1') ls.set('brivio_notrack','1');
+  if (qs.get('notrack')==='0') ls.set('brivio_notrack','');
+  const enabled = CFG.hosts.includes(location.hostname) && ls.get('brivio_notrack')!=='1' && !navigator.webdriver && !/HeadlessChrome|bot|crawl|spider|preview/i.test(navigator.userAgent);
+  if (!enabled) return;
+
+  /* --- Clarity --- */
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CFG.clarity);
+  const clarity = (...a) => { try{ window.clarity(...a); }catch(e){} };
+  clarity('set','proposal',CFG.proposal);
+
+  /* --- session state --- */
+  const t0 = Date.now();
+  let visibleMs = 0, visSince = document.hidden ? null : t0, maxScroll = 0, sent = false, hideTimer = null;
+  const sections = {}, secSince = {}, cards = {}, assumptions = {opened:0, changes:[]}, clicks = [];
+  let geo = {};
+  const vid = ls.get('tafs_vid') || (Math.random().toString(36).slice(2,10)); ls.set('tafs_vid', vid);
+  const visitNo = (+ls.get('tafs_visits') || 0) + 1; ls.set('tafs_visits', String(visitNo));
+  const firstSeen = ls.get('tafs_first') || new Date(t0).toISOString(); ls.set('tafs_first', firstSeen);
+
+  function nowVisible(){ return visibleMs + (visSince ? Date.now()-visSince : 0); }
+  function mmss(ms){ const s=Math.round(ms/1000); return Math.floor(s/60)+'m '+String(s%60).padStart(2,'0')+'s'; }
+
+  /* --- location / company from IP --- */
+  fetch('https://ipapi.co/json/').then(r=>r.json()).then(j=>{
+    if (j.error) throw 0;
+    geo = {ip:j.ip, city:j.city, region:j.region, country:j.country_name, postal:j.postal, org:j.org, asn:j.asn};
+  }).catch(()=>fetch('https://ipwho.is/').then(r=>r.json()).then(j=>{
+    geo = {ip:j.ip, city:j.city, region:j.region, country:j.country, postal:j.postal, org:(j.connection||{}).org || (j.connection||{}).isp, asn:(j.connection||{}).asn};
+  })).catch(()=>{}).finally(()=>{
+    if (geo.org) clarity('set','org',String(geo.org));
+    if (geo.city) clarity('set','city',String(geo.city));
+  });
+
+  /* --- engagement --- */
+  addEventListener('scroll',()=>{
+    const h = document.documentElement.scrollHeight - innerHeight;
+    if (h>0) maxScroll = Math.max(maxScroll, Math.round(scrollY/h*100));
+  },{passive:true});
+  const io = new IntersectionObserver(es=>es.forEach(e=>{
+    const k = e.target.dataset.sec;
+    if (e.isIntersecting){ secSince[k] = Date.now(); }
+    else if (secSince[k]){ sections[k] = (sections[k]||0) + (Date.now()-secSince[k]); secSince[k]=null; }
+  }),{threshold:.4});
+  document.querySelectorAll('[data-sec]').forEach(s=>io.observe(s));
+  function secSummary(){
+    const out = {...sections};
+    for (const k in secSince) if (secSince[k]) out[k] = (out[k]||0) + (Date.now()-secSince[k]);
+    return Object.entries(out).map(([k,v])=>`${k} ${Math.round(v/1000)}s`).join(', ') || 'none';
+  }
+  document.addEventListener('click',e=>{
+    const a = e.target.closest('[data-track]');
+    if (a){ clicks.push(a.dataset.track); clarity('event', a.dataset.track); }
+  });
+
+  window.TAFS_TRACK = {
+    card(key, how){
+      if (how==='auto') return;
+      cards[key] = cards[key] || {hover:0, click:0, keyboard:0};
+      cards[key][how] = (cards[key][how]||0) + 1;
+      clarity('event','card_'+key);
+    },
+    assumptionsOpened(){ assumptions.opened++; clarity('event','assumptions_opened'); clarity('upgrade','assumptions'); },
+    assumptionsChanged(s){
+      assumptions.changes.push(s.reset ? 'reset' : `${s.R} rooftops / ${s.L} loans / ${s.P}% 740+`);
+      if (assumptions.changes.length > 12) assumptions.changes.shift();
+      clarity('event','assumptions_changed');
+    }
+  };
+
+  /* --- send one summary per visit --- */
+  function device(){
+    const ua = navigator.userAgent;
+    const os = /iPhone|iPad/.test(ua)?'iOS':/Android/.test(ua)?'Android':/Mac OS X/.test(ua)?'Mac':/Windows/.test(ua)?'Windows':'Other';
+    const br = /Edg[A-Z]?\//.test(ua)?'Edge':/CriOS|Chrome\//.test(ua)?'Chrome':/FxiOS|Firefox\//.test(ua)?'Firefox':/Safari\//.test(ua)?'Safari':'Other';
+    const kind = /iPhone|iPod|Android.+Mobile|Windows Phone/.test(ua) ? 'Phone' : (/iPad|Android/.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua))) ? 'Tablet' : 'Desktop';
+    return {os, br, kind, ua};
+  }
+  function send(reason){
+    if (sent) return; sent = true;
+    const today = new Date().toISOString().slice(0,10);
+    const key = 'tafs_sent_'+today, n = +ls.get(key) || 0;
+    if (n >= CFG.maxEmailsPerDevicePerDay) return;
+    ls.set(key, String(n+1));
+    const d = device(), vis = nowVisible();
+    const scanner = /microsoft|google|amazon|proofpoint|mimecast|barracuda|cisco|forcepoint|zscaler|cloudflare/i.test(geo.org||'') && vis < 5000;
+    const where = [geo.city, geo.region].filter(Boolean).join(', ') || 'unknown location';
+    const cardTxt = Object.entries(cards).map(([k,v])=>`${k} (${Object.entries(v).filter(([,c])=>c).map(([h,c])=>h+' x'+c).join(', ')})`).join('; ') || 'none (auto-rotate only)';
+    const f = new FormData();
+    f.append('_subject', `${scanner?'[likely email scanner] ':''}Triton page visit: ${where} · ${geo.org||'unknown network'} · ${mmss(vis)}`);
+    f.append('proposal', CFG.proposal);
+    f.append('opened_at', new Date(t0).toString());
+    f.append('time_on_page', mmss(vis) + ' (visible), ' + mmss(Date.now()-t0) + ' (total)');
+    f.append('max_scroll', maxScroll + '%');
+    f.append('time_by_section', secSummary());
+    f.append('value_cards_touched', cardTxt);
+    f.append('assumptions_opened', String(assumptions.opened));
+    f.append('assumptions_tried', assumptions.changes.join(' | ') || 'none');
+    f.append('clicks', clicks.join(', ') || 'none');
+    f.append('location', `${where}, ${geo.country||''} ${geo.postal||''}`.trim());
+    f.append('network_org', `${geo.org||'unknown'} ${geo.asn||''}`.trim());
+    f.append('ip', geo.ip || 'unknown');
+    f.append('device', `${d.kind} · ${d.os} · ${d.br} · screen ${screen.width}x${screen.height}`);
+    f.append('language_timezone', `${navigator.language} · ${Intl.DateTimeFormat().resolvedOptions().timeZone}`);
+    f.append('referrer', document.referrer || 'direct (email, bookmark or typed)');
+    f.append('link_params', location.search || 'none');
+    f.append('visit_number_on_device', `${visitNo} (device id ${vid}, first seen ${firstSeen})`);
+    f.append('sent_because', reason);
+    f.append('user_agent', d.ua);
+    try {
+      fetch(CFG.formspree, {method:'POST', body:f, headers:{'Accept':'application/json'}, keepalive:true}).catch(()=>{});
+    } catch(e){}
+  }
+  document.addEventListener('visibilitychange',()=>{
+    if (document.hidden){
+      if (visSince){ visibleMs += Date.now()-visSince; visSince = null; }
+      clearTimeout(hideTimer); hideTimer = setTimeout(()=>send('left the tab for 15s'), CFG.idleSendMs);
+    } else {
+      visSince = Date.now(); clearTimeout(hideTimer);
+    }
+  });
+  addEventListener('pagehide',()=>{ if (visSince){ visibleMs += Date.now()-visSince; visSince=null; } send('closed the page'); });
+  const cp = setInterval(()=>{ if (nowVisible() >= CFG.checkpointMs){ clearInterval(cp); send('still reading after 3 min'); } }, 5000);
+})();
+</script>
+</body>
+</html>
