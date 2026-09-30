@@ -773,8 +773,9 @@ render();
 <script>
 (function(){
   const CFG = {
-    formspree: 'https://formspree.io/f/xbdbozza',
+    formspree: '', // OFF while this is a draft. To turn on: 'https://formspree.io/f/xbdbozza'
     clarity: 'ypy955s9lz',
+    draft: true,
     proposal: 'AutoTrust Sept 2026',
     hosts: ['briviocapital.com','www.briviocapital.com'],
     idleSendMs: 15000,        // tab hidden this long = visit over
@@ -787,6 +788,7 @@ render();
   if (qs.get('notrack')==='0') ls.set('brivio_notrack','');
   const enabled = CFG.hosts.includes(location.hostname) && ls.get('brivio_notrack')!=='1' && !navigator.webdriver && !/HeadlessChrome|bot|crawl|spider|preview/i.test(navigator.userAgent);
   if (!enabled) return;
+  if (CFG.draft) return; // DRAFT: all tracking off (Clarity + Formspree). Set draft:false to turn back on.
 
   /* --- Clarity --- */
   (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CFG.clarity);
@@ -861,6 +863,7 @@ render();
     return {os, br, kind, ua};
   }
   function send(reason){
+    if (!CFG.formspree) return;
     if (sent) return; sent = true;
     const today = new Date().toISOString().slice(0,10);
     const key = 'atfs_sent_'+today, n = +ls.get(key) || 0;
