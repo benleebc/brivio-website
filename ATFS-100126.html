@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoTrust Financial Services | Proposal</title>
+<meta name="description" content="A proposal to make AutoTrust Financial Services a dealer-owned captive lender, powered by Brivio.">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta property="og:title" content="AutoTrust Financial Services | Proposal">
+<meta property="og:description" content="Proposal prepared for AutoTrust Dealer Alliance by Brivio Capital. October 2026.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="assets/autotrust/autotrust-favicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A1A1A;          /* AutoTrust primary dark */
+  --ink-2:#242424;
+  --ink-3:#2E2E2E;
+  --paper:#F7F8F5;        /* AutoTrust off-white */
+  --white:#FFFFFF;
+  --lime:#CCFF00;         /* AutoTrust accent */
+  --stone:#938D83;        /* AutoTrust warm gray (accent 2) */
+  --sand:#D4CFC7;         /* AutoTrust light warm gray (accent 3) */
+  --muted:#6E6A63;
+  --radius:8px;
+  --head:"Oxygen","Tahoma",sans-serif;
+  --body:"Inter","Verdana",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:500;font-size:17px;line-height:1.6;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--head);margin:0;font-weight:700;letter-spacing:-.02em}
+p{margin:0}
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+@media (max-width:640px){.container{padding:0 16px}body{font-size:16px}}
+section{scroll-margin-top:100px}
+.accent{color:var(--lime)}
+.stone{color:var(--stone)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;font:700 16px/1.2 var(--head);letter-spacing:-.01em;padding:13px 22px;border-radius:var(--radius);border:1px solid var(--lime);background:var(--lime);color:var(--ink) !important;text-decoration:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(204,255,0,.25)}
+.btn.sm{padding:9px 14px;font-size:14px}
+.btn.line{background:transparent;border-color:var(--paper);color:var(--paper) !important}
+.btn.line:hover{box-shadow:none;background:rgba(247,248,245,.08)}
+.btn.line-dark{background:transparent;border-color:var(--ink);color:var(--ink) !important}
+.btn.line-dark:hover{box-shadow:none;background:rgba(26,26,26,.05)}
+
+/* ---------- Floating navbar ---------- */
+.nav-wrap{position:fixed;top:16px;left:0;right:0;z-index:50;padding:0 32px;pointer-events:none}
+.navbar{pointer-events:auto;max-width:1200px;margin:0 auto;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 14px 0 22px;background:var(--ink);border:1px solid var(--lime);border-radius:var(--radius);color:var(--paper)}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none}
+.brand img{height:34px;width:auto}
+.brand .for{font-size:12px;line-height:1.35;color:var(--sand);border-left:1px solid #3d3d3d;padding-left:16px}
+.brand .for b{display:block;color:var(--lime);font:700 13px var(--head);letter-spacing:0}
+.links{display:flex;align-items:center;gap:28px}
+.links a{white-space:nowrap}
+.brand .for{white-space:nowrap}
+@media (max-width:1180px){.brand .for{display:none}}
+.links a:not(.btn){text-decoration:none;font-size:15px;color:var(--paper);font-weight:500}
+.links a:not(.btn):hover{color:var(--lime)}
+@media (max-width:1000px){.links a:not(.btn){display:none}}
+@media (max-width:900px){.brand .for{display:none}.nav-wrap{padding:0 12px;top:10px}.navbar{height:60px;padding:0 10px 0 14px}.brand img{height:28px}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;background:var(--ink) center/cover no-repeat;color:var(--paper);overflow:hidden}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.35) 100%);z-index:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0) 62%,var(--ink));z-index:1}
+.hero .container{position:relative;z-index:2;width:100%;padding-top:150px;padding-bottom:96px}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--paper);background:rgba(26,26,26,.72);border:1px solid rgba(204,255,0,.5);border-radius:999px;padding:7px 14px}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--lime);display:block}
+.hero h1{font-size:clamp(46px,7vw,92px);line-height:1.05;margin-top:22px}
+.hero h1 span{display:block}
+.hero .lede{max-width:640px;margin-top:24px;font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:var(--paper)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+/* ---------- Owners (dark) ---------- */
+.dark{background:var(--ink);color:var(--paper)}
+.owners{padding:40px 0 104px}
+.owners-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.owners h2{font-weight:400;font-size:clamp(26px,2.6vw,34px);line-height:1.3;letter-spacing:-.02em}
+.owners .copy p+p{margin-top:16px}
+.owners .copy .sig{font-family:var(--head);font-weight:700;font-size:19px;color:var(--lime);letter-spacing:-.01em}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:64px}
+.stat{border:2px solid rgba(147,141,131,.55);border-radius:var(--radius);padding:30px 28px}
+.stat .v{font:700 clamp(46px,5vw,64px)/1 var(--head);letter-spacing:-.03em;color:var(--lime)}
+.stat .k{margin-top:16px;font-size:16px;font-weight:600;color:var(--paper)}
+.stat .s{margin-top:2px;font-size:14px;color:var(--stone)}
+.stats-note{margin-top:22px;font-size:14px;color:var(--sand)}
+.stats-note a{color:var(--lime);font-weight:600;text-underline-offset:3px}
+@media (max-width:860px){.owners-grid{grid-template-columns:1fr;gap:24px}.stats{grid-template-columns:1fr;gap:14px;margin-top:40px}.stat{padding:22px}}
+
+/* ---------- Section scaffolding ---------- */
+.sec{padding:112px 0}
+@media (max-width:640px){.sec{padding:72px 0}.owners{padding:24px 0 72px}}
+.h2{font-size:clamp(34px,3.8vw,48px);line-height:1.18}
+.center{text-align:center}
+.sub{margin-top:14px;font-size:18px;color:var(--muted)}
+.dark .sub{color:var(--sand)}
+
+/* Stacked-word heading (AutoTrust signature) */
+.stack{font-size:clamp(40px,4.4vw,56px);line-height:1.12}
+.stack span{display:block;white-space:nowrap}
+.stack span.g{color:var(--stone)}
+.js .stack span{opacity:0;transform:translateX(-28px);transition:opacity .6s ease,transform .6s ease}
+.js .stack.in span{opacity:1;transform:none}
+.js .stack.in span:nth-child(2){transition-delay:.08s}.js .stack.in span:nth-child(3){transition-delay:.16s}.js .stack.in span:nth-child(4){transition-delay:.24s}.js .stack.in span:nth-child(5){transition-delay:.32s}.js .stack.in span:nth-child(6){transition-delay:.4s}
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+/* ---------- The math ---------- */
+.math-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:end}
+.math-head .copy p{font-size:17px;color:#3a3833}
+.math-head .copy p+p{margin-top:14px}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+.card{background:var(--ink);color:var(--paper);border:2px solid var(--stone);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column}
+.lbl{font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sand)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.big{font:700 clamp(54px,5.6vw,76px)/1 var(--head);letter-spacing:-.03em;color:var(--lime);margin-top:16px}
+.big small{font:500 18px var(--body);letter-spacing:0;color:var(--stone);margin-left:10px}
+.cells{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.cell{background:var(--ink-2);border:1px solid #3a3a3a;border-radius:var(--radius);padding:16px 18px}
+.cell .t{font-size:13px;color:var(--stone);font-weight:600}
+.cell .v{font:700 34px/1.15 var(--head);letter-spacing:-.02em;color:var(--paper);margin-top:4px}
+.cell.hi{border-color:#3a3a3a}
+.card .foot{margin-top:auto;padding-top:22px;min-height:62px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;font-size:14.5px;color:var(--sand)}
+.card .foot b{color:var(--paper)}
+.quote{margin-top:40px;display:grid;grid-template-columns:4px 1fr;gap:20px;align-items:stretch;max-width:860px}
+.quote i{background:var(--lime);border-radius:2px;display:block}
+.quote q{display:block;font:400 clamp(20px,2vw,24px)/1.4 var(--head);letter-spacing:-.01em;quotes:"\201C" "\201D"}
+.quote .by{margin-top:10px;font-size:14px;color:var(--muted)}
+.notes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:16px;padding:0 4px;font-size:12px;color:var(--muted);line-height:1.55}
+@media (max-width:900px){.math-head{grid-template-columns:1fr;gap:24px}.cards2{grid-template-columns:1fr;margin-top:36px}.card{padding:26px 20px}.notes{grid-template-columns:1fr;gap:4px}}
+
+/* ---------- Beyond the economics (tabs + panels) ---------- */
+.vp-tabs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:52px}
+.vp-tab{position:relative;overflow:hidden;display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:center;text-align:left;background:var(--white);border:2px solid var(--sand);border-radius:var(--radius);padding:22px 24px;cursor:pointer;font:inherit;color:inherit;transition:background .2s,border-color .2s}
+.vp-tab:hover{border-color:var(--stone)}
+.vp-tab .ic{width:52px;height:52px;border-radius:var(--radius);background:var(--ink);display:grid;place-items:center}
+.vp-tab .ic img{width:28px;height:28px}
+.vp-tab h3{font-weight:400;font-size:24px;line-height:1.2}
+.vp-tab p{margin-top:4px;font-size:15px;color:var(--muted);line-height:1.45}
+.vp-tab .prog{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--lime)}
+.vp-tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink)}
+.vp-tab[aria-selected="true"] h3{color:var(--lime)}
+.vp-tab[aria-selected="true"] p{color:var(--sand)}
+.vp-tab[aria-selected="true"] .ic{background:var(--ink-3)}
+.vp-tab:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.vp-panels{margin-top:20px;display:grid;grid-template-columns:minmax(0,1fr);background:var(--ink);color:var(--paper);border:2px solid var(--stone);border-radius:var(--radius)}
+.vp-panel{grid-area:1/1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center;padding:56px;visibility:hidden}
+.vp-panel.on{visibility:visible;animation:fade .45s ease}
+.vp-panel > *{min-width:0}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (min-width:901px) and (max-width:1100px){.vp-panel{grid-template-columns:minmax(0,1fr);gap:32px;padding:40px}.vp-panel > div:last-child{max-width:620px}}
+@media (max-width:1100px){.p-brand span{display:none}.vp-panel:not(.on){display:none}.vp-panel{align-content:start}}
+.vp-panel h3{font-weight:400;font-size:clamp(26px,2.6vw,32px);line-height:1.25;color:var(--lime)}
+.vp-panel .p{margin-top:14px;font-size:16.5px;color:var(--paper)}
+.chips{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{font-size:13.5px;font-weight:600;color:var(--paper);border:1px solid var(--stone);border-radius:999px;padding:7px 14px}
+.sample{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-bottom:12px}
+.facts{margin-top:26px;border-top:1px solid #3a3a3a}
+.facts .h{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-top:16px}
+.facts dl{margin:8px 0 0}
+.facts dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid #3a3a3a;font-size:15px}
+.facts dt{color:var(--sand)}
+.facts dd{margin:0;font-weight:600;color:var(--paper);text-align:right}
+.facts .one{margin-top:16px;font-size:14.5px;color:var(--sand)}
+.facts .one b{color:var(--lime);font-weight:600}
+@media (max-width:900px){
+  .vp-tabs{gap:10px;margin-top:36px}
+  .vp-tab{grid-template-columns:1fr;gap:10px;padding:14px}
+  .vp-tab .ic{width:40px;height:40px}.vp-tab .ic img{width:22px;height:22px}
+  .vp-tab h3{font-size:17px}.vp-tab p{display:none}
+  .vp-panel{grid-template-columns:minmax(0,1fr);gap:28px;padding:26px 18px}
+  .vp-panel:not(.on){display:none}
+}
+
+/* Portal mock */
+.browser{border-radius:10px;overflow:hidden;background:var(--white);color:var(--ink);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.browser .chrome{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#ECEAE5}
+.browser .dots{display:flex;gap:6px}.browser .dots i{width:10px;height:10px;border-radius:50%;background:#CFCAC1;display:block}
+.browser .url{flex:1;background:var(--white);border-radius:6px;font-size:12px;color:#5f5b55;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.p-top{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--ink);padding:14px 18px}
+.p-brand{display:flex;align-items:center;gap:12px}
+.p-brand img{height:22px;width:auto}
+.p-brand span{font:700 12px var(--head);color:var(--lime);border-left:1px solid #444;padding-left:12px;letter-spacing:0}
+.p-top nav{display:flex;gap:16px;font-size:12.5px;color:var(--sand)}
+.p-top nav span.on{color:var(--paper);box-shadow:inset 0 -2px 0 var(--lime);padding-bottom:3px}
+.p-body{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;padding:18px;background:var(--paper)}
+.pc{background:var(--white);border:1px solid #E3DFD8;border-radius:var(--radius);padding:16px}
+.pc .hello{font:700 19px var(--head);letter-spacing:-.01em}
+.pc .acct{font-size:12.5px;color:var(--muted)}
+.pc .kv{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.pc .kv .k{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.pc .kv .v{font:700 22px var(--head);letter-spacing:-.01em}
+.meter{height:8px;border-radius:4px;background:#E5E2DC;margin-top:14px;overflow:hidden}
+.meter span{display:block;height:100%;width:40%;background:var(--ink);border-radius:4px}
+.pc .meta{font-size:12.5px;color:var(--muted);margin-top:6px}
+.okchip{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;background:#EAF7B8;color:#3b4a00;border-radius:999px;padding:3px 10px}
+.fakebtn{margin-top:14px;text-align:center;background:var(--lime);color:var(--ink);border-radius:var(--radius);padding:10px;font:700 14px var(--head);user-select:none}
+.pside{display:grid;gap:12px;align-content:start}
+.pside .h{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.pside p{font-size:13.5px;margin-top:4px;line-height:1.45}
+.pside .go{display:inline-block;margin-top:8px;font:700 13px var(--head);color:var(--ink);box-shadow:inset 0 -2px 0 var(--lime)}
+@media (max-width:640px){.p-body{grid-template-columns:1fr}.p-top nav{display:none}}
+
+/* Mailer mock */
+.mailer{border-radius:10px;overflow:hidden;background:var(--white);color:var(--ink);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.m-top{background:var(--ink);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.m-top img{height:22px;width:auto}
+.m-top span{font:700 12px var(--head);color:var(--lime);letter-spacing:0}
+.m-body{padding:22px 22px 18px}
+.m-body .hi{font-size:14px;color:var(--muted)}
+.m-body .head{font:700 23px/1.2 var(--head);letter-spacing:-.02em;margin-top:6px}
+.offer{margin-top:16px;background:var(--paper);border:1px solid #E3DFD8;border-radius:var(--radius);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.offer .veh{font-size:13px;color:var(--muted);line-height:1.35}
+.offer .veh b{display:block;color:var(--ink);font:700 16px var(--head)}
+.offer .pay{font:700 40px/1 var(--head);letter-spacing:-.03em;white-space:nowrap;background:linear-gradient(transparent 62%,var(--lime) 62%);padding:0 2px}
+.offer .pay small{font:600 14px var(--body);color:var(--muted);letter-spacing:0}
+.m-body .eq{margin-top:12px;font-size:14px}
+.m-body .eq b{font-weight:700}
+.mcta{margin-top:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.mcta span{background:var(--lime);border-radius:var(--radius);padding:9px 14px;font:700 14px var(--head)}
+.mcta em{font-style:normal;font-size:12.5px;color:var(--muted)}
+.fine{font-size:10.5px;color:#8b867e;line-height:1.45;margin-top:14px;padding-top:12px;border-top:1px solid #ECE8E1}
+@media (max-width:640px){.offer{flex-direction:column;align-items:flex-start}.offer .pay{font-size:34px}.m-body .head{font-size:19px}}
+
+/* ---------- Proposal (dark) ---------- */
+.prop-head .sub{max-width:760px}
+.prop-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:52px}
+.pcard{border:2px solid rgba(147,141,131,.55);border-radius:var(--radius);padding:32px 28px}
+.pcard h3{display:flex;align-items:center;gap:14px;font-size:clamp(20px,2vw,24px);letter-spacing:-.02em}
+@media (min-width:861px){.pcard h3{white-space:nowrap}}
+.pcard h3 img{width:40px;height:40px;object-fit:contain;border-radius:6px;flex:none}
+.ticks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:14px}
+.ticks li{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:16px;line-height:1.5;color:var(--sand)}
+.ticks li svg{margin-top:3px;color:var(--lime)}
+.ticks b{color:var(--paper);font-weight:600}
+@media (max-width:860px){.prop-grid{grid-template-columns:1fr;margin-top:36px}.pcard{padding:24px 20px}}
+
+/* ---------- Steps (light) ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:64px}
+.step img{width:34px;height:34px}
+.step h3{margin-top:22px;font-weight:400;font-size:clamp(22px,2.2vw,28px);line-height:1.25}
+.step p{margin-top:10px;color:var(--muted)}
+@media (max-width:860px){.steps{grid-template-columns:1fr;gap:36px;margin-top:40px}}
+
+/* ---------- CTA (dark with image) ---------- */
+.cta-sec{position:relative;overflow:hidden;background:var(--ink) center/cover no-repeat;color:var(--paper)}
+.cta-sec::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,26,26,.94) 0%,rgba(26,26,26,.82) 55%,rgba(26,26,26,.55) 100%)}
+.cta-sec .container{position:relative;padding-top:120px;padding-bottom:120px}
+.cta-sec h2{font-size:clamp(38px,4.6vw,60px);line-height:1.1}
+.cta-sec h2 span{display:block}
+.cta-sec p{margin-top:18px;max-width:560px;font-size:18px;color:var(--paper)}
+.cta-sec .cta{margin-top:32px}
+.who{margin-top:40px;display:flex;gap:44px;flex-wrap:wrap;font-size:15px;color:var(--sand)}
+.who b{display:block;color:var(--paper);font:700 18px var(--head);letter-spacing:-.01em}
+@media (max-width:640px){.cta-sec .container{padding-top:80px;padding-bottom:80px}}
+
+/* ---------- Footer ---------- */
+footer{background:var(--paper);border-top:1px solid #E3DFD8;padding:40px 0}
+footer .container{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.f-logos{display:flex;align-items:center;gap:18px}
+.f-logos img.at{height:34px;width:auto}
+.f-logos img.bv{height:40px;width:auto}
+.f-logos i{width:1px;height:30px;background:#D4CFC7;display:block}
+footer p{font-size:13px;color:var(--muted)}
+.fallback-wordmark{font:700 15px var(--head);letter-spacing:-.01em}
+
+/* ---------- Assumptions dialog ---------- */
+dialog{border:0;border-radius:var(--radius);padding:0;width:min(540px,calc(100vw - 32px));box-shadow:0 30px 80px rgba(0,0,0,.45);color:var(--ink);background:var(--paper)}
+dialog::backdrop{background:rgba(10,10,10,.55)}
+.dlg-h{background:var(--ink);color:var(--paper);padding:22px 26px;border-bottom:2px solid var(--lime)}
+.dlg-h h3{font-size:24px}
+.dlg-h p{font-size:14px;color:var(--sand);margin-top:4px}
+.dlg-b{padding:22px 26px 6px;display:grid;gap:20px}
+.fld label{display:block;font:700 15px var(--head);letter-spacing:-.01em}
+.fld .inw{position:relative;margin-top:8px}
+.fld input{width:100%;height:52px;padding:0 44px 0 16px;border:1px solid var(--sand);border-radius:var(--radius);font:700 20px var(--head);color:var(--ink);background:var(--white);-moz-appearance:textfield}
+.fld input::-webkit-inner-spin-button,.fld input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.fld input:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px var(--lime)}
+.fld .unit{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700;pointer-events:none}
+.fld .help{font-size:13px;color:var(--muted);margin-top:4px}
+.dlg-sum{margin:8px 26px 0;background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:16px 18px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dlg-sum .k{font-size:11.5px;color:var(--stone);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.dlg-sum .v{font:700 26px var(--head);color:var(--lime);letter-spacing:-.02em}
+.dlg-f{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 26px 24px}
+.linkish{background:none;border:0;color:var(--ink);font:600 14px var(--body);cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- Spacing / wrap polish ---------- */
+.h2,.cta-sec h2,.sub{text-wrap:balance}
+.pc .kv > div{display:flex;flex-direction:column;justify-content:flex-end}
+@media (max-width:640px){
+.tag{font-size:12px;letter-spacing:.02em}
+.h2{font-size:30px}
+.stack{font-size:38px}
+.cell{padding:14px}.cell .t{white-space:nowrap;font-size:12.5px}.cell .v{font-size:30px}
+.big{font-size:52px}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.who b{font-size:17px}
+.stats-note{line-height:1.6}
+}
+.browser,.mailer{border:1px solid var(--stone);box-shadow:0 0 0 6px rgba(147,141,131,.14),0 24px 60px rgba(0,0,0,.55)}
+.p-top,.m-top{border-bottom:1px solid #3a3a3a}
+.pcard{padding-left:24px;padding-right:24px}
+.ticks li{grid-template-columns:14px 1fr;gap:8px}.ticks li svg{width:14px;height:14px;margin-top:5px}
+@media (min-width:1180px){.prop-grid{grid-template-columns:max-content minmax(0,1fr);gap:20px}.pcard .ticks li{white-space:nowrap}}
+@media (min-width:1200px){.prop-head .sub{max-width:none;white-space:nowrap;font-size:16px}}
+.owners-grid{grid-template-columns:1fr}
+.owners-copy{margin-top:40px;padding-top:32px;border-top:1px solid #3a3a3a;font-size:18px}
+@media (max-width:640px){.owners-copy{margin-top:28px;padding-top:24px;font-size:16px}}
+.math-head{grid-template-columns:1fr !important;gap:18px !important;justify-items:center;text-align:center}
+.math-head .stack span{display:inline}
+.math-head .stack span+span{margin-left:.25em}
+.math-head .stack span.g+span.g{margin-left:0}
+.math-head .copy{max-width:820px}
+.math-head .copy p+p{margin-top:4px}
+.math-head + .cards2{margin-top:44px}
+@media (max-width:900px){.math-head + .cards2{margin-top:32px}}
+@media (max-width:640px){.math-head .stack{font-size:34px;white-space:normal}.math-head .stack span{white-space:normal}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;scroll-behavior:auto !important}.js .stack span,.js .reveal{opacity:1 !important;transform:none !important}}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- ======================= NAVBAR ======================= -->
+<div class="nav-wrap">
+  <header class="navbar">
+    <a class="brand" href="#top" aria-label="AutoTrust Dealer Alliance">
+      <img src="assets/autotrust/autotrust-logo-light.svg" alt="AutoTrust Dealer Alliance" data-fallback="AutoTrust">
+      <span class="for"><b>Financial Services</b>Proposal from Brivio · Oct 2026</span>
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="#math">The math</a>
+      <a href="#why">Beyond the economics</a>
+      <a href="#terms">Proposal</a>
+      <a class="btn sm" href="mailto:Charles.do@briviocapital.com?cc=Ben.lee@briviocapital.com&amp;subject=ATFS%20pilot" data-track="nav_contact">Contact us</a>
+    </nav>
+  </header>
+</div>
+
+<main id="top">
+<!-- ======================= HERO ======================= -->
+<header class="hero" data-sec="hero">
+  <img class="poster" src="assets/atfs/hero-keys-poster.jpg" alt="">
+  <video id="heroVid" muted loop playsinline preload="none" aria-hidden="true"></video>
+  <div class="container">
+    <span class="tag"><i></i>Proposal for AutoTrust Dealer Alliance · October 2026</span>
+    <h1><span>Dealer Lending,</span><span class="accent">Owned.</span></h1>
+    <p class="lede">Today, AutoTrust Financial Services negotiates with lenders. With Brivio, it becomes one. The AutoTrust name on every contract, with no capital, no credit risk and no change at the F&amp;I desk.</p>
+    <div class="cta">
+      <a class="btn" href="#math" data-track="hero_math">See the math</a>
+      <a class="btn line" href="#terms" data-track="hero_terms">Pilot terms</a>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= OWNERS ======================= -->
+<section class="dark owners" data-sec="owners" aria-label="Headline numbers">
+  <div class="container">
+    <div class="owners-grid reveal">
+      <h2>Your dealers own the alliance.<br><span class="accent">Now they own the lender.</span></h2>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="v" data-bind="total3">$66M</div><div class="k">Estimated payout</div><div class="s">over the first 3 years</div></div>
+      <div class="stat"><div class="v" data-bind="ev">$158M</div><div class="k">Enterprise value</div><div class="s">at 4x Year 3 payout</div></div>
+      <div class="stat"><div class="v">$0</div><div class="k">Capital to launch</div><div class="s">and zero credit risk</div></div>
+    </div>
+    <p class="stats-note">Based on <span data-bind="rooftopsTxt">300 of AutoTrust's 350+ rooftops</span> at <span data-bind="lprTxt">20 loans a month</span> each. <a href="#math" data-open-assumptions>Change the assumptions</a></p>
+    <div class="copy owners-copy reveal">
+        <p>AutoTrust already returns lender incentives to members through quarterly dealer payments. A captive lender goes further: members keep the loan economics, the brand on the contract and the customer file, not just a referral fee.</p>
+        <p class="sig">AutoTrust owns it. Brivio runs it. Your members win.</p>
+      </div>
+  </div>
+</section>
+
+<!-- ======================= THE MATH ======================= -->
+<section class="sec" id="math" data-sec="economics">
+  <div class="container">
+    <div class="math-head">
+      <h2 class="stack"><span>Keep the economics</span><span class="g">lenders earn today</span></h2>
+      <div class="copy reveal">
+        <p>Paid on top of the reserve your members earn today.</p>
+      </div>
+    </div>
+    <div class="cards2 reveal">
+      <div class="card">
+        <div class="lbl">All-in payout per funded loan</div>
+        <div class="big" data-bind="blended">~$640<small>blended</small></div>
+        <div class="cells">
+          <div class="cell"><div class="t">740+ credit</div><div class="v" data-bind="p740">~$250</div></div>
+          <div class="cell hi"><div class="t">Below 740</div><div class="v" data-bind="pLow">~$700</div></div>
+        </div>
+        <div class="foot"><p>At <b data-bind="lprShort">20 loans per rooftop a month</b>.</p></div>
+      </div>
+      <div class="card">
+        <div class="lbl">Enterprise value added</div>
+        <div class="big" data-bind="ev">$158M</div>
+        <div class="cells">
+          <div class="cell"><div class="t">Year 3 payout</div><div class="v" data-bind="y3">$40M</div></div>
+          <div class="cell"><div class="t">Earnings multiple</div><div class="v">4x</div></div>
+        </div>
+        <div class="foot"><p>About <b data-bind="evPerRoof">$527K</b> of value per rooftop.</p><button class="btn sm" type="button" data-open-assumptions data-track="ev_review">Review assumptions</button></div>
+      </div>
+    </div>
+    <div class="notes"><p>Per loan: upfront payout plus servicing bonus, minus the monthly subscription fee.</p><p>Enterprise value at 4x Year 3 payout (Haig Report, Q1 2026).</p></div>
+  </div>
+</section>
+
+<!-- ======================= BEYOND THE ECONOMICS ======================= -->
+<section class="sec" id="why" data-sec="value_props" style="padding-top:0">
+  <div class="container">
+    <h2 class="h2 center reveal">Own the Brand <span class="stone">and the Customer</span></h2>
+    <p class="sub center reveal">With ATFS, the name on the contract and the data behind every loan stay inside AutoTrust.</p>
+
+    <div class="vp-tabs" role="tablist" aria-label="Value propositions">
+      <button class="vp-tab" role="tab" id="t-brand" aria-controls="p-brand" aria-selected="true" data-key="own_brand">
+        <span class="ic"><img src="assets/autotrust/autotrust-icon-steering-wheel.svg" alt=""></span>
+        <span><h3>Own the brand experience</h3><p>Every contract, statement and payment carries AutoTrust.</p></span>
+        <span class="prog"></span>
+      </button>
+      <button class="vp-tab" role="tab" id="t-data" aria-controls="p-data" aria-selected="false" data-key="compound_data">
+        <span class="ic"><img src="assets/autotrust/autotrust-icon-loop.svg" alt=""></span>
+        <span><h3>Compound your data</h3><p>Personalized offers built on your own customer data.</p></span>
+        <span class="prog"></span>
+      </button>
+    </div>
+
+    <div class="vp-panels" id="vp-panels">
+      <!-- Brand experience -->
+      <div class="vp-panel on" role="tabpanel" id="p-brand" aria-labelledby="t-brand">
+        <div>
+          <h3>Every touchpoint says AutoTrust</h3>
+          <p class="p">From contract to payoff letter, your customer deals with ATFS and the store that sold the car. Brivio never appears.</p>
+          <ul class="chips"><li>ATFS on every contract</li><li>Branded customer portal</li><li>Servicing in the ATFS name</li></ul>
+        </div>
+        <div>
+          <span class="sample">Sample customer portal · illustrative</span>
+          <div class="browser" aria-label="Sample ATFS customer portal (illustration)">
+            <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">autotrustdealer.com/atfs/account</span></div>
+            <div class="p-top">
+              <div class="p-brand"><img src="assets/autotrust/autotrust-logo-light.svg" alt="AutoTrust" data-fallback="AutoTrust"><span>Financial Services</span></div>
+              <nav aria-hidden="true"><span class="on">Account</span><span>Payments</span><span>Documents</span><span>Offers</span></nav>
+            </div>
+            <div class="p-body">
+              <div class="pc">
+                <div class="hello">Good morning, Maria</div>
+                <div class="acct">2021 Ford Escape · Account ending 4417</div>
+                <div class="kv">
+                  <div><div class="k">Current balance</div><div class="v">$14,210</div></div>
+                  <div><div class="k">Next payment</div><div class="v">$412.18</div></div>
+                </div>
+                <div class="meter"><span></span></div>
+                <div class="meta">24 of 60 payments made · Due Oct 1 · Autopay on</div>
+                <span class="okchip">✓ 24 on-time payments in a row</span>
+                <div class="fakebtn" aria-hidden="true">Make a payment</div>
+              </div>
+              <div class="pside">
+                <div class="pc"><div class="h">Your dealership</div><p>Serviced where you bought.</p><span class="go">Book service ›</span></div>
+                <div class="pc"><div class="h">Just for you</div><p>You're pre-qualified for a new Chevrolet Traverse.</p><span class="go">See your offer ›</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compound data -->
+      <div class="vp-panel" role="tabpanel" id="p-data" aria-labelledby="t-data">
+        <div>
+          <h3>Market to your customers with your own data</h3>
+          <div class="facts">
+            <div class="h">What ATFS knows about Maria</div>
+            <dl>
+              <div><dt>On-time payments</dt><dd>24 of 24</dd></div>
+              <div><dt>Equity in her Escape</dt><dd>+$4,290</dd></div>
+              <div><dt>Bought at</dt><dd>Member store, pre-owned</dd></div>
+              <div><dt>Next vehicle</dt><dd>New Chevy Traverse, member store</dd></div>
+            </dl>
+            <p class="one"><b>Today this file sits with the funding bank.</b> With ATFS it sits with AutoTrust and the store, so a payment reminder, a service call and an upgrade offer become one conversation.</p>
+          </div>
+        </div>
+        <div>
+          <span class="sample">Sample loyalty mailer · illustrative</span>
+          <div class="mailer" aria-label="Sample ATFS loyalty mailer (illustration)">
+            <div class="m-top"><img src="assets/autotrust/autotrust-logo-light.svg" alt="AutoTrust" data-fallback="AutoTrust"><span>Financial Services</span></div>
+            <div class="m-body">
+              <div class="hi">Maria, thank you for 24 on-time payments.</div>
+              <div class="head">You've earned an upgrade. You're pre-qualified.*</div>
+              <div class="offer">
+                <div class="veh"><b>2026 Chevrolet Traverse LT</b>Selected for you based on your Escape</div>
+                <div class="pay">$699<small>/mo</small></div>
+              </div>
+              <p class="eq">Your Escape is worth more than you owe: <b>about $4,290 in equity</b> toward your next vehicle.</p>
+              <div class="mcta"><span>Claim at your dealership</span><em>Code ATFS-LOYAL · valid through Nov 30</em></div>
+              <p class="fine">*Based on ATFS payment history; subject to credit approval. $48,395 price, $2,500 down + $4,290 trade equity, $41,605 at 6.49% APR for 72 mo = $699.18/mo. Illustrative only; not an offer of credit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PROPOSAL ======================= -->
+<section class="sec dark" id="terms" data-sec="terms">
+  <div class="container">
+    <div class="prop-head reveal">
+      <h2 class="h2">Start with a 3-month pilot. <span class="accent">Zero investment.</span></h2>
+      <p class="sub">Prove it on a handful of member stores in one state, then open it to every member group. Brivio runs the lender; AutoTrust owns the relationship.</p>
+    </div>
+    <div class="prop-grid reveal">
+      <div class="pcard">
+        <h3><img src="https://briviocapital.com/assets/brivio-b-gold.png" alt="Brivio">What Brivio brings</h3>
+        <ul class="ticks">
+          <li><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>3-month pilot at zero cost.</b> No monthly subscription fee.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Funding for up to $25 million</b> in pilot loans.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Licensing, compliance, underwriting, servicing and capital markets.</b></span></li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <h3><img src="assets/autotrust/autotrust-touch-icon.jpg" alt="AutoTrust">What we need from AutoTrust</h3>
+        <ul class="ticks">
+          <li><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Non-binding letter of intent.</b></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Standard dealer lending agreement.</b></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Agreement on the pilot member stores.</b></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= STEPS ======================= -->
+<section class="sec" data-sec="steps">
+  <div class="container">
+    <h2 class="h2 center reveal">A Simple Path <span class="stone">to Launch</span></h2>
+    <p class="sub center reveal">Sign, pilot, roll out.</p>
+    <div class="steps reveal">
+      <div class="step"><img src="assets/autotrust/autotrust-icon-step-1.svg" alt="Step 1"><h3>Sign the LOI and agreement</h3><p>Agree on the pilot state and stores.</p></div>
+      <div class="step"><img src="assets/autotrust/autotrust-icon-step-2.svg" alt="Step 2"><h3>Run the pilot</h3><p>No fees. Economics paid at the end.</p></div>
+      <div class="step"><img src="assets/autotrust/autotrust-icon-step-3.svg" alt="Step 3"><h3>Roll out to members</h3><p>Add groups and stores at their own pace</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CTA ======================= -->
+<section class="cta-sec" id="next" data-sec="next_steps" style="background-image:url('assets/atfs/closing-lot.jpg')">
+  <div class="container reveal">
+    <h2><span>Own the Loan,</span><span class="accent">Not Just the Deal.</span></h2>
+    <p>Next step is a signed pilot LOI. We'll bring the draft, a proposed pilot state and a member store list to review.</p>
+    <div class="cta"><a class="btn" href="mailto:Charles.do@briviocapital.com?cc=Ben.lee@briviocapital.com&amp;subject=ATFS%20pilot" data-track="cta_email">Email the team</a></div>
+    <div class="who">
+      <div><b>Charles Do</b>CEO, Brivio Capital</div>
+      <div><b>Ben Lee</b>COO &amp; CFO, Brivio Capital</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="f-logos">
+      <img class="at" src="assets/autotrust/autotrust-logo-dark.svg" alt="AutoTrust Dealer Alliance" data-fallback="AutoTrust Dealer Alliance">
+      <i aria-hidden="true"></i>
+      <img class="bv" src="https://briviocapital.com/assets/brivio-lockup-v2.png" alt="Brivio Capital" data-fallback="Brivio Capital">
+    </div>
+    <p>Prepared by Brivio Capital for AutoTrust Dealer Alliance. Confidential. October 2026.</p>
+  </div>
+</footer>
+
+<!-- ======================= ASSUMPTIONS DIALOG ======================= -->
+<dialog id="assump" aria-labelledby="assump-title">
+  <form method="dialog" id="assumpForm">
+    <div class="dlg-h">
+      <h3 id="assump-title">Review assumptions</h3>
+      <p>Change a number and the whole page updates.</p>
+    </div>
+    <div class="dlg-b">
+      <div class="fld">
+        <label for="inR">Rooftops on ATFS</label>
+        <div class="inw"><input id="inR" type="number" inputmode="numeric" min="25" max="400" step="1" value="300"></div>
+        <div class="help">At full rollout. AutoTrust has 350+ committed rooftops.</div>
+      </div>
+      <div class="fld">
+        <label for="inL">Loans per rooftop, per month</label>
+        <div class="inw"><input id="inL" type="number" inputmode="numeric" min="1" max="40" step="1" value="20"></div>
+        <div class="help" id="helpL">About 18% of a typical member store's ~111 monthly sales.</div>
+      </div>
+      <div class="fld">
+        <label for="inP">Share of loans with 740+ credit</label>
+        <div class="inw"><input id="inP" type="number" inputmode="numeric" min="0" max="80" step="1" value="15"><span class="unit">%</span></div>
+        <div class="help" id="helpP">740+ pays ~$250 per loan all-in. Below 740 pays ~$700.</div>
+      </div>
+    </div>
+    <div class="dlg-sum">
+      <div><div class="k">3-year payout</div><div class="v" data-bind="total3Long">$66M</div></div>
+      <div><div class="k">Enterprise value</div><div class="v" data-bind="ev">$158M</div></div>
+    </div>
+    <div class="dlg-f">
+      <button class="linkish" type="button" id="resetA">Reset to proposal</button>
+      <button class="btn" type="button" id="doneA">Done</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+/* =====================================================================
+   PAYOUT ENGINE
+   Mirrors 'Dealer financials'
+   rows 95-98 of the business case (servicing bonus corrected to /12).
+   Rooftop and loan ramps are the model's 36 launch months, scaled to the
+   chosen rooftops and loans/rooftop.
+   ===================================================================== */
+const MODEL = {
+  roof:  [8,8,8,32,60,93,113,113,122,122,150,150,166,166,203,203,221,221,280,280,280,280,280,310,310,310,312,312,312,312,312,312,312,312,312,312],
+  loans: [50.4809,57.2117,100.9618,201.9237,363.4626,584.7372,780.3508,989.4259,1227.3172,1405.4728,1692.7933,1798.5929,2068.8761,2189.1889,2567.7958,2669.1783,2959.0229,3034.5339,3512.6302,3616.9574,3923.2083,4020.1737,4290.8776,4512.9937,4621.5276,4774.6531,4866.7807,5024.5336,5105.303,5131.8055,5164.1974,5191.1206,5218.0438,5244.9669,5246.6496,5248.3323],
+  avgLoan: 34412.5,
+  gos740: 237.5024,      // $ per loan, 740+ (Pricing!H16)
+  gosLow: 687.0797,      // $ per loan, below 740 (Pricing!H17:H18, mix-weighted)
+  fee: 2495,             // $ per rooftop per month, waived months 1-3
+  pilotMonths: 3,
+  runoff: 0.015,         // monthly portfolio runoff (model: 0.985 x prior)
+  tiers: [[1e9,0.002],[5e8,0.001],[0,0]], // servicing bonus, annual rate by portfolio size
+  multiple: 4
+};
+const DEFAULTS = {R:300, L:20, P:15};
+const COMMITTED = 350;   // AutoTrust committed rooftops (autotrustdealer.com)
+const state = {...DEFAULTS};
+
+function bonusRate(p){ for (const [t,r] of MODEL.tiers) if (p >= t) return r; return 0; }
+
+function calc(R, L, pct){
+  const p = pct/100;
+  const baseR = MODEL.roof[35], baseL = MODEL.loans[35]/MODEL.roof[35];
+  const sR = R/baseR, sL = L/baseL;
+  const gosLoan = p*MODEL.gos740 + (1-p)*MODEL.gosLow;
+  let P = 0; const months = [];
+  for (let i=0;i<36;i++){
+    const rt = MODEL.roof[i]*sR, n = MODEL.loans[i]*sR*sL;
+    const gos = n*gosLoan;
+    const fee = i < MODEL.pilotMonths ? 0 : -MODEL.fee*rt;
+    const Pn = (1-MODEL.runoff)*P + n*MODEL.avgLoan;
+    const bonus = bonusRate(Pn)*(P+Pn)/2/12;
+    P = Pn; months.push({gos, fee, bonus, n});
+  }
+  const years = [0,1,2].map(y => {
+    const s = months.slice(y*12, y*12+12);
+    const up = s.reduce((a,m)=>a+m.gos+m.fee,0), bo = s.reduce((a,m)=>a+m.bonus,0);
+    return {up, bonus:bo, total:up+bo, loans:s.reduce((a,m)=>a+m.n,0)};
+  });
+  const bonusLoan = bonusRate(P)*MODEL.avgLoan*2;   // Pricing tab convention
+  const feeLoan = MODEL.fee/L;
+  const pilot = months.slice(0,MODEL.pilotMonths).reduce((a,m)=>a+m.gos,0);
+  const total3 = years.reduce((a,y)=>a+y.total,0);
+  return {
+    years, total3, ev: years[2].total*MODEL.multiple, pilot,
+    p740: MODEL.gos740 - feeLoan + bonusLoan,
+    pLow: MODEL.gosLow - feeLoan + bonusLoan,
+    upLoan: gosLoan - feeLoan, bonusLoan,
+    blended: gosLoan - feeLoan + bonusLoan
+  };
+}
+
+/* ---------- formatting (sign-aware) ---------- */
+const $sign = (v, n) => (v < 0 && n !== 0 ? '-' : '');
+const $m = (v,d=1) => { const s = (Math.abs(v)/1e6).toFixed(d); return $sign(v, +s) + '$' + s + 'M'; };
+const $M0 = v => { const n = Math.round(Math.abs(v)/1e6); return $sign(v, n) + '$' + n.toLocaleString('en-US') + 'M'; };
+const $d = v => { const n = Math.round(Math.abs(v)); return $sign(v, n) + '$' + n.toLocaleString('en-US'); };
+const $k = v => { const n = Math.round(Math.abs(v)/1000); return $sign(v, n) + '$' + n.toLocaleString('en-US') + 'K'; };
+const r10 = v => Math.round(Math.round(v)/10)*10;
+
+/* ---------- bind values ---------- */
+function render(){
+  const r = calc(state.R, state.L, state.P);
+  const vals = {
+    total3: $M0(r.total3), total3Long: $M0(r.total3), ev: $M0(r.ev), y3: $M0(r.years[2].total),
+    p740: '~'+$d(r.p740), pLow: '~'+$d(r.pLow),
+    rooftopsTxt: state.R <= COMMITTED ? `${state.R} of AutoTrust's ${COMMITTED}+ rooftops` : `${state.R} rooftops`,
+    lprTxt: state.L + (state.L===1 ? ' loan a month' : ' loans a month'),
+    lprShort: state.L + (state.L===1 ? ' loan per rooftop a month' : ' loans per rooftop a month'),
+    evPerRoof: Math.abs(r.ev/Math.max(1,state.R)) >= 1e6 ? $m(r.ev/Math.max(1,state.R)) : $k(r.ev/Math.max(1,state.R))
+  };
+  document.querySelectorAll('[data-bind]').forEach(n=>{
+    const k=n.dataset.bind;
+    if (k==='blended'){ n.innerHTML = '~' + $d(r10(r.upLoan) + r10(r.bonusLoan)) + '<small>blended</small>'; return; }
+    if (k in vals) n.textContent = vals[k];
+  });
+  const perStore = 111; // ~111 monthly sales per member rooftop (Brivio assumption; 20 loans = ~18% penetration)
+  document.getElementById('helpL').textContent = `About ${Math.round(state.L/perStore*100)}% of a typical member store's ~${perStore} monthly sales.`;
+  document.getElementById('helpP').textContent = `740+ pays ~${$d(r.p740)} per loan all-in. Below 740 pays ~${$d(r.pLow)}.`;
+  return r;
+}
+
+/* ---------- assumptions dialog ---------- */
+const dlg = document.getElementById('assump');
+const inR = document.getElementById('inR'), inL = document.getElementById('inL'), inP = document.getElementById('inP');
+function syncInputs(){ inR.value=state.R; inL.value=state.L; inP.value=state.P; }
+function openAssumptions(e){
+  if (e) e.preventDefault();
+  syncInputs();
+  if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open','');
+  window.ATFS_TRACK && ATFS_TRACK.assumptionsOpened();
+}
+document.querySelectorAll('[data-open-assumptions]').forEach(b=>b.addEventListener('click', openAssumptions));
+let inputTimer;
+const clampIn = (el,lo,hi,fb) => { const v = parseFloat(el.value); return isFinite(v) ? Math.min(hi, Math.max(lo, v)) : fb; };
+[inR,inL,inP].forEach(inp=>inp.addEventListener('blur',()=>syncInputs()));
+[inR,inL,inP].forEach(inp=>inp.addEventListener('input',()=>{
+  if (inp.value === '') return;
+  state.R=clampIn(inR,25,400,state.R); state.L=clampIn(inL,1,40,state.L); state.P=clampIn(inP,0,80,state.P);
+  render();
+  clearTimeout(inputTimer);
+  inputTimer = setTimeout(()=>window.ATFS_TRACK && ATFS_TRACK.assumptionsChanged({...state}), 700);
+}));
+document.getElementById('resetA').addEventListener('click',()=>{
+  Object.assign(state, DEFAULTS); syncInputs(); render();
+  window.ATFS_TRACK && ATFS_TRACK.assumptionsChanged({...state, reset:true});
+});
+document.getElementById('doneA').addEventListener('click',()=>{ syncInputs(); dlg.close(); });
+document.getElementById('assumpForm').addEventListener('submit', e => e.preventDefault());
+[inR,inL,inP].forEach(inp=>inp.addEventListener('keydown', e => { if (e.key === 'Enter'){ e.preventDefault(); inp.blur(); } }));
+let downOnBackdrop = false;
+const outside = e => { const r = dlg.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
+dlg.addEventListener('pointerdown', e => { downOnBackdrop = e.target === dlg && outside(e); });
+dlg.addEventListener('click', e => { if (downOnBackdrop && e.target === dlg && outside(e)) dlg.close(); downOnBackdrop = false; });
+
+/* ---------- value-prop carousel ---------- */
+(function(){
+  const tabs = [...document.querySelectorAll('.vp-tab')];
+  const panels = tabs.map(t=>document.getElementById(t.getAttribute('aria-controls')));
+  const panelsBox = document.getElementById('vp-panels');
+  const INTERVAL = 6000;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let idx = 0, locked = reduced || window.matchMedia('(max-width:900px)').matches, hovering = false, visible = false, elapsed = 0, last = null;
+  function select(i, how){
+    idx = i; elapsed = 0;
+    tabs.forEach((t,j)=>{ t.setAttribute('aria-selected', j===i ? 'true':'false'); t.tabIndex = j===i ? 0 : -1; t.querySelector('.prog').style.width='0'; });
+    panels.forEach((p,j)=>p.classList.toggle('on', j===i));
+    if (how && window.ATFS_TRACK) ATFS_TRACK.card(tabs[i].dataset.key, how);
+  }
+  tabs.forEach((t,i)=>{
+    t.addEventListener('click',()=>{ locked = true; select(i,'click'); });
+    t.addEventListener('mouseenter',()=>{ if (window.matchMedia('(hover:hover)').matches){ hovering = true; if (idx!==i) select(i,'hover'); } });
+    t.addEventListener('mouseleave',()=>{ hovering = false; elapsed = 0; });
+    t.addEventListener('keydown',e=>{
+      if (e.key==='ArrowRight'||e.key==='ArrowLeft'){ e.preventDefault(); locked = true; const n=(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length; select(n,'keyboard'); tabs[n].focus(); }
+    });
+  });
+  panelsBox.addEventListener('mouseenter',()=>{ hovering = true; });
+  panelsBox.addEventListener('mouseleave',()=>{ hovering = false; });
+  panelsBox.addEventListener('touchstart',()=>{ locked = true; },{passive:true});
+  new IntersectionObserver(es=>es.forEach(e=>visible = e.isIntersecting),{threshold:.35}).observe(document.getElementById('why'));
+  function tick(now){
+    if (last==null) last = now;
+    const dt = now - last; last = now;
+    if (!locked && !hovering && visible && !document.hidden){
+      elapsed += dt;
+      tabs[idx].querySelector('.prog').style.width = Math.min(100, elapsed/INTERVAL*100) + '%';
+      if (elapsed >= INTERVAL){ select((idx+1)%tabs.length); if (window.ATFS_TRACK) ATFS_TRACK.card(tabs[idx].dataset.key,'auto'); }
+    } else if (locked) {
+      tabs.forEach(t=>t.querySelector('.prog').style.width='0');
+    }
+    requestAnimationFrame(tick);
+  }
+  select(0);
+  requestAnimationFrame(tick);
+})();
+
+/* ---------- hero video (desktop only, respects reduced motion) ---------- */
+(function(){
+  const v = document.getElementById('heroVid');
+  if (!v || !matchMedia('(min-width:768px)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) { if (v) v.remove(); return; }
+  
+  const s=document.createElement('source'); s.src='assets/atfs/hero-keys.mp4'; s.type='video/mp4'; v.appendChild(s);
+  v.addEventListener('playing',()=>{ const p=document.querySelector('.hero .poster'); if (p) p.style.visibility='hidden'; });
+  v.addEventListener('error',()=>v.remove(), true);
+  v.load(); v.play().catch(()=>{});
+})();
+
+/* ---------- scroll reveals ---------- */
+(function(){
+  const els = document.querySelectorAll('.reveal, .stack');
+  if (!('IntersectionObserver' in window)) { els.forEach(e=>e.classList.add('in')); return; }
+  const io = new IntersectionObserver(es=>es.forEach(e=>{ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{threshold:.15});
+  els.forEach(e=>io.observe(e));
+})();
+
+/* ---------- logo fallbacks ---------- */
+document.querySelectorAll('img[data-fallback]').forEach(img=>{
+  const swap = () => { const s=document.createElement('span'); s.className='fallback-wordmark'; s.textContent=img.dataset.fallback; if (img.closest('.navbar,.p-top,.m-top')) s.style.color='#F7F8F5'; img.replaceWith(s); };
+  if (img.complete && img.naturalWidth===0) swap(); else img.addEventListener('error', swap);
+});
+
+render();
+</script>
+
+<!-- =====================================================================
+     VISIT TRACKING  (keep this block when editing the page)
+     - Microsoft Clarity: session recordings + heatmaps (project ypy955s9lz)
+     - Formspree: ONE email per page visit with location + engagement summary
+     - Runs only on briviocapital.com. Open the page once with ?notrack=1 on
+       each of your own devices to exclude yourself (?notrack=0 to undo).
+     ===================================================================== -->
+<script>
+(function(){
+  const CFG = {
+    formspree: 'https://formspree.io/f/xbdbozza',
+    clarity: 'ypy955s9lz',
+    draft: false,
+    proposal: 'AutoTrust Oct 2026',
+    hosts: ['briviocapital.com','www.briviocapital.com'],
+    idleSendMs: 15000,        // tab hidden this long = visit over
+    checkpointMs: 180000,     // or send after 3 min of reading
+    maxEmailsPerDevicePerDay: 4
+  };
+  const ls = { get(k){ try{return localStorage.getItem(k);}catch(e){return null;} }, set(k,v){ try{localStorage.setItem(k,v);}catch(e){} } };
+  const qs = new URLSearchParams(location.search);
+  if (qs.get('notrack')==='1') ls.set('brivio_notrack','1');
+  if (qs.get('notrack')==='0') ls.set('brivio_notrack','');
+  const enabled = CFG.hosts.includes(location.hostname) && ls.get('brivio_notrack')!=='1' && !navigator.webdriver && !/HeadlessChrome|bot|crawl|spider|preview/i.test(navigator.userAgent);
+  if (!enabled) return;
+  if (CFG.draft) return; // DRAFT: all tracking off (Clarity + Formspree). Set draft:false to turn back on.
+
+  /* --- Clarity --- */
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CFG.clarity);
+  const clarity = (...a) => { try{ window.clarity(...a); }catch(e){} };
+  clarity('set','proposal',CFG.proposal);
+
+  /* --- session state --- */
+  const t0 = Date.now();
+  let visibleMs = 0, visSince = document.hidden ? null : t0, maxScroll = 0, sent = false, hideTimer = null;
+  const sections = {}, secSince = {}, cards = {}, assumptions = {opened:0, changes:[]}, clicks = [];
+  let geo = {};
+  const vid = ls.get('atfs_vid') || (Math.random().toString(36).slice(2,10)); ls.set('atfs_vid', vid);
+  const visitNo = (+ls.get('atfs_visits') || 0) + 1; ls.set('atfs_visits', String(visitNo));
+  const firstSeen = ls.get('atfs_first') || new Date(t0).toISOString(); ls.set('atfs_first', firstSeen);
+
+  function nowVisible(){ return visibleMs + (visSince ? Date.now()-visSince : 0); }
+  function mmss(ms){ const s=Math.round(ms/1000); return Math.floor(s/60)+'m '+String(s%60).padStart(2,'0')+'s'; }
+
+  /* --- location / company from IP --- */
+  fetch('https://ipapi.co/json/').then(r=>r.json()).then(j=>{
+    if (j.error) throw 0;
+    geo = {ip:j.ip, city:j.city, region:j.region, country:j.country_name, postal:j.postal, org:j.org, asn:j.asn};
+  }).catch(()=>fetch('https://ipwho.is/').then(r=>r.json()).then(j=>{
+    geo = {ip:j.ip, city:j.city, region:j.region, country:j.country, postal:j.postal, org:(j.connection||{}).org || (j.connection||{}).isp, asn:(j.connection||{}).asn};
+  })).catch(()=>{}).finally(()=>{
+    if (geo.org) clarity('set','org',String(geo.org));
+    if (geo.city) clarity('set','city',String(geo.city));
+  });
+
+  /* --- engagement --- */
+  addEventListener('scroll',()=>{
+    const h = document.documentElement.scrollHeight - innerHeight;
+    if (h>0) maxScroll = Math.max(maxScroll, Math.round(scrollY/h*100));
+  },{passive:true});
+  const io = new IntersectionObserver(es=>es.forEach(e=>{
+    const k = e.target.dataset.sec;
+    if (e.isIntersecting){ secSince[k] = Date.now(); }
+    else if (secSince[k]){ sections[k] = (sections[k]||0) + (Date.now()-secSince[k]); secSince[k]=null; }
+  }),{threshold:.4});
+  document.querySelectorAll('[data-sec]').forEach(s=>io.observe(s));
+  function secSummary(){
+    const out = {...sections};
+    for (const k in secSince) if (secSince[k]) out[k] = (out[k]||0) + (Date.now()-secSince[k]);
+    return Object.entries(out).map(([k,v])=>`${k} ${Math.round(v/1000)}s`).join(', ') || 'none';
+  }
+  document.addEventListener('click',e=>{
+    const a = e.target.closest('[data-track]');
+    if (a){ clicks.push(a.dataset.track); clarity('event', a.dataset.track); }
+  });
+
+  window.ATFS_TRACK = {
+    card(key, how){
+      if (how==='auto') return;
+      cards[key] = cards[key] || {hover:0, click:0, keyboard:0};
+      cards[key][how] = (cards[key][how]||0) + 1;
+      clarity('event','card_'+key);
+    },
+    assumptionsOpened(){ assumptions.opened++; clarity('event','assumptions_opened'); clarity('upgrade','assumptions'); },
+    assumptionsChanged(s){
+      assumptions.changes.push(s.reset ? 'reset' : `${s.R} rooftops / ${s.L} loans / ${s.P}% 740+`);
+      if (assumptions.changes.length > 12) assumptions.changes.shift();
+      clarity('event','assumptions_changed');
+    }
+  };
+
+  /* --- send one summary per visit --- */
+  function device(){
+    const ua = navigator.userAgent;
+    const os = /iPhone|iPad/.test(ua)?'iOS':/Android/.test(ua)?'Android':/Mac OS X/.test(ua)?'Mac':/Windows/.test(ua)?'Windows':'Other';
+    const br = /Edg[A-Z]?\//.test(ua)?'Edge':/CriOS|Chrome\//.test(ua)?'Chrome':/FxiOS|Firefox\//.test(ua)?'Firefox':/Safari\//.test(ua)?'Safari':'Other';
+    const kind = /iPhone|iPod|Android.+Mobile|Windows Phone/.test(ua) ? 'Phone' : (/iPad|Android/.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua))) ? 'Tablet' : 'Desktop';
+    return {os, br, kind, ua};
+  }
+  function send(reason){
+    if (!CFG.formspree) return;
+    if (sent) return; sent = true;
+    const today = new Date().toISOString().slice(0,10);
+    const key = 'atfs_sent_'+today, n = +ls.get(key) || 0;
+    if (n >= CFG.maxEmailsPerDevicePerDay) return;
+    ls.set(key, String(n+1));
+    const d = device(), vis = nowVisible();
+    const scanner = /microsoft|google|amazon|proofpoint|mimecast|barracuda|cisco|forcepoint|zscaler|cloudflare/i.test(geo.org||'') && vis < 5000;
+    const where = [geo.city, geo.region].filter(Boolean).join(', ') || 'unknown location';
+    const cardTxt = Object.entries(cards).map(([k,v])=>`${k} (${Object.entries(v).filter(([,c])=>c).map(([h,c])=>h+' x'+c).join(', ')})`).join('; ') || 'none (auto-rotate only)';
+    const f = new FormData();
+    f.append('_subject', `${scanner?'[likely email scanner] ':''}AutoTrust page visit: ${where} · ${geo.org||'unknown network'} · ${mmss(vis)}`);
+    f.append('proposal', CFG.proposal);
+    f.append('opened_at', new Date(t0).toString());
+    f.append('time_on_page', mmss(vis) + ' (visible), ' + mmss(Date.now()-t0) + ' (total)');
+    f.append('max_scroll', maxScroll + '%');
+    f.append('time_by_section', secSummary());
+    f.append('value_cards_touched', cardTxt);
+    f.append('assumptions_opened', String(assumptions.opened));
+    f.append('assumptions_tried', assumptions.changes.join(' | ') || 'none');
+    f.append('clicks', clicks.join(', ') || 'none');
+    f.append('location', `${where}, ${geo.country||''} ${geo.postal||''}`.trim());
+    f.append('network_org', `${geo.org||'unknown'} ${geo.asn||''}`.trim());
+    f.append('ip', geo.ip || 'unknown');
+    f.append('device', `${d.kind} · ${d.os} · ${d.br} · screen ${screen.width}x${screen.height}`);
+    f.append('language_timezone', `${navigator.language} · ${Intl.DateTimeFormat().resolvedOptions().timeZone}`);
+    f.append('referrer', document.referrer || 'direct (email, bookmark or typed)');
+    f.append('link_params', location.search || 'none');
+    f.append('visit_number_on_device', `${visitNo} (device id ${vid}, first seen ${firstSeen})`);
+    f.append('sent_because', reason);
+    f.append('user_agent', d.ua);
+    try {
+      fetch(CFG.formspree, {method:'POST', body:f, headers:{'Accept':'application/json'}, keepalive:true}).catch(()=>{});
+    } catch(e){}
+  }
+  document.addEventListener('visibilitychange',()=>{
+    if (document.hidden){
+      if (visSince){ visibleMs += Date.now()-visSince; visSince = null; }
+      clearTimeout(hideTimer); hideTimer = setTimeout(()=>send('left the tab for 15s'), CFG.idleSendMs);
+    } else {
+      visSince = Date.now(); clearTimeout(hideTimer);
+    }
+  });
+  addEventListener('pagehide',()=>{ if (visSince){ visibleMs += Date.now()-visSince; visSince=null; } send('closed the page'); });
+  const cp = setInterval(()=>{ if (nowVisible() >= CFG.checkpointMs){ clearInterval(cp); send('still reading after 3 min'); } }, 5000);
+})();
+</script>
+</body>
+</html>
