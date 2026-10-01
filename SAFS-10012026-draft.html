@@ -230,8 +230,10 @@ section{scroll-margin-top:96px}
 
 /* ---------- Proposal ---------- */
 .prop-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:44px}
-.pcard{background:#fff;border:1px solid var(--line);border-top:5px solid var(--blue);border-radius:var(--radius);padding:30px 28px}
-.pcard h3{display:flex;align-items:center;gap:14px;font-size:clamp(20px,2vw,24px);font-weight:900}
+.pcard{background:#fff;border:1px solid var(--line);border-top:5px solid var(--blue);border-radius:var(--radius);padding:30px 28px;display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0;align-content:start}
+.pcard .take{align-self:end;padding-top:18px;border-top:1px solid var(--line);font-style:italic;font-weight:600;font-size:16px;color:var(--blue)}
+.pcard .ticks{margin-bottom:22px}
+.pcard h3{display:flex;align-items:center;gap:14px;min-height:40px;font-size:clamp(20px,2vw,24px);font-weight:900}
 .pcard h3 img{height:40px;width:auto;flex:none}
 .pcard h3 img.sq{width:40px;object-fit:contain}
 .ticks{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:14px}
@@ -293,10 +295,11 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
 .h2,.family h2,.cta-sec h2,.vp-panel h3,.m-body .head{text-wrap:balance}
 .sub,.lede,.cta-sec p,.family .copy p,.vp-panel .p,.facts .one,.step p{text-wrap:pretty}
 .sub.center{max-width:760px;margin-left:auto;margin-right:auto}
-#terms .sub{max-width:760px}
+#terms .sub{max-width:none}
+
 @media (min-width:641px){.h2 .blue,.family h2 .blue{white-space:nowrap}}
-@media (min-width:861px){.pcard h3{white-space:nowrap}}
-@media (min-width:1240px){#terms .prop-grid{grid-template-columns:minmax(0,1.36fr) minmax(0,1fr)}#terms .pcard{padding:30px 24px}#terms .ticks li{grid-template-columns:16px 1fr;gap:8px;white-space:nowrap}}
+
+@media (min-width:1240px){#terms .prop-grid{grid-template-columns:max-content minmax(0,1fr)}#terms .pcard{padding:30px 24px}#terms .pcard h3{font-size:20px;white-space:nowrap}#terms .ticks li{grid-template-columns:16px 1fr;gap:8px;white-space:nowrap}}
 .step h4{font-size:clamp(18px,1.8vw,20px)}
 .card .lbl{min-height:1.4em}
 .facts dd{white-space:nowrap}
@@ -352,10 +355,10 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
     <figure><img src="assets/safs/store-cadillac.jpg" alt=""><figcaption>Sport Cadillac</figcaption></figure>
   </div>
   <div class="container">
-    <div class="kicker">Proposal for Sport Automotive Group</div>
+    <div class="kicker">Proposal for Sport Automotive</div>
     <h1><span>Dealer Lending,</span><span class="blue">Owned.</span></h1>
-    <span class="tagline">Sport Auto Financial Services</span>
-    <p class="lede">Today, the loans your three stores write go to outside lenders. With Brivio, Sport becomes the lender. The Sport name on every contract, with no capital, no credit risk and no change at the F&amp;I desk.</p>
+    <span class="tagline">Sport Automotive Financial Services</span>
+    <p class="lede">Today, the loans your three stores go to outside lenders. With Brivio, Sport Automotive is the lender. The Sport Automotive name on every contract, no capital, no credit risk and no change at the F&amp;I desk.</p>
     <div class="cta">
       <a class="btn" href="#math">See the math</a>
       <a class="btn line" href="#terms">Pilot terms</a>
@@ -366,10 +369,10 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
 <!-- ======================= FAMILY ======================= -->
 <section class="family" aria-label="Headline numbers">
   <div class="container">
-    <h2>Your family built three stores.<br><span class="blue">Now it owns the lender.</span></h2>
+    <h2>Sport Automotive built three stores.<br><span class="blue">Now it owns the lender.</span></h2>
     <div class="copy">
-      <p>Today, the lender that funds each deal keeps the loan economics and the customer file. A captive lender keeps both inside the family: the payout on every loan, the Sport name on the contract, and the customer who comes back for the next car.</p>
-      <p class="sig">Sport owns it. Brivio runs it. Your family wins.</p>
+      <p>Today, the lender that funds each deal keeps the loan economics and the customer data. A captive lender keeps both in-house: the payout on every loan, the Sport Automotive name on the contract, and the customer who comes back for the next car.</p>
+      <p class="sig">Sport Automotive owns it. Brivio runs it. All three stores benefit.</p>
     </div>
     <div class="stores-row">
       <div class="store"><h3>Sport Honda</h3><p>3201 Automobile Blvd, Silver Spring</p></div>
@@ -381,7 +384,7 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
       <div class="stat"><div class="v" data-bind="ev">$911K</div><div class="k">Enterprise value</div><div class="s">at 4x annual payout</div></div>
       <div class="stat"><div class="v">$0</div><div class="k">Capital to launch</div><div class="s">and zero credit risk</div></div>
     </div>
-    <p class="stats-note">Based on <span data-bind="rooftopsTxt">all 3 Sport stores</span> at <span data-bind="lprTxt">20 loans a month</span> each. <a href="#math" data-open-assumptions>Change the assumptions</a></p>
+    <p class="stats-note">Based on <span data-bind="rooftopsTxt">all 3 Sport Automotive stores</span> at <span data-bind="lprTxt">20 loans a month</span> each. <a href="#math" data-open-assumptions>Change the assumptions</a></p>
   </div>
 </section>
 
@@ -389,7 +392,7 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
 <section class="sec mist" id="math">
   <div class="container">
     <h2 class="h2 center">Keep the economics <span class="blue">lenders earn today</span></h2>
-    <p class="sub center"><b>Paid on top of the reserve</b> your stores earn today.</p>
+    <p class="sub center"><b>Paid on top of the reserve or flats</b> your stores earn today.</p>
     <div class="cards2">
       <div class="card">
         <div class="lbl">All-in payout per funded loan</div>
@@ -418,12 +421,12 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
 <section class="sec" id="why">
   <div class="container">
     <h2 class="h2 center">Own the brand <span class="blue">and the customer</span></h2>
-    <p class="sub center">With SAFS, the name on the contract and the data behind every loan stay inside Sport.</p>
+    <p class="sub center">With SAFS, the name on the contract and the data behind every loan stay inside Sport Automotive.</p>
 
     <div class="vp-tabs" role="tablist" aria-label="Value propositions">
       <button class="vp-tab" role="tab" id="t-brand" aria-controls="p-brand" aria-selected="true">
         <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 3v6.5M4.5 16.5l5.4-3.1M19.5 16.5l-5.4-3.1"/></svg></span>
-        <span><h3>Own the brand experience</h3><p>Every contract, statement and payment carries Sport.</p></span>
+        <span><h3>Own the brand experience</h3><p>Every contract, statement and payment carries Sport Automotive.</p></span>
         <span class="prog"></span>
       </button>
       <button class="vp-tab" role="tab" id="t-data" aria-controls="p-data" aria-selected="false">
@@ -437,7 +440,7 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
       <!-- Brand experience -->
       <div class="vp-panel on" role="tabpanel" id="p-brand" aria-labelledby="t-brand">
         <div>
-          <h3>Every touchpoint says Sport</h3>
+          <h3>Every touchpoint says Sport Automotive</h3>
           <p class="p">From contract to payoff letter, your customer deals with SAFS and the store that sold the car. Brivio never appears.</p>
           <ul class="chips"><li>SAFS on every contract</li><li>Branded customer portal</li><li>Servicing in the SAFS name</li></ul>
         </div>
@@ -483,7 +486,7 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
               <div><dt>Bought at</dt><dd>Sport Honda</dd></div>
               <div><dt>Next vehicle</dt><dd>Cadillac XT5, Sport Cadillac</dd></div>
             </dl>
-            <p class="one"><b>Today this file sits with the funding bank.</b> With SAFS it stays with Sport, so a payment reminder, a service call and an upgrade offer become one conversation.</p>
+            <p class="one"><b>Today this file sits with the funding bank.</b> With SAFS it stays with Sport Automotive, so a payment reminder, a service call and an upgrade offer become one conversation.</p>
           </div>
         </div>
         <div>
@@ -495,7 +498,7 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
               <div class="hi">Maria, thank you for 24 on-time payments.</div>
               <div class="head">You've earned an upgrade. You're pre-qualified.*</div>
               <div class="offer">
-                <div class="veh"><b>2026 Cadillac XT5</b>From your Honda CR-V to a Cadillac, same Sport family</div>
+                <div class="veh"><b>2026 Cadillac XT5</b>From your Honda CR-V to a Cadillac, without leaving Sport Automotive</div>
                 <div class="pay">$699<small>/mo</small></div>
               </div>
               <p class="eq">Your CR-V is worth more than you owe: <b>about $4,290 in equity</b> toward your next vehicle.</p>
@@ -513,23 +516,25 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
 <section class="sec mist" id="terms">
   <div class="container">
     <h2 class="h2">Start with a 3-month pilot. <span class="blue">Zero investment.</span></h2>
-    <p class="sub">Prove it at all three Sport stores. Brivio runs the lender; Sport owns the relationship.</p>
+    <p class="sub">Prove it at all three Sport Automotive stores. Brivio runs the lender; Sport Automotive keeps its exisiting infrastructure and owns the relationship</p>
     <div class="prop-grid">
       <div class="pcard">
         <h3><img class="sq" src="https://briviocapital.com/assets/brivio-b-gold.png" alt="Brivio">What Brivio brings</h3>
         <ul class="ticks">
           <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>3-month pilot at zero cost.</b> No monthly subscription fee</span></li>
           <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Funding for the pilot</b></span></li>
-          <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Licensing, compliance, underwriting, servicing and capital markets</b></span></li>
+          <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Licensing, underwriting, servicing and capital markets</b></span></li>
         </ul>
+        <p class="take">We handle everything</p>
       </div>
       <div class="pcard">
-        <h3><img src="assets/safs/sport-logo.png" alt="Sport" data-fallback="SPORT">What we need from Sport</h3>
+        <h3><img src="assets/safs/sport-logo.png" alt="Sport" data-fallback="SPORT">What we need from Sport Automotive</h3>
         <ul class="ticks">
           <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Non-binding letter of intent</b></span></li>
           <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Standard dealer lending agreement</b></span></li>
           <li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Agreement on the pilot start date</b></span></li>
         </ul>
+        <p class="take">Nothing else for you to do</p>
       </div>
     </div>
     <div class="steps">
@@ -653,7 +658,7 @@ function render(){
   const vals = {
     annual: $money(r.annual), total3: $money(r.total3), ev: $money(r.ev),
     p740: '~'+$d(r.p740), pLow: '~'+$d(r.pLow),
-    rooftopsTxt: state.R === 3 ? 'all 3 Sport stores' : `${state.R} ${state.R===1?'store':'stores'}`,
+    rooftopsTxt: state.R === 3 ? 'all 3 Sport Automotive stores' : `${state.R} ${state.R===1?'store':'stores'}`,
     lprTxt: state.L + (state.L===1 ? ' loan a month' : ' loans a month'),
     lprShort: state.L + (state.L===1 ? ' loan per store a month' : ' loans per store a month'),
     evPerRoof: $money(r.ev/Math.max(1,state.R))
