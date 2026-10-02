@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brivio · Bid review</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0A1A2F;--ink2:#13263F;--line:#24384F;--mute:#9AA8B8;--paper:#F3F5F8;--hi:#FFFFFF;--ok:#3FB97A;--warn:#E0A43A;--font:"Commissioner",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:var(--font);background:var(--ink);color:var(--hi);-webkit-font-smoothing:antialiased}
+a{color:var(--hi)}a:hover{color:#cfe0f5}
+button{font:inherit;color:inherit;cursor:pointer}
+.gate{min-height:100%;display:grid;place-items:center;padding:24px}
+.gate form{width:100%;max-width:360px;display:flex;flex-direction:column;gap:14px}
+.gate h1{margin:0;font-size:22px;font-weight:600;letter-spacing:-.01em}
+.gate p{margin:0 0 6px;color:var(--mute);font-size:14px;line-height:1.5}
+.gate input{font:inherit;font-size:16px;padding:13px 14px;border-radius:10px;border:1px solid var(--line);background:var(--ink2);color:var(--hi);outline:none}
+.gate input:focus{border-color:#5B8BD0}
+.gate .go{padding:13px;border-radius:10px;border:0;background:var(--hi);color:var(--ink);font-weight:600}
+.gate .err{color:#F08A8A;font-size:13px;min-height:18px}
+.app{display:none;flex-direction:column;height:100%}
+.app.on{display:flex}
+.bar{display:flex;align-items:center;gap:16px;padding:10px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{font-weight:700;font-size:15px;letter-spacing:.01em;white-space:nowrap}
+.brand span{color:var(--mute);font-weight:500}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;flex:1;min-width:0}
+.tab{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:transparent;font-size:14px;font-weight:500;color:var(--mute)}
+.tab:hover{color:var(--hi)}
+.tab[aria-pressed="true"]{background:var(--hi);color:var(--ink);border-color:var(--hi)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ok);flex:none}
+.tab.draft .dot{background:var(--warn)}
+.tools{display:flex;align-items:center;gap:8px}
+.seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:transparent;padding:7px 11px;font-size:13px;color:var(--mute)}
+.seg button[aria-pressed="true"]{background:var(--ink2);color:var(--hi)}
+.btn{border:1px solid var(--line);background:transparent;border-radius:8px;padding:7px 11px;font-size:13px;color:var(--mute);text-decoration:none;white-space:nowrap}
+.btn:hover{color:var(--hi)}
+.meta{display:flex;align-items:center;gap:14px;padding:8px 16px;font-size:12.5px;color:var(--mute);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.meta b{color:var(--hi);font-weight:600}
+.safe{display:flex;align-items:center;gap:6px;color:var(--ok)}
+.stage{flex:1;min-height:0;background:#0E2036;display:flex;justify-content:center;overflow:auto}
+.stage iframe{border:0;background:#fff;width:100%;height:100%;display:block}
+.stage.mobile{padding:24px 0}
+.stage.mobile iframe{width:390px;height:844px;max-height:100%;border-radius:18px;box-shadow:0 0 0 8px #000,0 20px 50px rgba(0,0,0,.5)}
+.empty{align-self:center;text-align:center;color:var(--mute);font-size:15px;line-height:1.6;padding:24px}
+@media (max-width:700px){.tools .seg{display:none}}
+</style>
+</head>
+<body>
+<div class="gate" id="gate">
+<form id="f" autocomplete="off">
+<h1>Bid review</h1>
+<p>Brivio internal. Pages viewed here don't send Clarity, Formspree, or Apollo alerts.</p>
+<input id="pw" type="password" placeholder="Password" autofocus>
+<button class="go" type="submit">Unlock</button>
+<div class="err" id="err"></div>
+</form>
+</div>
+<div class="app" id="app">
+<div class="bar">
+<div class="brand">Brivio <span>· Bid review</span></div>
+<div class="tabs" id="tabs"></div>
+<div class="tools">
+<div class="seg" id="dev"><button data-d="desktop" aria-pressed="true">Desktop</button><button data-d="mobile" aria-pressed="false">Mobile</button></div>
+<a class="btn" id="open" target="_blank" rel="noopener">Open in tab</a>
+<button class="btn" id="lock">Lock</button>
+</div>
+</div>
+<div class="meta" id="meta"></div>
+<div class="stage" id="stage"></div>
+</div>
+<script>
+const PAYLOAD={"s":"Uk9K3Wv3B7BYeDmWJPcXvQ==","i":"3XDIgCxs2Qvihqpd","c":"e990Yn2NbcZaKmZKStrxYTqVOcHgjVDz0wI2apttzAxdLqmBK0eLnHUTbXz99W2kvwo0j4jTevdLeJy+pyV5WEBYOtAwNVfsGaVcrCymcPR4ZbPoVGxNtREk2J6TZmTRQxVDCUYp3xc7XAfY54CPGZR8R9IaiFN0M1YNM13WheU7glUVr2BVnGq97FF5WwtSZkGuMKTnjskC8m0j5zByF2UVT3WX2QoZ6l5IeWAfeO9JfRmMulhbzvOYXq5gQ+xBMHajx+WOb+EYKs+o9iiqdjwUxqxHt6lhjVtZLO4Zopb5gBDP9KhUftG7moVksvtPAnDgMb9n4PGiwuBfK0vltDkA1OEaOagv9JgkJcra72i+1Q==","n":250000};
+const $=id=>document.getElementById(id);
+const b64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function decrypt(pw){
+  const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(PAYLOAD.s),iterations:PAYLOAD.n,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
+  const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(PAYLOAD.i)},key,b64(PAYLOAD.c));
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+let bids=[],cur=0,device='desktop';
+const withNotrack=u=>u+(u.includes('?')?'&':'?')+'notrack=1';
+function render(){
+  const b=bids[cur];
+  $('tabs').innerHTML=bids.map((x,i)=>`<button class="tab${x.status==='draft'?' draft':''}" data-i="${i}" aria-pressed="${i===cur}"><span class="dot"></span>${x.name}</button>`).join('');
+  $('meta').innerHTML=`<span><b>${b.name}</b></span><span>${b.status==='draft'?'Draft, not published':'Live'}${b.sent?' · Sent '+b.sent:''}</span><span>${b.file}</span><span class="safe">● Untracked view</span>`;
+  const st=$('stage');st.className='stage'+(device==='mobile'?' mobile':'');
+  if(b.status==='draft'){st.innerHTML=`<div class="empty">${b.name} isn't published yet.<br>Upload ${b.file} to GitHub to review it here.</div>`;$('open').style.display='none';}
+  else{st.innerHTML=`<iframe src="${withNotrack(b.file)}" title="${b.name}"></iframe>`;$('open').style.display='';$('open').href=withNotrack(b.file);}
+  localStorage.setItem('brivio_review_cur',cur);
+}
+function start(list){
+  bids=list;
+  try{localStorage.setItem('brivio_notrack','1');}catch(e){}
+  cur=Math.min(+localStorage.getItem('brivio_review_cur')||0,bids.length-1);
+  $('gate').style.display='none';$('app').classList.add('on');render();
+}
+$('f').onsubmit=async e=>{
+  e.preventDefault();$('err').textContent='';
+  try{const pw=$('pw').value;const list=await decrypt(pw);sessionStorage.setItem('brivio_review_pw',pw);start(list);}
+  catch(x){$('err').textContent='Wrong password.';$('pw').select();}
+};
+$('tabs').onclick=e=>{const t=e.target.closest('.tab');if(t){cur=+t.dataset.i;render();}};
+$('dev').onclick=e=>{const t=e.target.closest('button');if(!t)return;device=t.dataset.d;[...$('dev').children].forEach(c=>c.setAttribute('aria-pressed',c===t));render();};
+$('lock').onclick=()=>{sessionStorage.removeItem('brivio_review_pw');location.reload();};
+const saved=sessionStorage.getItem('brivio_review_pw');
+if(saved)decrypt(saved).then(start).catch(()=>sessionStorage.removeItem('brivio_review_pw'));
+</script>
+</body>
+</html>
