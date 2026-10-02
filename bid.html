@@ -90,10 +90,9 @@ const withNotrack=u=>u+(u.includes('?')?'&':'?')+'notrack=1';
 function render(){
   const b=bids[cur];
   $('tabs').innerHTML=bids.map((x,i)=>`<button class="tab${x.status==='draft'?' draft':''}" data-i="${i}" aria-pressed="${i===cur}"><span class="dot"></span>${x.name}</button>`).join('');
-  $('meta').innerHTML=`<span><b>${b.name}</b></span><span>${b.status==='draft'?'Draft, not published':'Live'}${b.sent?' · Sent '+b.sent:''}</span><span>${b.file}</span><span class="safe">● Untracked view</span>`;
+  $('meta').innerHTML=`<span><b>${b.name}</b></span><span>${b.status==='draft'?'Draft':'Live'}${b.sent?' · Sent '+b.sent:''}</span><span>${b.file}</span><span class="safe">● Untracked view</span>`;
   const st=$('stage');st.className='stage'+(device==='mobile'?' mobile':'');
-  if(b.status==='draft'){st.innerHTML=`<div class="empty">${b.name} isn't published yet.<br>Upload ${b.file} to GitHub to review it here.</div>`;$('open').style.display='none';}
-  else{st.innerHTML=`<iframe src="${withNotrack(b.file)}" title="${b.name}"></iframe>`;$('open').style.display='';$('open').href=withNotrack(b.file);}
+  {st.innerHTML=`<iframe src="${withNotrack(b.file)}" title="${b.name}"></iframe>`;$('open').style.display='';$('open').href=withNotrack(b.file);}
   localStorage.setItem('brivio_review_cur',cur);
 }
 function start(list){
