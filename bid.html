@@ -57,7 +57,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 <form id="f" autocomplete="off">
 <h1>Bid review</h1>
 <p>Brivio internal. Pages viewed here don't send Clarity, Formspree, or Apollo alerts.</p>
-<input id="pw" type="password" placeholder="Password" autofocus>
+<input id="pw" type="text" placeholder="Password" autofocus>
 <button class="go" type="submit">Unlock</button>
 <div class="err" id="err"></div>
 </form>
@@ -76,7 +76,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 <div class="stage" id="stage"></div>
 </div>
 <script>
-const PAYLOAD={"s":"/bwDUNRaz2R71l9vhMdQJw==","i":"e8fZr0+Jgd9x0yMQ","c":"pkd76TZmyyfGfSqAaSZjz3aYvpp5Di51El8npx3VB3eqFGkIHpkKxyYcLpkPQO1q3gcAG+Mwd+rv02FdEEz7JEsbvi2vXrumNFzmgIF5t1DXt42+yKHeoRCYDzWT7oCBtbH69/i4pR+eHj9jtc7Z6bHpDkEGR/Nw8Bw2dcxCKOuKTIcXI0Ho8S023Py+vZUWw+VCrqCQ0Vuajugm5EuEQMu84Jct/fzIOT+Od4jkwST84MtU4zeDdbCAJLmHUllhL8E9bXbPmPMQliqb5hRbScXmJn4L/YFO/MeeqwE6GnD8s4yfJGHuBfRRagrXLACmppbTMqm2T9i5ocsiqbd6t8TyaCwpRIOVmgH1ifh0+FUFaVDwNvgj+43HvzmB/AxQG1xpYwlT7vFtBCwOfCL1CLO10cZwkeZgPad9muyAGmFAslZoEjG9XlX4M3LehU2Mz/vR513ZbqNaUPR3AYSSLgyvkMa5lUAFRsh3Urswe6A33UL/xFnKnIHkMkRRx6LiNA7Idbguq4S22S0+kTt+c3ap/HgdtVSnX92sGPK/FaaTtBdHUJXkZShmo9G+SLQZ2INS3qMNxsjcUphyyEo6","n":250000};
+const PAYLOAD={"s":"WBo1WwTNcW5Hy9VQZY9jiQ==","i":"Ttw667mUREkyhDXv","c":"Bx7Xi/hRqpHs1G79XPGBIH3IktX/hDRv4Kwz3HlmhnXS3IUSU2O9ZCugq1+0ed/Ga/+wWkqjX82+NZVDuA49ZRXKcbbxP0DwVUM0HDKRBrRVafI1RwmOXt60vxIncgcvcUdaKZCo+T+NJ68VKZSf9JYL15v5VtBxU9OKumBY+6cViN3t0ERm/0EH2d1rG7VUyYgK2QcMqah1lrF9L7jpwK2gEwSpVJTWhz8cMDAKbECb4U/75ylpmEns0JvBYk8IiXWB+IMDfW3OGEH9FiSP8wHxogwG1nwtrAZmUShmuDiGRX9B5r2ne8DWvBaCSnzR8PSSGaq3+7nQEhxTdbTdxEdq+zxzdDMeVRNmk/LZPd9tehARfux4zuv0Zo8ZVVhPfXHmYNF6R5LafsoyaitnXAyuqscUDBOktodgyvNjBmq9YOhW2OHSHYubkURzJNBllnMmA/R/7dNzHtkLsPJKvKa4QMERQooCpgF7jr634ajvRz/XdwDPhIbpCmI8MukoLxNI5BhjCg799KbpJMG7+b1LwciKdk+Ygnzpfd3wwrmnYZENOUwl7XhD6YF5DlqU+0myIiNWYgQQcu74YYs=","n":250000};
 const $=id=>document.getElementById(id);
 const b64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
 async function decrypt(pw){
