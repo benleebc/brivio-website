@@ -348,8 +348,13 @@ function Hero({ variant, onContact }) {
 
         <p style={{
           fontSize: isMobile ? 16 : 18, fontWeight: 400, lineHeight: 1.65, color: T.bodyText,
-          maxWidth: 680, margin: v.sub2 ? '0 0 18px' : (isMobile ? '0 0 36px' : '0 0 52px'), whiteSpace: 'pre-line'
+          maxWidth: 680, margin: 0, whiteSpace: 'pre-line'
         }}>{v.sub}</p>
+
+        <p style={{
+          fontSize: isMobile ? 16 : 18, fontWeight: 400, lineHeight: 1.65, color: T.bodyText,
+          maxWidth: 680, margin: v.sub2 ? '0 0 18px' : (isMobile ? '0 0 36px' : '0 0 52px')
+        }}>Works like adding another indirect lender. No new system to learn.</p>
 
         {v.sub2 && (
           <p style={{
@@ -494,15 +499,15 @@ function TheReality() {
 function PortalMock() {
   const rows = [['Loan balance','$28,340'],['Rate','7.49% APR'],['Payments made','14 of 60']];
   return (
-    <div>
-      <div style={{ background: '#0A1521', border: '1px solid rgba(245,247,249,0.18)', borderRadius: 6, overflow: 'hidden', boxShadow: '0 8px 28px rgba(0,0,0,0.28)' }} aria-hidden="true">
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', background: '#0A1521', border: '1px solid rgba(245,247,249,0.18)', borderRadius: 6, overflow: 'hidden', boxShadow: '0 8px 28px rgba(0,0,0,0.28)' }} aria-hidden="true">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px', borderBottom: '1px solid rgba(245,247,249,0.10)' }}>
           {['#2B2F33','#2B2F33','#2B2F33'].map((c,i) => <span key={i} style={{ width: 9, height: 9, borderRadius: '50%', background: c, display: 'inline-block', flexShrink: 0 }}></span>)}
           <span style={{ marginLeft: 12, flex: 1, fontSize: 11.5, color: '#7B8289', background: 'rgba(245,247,249,0.04)', border: '1px solid rgba(245,247,249,0.10)', borderRadius: 4, padding: '5px 12px', letterSpacing: '0.02em' }}>
             <span style={{ color: '#D4BA85' }}>summitautofinancial</span>.com/account
           </span>
         </div>
-        <div style={{ padding: 28 }}>
+        <div style={{ padding: 28, flex: 1, display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 26, gap: 12, flexWrap: 'wrap' }}>
             <span style={{ fontFamily: FONT_DISPLAY, fontWeight: 500, fontSize: 17, display: 'flex', alignItems: 'center', gap: 10 }}>
               <span style={{ width: 26, height: 26, borderRadius: 4, background: T.brass, color: T.navy, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, flexShrink: 0 }}>S</span>
@@ -513,14 +518,14 @@ function PortalMock() {
           <p style={{ fontSize: 13, color: '#7B8289', marginBottom: 4 }}>Good morning, Sarah</p>
           <p style={{ fontFamily: FONT_DISPLAY, fontWeight: 300, fontSize: 40, letterSpacing: '-0.01em', color: T.offwhite, marginBottom: 2 }}>$487.22</p>
           <p style={{ fontSize: 12.5, color: '#A8ADB3', marginBottom: 24 }}>Next payment · July 1, 2026</p>
-          <div>
+          <div style={{ marginBottom: 22 }}>
             {rows.map(([label, val]) => (
               <div key={label} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, padding: '11px 0', borderTop: '1px solid rgba(245,247,249,0.10)', color: '#A8ADB3' }}>
                 <span>{label}</span><span style={{ color: T.offwhite }}>{val}</span>
               </div>
             ))}
           </div>
-          <button type="button" tabIndex="-1" style={{ marginTop: 22, width: '100%', height: 44, border: 'none', borderRadius: 3, background: T.brass, color: T.navy, fontFamily: FONT_UI, fontSize: 12, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', cursor: 'default' }}>
+          <button type="button" tabIndex="-1" style={{ marginTop: 'auto', flexShrink: 0, width: '100%', height: 44, border: 'none', borderRadius: 3, background: T.brass, color: T.navy, fontFamily: FONT_UI, fontSize: 12, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', cursor: 'default' }}>
             Make a payment
           </button>
         </div>
@@ -535,8 +540,8 @@ const STEPS = [
 { n: '01', title: 'We look under the hood', body: 'We map your loan volumes, credit mix, and what you’re leaving on the table today.' },
 { n: '02', title: 'You set the pricing', body: 'We walk through the economics together and agree on a pricing range that works for both sides.' },
 { n: '03', title: 'Agree to terms', body: 'Sign our agreement — and put your name on the loan for the first time.' },
-{ n: '04', title: 'We get to work', body: 'Your branded portal is built, your F&I team is trained. You don’t lift a finger.' },
-{ n: '05', title: 'You’re live', body: 'Every funded deal now builds your portfolio, your data, and your economics.' }];
+{ n: '04', title: 'We get to work', body: 'Your branded portal gets built. Your program goes into the tech stack. We show your F&I team where to send deals. Day one feels like business as usual. You don’t lift a finger.' },
+{ n: '05', title: 'You’re live', body: 'Your team routes deals to your new finance company like any other lender. No new system. Every funded deal builds your portfolio, customer data, and economics. The bank no longer gets that, you do.' }];
 
 
 function HowItWorks() {

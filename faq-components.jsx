@@ -125,6 +125,7 @@ const FAQ_CATEGORIES = [
   num: '03',
   label: 'Operations',
   items: [
+  { q: 'Do I have to change how my dealership works to launch my own captive?', a: 'No. Creating your captive doesn’t require changes to your existing processes. We work within your current workflow, just like signing another indirect lender. No new app, no new system, and no new training beyond a short walkthrough of how to send deals to us. We handle licensing, underwriting, servicing, and capital markets behind the scenes.' },
   { q: 'Does my F&I team have to learn new systems or change how they handle deals?', a: 'No. Your F&I processes stay exactly the same. Nothing changes, except you now have the opportunity to earn more by sending the loan to a lender under your own brand.' }]
 },
 {
