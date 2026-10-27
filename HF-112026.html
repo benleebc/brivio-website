@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions.onLoad({appId:"6abebe2a83e5d4002091dab6"})},document.head.appendChild(o)}(function(){try{var q=new URLSearchParams(location.search).get('notrack');if(q==='1')localStorage.setItem('brivio_notrack','1');if(q==='0')localStorage.setItem('brivio_notrack','');if(localStorage.getItem('brivio_notrack')==='1')return}catch(e){}initApollo()})();</script>
+<script>(function(){try{if(localStorage.getItem('brivio_notrack')==='1'||new URLSearchParams(location.search).get('notrack')==='1')return}catch(e){}!function(m,n,e,t,l,o,g,y){var u,a,f=function(h){return!(h in m)||(m.console&&m.console.log&&m.console.log("FullStory namespace conflict. Please use a different namespace."),!1)}(l);f&&(g=m[l]=function(){var b=function(b,d,j,r){r=r||2;var i,c=/Async$/;return c.test(b)&&(b=b.replace(c,""),"function"==typeof Promise)?new Promise((function(i,c){h(b,d,j,i,c,r)})):h(b,d,j,i,i,r)};function h(h,d,j,r,i,c){return b._api?b._api(h,d,j,r,i,c):(b.q&&b.q.push([h,d,j,r,i,c]),null)}return b.q=[],b}(),y=function(b){function h(h){"function"==typeof h[4]&&h[4](new Error(b))}var d=g.q;if(d){for(var j=0;j<d.length;j++)h(d[j]);d.length=0,d.push=h}},function(){var b="script",d=n.createElement(b);d.async=!0,d.crossOrigin="anonymous",d.src="https://"+t+"?org="+o,d.setAttribute("data-fs-namespace",l),d.onerror=function(){y("Error loading "+t)};var c=n.getElementsByTagName(b)[0];c&&c.parentNode?c.parentNode.insertBefore(d,c):n.head.appendChild(d)}(),function(){function b(){}function h(b,h,d){g(b,h,d,1)}function d(b,d,j){h("setProperties",{type:b,properties:d},j)}function j(b,h){d("user",b,h)}function r(b,h,d){j({uid:b},d),h&&j(h,d)}g.identify=r,g.setUserVars=j,g.identifyAccount=b,g.clearUserCookie=b,g.setVars=d,g.event=function(b,d,j){h("trackEvent",{name:b,properties:d},j)},g.anonymize=function(){r(!1)},g.shutdown=function(){h("shutdown")},g.restart=function(){h("restart")},g.log=function(b,d){h("log",{level:b,msg:d})},g.consent=function(b){h("setIdentity",{consent:!arguments.length||b})}}(),u="fetch",a="XMLHttpRequest",g._w={},g._w[a]=m[a],g._w[u]=m[u],m[u]&&(m[u]=function(){return g._w[u].apply(this,arguments)}),g("init",{env:{orgId:o,host:e,script:t}}),g._v="2.1.0")}(window,document,"fullstory.com","edge.fullstory.com/s/fs.js","FS","o-259Z1B-na1");})();</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Holman Financial | Proposal</title>
+<meta name="description" content="A proposal to launch Holman Financial, Holman's own captive lender, powered by Brivio.">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<meta property="og:title" content="Holman Financial | Proposal">
+<meta property="og:description" content="Proposal prepared for Holman by Brivio Capital. November 2026.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Holman palette: Prussian blue #003057, Bahama blue #005897, Cornflower #66AFE9 (holman.com brand assets) */
+:root{
+  --blue:#005897;--blue-2:#1F74B3;--sky:#66AFE9;--blue-dk:#003057;--blue-lt:#EAF2F9;
+  --grad:linear-gradient(#005897,#005897);
+  --ink:#2B3640;--black:#101010;--gray:#5F6B76;--nav:#003057;--line:#E1E6EB;
+  --paper:#FFFFFF;--mist:#F4F7FA;--dark:#002445;--radius:4px;--pill:2px;
+  --font:"Montserrat",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.65;letter-spacing:.02em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:0;line-height:1.15;color:var(--black)}
+p{margin:0}
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+@media (max-width:640px){.container{padding:0 16px}body{font-size:15px}}
+section{scroll-margin-top:90px}
+.blue{color:var(--blue)}
+.pre{font-size:13px;font-weight:300;letter-spacing:.32em;text-transform:uppercase}
+
+/* ---------- Buttons (Keffer pill + gradient) ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;font:600 14px/1.2 var(--font);letter-spacing:2px;text-transform:uppercase;padding:16px 30px;border-radius:var(--pill);border:0;background:var(--grad);color:#fff !important;text-decoration:none;cursor:pointer;transition:filter .15s,box-shadow .15s}
+.btn:hover{filter:brightness(1.07);box-shadow:0 6px 18px rgba(0,88,151,.35)}
+.btn.sm{padding:10px 18px;font-size:12px;letter-spacing:1.5px}
+.btn.line{background:transparent;box-shadow:inset 0 0 0 2px #fff}
+.btn.line:hover{background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 2px #fff}
+
+/* ---------- Utility bar + header ---------- */
+.util{background:var(--blue-dk);color:#fff;font-size:13px;letter-spacing:1px}
+.util .container{display:flex;justify-content:space-between;align-items:center;gap:16px;height:32px}
+.util a{text-decoration:none}
+.head{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.head .container{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{position:relative;align-self:flex-start;display:flex;align-items:center;gap:16px;text-decoration:none;height:64px}
+.brand .tab{background:#fff;padding:8px 14px 10px;margin-top:0;border-radius:0 0 6px 6px;box-shadow:0 6px 14px rgba(0,0,0,.12);transform:translateY(8px)}
+.brand img{height:48px;width:auto}
+.brand .for{font-size:11.5px;line-height:1.35;color:var(--gray);border-left:1px solid var(--line);padding-left:16px;font-weight:500;letter-spacing:.5px}
+.brand .for b{display:block;color:var(--black);font-weight:700;font-size:13px}
+.links{display:flex;align-items:center;gap:28px}
+.links a:not(.btn){text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.84px;color:var(--nav)}
+.links a:not(.btn):hover{color:var(--blue)}
+@media (max-width:1000px){.links a:not(.btn){display:none}}
+@media (max-width:900px){.brand .for{display:none}.head .container{height:58px}.brand{height:58px}.brand img{height:38px}.brand .tab{padding:6px 10px 8px;transform:translateY(6px)}}
+
+/* ---------- Hero (Keffer full-bleed photo, centered) ---------- */
+.hero{position:relative;min-height:74vh;display:flex;align-items:center;color:#fff;overflow:hidden;background:#002445 url("assets/hf/hero.webp") center 50%/cover no-repeat;text-align:center}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,36,69,.78) 0%,rgba(0,36,69,.66) 45%,rgba(0,24,46,.88) 100%)}
+.hero .container{position:relative;z-index:1;width:100%;padding-top:88px;padding-bottom:96px}
+.hero .pre{font-size:clamp(12px,1.5vw,20px);letter-spacing:.3em;color:#fff}
+.hero h1{color:#fff;font-size:clamp(36px,5.6vw,72px);line-height:1.06;margin-top:18px;font-weight:700}
+.hero .lede{max-width:780px;margin:22px auto 0;text-wrap:balance;font-size:clamp(16px,1.4vw,18px);font-weight:400;line-height:1.65}
+.hero .lede b{font-weight:700}
+.hero .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:32px}
+
+/* ---------- Headline numbers ---------- */
+.nums{padding:84px 0 40px}
+.nums h2{font-size:clamp(28px,3.4vw,44px)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;box-shadow:0 10px 26px rgba(0,0,0,.05);position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:var(--grad)}
+.stat .v{font-size:clamp(40px,4.6vw,58px);font-weight:700;line-height:1;color:var(--black)}
+.stat .k{margin-top:14px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue)}
+.stat .s{margin-top:4px;font-size:14px;color:var(--gray);font-weight:500}
+.stats-note{margin-top:18px;font-size:14px;color:var(--gray);font-weight:500}
+.stats-note a{color:var(--blue);font-weight:700;text-underline-offset:3px}
+@media (max-width:860px){.stats{grid-template-columns:1fr;gap:14px;margin-top:28px}.stat{padding:22px}}
+
+/* Store tiles (Keffer dealer grid) */
+.tiles-wrap{padding:44px 0 88px;background:#fff}
+.tiles-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.tiles-head h3{font-size:20px}
+.tiles-head p{font-size:14px;color:var(--gray);font-weight:500}
+.tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:18px}
+.tile{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#222}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.tile:hover img{transform:scale(1.04)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.72) 100%)}
+.tile figcaption{position:absolute;left:14px;right:10px;bottom:10px;z-index:1;color:#fff;font-weight:700;font-size:16px;line-height:1.2}
+.tile figcaption small{display:block;font-size:11.5px;font-weight:500;letter-spacing:.5px;opacity:.85}
+@media (max-width:1000px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.tile figcaption{font-size:14px;left:10px}.tiles-wrap{padding:28px 0 60px}}
+
+/* ---------- Sections ---------- */
+.sec{padding:96px 0}
+.sec.mist{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.h2{font-size:clamp(30px,3.6vw,46px)}
+.center{text-align:center}
+.sec .pre{display:block;color:var(--blue);font-weight:600;font-size:12.5px;margin-bottom:12px}
+.sub{margin-top:14px;font-size:17px;color:var(--gray);font-weight:500}
+.sub.center{max-width:780px;margin-left:auto;margin-right:auto}
+
+@media (max-width:640px){.sec{padding:60px 0}}
+
+/* ---------- How it works ---------- */
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:44px}
+.hcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column}
+.hcard .who{margin:0;font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.hcard h3{margin-top:8px;font-size:clamp(16px,1.6vw,18px);line-height:1.25;text-wrap:balance;min-height:2.5em}
+.hcard .ticks{margin-top:18px}
+.hcard .bottom{margin-top:auto;min-height:0;padding-top:18px;border-top:1px solid var(--line);font-weight:700;color:var(--black);font-size:14px;letter-spacing:0}
+@media (min-width:1101px){.hcard .bottom{white-space:nowrap}}
+.hcard .ticks{margin-bottom:20px}
+@media (max-width:1100px){.how{grid-template-columns:1fr;margin-top:32px}.hcard{padding:22px 20px}}
+
+.ticks{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
+.ticks li{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:15.5px;line-height:1.5;color:var(--ink);font-weight:500}
+.ticks li svg{margin-top:4px;color:var(--blue)}
+.ticks b{color:var(--black);font-weight:700}
+
+/* ---------- The math ---------- */
+.cards2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:44px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(0,0,0,.05);position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:var(--grad)}
+.lbl{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);min-height:1.4em}
+.big{font-size:clamp(52px,5.4vw,72px);font-weight:700;line-height:1;color:var(--black);margin-top:14px}
+.big small{font-size:17px;font-weight:500;color:var(--gray);margin-left:10px}
+.cells{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.cell{background:var(--blue-lt);border-radius:var(--radius);padding:16px 18px}
+.cell .t{font-size:13px;font-weight:600;color:var(--gray)}
+.cell .v{font-size:30px;font-weight:700;line-height:1.15;color:var(--blue-dk);margin-top:4px}
+.card .foot{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;font-size:14.5px;color:var(--gray);font-weight:500}
+.card .foot b{color:var(--black)}
+.notes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:16px;padding:0 4px;font-size:12px;color:var(--gray);line-height:1.6;letter-spacing:.01em}
+.pencil{margin-top:48px}
+.pencil h3{font-size:22px}
+.pencil > p{margin-top:6px;color:var(--gray);font-weight:500}
+.split{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+.split div{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:var(--radius);padding:18px 20px}
+.split b{display:block;font-size:16px;color:var(--black)}
+.split span{display:block;margin-top:4px;font-size:14.5px;color:var(--gray);font-weight:500;line-height:1.5}
+@media (max-width:900px){.cards2{grid-template-columns:1fr;margin-top:32px}.card{padding:24px 20px}.notes{grid-template-columns:1fr;gap:4px}.split{grid-template-columns:1fr;gap:10px}}
+
+/* ---------- Beyond the economics ---------- */
+.vp-tabs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px}
+.vp-tab{position:relative;overflow:hidden;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;text-align:left;background:#fff;border:2px solid var(--line);border-radius:var(--radius);padding:20px 22px;cursor:pointer;font:inherit;color:inherit;letter-spacing:inherit;transition:border-color .2s,background .2s}
+.vp-tab:hover{border-color:var(--blue-2)}
+.vp-tab .ic{width:52px;height:52px;border-radius:50%;background:var(--blue-lt);color:var(--blue);display:grid;place-items:center}
+.vp-tab h3{font-size:19px}
+.vp-tab p{margin-top:4px;font-size:14.5px;color:var(--gray);line-height:1.45;font-weight:500}
+.vp-tab .prog{position:absolute;left:0;bottom:0;height:4px;width:0;background:var(--sky)}
+.vp-tab[aria-selected="true"]{background:var(--grad);border-color:transparent}
+.vp-tab[aria-selected="true"] h3{color:#fff}
+.vp-tab[aria-selected="true"] p{color:#E3ECF8}
+.vp-tab[aria-selected="true"] .ic{background:rgba(255,255,255,.18);color:#fff}
+.vp-tab:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.vp-panels{margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr);background:var(--dark);color:#fff;border-radius:var(--radius)}
+.vp-panel{grid-area:1/1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:52px;align-items:center;padding:52px;visibility:hidden}
+.vp-panel.on{visibility:visible;animation:fade .4s ease}
+.vp-panel > *{min-width:0}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.vp-panel h3{font-size:clamp(24px,2.4vw,32px);color:#fff}
+.vp-panel .p{margin-top:14px;font-size:16px;color:#DADADA;font-weight:400}
+.chips{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{font-size:13px;font-weight:600;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.25);border-radius:var(--pill);padding:7px 14px}
+.sample{display:block;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#9CA3AF;margin-bottom:12px}
+.facts{margin-top:24px;border-top:1px solid #333}
+.facts .h{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);margin-top:16px}
+.facts dl{margin:8px 0 0}
+.facts dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid #333;font-size:15px}
+.facts dt{color:#BDBDBD;font-weight:500}
+.facts dd{margin:0;font-weight:700;color:#fff;text-align:right}
+.facts .one{margin-top:16px;font-size:14.5px;color:#D4D4D4;font-weight:400}
+.facts .one b{color:var(--sky)}
+@media (max-width:1100px){.vp-panel:not(.on){display:none}.vp-panel{grid-template-columns:minmax(0,1fr);gap:32px;padding:40px}}
+@media (max-width:900px){
+  .vp-tabs{gap:10px;margin-top:32px}
+  .vp-tab{grid-template-columns:1fr;gap:10px;padding:14px}
+  .vp-tab .ic{width:40px;height:40px}
+  .vp-tab h3{font-size:15.5px}.vp-tab p{display:none}
+  .vp-panel{padding:26px 18px}
+}
+
+/* Portal mock */
+.browser{border-radius:8px;overflow:hidden;background:#fff;color:var(--ink);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.browser .chrome{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#ECEEF1}
+.browser .dots{display:flex;gap:6px}.browser .dots i{width:10px;height:10px;border-radius:50%;background:#C9CDD3;display:block}
+.browser .url{flex:1;min-width:0;background:#fff;border-radius:6px;font-size:12px;color:#555;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.p-util{background:var(--blue);height:6px}
+.p-top{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;padding:10px 18px;border-bottom:1px solid var(--line)}
+.p-brand{display:flex;align-items:center;gap:12px}
+.p-brand img{height:30px;width:auto}
+.p-brand span{font-size:11.5px;font-weight:700;color:var(--blue-dk);border-left:1px solid var(--line);padding-left:12px;letter-spacing:.3px}
+.p-top nav{display:flex;gap:16px;font-size:11.5px;font-weight:600;color:var(--nav)}
+.p-top nav span.on{color:var(--blue)}
+.p-body{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;padding:18px;background:var(--mist)}
+.pc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.pc .hello{font-size:18px;font-weight:700;color:var(--black)}
+.pc .acct{font-size:12.5px;color:var(--gray);font-weight:500}
+.pc .kv{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.pc .kv > div{display:flex;flex-direction:column;justify-content:flex-end}
+.pc .kv .k{font-size:10.5px;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.pc .kv .v{font-size:21px;font-weight:700;color:var(--black)}
+.meter{height:8px;border-radius:4px;background:#E3E6EA;margin-top:14px;overflow:hidden}
+.meter span{display:block;height:100%;width:40%;background:var(--grad);border-radius:4px}
+.pc .meta{font-size:12.5px;color:var(--gray);margin-top:6px;font-weight:500}
+.okchip{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;background:#E4F4E8;color:#146c2e;border-radius:999px;padding:3px 10px}
+.fakebtn{margin-top:14px;text-align:center;background:var(--grad);color:#fff;border-radius:var(--pill);padding:10px;font-size:12.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;user-select:none}
+.pside{display:grid;gap:12px;align-content:start}
+.pside .h{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-dk)}
+.pside p{font-size:13.5px;margin-top:4px;line-height:1.45;font-weight:500}
+.pside .go{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;color:var(--blue)}
+@media (max-width:640px){.p-body{grid-template-columns:1fr}.p-top nav{display:none}.p-brand span{display:none}}
+
+/* Mailer mock */
+.mailer{border-radius:8px;overflow:hidden;background:#fff;color:var(--ink);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.m-top{background:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line)}
+.m-top img{height:30px;width:auto}
+.m-top .store{font-size:13px;font-weight:700;text-align:right;line-height:1.25;color:var(--black)}
+.m-top .store small{display:block;font-size:11px;font-weight:500;color:var(--gray)}
+.m-stripe{background:var(--grad);color:#fff;padding:9px 20px;font-weight:300;text-transform:uppercase;letter-spacing:.22em;font-size:12px}
+.m-stripe b{font-weight:700}
+.m-body{padding:20px 22px 18px}
+.m-body .hi{font-size:14px;color:var(--gray);font-weight:500}
+.m-body .mhead{font-size:21px;font-weight:700;line-height:1.25;margin-top:6px;color:var(--black)}
+.offer{margin-top:16px;background:var(--blue-lt);border-radius:var(--radius);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.offer .veh{font-size:13px;color:var(--gray);line-height:1.35;font-weight:500}
+.offer .veh b{display:block;color:var(--black);font-size:16px;font-weight:700}
+.offer .pay{font-size:38px;font-weight:700;line-height:1;color:var(--blue);white-space:nowrap}
+.offer .pay small{font-size:14px;color:var(--gray);font-weight:500}
+.m-body .eq{margin-top:12px;font-size:14px;font-weight:500}
+.m-body .eq b{font-weight:700;color:#146c2e}
+.mcta{margin-top:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.mcta span{background:var(--grad);color:#fff;border-radius:var(--pill);padding:9px 16px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+.mcta em{font-style:normal;font-size:12.5px;color:var(--gray);font-weight:500}
+.fine{font-size:10.5px;color:#8b8f95;line-height:1.5;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);letter-spacing:0}
+@media (max-width:640px){.offer{flex-direction:column;align-items:flex-start}.offer .pay{font-size:32px}.m-body .mhead{font-size:18px}.m-top .store{display:none}}
+
+/* ---------- Pilot ---------- */
+.prop-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:44px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.pcard::before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:var(--grad)}
+.pcard h3{display:flex;align-items:center;gap:12px;min-height:40px;font-size:clamp(19px,2vw,23px)}
+.pcard h3 img{height:36px;width:auto;flex:none}
+.pcard h3 img.sq{width:36px;object-fit:contain}
+.pcard .ticks{margin-bottom:22px}
+.pcard .take{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-weight:700;font-size:15.5px;color:var(--blue)}
+@media (max-width:860px){.prop-grid{grid-template-columns:1fr;margin-top:32px}.pcard{padding:24px 20px}}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
+.step{background:var(--blue-lt);border-radius:var(--radius);padding:24px}
+.step .n{width:42px;height:42px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-weight:700;font-size:17px}
+.step h4{margin-top:16px;font-size:clamp(17px,1.8vw,19px)}
+.step p{margin-top:6px;color:var(--gray);font-weight:500}
+.step{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:14px;align-items:center}.step .n{grid-column:1;grid-row:1}.step h4{grid-column:2;grid-row:1;margin:0}.step p{grid-column:1/-1;grid-row:2;margin-top:12px}
+@media (max-width:860px){.steps{grid-template-columns:1fr;gap:12px}}
+
+/* ---------- CTA (Keffer "Welcome to" dark road section) ---------- */
+.cta-sec{position:relative;color:#fff;background:#002445 url("assets/hf/banner.avif") center/cover no-repeat;text-align:center}
+.cta-sec::before{content:"";position:absolute;inset:0;background:rgba(0,36,69,.82)}
+.cta-sec .container{position:relative;padding-top:100px;padding-bottom:100px}
+.cta-sec .pre{color:#fff;font-size:clamp(12px,1.4vw,16px)}
+.cta-sec h2{color:#fff;font-size:clamp(34px,4.6vw,58px);line-height:1.08;margin-top:14px}
+.cta-sec h2 span{display:block}
+.cta-sec p{margin:18px auto 0;max-width:700px;font-size:17px;font-weight:400;text-wrap:balance}
+.cta-sec .cta{margin-top:30px}
+.team{margin:40px auto 0;display:flex;justify-content:center;gap:56px;flex-wrap:wrap;font-size:14.5px;color:#D0D6DE;font-weight:500}
+.team b{display:block;color:#fff;font-size:18px;font-weight:700}
+@media (max-width:640px){.cta-sec .container{padding-top:72px;padding-bottom:72px}.team{display:grid;grid-template-columns:1fr 1fr;gap:16px}}
+
+/* ---------- Footer ---------- */
+footer{background:#fff;border-top:1px solid var(--line);padding:30px 0}
+footer .container{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.f-logos{display:flex;align-items:center;gap:18px}
+.f-logos img.sp{height:44px;width:auto}
+.f-logos img.bv{height:40px;width:auto}
+.f-logos i{width:1px;height:30px;background:var(--line);display:block}
+footer p{font-size:12px;color:var(--gray);font-weight:400;letter-spacing:1px}
+.fallback-wordmark{font-weight:800;font-size:18px;color:var(--blue)}
+
+/* ---------- Assumptions dialog ---------- */
+dialog{border:0;border-radius:8px;padding:0;width:min(540px,calc(100vw - 32px));box-shadow:0 30px 80px rgba(0,0,0,.4);color:var(--ink);background:#fff}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.dlg-h{background:var(--grad);color:#fff;padding:22px 26px}
+.dlg-h h3{font-size:22px;color:#fff}
+.dlg-h p{font-size:14px;color:#E8EEF8;margin-top:4px;font-weight:500}
+.dlg-b{padding:22px 26px 6px;display:grid;gap:20px}
+.fld label{display:block;font-size:15px;font-weight:700;color:var(--black)}
+.fld .inw{position:relative;margin-top:8px}
+.fld input{width:100%;height:52px;padding:0 44px 0 16px;border:1px solid #CED3DA;border-radius:var(--pill);font:700 19px var(--font);color:var(--black);background:#fff;-moz-appearance:textfield}
+.fld input::-webkit-inner-spin-button,.fld input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.fld input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,88,151,.2)}
+.fld .unit{position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--gray);font-weight:700;pointer-events:none}
+.fld .help{font-size:13px;color:var(--gray);margin-top:4px;font-weight:500}
+.dlg-sum{margin:8px 26px 0;background:var(--blue-lt);border-radius:var(--radius);padding:16px 18px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dlg-sum .k{font-size:11px;color:var(--gray);font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.dlg-sum .v{font-size:25px;font-weight:700;color:var(--blue-dk)}
+.dlg-f{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 26px 24px}
+.dlg-fn{margin:12px 26px 0;font-size:12px;color:var(--gray);line-height:1.5;font-weight:500}
+.linkish{background:none;border:0;color:var(--blue);font:600 14px var(--font);cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- Wrap + spacing polish ---------- */
+.h2,.nums h2,.cta-sec h2,.vp-panel h3,.m-body .mhead{text-wrap:balance}
+.sub,.lede,.cta-sec p,.vp-panel .p,.facts .one,.step p{text-wrap:pretty}
+@media (min-width:641px){.h2 .blue,.nums h2 .blue{white-space:nowrap}}
+.facts dd{white-space:nowrap}
+@media (max-width:560px){.util .r{display:none}.util .container{justify-content:center}}
+@media (max-width:640px){
+.h2{font-size:28px}.nums h2{font-size:28px}.cta-sec h2{font-size:34px}
+.hero h1{font-size:36px}.hero .container{padding-top:64px;padding-bottom:72px}
+.big{font-size:50px}
+.cell{padding:14px}.cell .t{font-size:12.5px}.cell .v{font-size:26px}
+.stat .v{font-size:42px}
+.facts dd{white-space:normal}
+.ticks li{font-size:15px}
+.hero .cta .btn{flex:1 1 auto}
+.btn{padding:15px 22px}
+}
+.nums h2{text-align:center}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+
+/* ---------- Holman additions ---------- */
+.brand .tab{background:none;box-shadow:none;padding:0;transform:none;display:flex;align-items:center;height:100%}
+.brand img{height:30px}
+@media (max-width:900px){.brand img{height:24px}.brand .tab{padding:0;transform:none}}
+.fallback-wordmark{font-weight:800;font-size:20px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-dk)}
+.btn{letter-spacing:1.6px}
+.hcard .who{display:block}
+.hcard p.body{margin-top:14px;margin-bottom:20px;font-size:15.5px;line-height:1.55;color:var(--ink);font-weight:500;text-wrap:pretty}
+.hcard{border-top:4px solid var(--blue)}
+#fit .how{margin-top:44px}
+.ticks li span,.split span,.step p,.hcard p.body,.pcard .take{text-wrap:pretty}
+.pcard h3 img.hl{height:22px;width:auto}
+.p-brand img{height:20px}
+.m-top img{height:22px}
+.f-logos img.sp{height:28px}
+.cta-sec h2 span{display:block}
+@media (max-width:1100px){#fit .how{margin-top:32px}}
+</style>
+</head>
+<body>
+<div class="util"><div class="container"><span>Proposal from Brivio Capital · November 2026</span><span class="r"><br></span></div></div>
+<header class="head"><div class="container">
+<a class="brand" href="#top" aria-label="Holman"><span class="tab"><img src="assets/hf/holman-logo.png" alt="Holman" data-fallback="Holman"></span><span class="for"><b>Holman Financial</b>Proposal from Brivio · Nov 2026</span></a>
+<nav class="links" aria-label="Sections"><a href="#fit">Why Holman</a><a href="#how">How it works</a><a href="#math">The math</a><a href="#why">Brand and data</a><a href="#terms">Pilot</a><a class="btn sm" href="mailto:Charles.do@briviocapital.com?cc=Ben.lee@briviocapital.com&amp;subject=Holman%20Financial%20pilot" data-track="contact_header">Contact us</a></nav>
+</div></header>
+<main id="top">
+<section class="hero" data-sec="hero"><div class="container">
+<div class="pre">Proposal for Holman</div>
+<h1>Holman Financial</h1>
+<p class="lede">Your own captive lender. Loans carry <b>the Holman name</b>, Brivio runs the infrastructure behind them, and every store's F&amp;I process stays business as usual.</p>
+<div class="cta"><a class="btn" href="#math" data-track="hero_math">See the math</a><a class="btn line" href="#terms" data-track="hero_pilot">Pilot terms</a></div>
+</div></section>
+
+<section class="sec" id="fit" data-sec="fit"><div class="container">
+<span class="pre center">Why Holman</span>
+<h2 class="h2 center">Built around<br><span class="blue">How Holman already runs</span></h2>
+<p class="sub center">We studied how Holman grows, integrates stores and serves customers. Holman Financial is designed to fit each one.</p>
+<div class="how">
+<div class="hcard"><div class="who">Hub model</div><h3>Start in one hub, then repeat it region by region</h3><p class="body">Holman grows in regional hubs, not scattered stores. The pilot runs in three stores inside one hub, so the results are clear and easy to repeat.</p><p class="bottom">Prove it in one hub first</p></div>
+<div class="hcard"><div class="who">Integration</div><h3>Observe first, with no change at the desk</h3><p class="body">Holman integrates by observing and learning before it changes anything. We plug in as another lender, so every store keeps the process it runs today.</p><p class="bottom">No new system for any store</p></div>
+<div class="hcard"><div class="who">Brands</div><h3>Store names stay, and the loan says Holman</h3><p class="body">Leith kept its name and team after joining Holman in 2024. Holman Financial works the same way: the contract says Holman, and the selling store stays in front.</p><p class="bottom">Your name on every contract</p></div>
+</div>
+</div></section>
+
+<section class="sec mist" id="how" data-sec="how"><div class="container">
+<span class="pre center">The details</span>
+<h2 class="h2 center">We bring the infrastructure. <span class="blue">You keep the process.</span></h2>
+<p class="sub center">What Brivio does, what Holman does, and what stays the same.</p>
+<div class="how">
+<div class="hcard"><div class="who">Brivio</div><h3>We bring the infrastructure to offer and maintain the loan</h3><ul class="ticks"><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Lending and servicing compliance</span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tech to decision and service loans, including the customer website</span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pricing and underwriting strategy</span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Capital markets to fund the loans</span></li></ul><p class="bottom">The loan is offered under your brand</p></div>
+<div class="hcard"><div class="who">Holman</div><h3>You give us an initial look for customer financing</h3><ul class="ticks"><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Determine your lending brand</span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sign a pilot and dealer agreement</span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Feedback on pricing and structure</span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Identify tools that would make us a better partner</span></li></ul><p class="bottom">Place the loan with us when competitive</p></div>
+<div class="hcard"><div class="who">At the desk</div><h3>The process and current economics are business as usual</h3><ul class="ticks"><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>We show up as another lender on DealerTrack or RouteOne</span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Reserves or flats are paid at funding</span></li></ul><p class="bottom">No new system for your F&amp;I team</p></div>
+</div>
+</div></section>
+
+<section class="nums" aria-label="Headline numbers" data-sec="numbers"><div class="container">
+<h2><span style="color:#101010">What's possible for</span><br><span class="blue">Holman</span></h2>
+<div class="stats">
+<div class="stat"><div class="v" data-bind="total3">$18.1M</div><div class="k">3-year payout</div><div class="s">net of subscription fees</div></div>
+<div class="stat"><div class="v">$0</div><div class="k">Lending capital</div><div class="s">loan buyers take the credit risk</div></div>
+<div class="stat"><div class="v">3 months</div><div class="k">Pilot</div><div class="s">three stores, no subscription cost</div></div>
+</div>
+<p class="stats-note">Estimated, based on <span data-bind="rooftopsTxt">66 rooftops</span> at <span data-bind="lprTxt">20 loans a month</span> each. <a href="#math" data-open-assumptions data-track="assumptions_link">Change the assumptions</a></p>
+</div></section>
+
+<section class="sec" id="math" data-sec="math"><div class="container">
+<span class="pre center">Your marginal economics (estimated)</span>
+<h2 class="h2 center">Earn the economics <br><span class="blue">lenders earn today</span></h2>
+<p class="sub center">Paid on top of the reserves or flats your stores already earn at funding.</p>
+<div class="cards2">
+<div class="card"><div class="lbl">All-in payout to Holman (per funded loan)</div><div class="big" data-bind="blended">~$600<small>blended</small></div>
+<div class="cells"><div class="cell"><div class="t">740+ credit</div><div class="v" data-bind="p740">~$215</div></div><div class="cell"><div class="t">Less than 740</div><div class="v" data-bind="pLow">~$650</div></div></div>
+<div class="foot"><p>At <b data-bind="lprShort">20 loans per rooftop a month</b>, <b data-bind="lowShare">85%</b> below 740.</p></div></div>
+<div class="card"><div class="lbl">Enterprise value added</div><div class="big" data-bind="ev">$36M</div>
+<div class="cells"><div class="cell"><div class="t">Year 3 payout</div><div class="v" data-bind="y3">$9.0M</div></div><div class="cell"><div class="t">Earnings multiple</div><div class="v">4x</div></div></div>
+<div class="foot"><p>About <b data-bind="evPerRoof">$547K</b> of value per rooftop.</p><button class="btn sm" type="button" data-open-assumptions data-track="assumptions_button">Review assumptions</button></div></div>
+</div>
+<div class="notes"><p>Per loan: upfront sales commission + servicing bonus - monthly subscription fee, at 20 loans per rooftop a month.</p><p>Enterprise value at 4x (Haig Report, Q1 2026).</p></div>
+<div class="pencil"><h3>How the numbers pencil</h3><p>Current lender economics, redistributed to Holman and Brivio.</p>
+<div class="split"><div><b>Loan buyers</b><span>Take the credit risk and earn a return on their capital.</span></div><div><b>Brivio</b><span>Earns money for servicing and collecting on the loan.</span></div><div><b>Holman</b><span>Earns incremental economics for acquiring the customer.</span></div></div></div>
+</div></section>
+
+<section class="sec mist" id="why" data-sec="brand_data"><div class="container">
+<span class="pre center">Beyond the economics</span>
+<h2 class="h2 center">We saw firsthand <span class="blue">the benefits of captive lenders</span></h2>
+<p class="sub center">A captive lender keeps the economics, the brand and the customer data inside Holman.</p>
+<div class="vp-tabs" role="tablist" aria-label="Value propositions">
+<button class="vp-tab" role="tab" id="t-brand" aria-controls="p-brand" aria-selected="true" tabindex="0"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 3v6.5M4.5 16.5l5.4-3.1M19.5 16.5l-5.4-3.1"/></svg></span><span><h3>Own the brand experience</h3><p>Every interaction reinforces the brand, from origination to repayment.</p></span><span class="prog"></span></button>
+<button class="vp-tab" role="tab" id="t-data" aria-controls="p-data" aria-selected="false" tabindex="-1"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-13.7 5.6"/><path d="M4 12A8 8 0 0 1 17.7 6.4"/><path d="M18 2.5v4h-4"/><path d="M6 21.5v-4h4"/></svg></span><span><h3>Compound your data</h3><p>Accumulate and consolidate customer data to drive the next sale.</p></span><span class="prog"></span></button>
+</div>
+<div class="vp-panels" id="vp-panels">
+<div class="vp-panel on" role="tabpanel" id="p-brand" aria-labelledby="t-brand">
+<div><h3>Every touchpoint says Holman</h3><p class="p">From contract to payoff letter, your customer deals with Holman Financial and the store that sold the car. Clear terms and fair servicing, in Holman's name. Brivio does not appear.</p><ul class="chips"><li>Your brand on every contract</li><li>Branded customer website</li><li>Servicing in your name</li></ul></div>
+<div><span class="sample">Sample customer website · illustrative</span>
+<div class="browser" aria-label="Sample Holman Financial customer website (illustration)">
+<div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">holman.com/financial/account</span></div>
+<div class="p-util"></div>
+<div class="p-top"><div class="p-brand"><img src="assets/hf/holman-logo.png" alt="Holman" data-fallback="Holman"><span>Financial</span></div><nav aria-hidden="true"><span class="on">Account</span><span>Payments</span><span>Documents</span><span>Offers</span></nav></div>
+<div class="p-body">
+<div class="pc"><div class="hello">Good morning, Jessica</div><div class="acct">2022 Honda CR-V · Account ending 2093</div>
+<div class="kv"><div><div class="k">Current balance</div><div class="v">$17,634</div></div><div><div class="k">Next payment</div><div class="v">$544.40</div></div></div>
+<div class="meter"><span></span></div><div class="meta">24 of 60 payments made · Due Dec 1 · Autopay on</div><span class="okchip">✓ 24 on-time payments in a row</span><div class="fakebtn" aria-hidden="true">Make a payment</div></div>
+<div class="pside"><div class="pc"><div class="h">Your dealership</div><p>Holman Honda Centennial. Service where you bought.</p><span class="go">Book service ›</span></div><div class="pc"><div class="h">Just for you</div><p>You're pre-qualified for a 2026 Lexus RX at Lexus of Greenwood Village.</p><span class="go">See your offer ›</span></div></div>
+</div></div></div>
+</div>
+<div class="vp-panel" role="tabpanel" id="p-data" aria-labelledby="t-data">
+<div><h3>Market to your customers with your own data</h3>
+<div class="facts"><div class="h">What you know about Jessica</div>
+<dl><div><dt>On-time payments</dt><dd>24 of 24</dd></div><div><dt>Equity in her CR-V</dt><dd>+$3,366</dd></div><div><dt>Bought at</dt><dd>Holman Honda Centennial</dd></div><div><dt>Next vehicle</dt><dd>Lexus RX, Greenwood Village</dd></div></dl>
+<p class="one"><b>Today this file sits with the funding bank.</b> With your own lender it stays with Holman, so a payment reminder, a service visit and an upgrade offer become one conversation.</p></div></div>
+<div><span class="sample">Sample loyalty mailer · illustrative</span>
+<div class="mailer" aria-label="Sample Holman loyalty mailer (illustration)">
+<div class="m-top"><img src="assets/hf/holman-logo.png" alt="Holman" data-fallback="Holman"><div class="store">Lexus of Greenwood Village<small>5150 S Quebec Street, Greenwood Village, CO</small></div></div>
+<div class="m-stripe">Holman loyalty offer · <b>Step up to Lexus</b></div>
+<div class="m-body"><div class="hi">Jessica, thank you for 24 on-time payments.</div><div class="mhead">You've earned an upgrade. You're pre-qualified.*</div>
+<div class="offer"><div class="veh"><b>2026 Lexus RX 350</b>From your Honda CR-V to a Lexus, without leaving Holman</div><div class="pay">$775<small>/mo</small></div></div>
+<p class="eq">Your CR-V is worth more than you owe: <b>about $3,366 in equity</b> toward your next vehicle.</p>
+<div class="mcta"><span>Claim at Lexus of Greenwood Village</span><em>Code HOLMAN-LOYAL · valid through Jan 31</em></div>
+<p class="fine">*Based on payment history; subject to credit approval. $52,000 price, $2,500 down + $3,366 trade equity, $46,134 at 6.49% APR for 72 mo = $775.29/mo. Illustrative only; not an offer of credit.</p></div>
+</div></div>
+</div>
+</div>
+</div></section>
+
+<section class="sec" id="terms" data-sec="pilot"><div class="container">
+<span class="pre">What we're offering</span>
+<h2 class="h2">A three-month pilot. <span class="blue">No subscription cost.</span></h2>
+<p class="sub">Three Holman stores in one hub, selected together. No obligation or requirements after the pilot.</p>
+<div class="prop-grid">
+<div class="pcard"><h3><img class="sq" src="https://briviocapital.com/assets/brivio-b-gold.png" alt="Brivio">What Brivio offers</h3><ul class="ticks"><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Three-month pilot</b> with no subscription cost</span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Our expertise</b> on a competitive loan program</span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>A branded customer website</b> and servicing</span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>No obligation</b> after the pilot. We still pay commission if you walk away</span></li></ul><p class="take">You can walk away clean</p></div>
+<div class="pcard"><h3><img class="hl" src="assets/hf/holman-logo.png" alt="Holman" data-fallback="Holman">What we need from Holman</h3><ul class="ticks"><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Your lending brand</b></span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>A pilot and a standard dealer agreement</b></span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Feedback on pricing and structure</b></span></li><li><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>An initial look</b> for customer financing</span></li></ul><p class="take">Place the loan with us when we're competitive</p></div>
+</div>
+<div class="steps">
+<div class="step"><div class="n">1</div><h4>Pick the brand and hub</h4><p>Choose your lending brand and the three pilot stores in one hub.</p></div>
+<div class="step"><div class="n">2</div><h4>Sign and run the pilot</h4><p>Sign the pilot and dealer agreement. Three months, no subscription cost.</p></div>
+<div class="step"><div class="n">3</div><h4>Decide</h4><p>Expand to the next hub, or stop with no obligation.</p></div>
+</div>
+</div></section>
+
+<section class="cta-sec" id="next" data-sec="cta"><div class="container">
+<div class="pre">Next step</div>
+<h2><span>Own the loan,</span><span>not just the deal.</span></h2>
+<p>Next step is a signed pilot agreement. We'll bring the draft and choose the hub and pilot stores with you.</p>
+<div class="cta"><a class="btn" href="mailto:Charles.do@briviocapital.com?cc=Ben.lee@briviocapital.com&amp;subject=Holman%20Financial%20pilot" data-track="contact_cta">Email the team</a></div>
+<div class="team"><div><b>Charles Do</b>CEO, Brivio Capital</div><div><b>Ben Lee</b>COO &amp; CFO, Brivio Capital</div></div>
+</div></section>
+</main>
+<footer><div class="container">
+<div class="f-logos"><img class="sp" src="assets/hf/holman-logo.png" alt="Holman" data-fallback="Holman"><i aria-hidden="true"></i><img class="bv" src="https://briviocapital.com/assets/brivio-lockup-v2.png" alt="Brivio Capital" data-fallback="Brivio Capital"></div>
+<p>Prepared by Brivio Capital for Holman. Confidential. November 2026.</p>
+</div></footer>
+<!-- ======================= ASSUMPTIONS DIALOG ======================= -->
+<dialog id="assump" aria-labelledby="assump-title">
+  <form method="dialog" id="assumpForm">
+    <div class="dlg-h">
+      <h3 id="assump-title">Review assumptions</h3>
+      <p>Change a number and the whole page updates.</p>
+    </div>
+    <div class="dlg-b">
+      <div class="fld">
+        <label for="inR">Rooftops</label>
+        <div class="inw"><input id="inR" type="number" inputmode="numeric" min="1" max="100" step="1" value="66"></div>
+        <div class="help">The proposal assumes 66 rooftops.</div>
+      </div>
+      <div class="fld">
+        <label for="inL">Loans per rooftop, per month</label>
+        <div class="inw"><input id="inL" type="number" inputmode="numeric" min="1" max="60" step="1" value="20"></div>
+        <div class="help">The proposal assumes 20 at maturity.</div>
+      </div>
+      <div class="fld">
+        <label for="inP">Share of loans with 740+ credit</label>
+        <div class="inw"><input id="inP" type="number" inputmode="numeric" min="0" max="80" step="1" value="15"><span class="unit">%</span></div>
+        <div class="help" id="helpP">740+ pays ~$215 per loan. Less than 740 pays ~$650.</div>
+      </div>
+    </div>
+    <div class="dlg-sum">
+      <div><div class="k">3-year payout</div><div class="v" data-bind="total3">$18.1M</div></div>
+      <div><div class="k">Enterprise value</div><div class="v" data-bind="ev">$36M</div></div>
+    </div>
+    <p class="dlg-fn">Payouts are net of monthly subscription fees. Enterprise value at 4x Year 3 payout.</p>
+    <div class="dlg-f">
+      <button class="linkish" type="button" id="resetA">Reset to proposal</button>
+      <button class="btn" type="button" id="doneA">Done</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+/* =====================================================================
+   PAYOUT ENGINE (Holman) - same method as TAFS.
+   Mirrors 'Dealer financials' rows 95-98 of Holman Volume Build_Business Case.xlsx:
+   GOS (1.8% of each loan) - $2,495/rooftop/mo fee (waived months 1-3)
+   + servicing bonus (10 bps of portfolio > $300M, 15 bps > $600M, /12 monthly).
+   Model ramp (36 months) scaled to chosen rooftops and mature loans/rooftop
+   (model month 36 = 16.83). At model inputs this ties to row 98:
+   Y1 $1.53M, Y2 $5.64M, Y3 $7.21M. Per-loan: Pricing tab at 20 loans, rounded.
+   ===================================================================== */
+const MODEL = {
+  roof:  [4,4,8,18,28,39,41,44,47,47,51,55,60,60,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66,66],
+  loans: [25.24,28.61,75.72,121.15,206.13,286.06,351.68,439.6,510.49,578.01,638.79,697.69,773.2,822.42,903.61,942.94,991.95,1011.72,1046.64,1062.62,1078.61,1091.23,1100.48,1105.53,1110.58,1110.58,1110.58,1110.58,1110.58,1110.58,1110.58,1110.58,1110.58,1110.58,1110.58,1110.58],
+  avgLoan: 34412.5,
+  gos: 0.018,
+  fee: 2495,
+  pilotMonths: 3,
+  runoff: 0.015,
+  tiers: [[6e8,0.0015],[3e8,0.001],[0,0]],
+  baseL: 20, net740: 215, netLow: 650,
+  multiple: 4
+};
+const DEFAULTS = {R:66, L:20, P:15};
+const state = {...DEFAULTS};
+
+function bonusRate(p){ for (const [t,r] of MODEL.tiers) if (p >= t) return r; return 0; }
+
+function calc(R, L, pct){
+  const p = pct/100;
+  const sR = R/MODEL.roof[35], sL = L/(MODEL.loans[35]/MODEL.roof[35]);
+  let P = 0; const months = [];
+  for (let i=0;i<36;i++){
+    const rt = MODEL.roof[i]*sR, n = MODEL.loans[i]*sR*sL;
+    const gos = n*MODEL.avgLoan*MODEL.gos;
+    const fee = i < MODEL.pilotMonths ? 0 : -MODEL.fee*rt;
+    const Pn = (1-MODEL.runoff)*P + n*MODEL.avgLoan;
+    const bonus = bonusRate(Pn)*(P+Pn)/2/12;
+    P = Pn; months.push({gos, fee, bonus});
+  }
+  const years = [0,1,2].map(y => {
+    const s = months.slice(y*12, y*12+12);
+    const gos = s.reduce((a,m)=>a+m.gos,0), fee = s.reduce((a,m)=>a+m.fee,0), bonus = s.reduce((a,m)=>a+m.bonus,0);
+    return {gos, fee, bonus, total: gos+fee+bonus};
+  });
+  const adj = MODEL.fee/MODEL.baseL - MODEL.fee/L;
+  const p740 = MODEL.net740 + adj, pLow = MODEL.netLow + adj;
+  const y3 = years[2].total;
+  return {years, total3: years.reduce((a,y)=>a+y.total,0), y3, ev: y3*MODEL.multiple, p740, pLow, blended: p*p740 + (1-p)*pLow};
+}
+
+/* ---------- formatting (sign-aware, K below $1M) ---------- */
+const $sign = (v, n) => (v < 0 && n !== 0 ? '-' : '');
+const $d = v => { const n = Math.round(Math.abs(v)); return $sign(v, n) + '$' + n.toLocaleString('en-US'); };
+const $M0 = v => { const n = Math.round(Math.abs(v)/1e6); return $sign(v, n) + '$' + n.toLocaleString('en-US') + 'M'; };
+const $money = v => { const a = Math.abs(v);
+  if (a >= 1e6) { const s=(a/1e6).toFixed(1); return $sign(v,+s) + '$' + s + 'M'; }
+  const n = Math.round(a/1000); return $sign(v,n) + '$' + n.toLocaleString('en-US') + 'K'; };
+
+/* ---------- bind values ---------- */
+function render(){
+  const r = calc(state.R, state.L, state.P);
+  const plural = (n, one, many) => n + ' ' + (n===1 ? one : many);
+  const vals = {
+    total3: $money(r.total3), y3: $money(r.y3), ev: $M0(r.ev), evPerRoof: $money(r.ev/Math.max(1,state.R)),
+    p740: '~'+$d(Math.round(r.p740/5)*5), pLow: '~'+$d(Math.round(r.pLow/5)*5),
+    rooftopsTxt: plural(state.R,'rooftop','rooftops'),
+    rooftopsShort: plural(state.R,'rooftop','rooftops'),
+    lprTxt: plural(state.L,'loan a month','loans a month'),
+    lprShort: plural(state.L,'loan per rooftop a month','loans per rooftop a month'),
+    lowShare: (100-state.P) + '%'
+  };
+  document.querySelectorAll('[data-bind]').forEach(n=>{
+    const k=n.dataset.bind;
+    if (k==='blended'){ n.innerHTML = '~' + $d(Math.round(r.blended/50)*50) + '<small>blended</small>'; return; }
+    if (k in vals) n.textContent = vals[k];
+  });
+  document.getElementById('helpP').textContent = `740+ pays ~${$d(Math.round(r.p740/5)*5)} per loan. Less than 740 pays ~${$d(Math.round(r.pLow/5)*5)}.`;
+  return r;
+}
+
+/* ---------- assumptions dialog ---------- */
+const dlg = document.getElementById('assump');
+const inR = document.getElementById('inR'), inL = document.getElementById('inL'), inP = document.getElementById('inP');
+function syncInputs(){ inR.value=state.R; inL.value=state.L; inP.value=state.P; }
+function openAssumptions(e){
+  if (e) e.preventDefault();
+  syncInputs();
+  if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open','');
+}
+document.querySelectorAll('[data-open-assumptions]').forEach(b=>b.addEventListener('click', openAssumptions));
+const clampIn = (el,lo,hi,fb) => { const v = parseFloat(el.value); return isFinite(v) ? Math.round(Math.min(hi, Math.max(lo, v))) : fb; };
+[inR,inL,inP].forEach(inp=>inp.addEventListener('blur',()=>syncInputs()));
+[inR,inL,inP].forEach(inp=>inp.addEventListener('input',()=>{
+  if (inp.value === '') return;
+  state.R=clampIn(inR,1,100,state.R); state.L=clampIn(inL,1,60,state.L); state.P=clampIn(inP,0,80,state.P);
+  render();
+}));
+document.getElementById('resetA').addEventListener('click',()=>{ Object.assign(state, DEFAULTS); syncInputs(); render(); });
+document.getElementById('doneA').addEventListener('click',()=>{ syncInputs(); dlg.close(); });
+document.getElementById('assumpForm').addEventListener('submit', e => e.preventDefault());
+[inR,inL,inP].forEach(inp=>inp.addEventListener('keydown', e => { if (e.key === 'Enter'){ e.preventDefault(); inp.blur(); } }));
+let downOnBackdrop = false;
+const outside = e => { const r = dlg.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
+dlg.addEventListener('pointerdown', e => { downOnBackdrop = e.target === dlg && outside(e); });
+dlg.addEventListener('click', e => { if (downOnBackdrop && e.target === dlg && outside(e)) dlg.close(); downOnBackdrop = false; });
+
+/* ---------- value-prop carousel ---------- */
+(function(){
+  const tabs = [...document.querySelectorAll('.vp-tab')];
+  const panels = tabs.map(t=>document.getElementById(t.getAttribute('aria-controls')));
+  const panelsBox = document.getElementById('vp-panels');
+  const INTERVAL = 6000;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let idx = 0, locked = reduced || window.matchMedia('(max-width:900px)').matches, hovering = false, visible = false, elapsed = 0, last = null;
+  function select(i){
+    idx = i; elapsed = 0;
+    tabs.forEach((t,j)=>{ t.setAttribute('aria-selected', j===i ? 'true':'false'); t.tabIndex = j===i ? 0 : -1; t.querySelector('.prog').style.width='0'; });
+    panels.forEach((p,j)=>p.classList.toggle('on', j===i));
+  }
+  tabs.forEach((t,i)=>{
+    t.addEventListener('click',()=>{ locked = true; select(i); });
+    t.addEventListener('mouseenter',()=>{ if (window.matchMedia('(hover:hover)').matches){ hovering = true; if (idx!==i) select(i); } });
+    t.addEventListener('mouseleave',()=>{ hovering = false; elapsed = 0; });
+    t.addEventListener('keydown',e=>{
+      if (e.key==='ArrowRight'||e.key==='ArrowLeft'){ e.preventDefault(); locked = true; const n=(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length; select(n); tabs[n].focus(); }
+    });
+  });
+  panelsBox.addEventListener('mouseenter',()=>{ hovering = true; });
+  panelsBox.addEventListener('mouseleave',()=>{ hovering = false; });
+  panelsBox.addEventListener('touchstart',()=>{ locked = true; },{passive:true});
+  new IntersectionObserver(es=>es.forEach(e=>visible = e.isIntersecting),{threshold:.35}).observe(document.getElementById('why'));
+  function tick(now){
+    if (last==null) last = now;
+    const dt = now - last; last = now;
+    if (!locked && !hovering && visible && !document.hidden){
+      elapsed += dt;
+      tabs[idx].querySelector('.prog').style.width = Math.min(100, elapsed/INTERVAL*100) + '%';
+      if (elapsed >= INTERVAL) select((idx+1)%tabs.length);
+    } else if (locked) {
+      tabs.forEach(t=>t.querySelector('.prog').style.width='0');
+    }
+    requestAnimationFrame(tick);
+  }
+  select(0);
+  requestAnimationFrame(tick);
+})();
+
+/* ---------- logo fallbacks ---------- */
+document.querySelectorAll('img[data-fallback]').forEach(img=>{
+  const swap = () => { const s=document.createElement('span'); s.className='fallback-wordmark'; s.textContent=img.dataset.fallback; img.replaceWith(s); };
+  if (img.complete && img.naturalWidth===0) swap(); else img.addEventListener('error', swap);
+});
+
+render();
+</script>
+<!-- =====================================================================
+     VISIT TRACKING  (keep this block when editing the page)
+     - Microsoft Clarity: session recordings + heatmaps (project ypy955s9lz)
+     - Formspree: ONE email per page visit with location + engagement summary
+     - Runs only on briviocapital.com. Open the page once with ?notrack=1 on
+       each of your own devices to exclude yourself (?notrack=0 to undo).
+     ===================================================================== -->
+<script>
+(function(){
+  const CFG = {
+    formspree: 'https://formspree.io/f/xbdbozza',
+    clarity: 'ypy955s9lz',
+    draft: false,
+    proposal: 'Holman Financial Nov 2026',
+    hosts: ['briviocapital.com','www.briviocapital.com'],
+    idleSendMs: 15000,        // tab hidden this long = visit over
+    checkpointMs: 180000,     // or send after 3 min of reading
+    maxEmailsPerDevicePerDay: 4
+  };
+  const ls = { get(k){ try{return localStorage.getItem(k);}catch(e){return null;} }, set(k,v){ try{localStorage.setItem(k,v);}catch(e){} } };
+  const qs = new URLSearchParams(location.search);
+  if (qs.get('notrack')==='1') ls.set('brivio_notrack','1');
+  if (qs.get('notrack')==='0') ls.set('brivio_notrack','');
+  const enabled = CFG.hosts.includes(location.hostname) && ls.get('brivio_notrack')!=='1' && !navigator.webdriver && !/HeadlessChrome|bot|crawl|spider|preview/i.test(navigator.userAgent);
+  if (!enabled) return;
+  if (CFG.draft) return; // DRAFT: all tracking off (Clarity + Formspree). Set draft:false to turn back on.
+
+  /* --- Clarity --- */
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CFG.clarity);
+  const clarity = (...a) => { try{ window.clarity(...a); }catch(e){} };
+  clarity('set','proposal',CFG.proposal);
+
+  /* --- session state --- */
+  const t0 = Date.now();
+  let visibleMs = 0, visSince = document.hidden ? null : t0, maxScroll = 0, sent = false, hideTimer = null;
+  const sections = {}, secSince = {}, cards = {}, assumptions = {opened:0, changes:[]}, clicks = [];
+  let geo = {};
+  const vid = ls.get('safs_vid') || (Math.random().toString(36).slice(2,10)); ls.set('safs_vid', vid);
+  const visitNo = (+ls.get('safs_visits') || 0) + 1; ls.set('safs_visits', String(visitNo));
+  const firstSeen = ls.get('safs_first') || new Date(t0).toISOString(); ls.set('safs_first', firstSeen);
+
+  function nowVisible(){ return visibleMs + (visSince ? Date.now()-visSince : 0); }
+  function mmss(ms){ const s=Math.round(ms/1000); return Math.floor(s/60)+'m '+String(s%60).padStart(2,'0')+'s'; }
+
+  /* --- location / company from IP --- */
+  fetch('https://ipapi.co/json/').then(r=>r.json()).then(j=>{
+    if (j.error) throw 0;
+    geo = {ip:j.ip, city:j.city, region:j.region, country:j.country_name, postal:j.postal, org:j.org, asn:j.asn};
+  }).catch(()=>fetch('https://ipwho.is/').then(r=>r.json()).then(j=>{
+    geo = {ip:j.ip, city:j.city, region:j.region, country:j.country, postal:j.postal, org:(j.connection||{}).org || (j.connection||{}).isp, asn:(j.connection||{}).asn};
+  })).catch(()=>{}).finally(()=>{
+    if (geo.org) clarity('set','org',String(geo.org));
+    if (geo.city) clarity('set','city',String(geo.city));
+  });
+
+  /* --- engagement --- */
+  addEventListener('scroll',()=>{
+    const h = document.documentElement.scrollHeight - innerHeight;
+    if (h>0) maxScroll = Math.max(maxScroll, Math.round(scrollY/h*100));
+  },{passive:true});
+  const io = new IntersectionObserver(es=>es.forEach(e=>{
+    const k = e.target.dataset.sec;
+    if (e.isIntersecting){ secSince[k] = Date.now(); }
+    else if (secSince[k]){ sections[k] = (sections[k]||0) + (Date.now()-secSince[k]); secSince[k]=null; }
+  }),{threshold:.4});
+  document.querySelectorAll('[data-sec]').forEach(s=>io.observe(s));
+  function secSummary(){
+    const out = {...sections};
+    for (const k in secSince) if (secSince[k]) out[k] = (out[k]||0) + (Date.now()-secSince[k]);
+    return Object.entries(out).map(([k,v])=>`${k} ${Math.round(v/1000)}s`).join(', ') || 'none';
+  }
+  document.addEventListener('click',e=>{
+    const a = e.target.closest('[data-track]');
+    if (a){ clicks.push(a.dataset.track); clarity('event', a.dataset.track); }
+  });
+
+  window.SAFS_TRACK = {
+    card(key, how){
+      if (how==='auto') return;
+      cards[key] = cards[key] || {hover:0, click:0, keyboard:0};
+      cards[key][how] = (cards[key][how]||0) + 1;
+      clarity('event','card_'+key);
+    },
+    assumptionsOpened(){ assumptions.opened++; clarity('event','assumptions_opened'); clarity('upgrade','assumptions'); },
+    assumptionsChanged(s){
+      assumptions.changes.push(s.reset ? 'reset' : `${s.R} rooftops / ${s.L} loans / ${s.P}% 740+`);
+      if (assumptions.changes.length > 12) assumptions.changes.shift();
+      clarity('event','assumptions_changed');
+    }
+  };
+
+  /* --- send one summary per visit --- */
+  function device(){
+    const ua = navigator.userAgent;
+    const os = /iPhone|iPad/.test(ua)?'iOS':/Android/.test(ua)?'Android':/Mac OS X/.test(ua)?'Mac':/Windows/.test(ua)?'Windows':'Other';
+    const br = /Edg[A-Z]?\//.test(ua)?'Edge':/CriOS|Chrome\//.test(ua)?'Chrome':/FxiOS|Firefox\//.test(ua)?'Firefox':/Safari\//.test(ua)?'Safari':'Other';
+    const kind = /iPhone|iPod|Android.+Mobile|Windows Phone/.test(ua) ? 'Phone' : (/iPad|Android/.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua))) ? 'Tablet' : 'Desktop';
+    return {os, br, kind, ua};
+  }
+  function send(reason){
+    if (!CFG.formspree) return;
+    if (sent) return; sent = true;
+    const today = new Date().toISOString().slice(0,10);
+    const key = 'safs_sent_'+today, n = +ls.get(key) || 0;
+    if (n >= CFG.maxEmailsPerDevicePerDay) return;
+    ls.set(key, String(n+1));
+    const d = device(), vis = nowVisible();
+    const scanner = /microsoft|google|amazon|proofpoint|mimecast|barracuda|cisco|forcepoint|zscaler|cloudflare/i.test(geo.org||'') && vis < 5000;
+    const where = [geo.city, geo.region].filter(Boolean).join(', ') || 'unknown location';
+    const cardTxt = Object.entries(cards).map(([k,v])=>`${k} (${Object.entries(v).filter(([,c])=>c).map(([h,c])=>h+' x'+c).join(', ')})`).join('; ') || 'none (auto-rotate only)';
+    const f = new FormData();
+    f.append('_subject', `${scanner?'[likely email scanner] ':''}Holman Financial page visit: ${where} · ${geo.org||'unknown network'} · ${mmss(vis)}`);
+    f.append('proposal', CFG.proposal);
+    f.append('opened_at', new Date(t0).toString());
+    f.append('time_on_page', mmss(vis) + ' (visible), ' + mmss(Date.now()-t0) + ' (total)');
+    f.append('max_scroll', maxScroll + '%');
+    f.append('time_by_section', secSummary());
+    f.append('value_cards_touched', cardTxt);
+    f.append('assumptions_opened', String(assumptions.opened));
+    f.append('assumptions_tried', assumptions.changes.join(' | ') || 'none');
+    f.append('clicks', clicks.join(', ') || 'none');
+    f.append('location', `${where}, ${geo.country||''} ${geo.postal||''}`.trim());
+    f.append('network_org', `${geo.org||'unknown'} ${geo.asn||''}`.trim());
+    f.append('ip', geo.ip || 'unknown');
+    f.append('device', `${d.kind} · ${d.os} · ${d.br} · screen ${screen.width}x${screen.height}`);
+    f.append('language_timezone', `${navigator.language} · ${Intl.DateTimeFormat().resolvedOptions().timeZone}`);
+    f.append('referrer', document.referrer || 'direct (email, bookmark or typed)');
+    f.append('link_params', location.search || 'none');
+    f.append('visit_number_on_device', `${visitNo} (device id ${vid}, first seen ${firstSeen})`);
+    f.append('sent_because', reason);
+    f.append('user_agent', d.ua);
+    try {
+      fetch(CFG.formspree, {method:'POST', body:f, headers:{'Accept':'application/json'}, keepalive:true}).catch(()=>{});
+    } catch(e){}
+  }
+  document.addEventListener('visibilitychange',()=>{
+    if (document.hidden){
+      if (visSince){ visibleMs += Date.now()-visSince; visSince = null; }
+      clearTimeout(hideTimer); hideTimer = setTimeout(()=>send('left the tab for 15s'), CFG.idleSendMs);
+    } else {
+      visSince = Date.now(); clearTimeout(hideTimer);
+    }
+  });
+  addEventListener('pagehide',()=>{ if (visSince){ visibleMs += Date.now()-visSince; visSince=null; } send('closed the page'); });
+  const cp = setInterval(()=>{ if (nowVisible() >= CFG.checkpointMs){ clearInterval(cp); send('still reading after 3 min'); } }, 5000);
+})();
+</script>
+</body>
+</html>
