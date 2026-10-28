@@ -86,7 +86,7 @@ async function decrypt(pw){
   return JSON.parse(new TextDecoder().decode(pt));
 }
 let bids=[],cur=0,device='desktop';
-const withNotrack=u=>u+(u.includes('?')?'&':'?')+'notrack=1';
+const withNotrack=u=>u+(u.includes('?')?'&':'?')+'notrack=1&v='+Date.now();
 function render(){
   const b=bids[cur];
   $('tabs').innerHTML=bids.map((x,i)=>`<button class="tab${x.status==='draft'?' draft':''}" data-i="${i}" aria-pressed="${i===cur}"><span class="dot"></span>${x.name}</button>`).join('');
