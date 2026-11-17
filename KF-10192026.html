@@ -425,11 +425,11 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
   <div class="container">
     <h2><span style="color:#111111">What's possible for</span><br><span class="blue">Keffer Auto Group</span></h2>
     <div class="stats">
-      <div class="stat"><div class="v" data-bind="annual">$1.1M</div><div class="k">Annual payout</div><div class="s">including the annual bonus</div></div>
+      <div class="stat"><div class="v" data-bind="annual">$1.9M</div><div class="k">Annual payout</div><div class="s">including the annual bonus</div></div>
       <div class="stat"><div class="v">$0</div><div class="k">Lending capital</div><div class="s">loan buyers take the credit risk</div></div>
       <div class="stat"><div class="v">3 months</div><div class="k">Pilot</div><div class="s">three stores, no subscription cost</div></div>
     </div>
-    <p class="stats-note">Estimated, based on <span data-bind="rooftopsTxt">15 rooftops</span> at <span data-bind="lprTxt">18 loans a month</span> each. <a href="#math" data-open-assumptions>Change the assumptions</a></p>
+    <p class="stats-note">Estimated, based on <span data-bind="rooftopsTxt">15 rooftops</span> at <span data-bind="lprTxt">20 loans a month</span> each. <a href="#math" data-open-assumptions>Change the assumptions</a></p>
   </div>
 </section>
 
@@ -442,25 +442,25 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
     <div class="cards2">
       <div class="card">
         <div class="lbl">Payout per funded loan</div>
-        <div class="big" data-bind="blended">~$275<small>blended</small></div>
+        <div class="big" data-bind="blended">~$450<small>blended</small></div>
         <div class="cells">
           <div class="cell"><div class="t">740+ credit</div><div class="v" data-bind="p740">~$125</div></div>
-          <div class="cell"><div class="t">Less than 740</div><div class="v" data-bind="pLow">~$300</div></div>
+          <div class="cell"><div class="t">Less than 740</div><div class="v" data-bind="pLow">~$500</div></div>
         </div>
-        <div class="foot"><p>At <b data-bind="lprShort">18 loans per rooftop a month</b>, <b data-bind="lowShare">85%</b> below 740.</p></div>
+        <div class="foot"><p>At <b data-bind="lprShort">20 loans per rooftop a month</b>, <b data-bind="lowShare">85%</b> below 740.</p></div>
       </div>
       <div class="card">
         <div class="lbl">Total payout per year</div>
-        <div class="big" data-bind="annual">~$1.1M</div>
+        <div class="big" data-bind="annual">~$1.9M</div>
         <div class="cells">
-          <div class="cell"><div class="t">Per-loan payouts</div><div class="v" data-bind="loanPay">$887K</div></div>
-          <div class="cell"><div class="t">Annual bonus</div><div class="v" data-bind="bonus">$238K</div></div>
+          <div class="cell"><div class="t">Per-loan payouts</div><div class="v" data-bind="loanPay">$1.6M</div></div>
+          <div class="cell"><div class="t">Annual bonus</div><div class="v" data-bind="bonus">$265K</div></div>
         </div>
         <div class="foot"><p>Across <b data-bind="rooftopsShort">15 rooftops</b>.</p><button class="btn sm" type="button" data-open-assumptions>Review assumptions</button></div>
       </div>
     </div>
     <div class="notes">
-      <p>Economics are net of a $2,495 monthly subscription and assume 18 loans per rooftop a month. Assumes an average loan of $35,000 and 85% of volume less than 740.</p>
+      <p>Economics are net of a $2,495 monthly subscription and assume 20 loans per rooftop a month. Assumes an average loan of $35,000 and 85% of volume less than 740.</p>
       <p>Annual bonus is paid at 10 basis points of total portfolio: one year of loans at 10 bps over a 2.1-year weighted average life.</p>
     </div>
 
@@ -649,18 +649,18 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
       </div>
       <div class="fld">
         <label for="inL">Loans per rooftop, per month</label>
-        <div class="inw"><input id="inL" type="number" inputmode="numeric" min="1" max="60" step="1" value="18"></div>
-        <div class="help">The proposal assumes 18.</div>
+        <div class="inw"><input id="inL" type="number" inputmode="numeric" min="1" max="60" step="1" value="20"></div>
+        <div class="help">The proposal assumes 20.</div>
       </div>
       <div class="fld">
         <label for="inP">Share of loans with 740+ credit</label>
         <div class="inw"><input id="inP" type="number" inputmode="numeric" min="0" max="80" step="1" value="15"><span class="unit">%</span></div>
-        <div class="help" id="helpP">740+ pays ~$125 per loan. Less than 740 pays ~$300.</div>
+        <div class="help" id="helpP">740+ pays ~$125 per loan. Less than 740 pays ~$500.</div>
       </div>
     </div>
     <div class="dlg-sum">
-      <div><div class="k">Annual payout</div><div class="v" data-bind="annual">$1.1M</div></div>
-      <div><div class="k">Annual bonus</div><div class="v" data-bind="bonus">$238K</div></div>
+      <div><div class="k">Annual payout</div><div class="v" data-bind="annual">$1.9M</div></div>
+      <div><div class="k">Annual bonus</div><div class="v" data-bind="bonus">$265K</div></div>
     </div>
     <p class="dlg-fn">Annual payout includes monthly subscription costs.</p>
     <div class="dlg-f">
@@ -675,7 +675,7 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
    PAYOUT ENGINE (Keffer Auto Group)
    From the Keffer deck:
    - Per-loan payout is net of the $2,495 monthly subscription per rooftop,
-     quoted at 18 loans per rooftop a month: 740+ ~$125, less than 740 ~$300.
+     quoted at 20 loans per rooftop a month: 740+ ~$125, less than 740 ~$500.
    - Average loan $35,000. 85% of volume less than 740. 15 rooftops.
    - Annual bonus: 10 bps of total portfolio = one year of loans x 10 bps x
      2.1-year weighted average life.
@@ -683,9 +683,9 @@ dialog::backdrop{background:rgba(0,0,0,.5)}
    ===================================================================== */
 const MODEL = {
   fee: 2495,          // $ per rooftop per month
-  baseL: 18,          // loans per rooftop per month the net payouts are quoted at
+  baseL: 20,          // loans per rooftop per month the net payouts are quoted at
   net740: 125,        // $ per loan after fee, 740+
-  netLow: 300,        // $ per loan after fee, less than 740
+  netLow: 500,        // $ per loan after fee, less than 740
   avgLoan: 35000,
   bonusBps: 10,
   wal: 2.1
@@ -693,7 +693,7 @@ const MODEL = {
 MODEL.gross740 = MODEL.net740 + MODEL.fee/MODEL.baseL;
 MODEL.grossLow = MODEL.netLow + MODEL.fee/MODEL.baseL;
 
-const DEFAULTS = {R:15, L:18, P:15};
+const DEFAULTS = {R:15, L:20, P:15};
 const state = {...DEFAULTS};
 
 function calc(R, L, pct){
