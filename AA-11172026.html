@@ -925,7 +925,7 @@ render();
     const where = [geo.city, geo.region].filter(Boolean).join(', ') || 'unknown location';
     const cardTxt = Object.entries(cards).map(([k,v])=>`${k} (${Object.entries(v).filter(([,c])=>c).map(([h,c])=>h+' x'+c).join(', ')})`).join('; ') || 'none (auto-rotate only)';
     const f = new FormData();
-    f.append('_subject', `${scanner?'[likely email scanner] ':''}Sport Automotive page visit: ${where} · ${geo.org||'unknown network'} · ${mmss(vis)}`);
+    f.append('_subject', `${scanner?'[likely email scanner] ':''}${CFG.proposal.replace(/ \w+ \d{4}$/,'')} page visit: ${where} · ${geo.org||'unknown network'} · ${mmss(vis)}`);
     f.append('proposal', CFG.proposal);
     f.append('opened_at', new Date(t0).toString());
     f.append('time_on_page', mmss(vis) + ' (visible), ' + mmss(Date.now()-t0) + ' (total)');
