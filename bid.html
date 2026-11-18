@@ -64,7 +64,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 </div>
 <div class="app" id="app">
 <div class="bar">
-<div class="brand">Keffer Financial <span>· Bid review</span></div>
+<div class="brand">Brivio <span>· Bid review</span></div>
 <div class="tabs" id="tabs"></div>
 <div class="tools">
 <div class="seg" id="dev"><button data-d="desktop" aria-pressed="true">Desktop</button><button data-d="mobile" aria-pressed="false">Mobile</button></div>
@@ -76,7 +76,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 <div class="stage" id="stage"></div>
 </div>
 <script>
-const PAYLOAD={"s":"Pk0kMB9zyt7Zq/V5BLDUuA==","i":"M3Ozjm/gRxXE63ba","c":"qkXUh5v5wm7teMCxvaHADMjSjff6JVFxtEORDNHNtJQ/qUyqpfco209J/sEYDNgBfWzKGYCWfNYULS5ASdb7J7lls64KfoyxEK9teToo9YCVEITzCCscSZ2BY6xq0PcUiDESUKQO5g6X1+A/PCidK3lATIo2VL8JpDqSRpnB3jYMRAay5sfREW/AqMNUjrB4L+QMZjCVjpKKUmAyuDV9MP2RjitFU0EWGBJxyuOM4iX2ViNOM3+bYK1NGCOMNVGMJ98qq2ctHhgIwfWzaAvIBoxm9/J68hdXs1X7S+W08sF9g1qMGHzfCDLo3vCmL9pyIcvRK1ws5mmikNCZcXimbKbJ7F8PGWZ79fO3UKHaVQeBgmN8ntgGt/DrKr2ogxeEV7lbMcyTU8/YEM2q7JeY9J5AEnwn62aTIMk/B0zveHag0OcBb3M/XmphgjDpRv6xTLNEw/Yh/s5tg0pKp70D4LR5m5XP+Q96zOnnI755R4EJIR3NPzOhAgaX11qV62YQCNBTd0nbHaS+RkgD/rdXC8rveybuubRPNj0eMTYvNMxo6IkItSReDAQNktZTeIbdG/5tZbW4//FGc+CZoLMWORKWh6lxQcJtlGQZ3QNzXLP4sFBB455r20+sldlIr8oBmxXXWr5zjICeo2c5KuNMT+fxJcsyn5XWvQU9ly4YUvWD6GE1tW/JKiUZrJ/duuuyYr7yP7y9dwXYLN/T5H6Oww21a+8fla/CDAo+cyzH4xgtb6jDve54RvopuLE2SOiIMFbWnM+NY3VYlQ7nrZLmHDe7pfbIuOnw2C+JmisYTJLM2CktXiLxRzwPDKa5RcSxGzwHyMYg2xxqtdNc7avX4j10iWvYPAwyxC0CQN85NxSfeVH5+PLvq+c=","n":250000};
+const PAYLOAD={"s":"/nxte6zDRx4ziK0qAr7LSw==","i":"An3xESttFHjnXRfw","c":"rXtrAn3hletqf9/Pi0+MX4O+nFhPNIeIiFzAslQ9psYiWJz5Re5VcQszOX0/6tTHSyXXUOJYtT3+f2N7MOGpqmNcg2OxRQiF58ai+yj7Iodk95aQ4CSnRO9ZqeG0S6Bs5C5e/AiDeVq09kYN2pXcsjzk7BmGPocSNPduUGzXdVRPXvjHAqAJg1B4oFynVj4ZqRF1e3XkDw6aFoorv4EH64omtDtVFGlFcOQqSZLdeOllfOXe/n7nKPRVvjmZzd9iDeMIa1vmz6aHS3H3RVaPEguyiX4bt6XFn2DFlCblcIl0+kRWD+GLhecxHzMdQV3Geu5E7qfqiJdSLwtbei/jWYgtVib4ogfaY+P7pji6q8Hqsp82QLc6SQpzvR+B7m7pk/j5MFM4FfewA8JFXE6u0NR59iv/OWULqvsAMlY7WXoQLIgqmpsTVAqg26v3YgVTfWFyzL3zimHmNaRRX7NM7oeQvMocQPhKtf7R3p22/y3P2lS4FJPdpc9fIwXnI7qqYCwcsu5rTX/nU4V99ugvss7PjPn+VG6YOdv9II+KCzCIoPQPlXnviqzEhXsoEZ9nTet0g6Tlq+rpKmyuTMGFiC7QkDqVnAjnfQakgi2Zo5kkxgyBbG4Kn6L37JlVfqQ3JAKL4U4kaluKNxIJYqXw1vouRCyUB1lLmCrRElmhODzC7JrJM27/663jKWVT2D/dN6731vAl8c+wMbNZZ4DziT2VrY8X0rA2xFvYeNQf5swibqXArwcn/NICAForvYc+OuugzmqgwvuVnbHkUG40cJWvDc6AYo5mw7uYcfMxQyhgJJMI/JVym43ylUrfPN6Bvp1whC2V+7wMm+FS1d1v5juL3BYxrQ8YWMHkeoT2Ig5N2LGXTfUpAx8+z70UgfZzVM2PDgZF7MEZ01iNc6grKWyfkPvHLQ7f/QlJUSoqZ+uEzNIpIrcb9F5OdIU+NDoUkAJU/MnugqAnJDbBeuxlT9ajnFzP+aY=","n":250000};
 const $=id=>document.getElementById(id);
 const b64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
 async function decrypt(pw){
