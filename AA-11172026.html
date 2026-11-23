@@ -75,8 +75,8 @@ section{scroll-margin-top:90px}
 
 /* ---------- Hero (Apple Autos full-bleed photo, centered) ---------- */
 .hero{position:relative;min-height:74vh;display:flex;align-items:center;color:#fff;overflow:hidden;background:#1b1b1b url("assets/aafs/hero.png") center 30%/cover no-repeat;text-align:center}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.8) 100%)}
-.hero .container{position:relative;z-index:1;width:100%;padding-top:88px;padding-bottom:96px}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 50% 50%,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 100%),linear-gradient(180deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.58) 45%,rgba(0,0,0,.8) 100%)}
+.hero .container{position:relative;z-index:1;width:100%;padding-top:88px;padding-bottom:96px;text-shadow:0 2px 24px rgba(0,0,0,.45)}
 .hero .pre{font-size:clamp(12px,1.5vw,20px);letter-spacing:.3em;color:#fff}
 .hero h1{color:#fff;font-size:clamp(36px,5.6vw,72px);line-height:1.06;margin-top:18px;font-weight:700}
 .hero .lede{max-width:780px;margin:22px auto 0;text-wrap:balance;font-size:clamp(16px,1.4vw,18px);font-weight:400;line-height:1.65}

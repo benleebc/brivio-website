@@ -49,7 +49,26 @@ button{font:inherit;color:inherit;cursor:pointer}
 .stage.mobile{padding:24px 0}
 .stage.mobile iframe{width:390px;height:844px;max-height:100%;border-radius:18px;box-shadow:0 0 0 8px #000,0 20px 50px rgba(0,0,0,.5)}
 .empty{align-self:center;text-align:center;color:var(--mute);font-size:15px;line-height:1.6;padding:24px}
-@media (max-width:700px){.tools .seg{display:none}}
+.arch{position:relative}
+.btn.on{color:var(--hi);border-color:#5B8BD0}
+.menu{position:absolute;right:0;top:calc(100% + 6px);z-index:20;min-width:220px;background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:6px;display:none;flex-direction:column;gap:2px;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+.menu.open{display:flex}
+.menu .h{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:6px 10px 4px}
+.menu button{display:flex;align-items:center;gap:8px;text-align:left;border:0;background:transparent;border-radius:7px;padding:9px 10px;font-size:14px;color:var(--hi)}
+.menu button:hover,.menu button[aria-pressed="true"]{background:#1C3250}
+.pick{display:none;flex:1;min-width:0;font:inherit;font-size:15px;padding:9px 10px;border-radius:8px;border:1px solid var(--line);background:var(--ink2);color:var(--hi)}
+.tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--warn)}
+@media (max-width:700px){
+.bar{flex-wrap:nowrap;gap:8px;padding:8px 10px}
+.brand span,.tabs,.tools .seg,#open{display:none}
+.brand{font-size:14px}
+.pick{display:block}
+.tools{gap:6px}
+.btn{padding:9px 10px}
+.meta{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;padding:6px 10px;font-size:12px;gap:12px}
+.meta .fn{display:none}
+.stage.mobile{padding:0}
+}
 </style>
 </head>
 <body>
@@ -66,8 +85,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 <div class="bar">
 <div class="brand">Brivio <span>· Bid review</span></div>
 <div class="tabs" id="tabs"></div>
+<select class="pick" id="pick" aria-label="Select bid"></select>
 <div class="tools">
 <div class="seg" id="dev"><button data-d="desktop" aria-pressed="true">Desktop</button><button data-d="mobile" aria-pressed="false">Mobile</button></div>
+<div class="arch"><button class="btn" id="archBtn" aria-haspopup="true" aria-expanded="false">Archived</button><div class="menu" id="archMenu" role="menu"></div></div>
 <a class="btn" id="open" target="_blank" rel="noopener">Open in tab</a>
 <button class="btn" id="lock">Lock</button>
 </div>
@@ -76,7 +97,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 <div class="stage" id="stage"></div>
 </div>
 <script>
-const PAYLOAD={"s":"/nxte6zDRx4ziK0qAr7LSw==","i":"An3xESttFHjnXRfw","c":"rXtrAn3hletqf9/Pi0+MX4O+nFhPNIeIiFzAslQ9psYiWJz5Re5VcQszOX0/6tTHSyXXUOJYtT3+f2N7MOGpqmNcg2OxRQiF58ai+yj7Iodk95aQ4CSnRO9ZqeG0S6Bs5C5e/AiDeVq09kYN2pXcsjzk7BmGPocSNPduUGzXdVRPXvjHAqAJg1B4oFynVj4ZqRF1e3XkDw6aFoorv4EH64omtDtVFGlFcOQqSZLdeOllfOXe/n7nKPRVvjmZzd9iDeMIa1vmz6aHS3H3RVaPEguyiX4bt6XFn2DFlCblcIl0+kRWD+GLhecxHzMdQV3Geu5E7qfqiJdSLwtbei/jWYgtVib4ogfaY+P7pji6q8Hqsp82QLc6SQpzvR+B7m7pk/j5MFM4FfewA8JFXE6u0NR59iv/OWULqvsAMlY7WXoQLIgqmpsTVAqg26v3YgVTfWFyzL3zimHmNaRRX7NM7oeQvMocQPhKtf7R3p22/y3P2lS4FJPdpc9fIwXnI7qqYCwcsu5rTX/nU4V99ugvss7PjPn+VG6YOdv9II+KCzCIoPQPlXnviqzEhXsoEZ9nTet0g6Tlq+rpKmyuTMGFiC7QkDqVnAjnfQakgi2Zo5kkxgyBbG4Kn6L37JlVfqQ3JAKL4U4kaluKNxIJYqXw1vouRCyUB1lLmCrRElmhODzC7JrJM27/663jKWVT2D/dN6731vAl8c+wMbNZZ4DziT2VrY8X0rA2xFvYeNQf5swibqXArwcn/NICAForvYc+OuugzmqgwvuVnbHkUG40cJWvDc6AYo5mw7uYcfMxQyhgJJMI/JVym43ylUrfPN6Bvp1whC2V+7wMm+FS1d1v5juL3BYxrQ8YWMHkeoT2Ig5N2LGXTfUpAx8+z70UgfZzVM2PDgZF7MEZ01iNc6grKWyfkPvHLQ7f/QlJUSoqZ+uEzNIpIrcb9F5OdIU+NDoUkAJU/MnugqAnJDbBeuxlT9ajnFzP+aY=","n":250000};
+const PAYLOAD={"s":"IaENcREpFoT+S+4nzh5wuA==","i":"itAF/AP4dcOgHNTj","c":"34Qqbs+YrXuy71I6Tiosp7fRSYz0enTNJcXUnd3gfTBRkUvdRAunU7t06fn3MkXmr6vSRuo1y48oSATuqm5VTBihpYBpjnnQrJvX6w/n4M5QrhAnQ5CVyBxATQwj/56M+FUcqPtK1Vt5gPEsiuwrHcm3MlJNSOA2dd14RwLH6/BWUY0RUQjRpdY+vpgL5AWjbkI1lLvyecloZmt2hdFBLFtBMlYbuFmh4r/YtH3/FNeh/9ZMSJBKDRD48TPb9JpgpVXQCFX0LgQ3XgVODVDCmrQCXTRFr9h19ub/llymmwbGh6YKvaP44Ud/WNSDJYudIc3ug0ok/Mm9fOHCM8/q94HDLsoejm/wnVxMWwSwLPN3k275ZP8aaLek8K1MkfL8GS0YVhSHxWeD4OpdujkmQHqtGCgseAkn98opJBrqEAi3rukiUAyMquKuO3Kfkzyd9cKl24YkIfUXqyZVG/HtzAuzD50rfgwZGSdqMo1SfakOCclF6Sn3ROQITxv5lcwOOoMSfiuUIpkyAD4ncI+KtKoXaCKVQvWo2EdAkuXj0KtAaUXOZKe1u0dDuPJ/k5pN96hdJwqN9DGFGAoeVzyyqzkHNAUU3DpkJX4/Xl4m9PviY7xVBl6XPNc4UH0Ubruz7n00dsjn13Nhek81LxeU6BesKKAbb6Z2PuTvYA0oM6AKuezCel1/EpFLQ/5lxE1VMOuQUqFC4lxHEs74VGmII4OoWd1CDTMUA9vw5ukUrgnf3u1NN3tQYnw1x8QuShqRscUCIpoyOIzvSjpOza4K3W5nvclai8e+yxs5pApe4RjIz+KSsLg8YKJ4fbrMtL8Ps7RXdrihvsbWPbCiyq/6FMgEiCvceb3CtUmjBzNNxeVaeeyuk06u8Jni/jFCnJWMglfrRTS6iGE/Wvco4rQ8fblpZ08qBRC8n5IsmZ0dT9o9ZpSDmROYaE0zrHpOOPxlbAgnPiFVL1TWur0ZXkfJONmPNF56uQfNZS5SfLplb4Q6K8EVE5fjaVqmxyT6xlIHT9o00LP8o4k/qe553HqwHYhK8q2kK1610+bceToP/2LZ77CNxkIvmWeLHyUc6+hXJi8ZHb7j+wTd2v8QBcXt6WzvOXK3OTGg5JZYc9zdOnLVUR8c5T+ZnMKS3bY60nIh/uRc4PoH6OqviNK3lPhe7upCftN/49zIBO8=","n":250000};
 const $=id=>document.getElementById(id);
 const b64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
 async function decrypt(pw){
@@ -89,8 +110,12 @@ let bids=[],cur=0,device='desktop';
 const withNotrack=u=>u+(u.includes('?')?'&':'?')+'notrack=1&v='+Date.now();
 function render(){
   const b=bids[cur];
-  $('tabs').innerHTML=bids.map((x,i)=>`<button class="tab${x.status==='draft'?' draft':''}" data-i="${i}" aria-pressed="${i===cur}"><span class="dot"></span>${x.name}</button>`).join('');
-  $('meta').innerHTML=`<span><b>${b.name}</b></span><span>${b.status==='draft'?'Draft':'Live'}${b.sent?' · Sent '+b.sent:''}</span><span>${b.file}</span><span class="safe">● Untracked view</span>`;
+  const act=bids.map((x,i)=>[x,i]).filter(([x])=>!x.archived),arc=bids.map((x,i)=>[x,i]).filter(([x])=>x.archived);
+  $('tabs').innerHTML=act.map(([x,i])=>`<button class="tab${x.status==='draft'?' draft':''}" data-i="${i}" aria-pressed="${i===cur}"><span class="dot"></span>${x.name}</button>`).join('');
+  $('pick').innerHTML=act.map(([x,i])=>`<option value="${i}"${i===cur?' selected':''}>${x.name}</option>`).join('')+(arc.length?`<optgroup label="Archived">${arc.map(([x,i])=>`<option value="${i}"${i===cur?' selected':''}>${x.name}</option>`).join('')}</optgroup>`:'');
+  $('archMenu').innerHTML='<div class="h">Archived bids</div>'+arc.map(([x,i])=>`<button role="menuitem" data-i="${i}" aria-pressed="${i===cur}"><span class="dot"${x.status==='draft'?' style="background:var(--warn)"':''}></span>${x.name}</button>`).join('');
+  $('archBtn').classList.toggle('on',!!b.archived);
+  $('meta').innerHTML=`<span><b>${b.name}</b></span>${b.archived?'<span class="tag">Archived</span>':''}<span>${b.status==='draft'?'Draft':'Live'}${b.sent?' · Sent '+b.sent:''}</span><span class="fn">${b.file}</span><span class="safe">● Untracked view</span>`;
   const st=$('stage');st.className='stage'+(device==='mobile'?' mobile':'');
   {st.innerHTML=`<iframe src="${withNotrack(b.file)}" title="${b.name}"></iframe>`;$('open').style.display='';$('open').href=withNotrack(b.file);}
   localStorage.setItem('brivio_review_cur',cur);
@@ -98,7 +123,7 @@ function render(){
 function start(list){
   bids=list;
   try{localStorage.setItem('brivio_notrack','1');}catch(e){}
-  cur=Math.min(+localStorage.getItem('brivio_review_cur')||0,bids.length-1);
+  const sv=localStorage.getItem('brivio_review_cur');cur=sv===null?bids.findIndex(x=>!x.archived):Math.min(+sv,bids.length-1);
   $('gate').style.display='none';$('app').classList.add('on');render();
 }
 $('f').onsubmit=async e=>{
@@ -108,6 +133,11 @@ $('f').onsubmit=async e=>{
 };
 $('tabs').onclick=e=>{const t=e.target.closest('.tab');if(t){cur=+t.dataset.i;render();}};
 $('dev').onclick=e=>{const t=e.target.closest('button');if(!t)return;device=t.dataset.d;[...$('dev').children].forEach(c=>c.setAttribute('aria-pressed',c===t));render();};
+$('pick').onchange=e=>{cur=+e.target.value;render();};
+const closeMenu=()=>{$('archMenu').classList.remove('open');$('archBtn').setAttribute('aria-expanded','false');};
+$('archBtn').onclick=e=>{e.stopPropagation();const o=$('archMenu').classList.toggle('open');$('archBtn').setAttribute('aria-expanded',o);};
+$('archMenu').onclick=e=>{const t=e.target.closest('button');if(t){cur=+t.dataset.i;closeMenu();render();}};
+document.addEventListener('click',e=>{if(!e.target.closest('.arch'))closeMenu();});
 $('lock').onclick=()=>{sessionStorage.removeItem('brivio_review_pw');location.reload();};
 const saved=sessionStorage.getItem('brivio_review_pw');
 if(saved)decrypt(saved).then(start).catch(()=>sessionStorage.removeItem('brivio_review_pw'));
