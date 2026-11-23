@@ -429,7 +429,7 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,dt,small,.sub,.lede,.take,.bottom,.fine,.s
   <div class="container">
     <h2><span class="l1" style="color:#111111">What's possible for</span><br><span class="blue">Walser Automotive Group</span></h2>
     <div class="stats">
-      <div class="stat"><div class="v" data-bind="annual">$4.8M</div><div class="k">Annual payout</div><div class="s">including the annual bonus</div></div>
+      <div class="stat"><div class="v" data-bind="annual">$4.8M</div><div class="k">Annual payout</div><div class="s">net of the monthly subscription</div></div>
       <div class="stat"><div class="v">$0</div><div class="k">Lending capital</div><div class="s">loan buyers take the credit risk</div></div>
       <div class="stat"><div class="v">3 months</div><div class="k">Pilot</div><div class="s">three stores, no subscription cost</div></div>
     </div>
@@ -457,20 +457,19 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,dt,small,.sub,.lede,.take,.bottom,.fine,.s
         <div class="lbl">Total payout per year</div>
         <div class="big" data-bind="annual">~$4.8M</div>
         <div class="cells">
-          <div class="cell"><div class="t">Per-loan payouts</div><div class="v" data-bind="loanPay">$4.2M</div></div>
-          <div class="cell"><div class="t">Annual bonus</div><div class="v" data-bind="bonus">$618K</div></div>
+          <div class="cell"><div class="t">Capital investment</div><div class="v">$0</div></div>
+          <div class="cell"><div class="t">Loans per year</div><div class="v" data-bind="loansYr">1,200</div></div>
         </div>
         <div class="foot"><p>Across <b data-bind="rooftopsShort">35 rooftops</b>.</p><button class="btn sm" type="button" data-open-assumptions>Review assumptions</button></div>
       </div>
     </div>
     <div class="notes">
       <p>Economics are net of a $2,495 monthly subscription and assume 20 loans per rooftop a month. Assumes an average loan of $35,000 and 85% of volume less than 740.</p>
-      <p>Annual bonus is paid at 10 basis points of total portfolio: one year of loans at 10 bps over a 2.1-year weighted average life.</p>
     </div>
 
     <div class="pencil">
-      <h3>How the numbers pencil</h3>
-      <p>Current lender economics, redistributed to Walser Automotive Group and Brivio.</p>
+      <h3 class="center">How the numbers pencil</h3>
+      <p class="center">Current lender economics, redistributed to Walser Automotive Group and Brivio.</p>
       <div class="split">
         <div><b>Loan buyers</b><span>Take the credit risk and earn a return on their capital.</span></div>
         <div><b>Brivio</b><span>Earns money for servicing and collecting on the loan.</span></div>
@@ -532,7 +531,7 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,dt,small,.sub,.lede,.take,.bottom,.fine,.s
               </div>
               <div class="pside">
                 <div class="pc"><div class="h">Your dealership</div><p>Walser Toyota. Service where you bought.</p><span class="go">Book service ›</span></div>
-                <div class="pc"><div class="h">Just for you</div><p>You're pre-qualified for a 2026 Toyota Highlander at Walser Toyota.</p><span class="go">See your offer ›</span></div>
+                <div class="pc"><div class="h">Just for you</div><p>You're pre-qualified for a 2026 BMW X3 at Walser Automotive Group.</p><span class="go">See your offer ›</span></div>
               </div>
             </div>
           </div>
@@ -549,7 +548,7 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,dt,small,.sub,.lede,.take,.bottom,.fine,.s
               <div><dt>On-time payments</dt><dd>24 of 24</dd></div>
               <div><dt>Equity in her RAV4</dt><dd>+$3,366</dd></div>
               <div><dt>Bought at</dt><dd>Walser Toyota</dd></div>
-              <div><dt>Next vehicle</dt><dd>Toyota Highlander, Walser Toyota</dd></div>
+              <div><dt>Next vehicle</dt><dd>BMW X3, Walser Automotive Group</dd></div>
             </dl>
             <p class="one"><b>Today this file sits with the funding bank.</b> With your own lender it stays with Walser Automotive Group, so a payment reminder, a service visit and an upgrade offer become one conversation.</p>
           </div>
@@ -558,16 +557,16 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,dt,small,.sub,.lede,.take,.bottom,.fine,.s
           <span class="sample">Sample loyalty mailer · illustrative</span>
           <div class="mailer" aria-label="Sample Walser Automotive Group loyalty mailer (illustration)">
             <div class="m-top"><img src="assets/wafs/logo.png" alt="Walser Automotive Group" data-fallback="Walser Automotive Group"><div class="store">Walser Toyota<small>Bloomington, MN</small></div></div>
-            <div class="m-stripe">Walser Automotive Group loyalty offer · <b>Step up to Highlander</b></div>
+            <div class="m-stripe">Walser Automotive Group loyalty offer · <b>Step up to BMW</b></div>
             <div class="m-body">
               <div class="hi">Jessica, thank you for 24 on-time payments.</div>
               <div class="mhead">You've earned an upgrade. You're pre-qualified.*</div>
               <div class="offer">
-                <div class="veh"><b>2026 Toyota Highlander</b>From your RAV4 to a Highlander, without leaving Walser</div>
+                <div class="veh"><b>2026 BMW X3</b>From your RAV4 to a BMW X3, without leaving Walser</div>
                 <div class="pay">$733<small>/mo</small></div>
               </div>
               <p class="eq">Your RAV4 is worth more than you owe: <b>about $3,366 in equity</b> toward your next vehicle.</p>
-              <div class="mcta"><span>Claim at Walser Toyota</span><em>Code WALSER-LOYAL · valid through Dec 31</em></div>
+              <div class="mcta"><span>Claim at any Walser store</span><em>Code WALSER-LOYAL · valid through Dec 31</em></div>
               <p class="fine">*Based on payment history; subject to credit approval. $49,500 price, $2,500 down + $3,366 trade equity, $43,634 at 6.49% APR for 72 mo = $733.28/mo. Illustrative only; not an offer of credit.</p>
             </div>
           </div>
@@ -580,9 +579,9 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,dt,small,.sub,.lede,.take,.bottom,.fine,.s
 <!-- ======================= PILOT ======================= -->
 <section class="sec" id="terms">
   <div class="container">
-    <span class="pre">What we're offering</span>
-    <h2 class="h2"><span class="l1">A three-month pilot.</span><br><span class="blue">No subscription cost.</span></h2>
-    <p class="sub">Three Walser stores in Minnesota, selected together.</p>
+    <span class="pre center">What we're offering</span>
+    <h2 class="h2 center"><span class="l1">A three-month pilot.</span><br><span class="blue">No subscription cost.</span></h2>
+    <p class="sub center">Three Walser stores in Minnesota, selected together.</p>
     <div class="prop-grid">
       <div class="pcard">
         <h3><img class="sq" src="https://briviocapital.com/assets/brivio-b-gold.png" alt="Brivio">What Brivio offers</h3>
@@ -664,7 +663,6 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,dt,small,.sub,.lede,.take,.bottom,.fine,.s
     </div>
     <div class="dlg-sum">
       <div><div class="k">Annual payout</div><div class="v" data-bind="annual">$4.8M</div></div>
-      <div><div class="k">Annual bonus</div><div class="v" data-bind="bonus">$618K</div></div>
     </div>
     <p class="dlg-fn">Annual payout includes monthly subscription costs.</p>
     <div class="dlg-f">
@@ -681,8 +679,6 @@ h1,h2,h3,h4{text-wrap:balance}p,li,dd,dt,small,.sub,.lede,.take,.bottom,.fine,.s
    - Per-loan payout is net of the $2,495 monthly subscription per rooftop,
      quoted at 20 loans per rooftop a month: 740+ ~$180, less than 740 ~$560.
    - Average loan $35,000. 85% of volume less than 740. 35 rooftops.
-   - Annual bonus: 10 bps of total portfolio = one year of loans x 10 bps x
-     2.1-year weighted average life.
    Steady-state year at full volume. No ramp, no pilot fee waiver modeled.
    ===================================================================== */
 const MODEL = {
@@ -708,7 +704,7 @@ function calc(R, L, pct){
   const loans = R*L*12;
   const loanPay = loans*blended;
   const bonus = loans*MODEL.avgLoan*(MODEL.bonusBps/10000)*MODEL.wal;
-  return {p740, pLow, blended, loanPay, bonus, annual: loanPay + bonus};
+  return {p740, pLow, blended, loanPay, bonus, annual: loanPay};
 }
 
 /* ---------- formatting (sign-aware, K below $1M) ---------- */
@@ -723,7 +719,7 @@ function render(){
   const r = calc(state.R, state.L, state.P);
   const plural = (n, one, many) => n + ' ' + (n===1 ? one : many);
   const vals = {
-    annual: $money(r.annual), loanPay: $money(r.loanPay), bonus: $money(r.bonus),
+    annual: $money(r.annual), perLoan: '~'+$d(Math.round(r.blended/5)*5), loansYr: (state.R*state.L*12).toLocaleString('en-US'), loanPay: $money(r.loanPay), bonus: $money(r.bonus),
     p740: '~'+$d(r.p740), pLow: '~'+$d(r.pLow),
     rooftopsTxt: plural(state.R,'rooftop','rooftops'),
     rooftopsShort: plural(state.R,'rooftop','rooftops'),
