@@ -44,6 +44,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .meta{display:flex;align-items:center;gap:14px;padding:8px 16px;font-size:12.5px;color:var(--mute);border-bottom:1px solid var(--line);flex-wrap:wrap}
 .meta b{color:var(--hi);font-weight:600}
 .safe{display:flex;align-items:center;gap:6px;color:var(--ok)}
+.live{display:flex;align-items:center;gap:6px;min-width:0;border:1px solid var(--line);border-radius:7px;padding:3px 3px 3px 9px;background:var(--ink2)}
+.live a{color:var(--hi);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.live a:hover{text-decoration:underline}
+.live button{flex:none;border:0;border-radius:5px;background:#1C3250;color:var(--hi);font-size:12px;font-weight:600;padding:4px 9px;cursor:pointer}
+.live button.ok{background:var(--ok);color:#0B1A2C}
 .stage{flex:1;min-height:0;background:#0E2036;display:flex;justify-content:center;overflow:auto}
 .stage iframe{border:0;background:#fff;width:100%;height:100%;display:block}
 .stage.mobile{padding:24px 0}
@@ -115,7 +120,7 @@ function render(){
   $('pick').innerHTML=act.map(([x,i])=>`<option value="${i}"${i===cur?' selected':''}>${x.name}</option>`).join('')+(arc.length?`<optgroup label="Archived">${arc.map(([x,i])=>`<option value="${i}"${i===cur?' selected':''}>${x.name}</option>`).join('')}</optgroup>`:'');
   $('archMenu').innerHTML='<div class="h">Archived bids</div>'+arc.map(([x,i])=>`<button role="menuitem" data-i="${i}" aria-pressed="${i===cur}"><span class="dot"${x.status==='draft'?' style="background:var(--warn)"':''}></span>${x.name}</button>`).join('');
   $('archBtn').classList.toggle('on',!!b.archived);
-  $('meta').innerHTML=`<span><b>${b.name}</b></span>${b.archived?'<span class="tag">Archived</span>':''}<span>${b.status==='draft'?'Draft':'Live'}${b.sent?' · Sent '+b.sent:''}</span><span class="fn">${b.file}</span><span class="safe">● Untracked view</span>`;
+  $('meta').innerHTML=`<span><b>${b.name}</b></span>${b.archived?'<span class="tag">Archived</span>':''}<span>${b.status==='draft'?'Draft':'Live'}${b.sent?' · Sent '+b.sent:''}</span><span class="live"><a href="${LIVE+b.file}" target="_blank" rel="noopener" title="Live link (tracked)">${LIVE.replace('https://','')+b.file}</a><button type="button" id="copyLive" data-url="${LIVE+b.file}">Copy link</button></span><span class="safe">● Untracked view</span>`;
   const st=$('stage');st.className='stage'+(device==='mobile'?' mobile':'');
   {st.innerHTML=`<iframe src="${withNotrack(b.file)}" title="${b.name}"></iframe>`;$('open').style.display='';$('open').href=withNotrack(b.file);}
   localStorage.setItem('brivio_review_cur',cur);
@@ -133,6 +138,8 @@ $('f').onsubmit=async e=>{
 };
 $('tabs').onclick=e=>{const t=e.target.closest('.tab');if(t){cur=+t.dataset.i;render();}};
 $('dev').onclick=e=>{const t=e.target.closest('button');if(!t)return;device=t.dataset.d;[...$('dev').children].forEach(c=>c.setAttribute('aria-pressed',c===t));render();};
+const LIVE='https://briviocapital.com/';
+$('meta').addEventListener('click',async e=>{const t=e.target.closest('#copyLive');if(!t)return;const u=t.dataset.url;try{await navigator.clipboard.writeText(u);}catch(_){const x=document.createElement('textarea');x.value=u;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove();}t.textContent='Copied';t.classList.add('ok');setTimeout(()=>{t.textContent='Copy link';t.classList.remove('ok');},1600);});
 $('pick').onchange=e=>{cur=+e.target.value;render();};
 const closeMenu=()=>{$('archMenu').classList.remove('open');$('archBtn').setAttribute('aria-expanded','false');};
 $('archBtn').onclick=e=>{e.stopPropagation();const o=$('archMenu').classList.toggle('open');$('archBtn').setAttribute('aria-expanded',o);};
